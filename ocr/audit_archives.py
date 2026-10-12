@@ -22,10 +22,11 @@ def inspect_image(data):
     return size,dh,pixel
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--root',default='D:/OCR');p.add_argument('--output',default='D:/OCR/research');p.add_argument('--word-limit',type=int,default=0);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--root',default='D:/OCR');p.add_argument('--output',default='D:/OCR/research');p.add_argument('--word-limit',type=int,default=0);p.add_argument('--words-only',action='store_true');p.add_argument('--retain-duplicates',action='store_true');a=p.parse_args()
     root,out=Path(a.root),Path(a.output);out.mkdir(parents=True,exist_ok=True)
     rows=[];rejected=[];inventories=[];seen={};pixel_seen={};bands=defaultdict(list);started=time.time()
     for archive in ['Page_Level_Telugu_Training_Set.zip','Page_Level_Telugu_Test_Set.zip','trainIIIT.zip','valIIIT.zip','testIIIT.zip']:
+        if a.words_only and 'IIIT' not in archive:continue
         path=root/archive; print('Auditing '+archive,flush=True)
         sha=digest_file(path)
         with zipfile.ZipFile(path) as z:
@@ -59,7 +60,7 @@ def main():
                 except Exception as e:
                     rejected.append({'archive':archive,'image':name,'reason':str(e)});continue
                 h=hashlib.sha256(data).hexdigest();eid=source+':'+name
-                if h in seen or pixel in pixel_seen:
+                if not a.retain_duplicates and (h in seen or pixel in pixel_seen):
                     rejected.append({'archive':archive,'image':name,'reason':'exact bytes/pixels duplicate','of':seen.get(h,pixel_seen.get(pixel))});continue
                 seen[h]=eid;pixel_seen[pixel]=eid
                 # Group all sibling word crops from each source page. First numeric component is
@@ -91,11 +92,14 @@ def main():
         while parents[x]!=x:parents[x]=parents[parents[x]];x=parents[x]
         return x
     def union(x,y):parents[find(y)]=find(x)
-    group_first={}
+    group_first={};exact_first={}
     for r in rows:
         g=r['group_id'];e=r['example_id']
         if g in group_first:union(e,group_first[g])
         else:group_first[g]=e
+        for key in [r['original_sha256'],r['pixel_sha256']]:
+            if key in exact_first:union(e,exact_first[key])
+            else:exact_first[key]=e
         for other in r['near_duplicate_candidates']:union(e,other)
     groups=defaultdict(list)
     for r in rows:groups[(r['granularity'],find(r['example_id']))].append(r)
@@ -107,7 +111,7 @@ def main():
             counts=Counter()
             for group in gs:
                 split='test' if counts['test']<500 else 'validation' if counts['validation']<500 else 'train'
-                for r in group:r['split']=split;assignments[gran+'_'+split].append(r)
+                for r in group:r['split']=split;r['leakage_group']=find(r['example_id']);assignments[gran+'_'+split].append(r)
                 counts[split]+=len(group)
         else:
             for group in gs:
