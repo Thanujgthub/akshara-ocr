@@ -1,4 +1,5 @@
-# Progress · 12 October 2026
+# Executed progress
 
-Environment inspected; package documents read as specifications. Public model metadata revision recorded; gated config request HTTP 401. Official training scope is layout only. Dataset sources catalogued; IIIT word portal states CC BY 4.0, download access unresolved; IHDR Task B validation URL HTTP 404. Website, local API bridge, data/evaluation CLI implemented. 13 Python tests passed. JavaScript syntax passed. HTTP frontend/health passed. Browser checked grapheme CER/WER and preserved raw output after edits. Full model inference/training blocked by checkpoint access and unverified model contract.
+13 October 2026: downloaded snapshot verified; archive audit completed; GPU forward/backward/update and tiny-subset save/reload checks passed; 1,000-word training epoch and 500-word validation completed; original and adapted models evaluated on the same 500-word test. Page training, representative page evaluation and writer metadata remain open.
 
+Executed final checks: 13 unit tests passed; both JavaScript files passed Node syntax checks; real original/adapted API outputs matched their saved test predictions; a real held-out image was uploaded and transcribed in the browser. Screenshot: ../akshara-working-preview.png. The local API remains running on 127.0.0.1:8765.

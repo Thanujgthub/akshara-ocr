@@ -1,3 +1,3 @@
-# Baseline · 12 October 2026
+# Executed original-model baseline
 
-Not run. The original checkpoint config request returned HTTP 401. No authorized checkpoint, baseline predictions, model latency or VRAM measurements exist. The website sample is typeset illustration only.
+Original weights on the same 500 frozen test words: grapheme CER 15.93%, WER 43.00%, raw exact match 66.20%. Full baseline evaluation ran after adaptation with unchanged original weights and no test-guided tuning.

@@ -1,3 +1,3 @@
-# Training · 12 October 2026
+# Executed training
 
-Not run. No verified recognizer training contract, model forward/backward step, adapter update or save/reload. The local GPU is RTX 3050 4 GB. A real LoRA recipe must be implemented after the checkpoint gate, not guessed from a generic Qwen recipe.
+One epoch on 1,000 frozen word samples completed in 27.5 minutes. See evaluation.md and word-pilot-results for the full settings and logs. The saved adapter was loaded into a fresh base model for the 500-word test.

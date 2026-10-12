@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "train": {
+      "count": 1000,
+      "source_document_groups": 875,
+      "manifest_hash_match": true,
+      "image_hashes_match": true
+    },
+    "validation": {
+      "count": 500,
+      "source_document_groups": 371,
+      "manifest_hash_match": true,
+      "image_hashes_match": true
+    },
+    "test": {
+      "count": 500,
+      "source_document_groups": 378,
+      "manifest_hash_match": true,
+      "image_hashes_match": true
+    }
+  },
+  "source_document_groups_overlap": false,
+  "pixel_or_byte_hash_overlap": false,
+  "known_near_duplicate_edges_cross_split": 0,
+  "writer_disjointness": "not established",
+  "image_label_semantic_correctness": "source provided; not newly human verified"
+}

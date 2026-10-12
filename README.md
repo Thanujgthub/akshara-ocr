@@ -1,61 +1,73 @@
-# Akshara · Telugu OCR Studio
+# Akshara · Telugu handwriting OCR studio
 
-A responsive Telugu transcription and review website, local REST API bridge, and tested data/evaluation toolkit. It is usable today for manual transcription, imported OCR review, batch image inspection, exports and text comparison. **It does not include a trained Telugu model, measured OCR accuracy, or a verified training corpus.** The typeset sample is illustrative.
+A clean transcription/review website with a local IndicOCR API, executed word-recognizer LoRA experiment, frozen data manifests and measured original-versus-adapted test results. Read `reports/evaluation.md` for the actual results and limitations. Word-crop performance does not establish full-page quality.
 
-## Windows setup
+## Open on this computer
 
-From this project directory in PowerShell:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe -m uvicorn ocr.server:app --host 127.0.0.1 --port 8765
-```
-
-Open http://127.0.0.1:8765. No model is needed for the review tools. The model endpoint returns 503 when unavailable; it never returns sample text for an uploaded image.
-
-## What works
-
-- Multi-image upload queue (JPEG/PNG/WebP, maximum 20 MB each), original preview, zoom and view-only rotation.
-- Editable Telugu text, immutable raw result, separate NFC normalization, human review flag.
-- Import official OCR Markdown/blocks JSON or an exported review bundle; plain UTF-8 TXT, Markdown and JSON exports.
-- Searchable device-local library; images are never persisted in the library. JSON bundles retain sample/review/model metadata.
-- Grapheme CER, WER and exact text comparison; source registry and developer API reference.
-- Deterministic grouped train/validation/test splitting, SHA-256 freeze files, corrupt/duplicate/missing label audit, visual near-duplicate candidate grouping and source-supplied raw/NFC labels.
-- Light/dark theme, responsive layout and keyboard-accessible form controls.
-
-## Connect real IndicOCR
-
-1. Review and accept the model's terms at https://huggingface.co/bodhan-ai/indic-ocr yourself. Hosting the model for others has separate conditions; the hosted preview contains no model inference service.
-2. Download the official snapshot at the recorded revision, following its installation documentation on Linux CUDA. Do not install its GPU stack into the lightweight Windows toolkit environment.
-3. Install this project's API requirements in that model-compatible environment. Set `INDIC_OCR_REPO` to the downloaded snapshot and `INDIC_OCR_REVISION` to its exact commit. Run the API in that environment. The documented snapshot Python API is implemented in `ocr/model.py`; actual loading has not been tested here.
-4. Use **Model connection** in the UI. `GET /api/health` checks snapshot presence, not proven model compatibility. The first prediction performs the actual load.
-
-The local site and API on the same origin avoid browser mixed-content restrictions. The static hosted site may not reach a local HTTP API. To use a remote API, serve it over HTTPS with your own authentication and set `OCR_ALLOWED_ORIGINS` to the specific frontend origin. The included server is designed for loopback development, not public unauthenticated hosting. No credential is collected by the browser.
-
-## Prepare authorized data
+From this project folder in PowerShell:
 
 ```powershell
-python -m ocr.cli audit --root data/my-corpus --source my-corpus --license-ref CC-BY-4.0 --granularity page --output manifests/all.jsonl
-python -m ocr.cli split --manifest manifests/all.jsonl --output manifests
-python -m ocr.cli evaluate --input predictions.jsonl --output reports/metrics.json
+.\Start-Akshara.ps1
 ```
 
-Page inputs use same-stem `.txt` labels. For word archives, pass `--labels-tsv train_gt.txt`; paths must match the image paths relative to `--root`. Labels must be tab-separated. Raw text stays unchanged. Telugu presence is a heuristic, not proof of correct language or handwriting: human/domain review is required. Visual hashes conservatively group near-duplicate candidates; review false positives. Writer-disjointness cannot be inferred from filenames and is reported false. Supply authoritative writer/document group IDs in the audited manifest before splitting when available. Split each granularity separately. Split assignment can exceed validation/test targets to preserve groups and reports train shortfalls honestly.
+Open http://127.0.0.1:8765 for the studio, or http://127.0.0.1:8765/research.html for training/results. The local service uses the installed D:/OCR/runtime/venv environment, authorized base weights in D:/OCR/models/indic-ocr and saved word adapter in D:/OCR/runs/word-pilot-v1/trained/adapter. Set INDIC_OCR_REPO / INDIC_OCR_ADAPTER / OCR_DEVICE to override these locations. OCR_RUN_ROOT and OCR_DATA_ROOT configure the dashboard paths. Start-Akshara.ps1 uses this computer's runtime location; adjust its ocrPython variable on another machine.
 
-The split command creates immutable-by-convention JSONL files and a checksum ledger; store these read-only before model selection. It does not enforce organizational test-label sealing. Never tune on test labels.
+The study reserves the GPU while training/testing; new inference returns 409 until it completes. Local uploads are temporary. Run on loopback only. The hosted private site contains the interface and exported results, while GPU inference runs locally. A hosted HTTPS page may not connect to a local HTTP API; use the local studio for inference.
 
-Evaluation input is JSONL: each row has `example_id`, `reference`, `prediction`, `source_dataset`, `granularity`. Empty reference metrics are undefined (`null`), not silently zero. The corpus report includes micro CER/WER, macro CER, raw exact match and per-example metrics. Text comparisons alone do not prove page-level or model accuracy. No bootstrap interval, latency/VRAM benchmark or failure-case image audit has been run.
+## Studio tools
 
-`python -m ocr.download --source SOURCE_ID --output data/archive.zip` only downloads registry records explicitly approved for the project's scope. It refuses HTML access gates, verifies a published hash when available, and calculates SHA-256 otherwise. It does not extract archives or bypass authentication. Registry approval is a human licensing decision, not a download success flag.
+- Batch JPG/PNG/WebP uploads, original image preview, zoom and view rotation.
+- Word-crop mode for the measured adapter; experimental full-page layout/block reconstruction.
+- Editable Telugu text beside immutable raw output, explicit NFC normalization and human review flag.
+- TXT, Markdown and JSON export; searchable browser-local library and OCR JSON import.
+- CER/WER text comparison, dataset registry, REST API and live study dashboard.
+- Light/dark presentation, responsive layouts and accessible labeled controls.
 
-## Cloud model setup
+The built-in typeset letter remains an illustrative editor sample. Real test images and unedited predictions appear on the separate research page. Layout scores are not transcription confidence. The application does not invent text when inference fails.
 
-See `notebooks/colab_train.ipynb` for an access/environment checkpoint and baseline bridge. It is a **baseline/setup notebook, not an executed recognizer training recipe**. See `docs/architecture_decision.md` for the mandatory training gate. The official repo trains only layout. A custom recognizer LoRA path must be verified against the actual model, processor and tokenizer before it can be implemented honestly.
+## Reproduce the environment
 
-## Privacy and assets
+Python 3.12, NVIDIA CUDA driver, and the exact original gated model are required for the GPU path. `requirements-gpu-lock.txt` records the installed versions, including Torch 2.11.0+cu128, torchvision 0.26.0+cu128, Transformers 5.7.0, PEFT 0.21.2 and Accelerate 1.15.0. Install Torch/torchvision from the official CUDA 12.8 wheel index, then install/sync the remaining lock file with that extra index available. The CPU data/review toolkit can use requirements.txt; CPU training was not viable under this laptop's initial memory pressure.
 
-Files are sent only when Transcribe is pressed and a server URL is configured. Local library uses browser localStorage and can be cleared; it is not encrypted. Images are temporary in API requests and deleted after processing. Export bundles can contain document text; keep them private as appropriate. No private images/data/model weights are in the published assets. Google Fonts is optional presentation styling; the app has system fallbacks and does not upload documents to Google Fonts.
+```powershell
+uv venv --python 3.12 D:/OCR/runtime/venv
+uv pip install --python D:/OCR/runtime/venv/Scripts/python.exe torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu128
+uv pip sync --python D:/OCR/runtime/venv/Scripts/python.exe requirements-gpu-lock.txt --extra-index-url https://download.pytorch.org/whl/cu128 --index-strategy unsafe-best-match
+```
 
-See `HANDOFF.md` for actual verification and incomplete research deliverables.
+Review/accept the base model terms through your own Hugging Face account, and download revision cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25 of bodhan-ai/indic-ocr, including shipped root Python modules, tokenizer/processor and weights. The original license accompanies the local adapter deliverable. Third-party hosted access is governed by that license. No token belongs in source, logs or browser localStorage.
+
+## Inference CLI and REST API
+
+```powershell
+$env:INDIC_OCR_REPO='D:/OCR/models/indic-ocr'
+$env:INDIC_OCR_REVISION='cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25'
+$env:INDIC_OCR_ADAPTER='D:/OCR/runs/word-pilot-v1/trained/adapter'
+& D:/OCR/runtime/venv/Scripts/python.exe -m ocr.cli predict --image word.jpg --mode word --output prediction.json
+curl.exe -F 'file=@word.jpg' -F mode=word http://127.0.0.1:8765/api/predict
+```
+
+Use mode=page for the official layout → cropped-block recognition → reconstruction pipeline. Page results are experimental and have no measured page benchmark in this pilot. Unset INDIC_OCR_ADAPTER to use unchanged original recognizer weights. Keep the raw Markdown unchanged for evaluation; human corrections belong in the separate reviewed transcription.
+
+## Data and experiments
+
+```powershell
+& D:/OCR/runtime/venv/Scripts/python.exe -m ocr.audit_archives --root D:/OCR --output D:/OCR/research --word-limit 8000
+& D:/OCR/runtime/venv/Scripts/python.exe -m ocr.experiment probe --manifest D:/OCR/research/manifests/word_train.jsonl --limit 4 --steps 64 --output D:/OCR/runs/new-probe
+& D:/OCR/runtime/venv/Scripts/python.exe -m ocr.experiment train --manifest D:/OCR/runs/word-pilot-v1/train.jsonl --validation D:/OCR/runs/word-pilot-v1/validation.jsonl --output D:/OCR/runs/new-training
+& D:/OCR/runtime/venv/Scripts/python.exe -m ocr.experiment evaluate --manifest D:/OCR/runs/word-pilot-v1/test.jsonl --output D:/OCR/runs/new-baseline
+& D:/OCR/runtime/venv/Scripts/python.exe -m ocr.experiment evaluate --manifest D:/OCR/runs/word-pilot-v1/test.jsonl --adapter D:/OCR/runs/new-training/adapter --output D:/OCR/runs/new-adapted
+& D:/OCR/runtime/venv/Scripts/python.exe -m unittest discover -s tests -v
+```
+
+Do not rerun audit or overwrite frozen study outputs during an experiment. Use a separate output directory for new audits and new runs. The audit's word-limit is a bounded sample count per official split, not a claim that the full archives have been verified. Review dataset versions, source labels, visual duplicate candidates and writer metadata before larger studies. Original images/labels/weights remain unchanged.
+
+The experiment CLI also accepts --repo, --data-root, --device, --epochs, --limit and --adapter. It uses the official tokenizer, template, prompt and preprocessing. Checkpoints and optimizer state are saved every 100 examples; automatic interrupted-run resume is not implemented. A clean rerun is reproducible by seed; the same GPU/kernel environment is needed for strict numerical parity. The Colab notebook is an optional launch path, not a claim of a cloud run.
+
+## Evidence and limits
+
+The results deliverable contains 1,000 / 500 / 500 frozen manifests, raw prediction JSONL, metrics, source-document bootstrap intervals, per-length/error breakdowns, loss logs and model provenance. Source-provided labels are not newly human-verified. Group isolation is based on source-document paths and conservative near-duplicate candidates; verified writer identity and original-model pretraining overlap are unavailable. Page data remains audit-only pending clarification of its terms. No page/line alignment, historical-domain adaptation or claim of production accuracy is made.
+
+Dataset attribution: IIIT Hyderabad, IIIT-INDIC-HW-WORDS Telugu, CC BY 4.0 stated at https://ilocr.iiit.ac.in/dataset/23/. Page source: https://ilocr.iiit.ac.in/icdar_2024_hwd/dataset.html. See data_registry and reports/data_audit.md for actual counts and version discrepancies.
+
+Model connection includes an original/adapted weight selector; the REST/CLI variant parameter accepts original or adapted. API parity and browser transcription were verified on a held-out word.

@@ -10,7 +10,7 @@ def main():
     a=sub.add_parser('audit'); a.add_argument('--root',required=True);a.add_argument('--source',required=True);a.add_argument('--license-ref',required=True);a.add_argument('--granularity',choices=['page','line','block','word'],default='page');a.add_argument('--labels-tsv');a.add_argument('--output',required=True)
     s=sub.add_parser('split');s.add_argument('--manifest',required=True);s.add_argument('--output',required=True);s.add_argument('--seed',type=int,default=42);s.add_argument('--validation',type=int,default=500);s.add_argument('--test',type=int,default=500);s.add_argument('--minimum-train',type=int,default=1000)
     e=sub.add_parser('evaluate');e.add_argument('--input',required=True);e.add_argument('--output',required=True)
-    p=sub.add_parser('predict');p.add_argument('--image',required=True);p.add_argument('--output',required=True)
+    p=sub.add_parser('predict');p.add_argument('--image',required=True);p.add_argument('--output',required=True);p.add_argument('--mode',choices=['word','page'],default='page');p.add_argument('--variant',choices=['adapted','original'],default='adapted')
     args=parser.parse_args()
     if args.command=='audit':
         rows,rejected=audit(args.root,args.source,args.license_ref,args.granularity,read_tsv(args.labels_tsv) if args.labels_tsv else None)
@@ -30,5 +30,5 @@ def main():
         result=corpus(rows);out=Path(args.output);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps({k:v for k,v in result.items() if k!='per_example'}))
     elif args.command=='predict':
         from .model import predict
-        result=predict(Path(args.image));out=Path(args.output);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+        result=predict(Path(args.image),args.mode,args.variant);out=Path(args.output);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
 if __name__=='__main__': main()

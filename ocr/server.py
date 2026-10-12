@@ -1,22 +1,30 @@
 import io
 import os
 import tempfile
+import logging
 from pathlib import Path
 from PIL import Image, UnidentifiedImageError
-from fastapi import FastAPI, UploadFile, HTTPException
+from fastapi import FastAPI, UploadFile, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from .model import available, predict
+from .model import available, predict, loaded
 app=FastAPI(title='Akshara OCR API',version='0.1.0')
 origins=os.environ.get('OCR_ALLOWED_ORIGINS','http://127.0.0.1:8765,http://localhost:8765').split(',')
 app.add_middleware(CORSMiddleware,allow_origins=origins,allow_methods=['GET','POST'],allow_headers=['Content-Type'],allow_credentials=False)
 
+def study_busy():
+    from .study_routes import ROOT,read
+    return (read(ROOT/'status.json') or {}).get('status')=='running'
+
 @app.get('/api/health')
 def health():
-    return {'status':'ok','model_ready':available(),'model_load_verified':False,'note':'model_ready indicates snapshot present; actual loading occurs on first prediction'}
+    return {'status':'ok','model_ready':available() and not study_busy(),'model_load_verified':loaded(),'training_active':study_busy(),'note':'Inference waits until the local GPU study completes.'}
 
 @app.post('/api/predict')
-def predict_page(file:UploadFile):
+def predict_page(file:UploadFile,mode:str=Form('page'),variant:str=Form('adapted')):
+    if study_busy():raise HTTPException(409,'The GPU is training or testing. Open Training & results to follow progress, then transcribe when it completes.')
+    if mode not in {'page','word'}: raise HTTPException(422,'Mode must be page or word')
+    if variant not in {'adapted','original'}:raise HTTPException(422,'Variant must be adapted or original')
     if not available(): raise HTTPException(503,'Model unavailable. Configure INDIC_OCR_REPO with an authorized snapshot and install official dependencies.')
     content=file.file.read(20*1024*1024+1)
     if len(content)>20*1024*1024: raise HTTPException(413,'Maximum file size is 20 MB')
@@ -33,8 +41,11 @@ def predict_page(file:UploadFile):
             with Image.open(io.BytesIO(content)) as im:
                 from PIL import ImageOps
                 ImageOps.exif_transpose(im).convert('RGB').save(path)
-            return predict(path)
+            return predict(path,mode,variant)
     except Exception:
+        logging.getLogger('akshara').exception('Local OCR inference failed')
         raise HTTPException(503,'Model inference failed. Check server environment and official checkpoint compatibility; no fallback text was generated.')
 
+from .study_routes import router
+app.include_router(router)
 app.mount('/',StaticFiles(directory=str(Path(__file__).resolve().parents[1]/'dist'),html=True),name='website')

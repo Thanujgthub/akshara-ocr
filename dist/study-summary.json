@@ -1,0 +1,671 @@
+{
+  "audit": {
+    "archives": [
+      {
+        "archive": "Page_Level_Telugu_Training_Set.zip",
+        "sha256": "3578f9045ddc16fc266b47227b92f2672c516955b8dcb5cb36ce50a3966462ff",
+        "images": 3496,
+        "labels": 3496,
+        "granularity": "page",
+        "source_split": "labeled-pool",
+        "verified": 3491
+      },
+      {
+        "archive": "Page_Level_Telugu_Test_Set.zip",
+        "sha256": "1f3e46569d4744c53d5ff72439809c90193b0bc865215023ad2a5c9e67077fab",
+        "images": 700,
+        "labels": 0,
+        "granularity": "page",
+        "source_split": "external-test",
+        "verified": 0
+      },
+      {
+        "archive": "trainIIIT.zip",
+        "sha256": "36648cc3113bcfd62c6e3432d62a219426c7f7181f1be8ce317a3980bd9a9db6",
+        "images": 88534,
+        "labels": 80637,
+        "granularity": "word",
+        "source_split": "train",
+        "verified": 8000
+      },
+      {
+        "archive": "valIIIT.zip",
+        "sha256": "4523b391a4239be79368e5c2604e55d520069fdfb0a20f0bbe70727c2353ad23",
+        "images": 19980,
+        "labels": 19980,
+        "granularity": "word",
+        "source_split": "validation",
+        "verified": 8000
+      },
+      {
+        "archive": "testIIIT.zip",
+        "sha256": "c86631ddc291cd1332216f09e7456061ba951c4e0cf6ad03828bf7ce0f77edb6",
+        "images": 17898,
+        "labels": 17898,
+        "granularity": "word",
+        "source_split": "test",
+        "verified": 8000
+      }
+    ],
+    "frozen_splits": {
+      "page_test": {
+        "count": 528,
+        "sha256": "7aaab73afe29dfe8e8686d062771735418182a50ab40a4d826c024b4512f9df5"
+      },
+      "page_validation": {
+        "count": 500,
+        "sha256": "1104b8b747b366e199e48fc7b2f179dede198cc1842a060fb68a23fdfb54f5a8"
+      },
+      "page_train": {
+        "count": 2463,
+        "sha256": "e07ec416ce4b282f2b55ff4c415522cf4bc5c4eec9c1174f94ed24b331df5dd3"
+      },
+      "word_test": {
+        "count": 8000,
+        "sha256": "1d555ce0544167181f0b681e997f07700d4f103302d000f902992add4422133a"
+      },
+      "word_validation": {
+        "count": 8003,
+        "sha256": "4b89efa2e643af6a2a1091445facecedb77ddf140e46b60525f6aa1f592182fa"
+      },
+      "word_train": {
+        "count": 7997,
+        "sha256": "e04f26a69d7bfcc497775a0b1d7d44e5650a0b30de7738b15d352c506682e78f"
+      }
+    },
+    "rejected_count": 5,
+    "word_cross_split_groups_reassigned": 1,
+    "writer_disjointness": "unverified; source-document and near-duplicate groups kept together",
+    "near_duplicate_method": "64-bit dHash <=3 and aspect-ratio difference <0.08; conservative candidates unioned",
+    "page_license_status": "terms clarification still needed before training; audit only",
+    "elapsed_seconds": 559.0358231067657
+  },
+  "protocol": {
+    "splits": {
+      "train": {
+        "count": 1000,
+        "sha256": "5489cd7a0e7ebd852ee8e44d2277a60c2ff4175c663ce3b2f009137114cd6d25"
+      },
+      "validation": {
+        "count": 500,
+        "sha256": "34fa161db5c37e9fe7860a57f714675dffa64157ed500a62f8ed31e033cd6f08"
+      },
+      "test": {
+        "count": 500,
+        "sha256": "5ca6d0070cdaed46966ac57e99d2b376190fb3a912ea14161a82d52d775a51fd"
+      }
+    },
+    "seed": 42,
+    "epochs": 1,
+    "learning_rate": 1e-05,
+    "gradient_accumulation": 4,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "selection": "single prespecified epoch; no test-guided hyperparameter selection",
+    "scope": "word recognition pilot; not page-level benchmark",
+    "writer_disjointness": "unverified"
+  },
+  "status": {
+    "stage": "complete",
+    "status": "completed"
+  },
+  "progress": {
+    "epoch": 1,
+    "example": 991,
+    "loss": 0.007474364247173071,
+    "elapsed_seconds": 1631.1443829536438
+  },
+  "probe": {
+    "status": "forward_backward_update_passed",
+    "adapter_weights_changed": true,
+    "baseline_prediction": "నాలెంట్",
+    "after_probe_prediction": "సాల్వెంట్",
+    "example_id": "iiit-words:train/images/2/831/18.jpg",
+    "elapsed_seconds": 96.8597948551178,
+    "peak_vram_bytes": 1998396416,
+    "tiny_overfit_proven": true,
+    "save_reload_verified": true
+  },
+  "validation": {
+    "examples": 500,
+    "micro_cer": 0.1213235294117647,
+    "raw_micro_cer": 0.1213235294117647,
+    "micro_wer": 0.298,
+    "macro_cer": 0.14388896103896104,
+    "raw_exact_match": 0.746,
+    "nfc_exact_match": 0.746,
+    "normalization": "NFC; regex extended grapheme clusters; all punctuation/digits retained; WER uses str.split()",
+    "by_source_granularity": {
+      "iiit-words/word": {
+        "count": 500,
+        "raw_exact_match": 0.746
+      }
+    },
+    "elapsed_seconds": 285.0037977695465,
+    "truncated_count": 0,
+    "contract": {
+      "model_class": "Qwen3_5ForConditionalGeneration",
+      "processor_class": "Qwen3VLProcessor",
+      "tokenizer_class": "TokenizersBackend",
+      "eos_token_id": 262146,
+      "pad_token_id": 262144,
+      "prompt": "Transcribe the text in this image. Write any mathematical expressions in LaTeX, using $...$ for inline math and $$...$$ for display equations.",
+      "dtype": "torch.bfloat16",
+      "attention": "sdpa",
+      "model_id": "bodhan-ai/indic-ocr",
+      "revision": "cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25",
+      "granularity": "word",
+      "crop_preprocessing": "official area_clamp defaults; same processor for training and inference",
+      "lora_modules": [
+        "model.language_model.layers.3.self_attn.q_proj",
+        "model.language_model.layers.3.self_attn.v_proj",
+        "model.language_model.layers.7.self_attn.q_proj",
+        "model.language_model.layers.7.self_attn.v_proj",
+        "model.language_model.layers.11.self_attn.q_proj",
+        "model.language_model.layers.11.self_attn.v_proj",
+        "model.language_model.layers.15.self_attn.q_proj",
+        "model.language_model.layers.15.self_attn.v_proj",
+        "model.language_model.layers.19.self_attn.q_proj",
+        "model.language_model.layers.19.self_attn.v_proj",
+        "model.language_model.layers.23.self_attn.q_proj",
+        "model.language_model.layers.23.self_attn.v_proj"
+      ],
+      "trainable_parameters": 319488,
+      "total_parameters": 867474496
+    }
+  },
+  "baseline": {
+    "examples": 500,
+    "micro_cer": 0.15932203389830507,
+    "raw_micro_cer": 0.15932203389830507,
+    "micro_wer": 0.43,
+    "macro_cer": 0.17665873015873015,
+    "raw_exact_match": 0.662,
+    "nfc_exact_match": 0.662,
+    "normalization": "NFC; regex extended grapheme clusters; all punctuation/digits retained; WER uses str.split()",
+    "by_source_granularity": {
+      "iiit-words/word": {
+        "count": 500,
+        "raw_exact_match": 0.662
+      }
+    },
+    "elapsed_seconds": 269.4741151332855,
+    "truncated_count": 0,
+    "contract": {
+      "model_class": "Qwen3_5ForConditionalGeneration",
+      "processor_class": "Qwen3VLProcessor",
+      "tokenizer_class": "TokenizersBackend",
+      "eos_token_id": 262146,
+      "pad_token_id": 262144,
+      "prompt": "Transcribe the text in this image. Write any mathematical expressions in LaTeX, using $...$ for inline math and $$...$$ for display equations.",
+      "dtype": "torch.bfloat16",
+      "attention": "sdpa",
+      "model_id": "bodhan-ai/indic-ocr",
+      "revision": "cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25",
+      "granularity": "word",
+      "crop_preprocessing": "official area_clamp defaults; same processor for training and inference"
+    }
+  },
+  "adapted": {
+    "examples": 500,
+    "micro_cer": 0.15351089588377723,
+    "raw_micro_cer": 0.15351089588377723,
+    "micro_wer": 0.416,
+    "macro_cer": 0.17067539682539684,
+    "raw_exact_match": 0.682,
+    "nfc_exact_match": 0.682,
+    "normalization": "NFC; regex extended grapheme clusters; all punctuation/digits retained; WER uses str.split()",
+    "by_source_granularity": {
+      "iiit-words/word": {
+        "count": 500,
+        "raw_exact_match": 0.682
+      }
+    },
+    "elapsed_seconds": 280.3165099620819,
+    "truncated_count": 0,
+    "contract": {
+      "model_class": "PeftModelForCausalLM",
+      "processor_class": "Qwen3VLProcessor",
+      "tokenizer_class": "TokenizersBackend",
+      "eos_token_id": 262146,
+      "pad_token_id": 262144,
+      "prompt": "Transcribe the text in this image. Write any mathematical expressions in LaTeX, using $...$ for inline math and $$...$$ for display equations.",
+      "dtype": "torch.bfloat16",
+      "attention": "sdpa",
+      "model_id": "bodhan-ai/indic-ocr",
+      "revision": "cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25",
+      "granularity": "word",
+      "crop_preprocessing": "official area_clamp defaults; same processor for training and inference"
+    }
+  },
+  "evaluation_progress": {
+    "baseline": 500,
+    "adapted": 500,
+    "validation": 500
+  },
+  "samples": [
+    {
+      "example_id": "iiit-words:test/images/13/35/10.jpg",
+      "reference": "పూల్",
+      "prediction": "పూల్",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.9869656562805176,
+      "generated_tokens": 3,
+      "truncated": false,
+      "baseline": "పూల్",
+      "image_url": "study-examples/5326e969c8577e8c4986f1c419f1d45e94d7762c5153620d842f1e2675ee7651.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/258/20.jpg",
+      "reference": "మార్చుకున్నప్పుడు",
+      "prediction": "మార్చుకున్నప్పుడు",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.6980369091033936,
+      "generated_tokens": 5,
+      "truncated": false,
+      "baseline": "మార్చుకున్నప్పుడు",
+      "image_url": "study-examples/b2e095f4ff1a93f314b75d36e796aebc185e2d85602a0a1b7c046f6b76441c92.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/408/14.jpg",
+      "reference": "రీఫామ్స్",
+      "prediction": "రీఫామ్స్",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.5247960090637207,
+      "generated_tokens": 6,
+      "truncated": false,
+      "baseline": "రీఫామ్స్",
+      "image_url": "study-examples/8bf133280f0aa5285854d1da23991c60096e13e56630363cbeb33a6f3e64dcea.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/12/65/22.jpg",
+      "reference": "తాకిడికి",
+      "prediction": "తాకిడికి",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.4588887691497803,
+      "generated_tokens": 4,
+      "truncated": false,
+      "baseline": "తాకిడికి",
+      "image_url": "study-examples/6d3cbcaa03ef90caf748509a7b060caf79233f3e3a7fbae3afa636e6457bc456.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/12/17/19.jpg",
+      "reference": "ట్రిబ్యునల్",
+      "prediction": "(ట్రి బ్యూనల్",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.7534737586975098,
+      "generated_tokens": 7,
+      "truncated": false,
+      "baseline": "(ట్రి బ్యూనల్",
+      "image_url": "study-examples/b6d35c10eb51202910023e40b2d36bfd4bcda9348dfbdd6972c908564b7bbf15.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/12/25/18.jpg",
+      "reference": "చూడనట్టు",
+      "prediction": "చూడనట్టు",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.6116106510162354,
+      "generated_tokens": 5,
+      "truncated": false,
+      "baseline": "చూడనట్టు",
+      "image_url": "study-examples/b7ad56f8204c0c82f0776f6fda34608ec52ddfa50498fa70a00b0c6374a8ff87.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/387/10.jpg",
+      "reference": "టిడిపిలో",
+      "prediction": "టిడిపిలో",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.6562623977661133,
+      "generated_tokens": 5,
+      "truncated": false,
+      "baseline": "టిడిపిలో",
+      "image_url": "study-examples/ec21a7476a143a95fadf80005c80ada17218dbfe3c4005ee07864e87db6d5549.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/430/5.jpg",
+      "reference": "చంద్రబాబుకు",
+      "prediction": "చంద్రబాబుకు",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.5858783721923828,
+      "generated_tokens": 5,
+      "truncated": false,
+      "baseline": "చంద్రబాబుకు",
+      "image_url": "study-examples/c4aee7cc2bc2257643b82ac9a2d6b0c3da82df71ed9a2ac66f052ccdaa8224aa.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/447/11.jpg",
+      "reference": "ఏప్రాంతపు",
+      "prediction": "ఏప్రాంతపు",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.608088493347168,
+      "generated_tokens": 5,
+      "truncated": false,
+      "baseline": "ఏప్రాంతపు",
+      "image_url": "study-examples/403cb25567217bfa3a4251517e586fcbe4852905fd41313470d8e0609ef60d05.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/359/19.jpg",
+      "reference": "పురుషులకు",
+      "prediction": "పురుషులకు",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.5946376323699951,
+      "generated_tokens": 5,
+      "truncated": false,
+      "baseline": "పురుషులకు",
+      "image_url": "study-examples/8b4de279308adf443eb04026ab23a0e0061d0f13812f628e50e6424cf1fa0a7f.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/12/16/22.jpg",
+      "reference": "తేల్చేయగల",
+      "prediction": "తెల్చేయగల",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.7423651218414307,
+      "generated_tokens": 6,
+      "truncated": false,
+      "baseline": "తెల్చేయగల",
+      "image_url": "study-examples/f138ca6802f42d211134811f416860b65491c3149322eec9f0f48e954c3b71b1.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/286/7.jpg",
+      "reference": "జరపాలి",
+      "prediction": "జరపాతి",
+      "source_dataset": "iiit-words",
+      "granularity": "word",
+      "latency_seconds": 0.5837621688842773,
+      "generated_tokens": 5,
+      "truncated": false,
+      "baseline": "జరపాతి",
+      "image_url": "study-examples/0e69afdf5500fb91811a7e38dcd1e5d5234f04b3d0e032cdd64eea0e26452c8f.jpg"
+    }
+  ],
+  "analysis": {
+    "examples": 500,
+    "source_document_groups": 378,
+    "bootstrap_replicates": 2000,
+    "seed": 42,
+    "confidence_intervals_95": {
+      "baseline_cer": [
+        0.12007589600810152,
+        0.20959523997582918
+      ],
+      "adapted_cer": [
+        0.10977944222708014,
+        0.21584221100034295
+      ],
+      "absolute_cer_reduction": [
+        -0.009648387298711515,
+        0.017865543992225227
+      ]
+    },
+    "bootstrap_unit": "source-document candidate group, not verified writer",
+    "improved_words": 16,
+    "worsened_words": 4,
+    "unchanged_words": 480,
+    "by_length": {
+      "1-3 graphemes": {
+        "count": 179,
+        "baseline_cer": 0.27892561983471076,
+        "adapted_cer": 0.2727272727272727
+      },
+      "4-6 graphemes": {
+        "count": 296,
+        "baseline_cer": 0.12778176597272076,
+        "adapted_cer": 0.12203876525484565
+      },
+      "7+ graphemes": {
+        "count": 25,
+        "baseline_cer": 0.0851063829787234,
+        "adapted_cer": 0.0797872340425532
+      }
+    },
+    "adapted_error_severity": {
+      "exact": 341,
+      "CER <=50%": 60,
+      "CER <=25%": 69,
+      "CER >50%": 30
+    },
+    "latency": {
+      "baseline": {
+        "median_seconds": 0.5128704309463501,
+        "p95_seconds": 0.7927500486373897
+      },
+      "adapted": {
+        "median_seconds": 0.5375016927719116,
+        "p95_seconds": 0.8223326802253722
+      }
+    }
+  },
+  "failure_cases": [
+    {
+      "example_id": "iiit-words:test/images/9/327/1.jpg",
+      "reference": "జ్వాలయై",
+      "baseline": "[No text or transcription provided]",
+      "adapted": "[No text or math present in the provided image]",
+      "cer": 15.666666666666666,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "జ్వాలయై",
+          "prediction": "[No text or math present in the provided image]"
+        }
+      ],
+      "prediction": "[No text or math present in the provided image]",
+      "image_url": "study-examples/14bfd1d7295c947b1017312f5ff2008cf60ed63320b1c8103182064b5b4c336f.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/13/31/2.jpg",
+      "reference": "నటనలోకాని",
+      "baseline": "______\nవినియోగించుకుంటారు\nవినియోగించుకుంటారు",
+      "adapted": "______\nవినియోగించుకుంటారు\nవినియోగించుకుంటారు",
+      "cer": 3.8333333333333335,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "నటనలోకా",
+          "prediction": "______\nవి"
+        },
+        {
+          "operation": "equal",
+          "reference": "ని",
+          "prediction": "ని"
+        },
+        {
+          "operation": "insert",
+          "reference": "",
+          "prediction": "యోగించుకుంటారు\nవినియోగించుకుంటారు"
+        }
+      ],
+      "prediction": "______\nవినియోగించుకుంటారు\nవినియోగించుకుంటారు",
+      "image_url": "study-examples/f8ffb95dd6e181c2309465749ca8eccbe6f8ca4f4ed1fea84c9954926fb23c56.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/223/19.jpg",
+      "reference": "౯౭",
+      "baseline": "$$52$$",
+      "adapted": "$$52$$",
+      "cer": 3.0,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "౯౭",
+          "prediction": "$$52$$"
+        }
+      ],
+      "prediction": "$$52$$",
+      "image_url": "study-examples/bb7ba4721483f59b67d89b6b674dd006b3dfb60e3c7b373acd4d3c57adf01e4c.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/385/22.jpg",
+      "reference": "వర",
+      "baseline": "$$వ$$",
+      "adapted": "$$వ$$",
+      "cer": 2.0,
+      "visual_diff": [
+        {
+          "operation": "insert",
+          "reference": "",
+          "prediction": "$$"
+        },
+        {
+          "operation": "equal",
+          "reference": "వ",
+          "prediction": "వ"
+        },
+        {
+          "operation": "replace",
+          "reference": "ర",
+          "prediction": "$$"
+        }
+      ],
+      "prediction": "$$వ$$",
+      "image_url": "study-examples/2bca927763747e6d274503b5c8fea98758f7a0e8717da52a60adf1a8d974a8fc.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/12/81/11.jpg",
+      "reference": "బండ్ల",
+      "baseline": "ಒಂದ್ಲಿ",
+      "adapted": "ಒಂದ್ಲಿ",
+      "cer": 1.5,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "బండ్ల",
+          "prediction": "ಒಂದ್ಲಿ"
+        }
+      ],
+      "prediction": "ಒಂದ್ಲಿ",
+      "image_url": "study-examples/f667238915e7fb46298169d3dde5951b2c258881bd0fd9133de17b7bf6c5cb1a.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/445/13.jpg",
+      "reference": "సువర్ణసుందరి",
+      "baseline": "ಸುವರ್ಣ ಸುಂದರಿ",
+      "adapted": "ಸುವರ್ಣ ಸುಂದರಿ",
+      "cer": 1.3333333333333333,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "సువర్ణసుందరి",
+          "prediction": "ಸುವರ್ಣ ಸುಂದರಿ"
+        }
+      ],
+      "prediction": "ಸುವರ್ಣ ಸುಂದರಿ",
+      "image_url": "study-examples/50a9769b7dc14e819ba4d1f4b790d67834e4339e3569f8904d29b9b21176c875.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/167/22.jpg",
+      "reference": "౦౹౼",
+      "baseline": "01-",
+      "adapted": "01-",
+      "cer": 1.0,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "౦౹౼",
+          "prediction": "01-"
+        }
+      ],
+      "prediction": "01-",
+      "image_url": "study-examples/a649edb7e66ff855c25b88dd94aae3f8b99e80e1cce7f37547624b2ae1b5ce8b.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/12/117/11.jpg",
+      "reference": "౦౻౽",
+      "baseline": "042",
+      "adapted": "042",
+      "cer": 1.0,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "౦౻౽",
+          "prediction": "042"
+        }
+      ],
+      "prediction": "042",
+      "image_url": "study-examples/4937cc9ea5c652fe5bdc47652eb06ca0ffa83118ff027c6c1dca072148c0bbbb.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/196/20.jpg",
+      "reference": "బీడీ",
+      "baseline": "ಬೇಡಿ",
+      "adapted": "చేడి",
+      "cer": 1.0,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "బీడీ",
+          "prediction": "చేడి"
+        }
+      ],
+      "prediction": "చేడి",
+      "image_url": "study-examples/f54c9496e180c8e4d0d962081cb1f2440534e2afce85cffe127a2512602757ec.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/213/19.jpg",
+      "reference": "దీనిని",
+      "baseline": "ದಿನಿನಿ",
+      "adapted": "ದಿನಿನಿ",
+      "cer": 1.0,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "దీనిని",
+          "prediction": "ದಿನಿನಿ"
+        }
+      ],
+      "prediction": "ದಿನಿನಿ",
+      "image_url": "study-examples/3ff460be8ebd4a1ac7cb55b5a5cb99a4131688a5cdcea0d8a2a3360982fa9929.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/12/46/19.jpg",
+      "reference": "కోస్తా",
+      "baseline": "উঃ",
+      "adapted": "উঃ",
+      "cer": 1.0,
+      "visual_diff": [
+        {
+          "operation": "replace",
+          "reference": "కోస్తా",
+          "prediction": "উঃ"
+        }
+      ],
+      "prediction": "উঃ",
+      "image_url": "study-examples/f72456497d3553539b2043921310abcbf122b4cefa6aa8d878f39ac9697d3ae7.jpg"
+    },
+    {
+      "example_id": "iiit-words:test/images/9/329/23.jpg",
+      "reference": "భర్తీలో",
+      "baseline": "భర్తలతో",
+      "adapted": "భర్తలతో",
+      "cer": 1.0,
+      "visual_diff": [
+        {
+          "operation": "equal",
+          "reference": "భ",
+          "prediction": "భ"
+        },
+        {
+          "operation": "replace",
+          "reference": "ర్తీలో",
+          "prediction": "ర్తలతో"
+        }
+      ],
+      "prediction": "భర్తలతో",
+      "image_url": "study-examples/6687958cd6129ad79843166d7c923570ba18dea06dea88d2756b230d250e6f92.jpg"
+    }
+  ],
+  "failures": [],
+  "static_snapshot": true
+}

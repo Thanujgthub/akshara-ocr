@@ -1,19 +1,9 @@
-# Architecture decision · 12 October 2026
+# Verified architecture · 13 October 2026
 
-Preserve Route B, the official layout → block recognition → reading order pipeline. This is an integration decision, **not a verified fine-tuning decision**.
+Preserve the original IndicOCR page layout → block recognition → reconstruction route. Adapt its actual Qwen3.5 recognizer on isolated handwritten word crops; no line alignment or replacement model is invented. The word adapter improved grapheme CER by 0.58 percentage points on this fixed test set.
 
-The public model card identifies IndicDocLayout (PP-DocLayoutV3 / RT-DETR), IndicBlockOCR (Qwen3.5-0.8B), and the Sarvam-30B tokenizer. Model metadata API returned revision `cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25`, gated=`auto`. No checkpoint downloaded. An unauthenticated request to the recognizer config was attempted; see research log. No alternate checkpoint was substituted.
+Actual local weights, processor and original repository source were inspected and matched the published snapshot hashes. The official repository supplies layout training only, so this project implements a separately verified recognizer LoRA path. The exact prompt/template/EOS, image preprocessing, module names, parameter counts and environment are saved in the executed run contract.
 
-The official repository OCR README states that its training recipe trains layout only. It provides a Transformers path and a vLLM path, but no recognizer training recipe. The snapshot model card documents `IndicOCR.from_pretrained(repo).parse(path)` returning a dict with Markdown and ordered block JSON. The included model bridge follows that documented API and rejects an incompatible output schema. It is unverified against real weights.
+The initial Windows page-file allocation failures were resolved by tensor-by-tensor original-weight loading and freeing unused apps. CPU inference worked but CPU training exceeded available memory. GPU answer-token-only cross-entropy, BF16, gradient checkpointing and batch size one passed. The 64-step smoke experiment demonstrated learning and save/reload parity before the clean 1,000-word epoch.
 
-Route A is deferred: checkpoint configs, processor/chat-template, actual model class, prompt-token masking, image resolution and one backward update cannot be verified without access. Route B recognizer adaptation is also deferred until authorized crop/transcript pairs and the exact checkpoint training contract are available. The official repository's layout script is deliberately not relabeled recognizer training.
-
-## Environment observed
-
-Windows, Python 3.9.4, Node 25.6.0. NVIDIA RTX 3050 laptop GPU, 4096 MiB VRAM, driver 617.42. No Torch, PIL, regex or huggingface_hub in the initial Python environment; an isolated CPU/toolkit environment was created and tested. GPU fit is not established. Use a separately provisioned Linux CUDA machine for model experiments; do not assume the weight file size predicts memory usage.
-
-## Model gate still required
-
-Accept terms yourself in Hugging Face; download an immutable revision; use the official installer in an isolated Linux environment. Inspect tokenizer, processor, chat template, generation defaults and modules from that exact snapshot. Establish inference parity, finite loss/gradients, prompt masking, changed adapter weights, save/reload parity and tiny-subset overfit before implementing a scaled LoRA run. No generic LoRA training script is provided as a false substitute for that proof.
-
-Sources: https://huggingface.co/bodhan-ai/indic-ocr and https://github.com/Bodhan-AI/bodhan_genai/blob/main/src/bodhan_genai/ocr/README.md
+Full pages still use the official layout and block reconstruction pipeline. Word test metrics do not establish page quality. Page corpus training remains unapproved pending terms clarification. A separate page experiment and authoritative writer IDs are required before broader claims.
