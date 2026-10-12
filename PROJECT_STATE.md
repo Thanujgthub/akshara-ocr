@@ -24,13 +24,8 @@ Use D:/OCR/runtime/venv/Scripts/python.exe. Read newest run status/failure befor
 ## Latest automated milestone
 {
   "status": "running",
-  "stage": "Validation: curated-original-telugu_literal-official",
-  "updated_utc": "2026-10-12T21:42:34Z",
+  "stage": "Validation: curated-original-telugu_literal-white_margin",
+  "updated_utc": "2026-10-12T21:45:31Z",
   "note": "",
-  "experiment_directory": "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-original-telugu_literal-official"
+  "experiment_directory": "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-original-telugu_literal-white_margin"
 }
-
-## Completed scale-up preparation
-80,083 eligible training images; 13,462 curated validation images; unchanged independent final test 1,016 words. Short matrix: 1,000 train / 287 validation. Candidate pre-curation manifests retained. 488 training and 470 validation crops held for review; technical checks do not prove human transcript correctness. All candidate training labels round-trip through original tokenizer.
-
-GPU mid-epoch resume smoke PASSED: interrupted/resumed and uninterrupted final adapter tensors are exactly equal. Pipeline is active; original/pilot comparisons precede five controlled short training trials and up to two full-data epochs. Final testing is automatic only after validation selection. Resume-Scale-Training.ps1 resumes existing stages; an OS file lock refuses a duplicate pipeline.

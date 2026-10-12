@@ -36,3 +36,7 @@
 - During pipeline restart an orphan evaluation process briefly competed for VRAM; terminated the specifically identified old child and verified only the active experiment process remained. Smoke duration includes contention; do not use it as clean throughput evidence.
 - Added local research monitor and uncertainty diagnostics. Existing hosted UI remains unchanged by this operational research run. API unloads model and refuses inference while research is active.
 - Reviewed all earlier scratch log files and saved fingerprint/error summaries. Researched separately licensed PaddleOCR Telugu and Kraken line training as later baselines; neither silently replaces IndicOCR.
+
+- 2026-10-12T21:45:31Z: Validation: curated-original-telugu_literal-white_margin. 
+
+- Final software validation: 20 tests passed. Image-token estimates matched the original processor on five image shapes. Mild skew augmentation reverts to the source when expansion would exceed the word budget.

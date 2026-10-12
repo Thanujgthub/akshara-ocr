@@ -32,5 +32,14 @@ class ResearchTests(unittest.TestCase):
         a=augment(im,random.Random(42));b=augment(im,random.Random(42))
         self.assertEqual(a.tobytes(),b.tobytes())
         self.assertGreater(a.width*a.height,0)
+    def test_paired_groups_no_false_gain(self):
+        from ocr.scale_analysis import paired
+        rows=[{'example_id':str(i),'group_id':str(i//2),'reference':'తెలుగు','prediction':'తెలుగు'} for i in range(10)]
+        result=paired(rows,rows,reps=100)
+        self.assertEqual(result['cer_reduction_95'],[0,0])
+        self.assertFalse(result['cer_improvement_supported'])
+        with self.assertRaises(ValueError):paired(rows,list(reversed(rows)),reps=100)
+    def test_malformed_table_not_transcription(self):
+        self.assertTrue(flags('<table><tr><td>తెలుగు</td></tr></table>')['malformed_output'])
 
 if __name__=='__main__':unittest.main()
