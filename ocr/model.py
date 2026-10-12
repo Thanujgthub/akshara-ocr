@@ -4,6 +4,7 @@ No substitute recognizer or guessed tokenizer is loaded.
 import os
 import sys
 import threading
+import json
 from contextlib import nullcontext
 from pathlib import Path
 _parser=None
@@ -24,7 +25,17 @@ def _run(parser,path,mode):
     try:
         backend.config=original_config.merged(max_tokens=64)
         with Image.open(path) as image:
-            return {'markdown':backend.transcribe([CropRequest(area_clamp(image.convert('RGB')),TEXT_PROMPT)])[0],'blocks':[]}
+            image=image.convert('RGB');prompt=TEXT_PROMPT
+            research_config=os.environ.get('OCR_RESEARCH_CONFIG')
+            if research_config:
+                cfg=json.loads(Path(research_config).read_text(encoding='utf-8'))
+                if cfg.get('prompt')=='telugu_literal':
+                    from .research_policy import TELUGU_PROMPT
+                    prompt=TELUGU_PROMPT
+                if cfg.get('preprocessing')=='white_margin':
+                    from PIL import ImageOps
+                    image=ImageOps.expand(image,border=4,fill='white')
+            return {'markdown':backend.transcribe([CropRequest(area_clamp(image),prompt)])[0],'blocks':[]}
     finally:backend.config=original_config
 
 def predict(path,mode='page',variant='adapted'):
