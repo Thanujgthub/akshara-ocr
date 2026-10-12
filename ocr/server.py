@@ -14,7 +14,7 @@ app.add_middleware(CORSMiddleware,allow_origins=origins,allow_methods=['GET','PO
 
 def study_busy():
     from .study_routes import ROOT,read
-    return (read(ROOT/'status.json') or {}).get('status')=='running'
+    return (read(ROOT/'status.json') or {}).get('status')=='running' or (read(Path('D:/OCR/runs/word-scale-v2/status.json')) or {}).get('status')=='running'
 
 @app.get('/api/health')
 def health():
@@ -48,4 +48,6 @@ def predict_page(file:UploadFile,mode:str=Form('page'),variant:str=Form('adapted
 
 from .study_routes import router
 app.include_router(router)
+from .scale_routes import router as scale_router
+app.include_router(scale_router)
 app.mount('/',StaticFiles(directory=str(Path(__file__).resolve().parents[1]/'dist'),html=True),name='website')

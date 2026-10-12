@@ -64,7 +64,8 @@ def predict(path,mode='page',variant='adapted'):
         with context:result=_run(_parser,path,mode)
         if not isinstance(result,dict) or not isinstance(result.get('markdown'),str):
             raise RuntimeError('Checkpoint output contract changed: expected dict with markdown.')
-        return {**result,'review_required':True,'granularity':mode,'model':{'id':'bodhan-ai/indic-ocr','revision':os.environ.get('INDIC_OCR_REVISION','unrecorded'),'adapter':os.environ.get('INDIC_OCR_ADAPTER') if variant=='adapted' else None},'confidence_note':'Layout scores are not text confidence. Word adaptation does not establish page accuracy.'}
+        from .research_policy import flags
+        return {**result,**flags(result['markdown']),'review_required':True,'granularity':mode,'model':{'id':'bodhan-ai/indic-ocr','revision':os.environ.get('INDIC_OCR_REVISION','unrecorded'),'adapter':os.environ.get('INDIC_OCR_ADAPTER') if variant=='adapted' else None},'confidence_note':'Layout scores are not text confidence. Word adaptation does not establish page accuracy.'}
 
 def loaded():
     return _parser is not None
