@@ -1,0 +1,37 @@
+{
+  "recorded_utc": "2026-10-13T19:20:34.421758+00:00",
+  "observed_failed_sync": {
+    "verified": false,
+    "error": "",
+    "time": 1791918388.7456229,
+    "exception_type": "unknown; controller recorded only str(exception)"
+  },
+  "preserved_partial_snapshot": "D:/OCR/backups/word-efficient-v3-local-approved-v1/.partial-9b0eb1ab43e0486db4e96e5e4e5e3937",
+  "separate_diagnostic": {
+    "observed_utc": "2026-10-13T19:10:25.896638+00:00",
+    "success": true,
+    "snapshot": "D:\\OCR\\backups\\word-efficient-v3-sync-diagnostic-20261014\\snapshot-20261013T191025Z-b30b01cb",
+    "scope": "Separate diagnostic destination; existing controller and prior snapshots untouched."
+  },
+  "scheduled_retry": {
+    "snapshot": "snapshot-20261013T191652Z-de6243de",
+    "verified": true,
+    "time": 1791919012.9377136
+  },
+  "scheduled_backup_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 500,
+    "epoch": 0,
+    "next_index": 2000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "commit_memory_observation_gib": {
+    "committed": 23.52,
+    "limit": 25.44
+  },
+  "cause": "Not established. Separate snapshot and following scheduled retry both succeeded.",
+  "trainer_restarted": false,
+  "earlier_snapshots_removed": false,
+  "training_modules_edited": false
+}
