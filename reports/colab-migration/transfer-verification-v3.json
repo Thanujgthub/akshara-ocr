@@ -1,0 +1,48 @@
+{
+  "verified_utc": "2026-10-13T16:07:06.458554+00:00",
+  "source_git_commit": "cfcc3b083c47f16da0c2fff056e0e94714ee6b66",
+  "bundle_folder": "C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\Akshara_Colab_Transfer_v3",
+  "counts": {
+    "train": 25000,
+    "validation": 5000,
+    "final-test": 3000
+  },
+  "archives": [
+    {
+      "file": "akshara-source.zip",
+      "sha256": "e6aaf9a324e7f09ad8472e2da98d1e68f7de6d892e442ed1b558c0caf46c8957",
+      "bytes": 1811095,
+      "files": 278,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "indic-ocr-original.zip",
+      "sha256": "bbb2eb2abee136fee6e29c0120b5fdbdd669267d9b8c000926c90c0536cb33df",
+      "bytes": 1901495464,
+      "files": 31,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "pilot-adapter.zip",
+      "sha256": "233d5b4566a90e1ec45dbb06ddc69ef549fc5bfa6a5c8bc1c10e5a3297710f99",
+      "bytes": 1289334,
+      "files": 4,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "frozen-protocol.zip",
+      "sha256": "4a9a8fbc2de38a4ea7c39e8d89251eea083f0cf93e0715fde44c9563cf1208f0",
+      "bytes": 38871586,
+      "files": 6,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "selected-images-001.zip",
+      "sha256": "820df1b57e46dd9232e5e4309a0e2b611d862124c6b26b4cefc2d2c90f644b35",
+      "bytes": 1003388418,
+      "files": 33000,
+      "zip_crc_valid": true
+    }
+  ],
+  "scope": "Read-back SHA256 and ZIP integrity; unchanged model/pilot/protocol/images reused from v2. No cloud or OCR accuracy evidence."
+}

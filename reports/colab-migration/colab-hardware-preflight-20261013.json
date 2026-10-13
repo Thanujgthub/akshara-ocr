@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-10-13T16:08:17.072429+00:00",
+  "notebook_url": "https://colab.research.google.com/drive/1FF32mRZzFbM9Mx3iP94w8sbYDVoV3ryw",
+  "source": "Visible executed Colab hardware-only cell output; browser UI",
+  "gpu": "Tesla T4",
+  "vram_total_mib": 15360,
+  "vram_free_mib": 14913,
+  "driver_version": "580.82.07",
+  "torch": "2.11.0+cu130",
+  "cuda": "13.0",
+  "native_bf16_supported": false,
+  "cell_execution_seconds_displayed": 6,
+  "enabled_hardware_options": [
+    "CPU",
+    "T4 GPU",
+    "v5e-1 TPU"
+  ],
+  "disabled_gpu_options": [
+    "H100 GPU",
+    "G4 GPU",
+    "A100 GPU",
+    "L4 GPU"
+  ],
+  "drive_mounted": false,
+  "dependencies_installed": false,
+  "smoke_completed": false,
+  "benchmark_completed": false,
+  "training_started": false,
+  "evaluation_started": false,
+  "full_training_checkpoint": null,
+  "limitation": "Assigned GPU violates native BF16 contract; no precision conversion permitted. Prepared-notebook upload stalled and was cancelled; existing formerly empty notebook now holds only hardware diagnostic.",
+  "next_action": "Obtain a native BF16 GPU, upload the prepared notebook and version3 private transfer files; execute preflight cells1-7 before training."
+}
