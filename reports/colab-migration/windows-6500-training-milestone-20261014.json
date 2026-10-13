@@ -1,0 +1,1890 @@
+{
+  "observed_utc": "2026-10-13T21:52:16.928614+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0001625",
+  "checksums": {
+    "adapter/adapter_config.json": "b6138cdda31528a01149ce0bb92e92814a629b533644848aba70ca852a1a08c2",
+    "adapter/adapter_model.safetensors": "d8704717ff45687ad19bd49f672e6ecaf3941d81c6d2ea95f127f7642e7100df",
+    "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+    "recovery.json": "afe0b80867c27907ea11a4598c3f592bca94b046e2df8861e01e731d274bdc48",
+    "state.pt": "f23885aeb7f27ff322fceb7424e280a5e0434980f6472db200fc152df0ced71b"
+  },
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1625,
+    "epoch": 0,
+    "next_index": 6500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "unchanged_verified_configuration_and_dataset_signatures": true,
+  "frozen_manifest_hashes": {
+    "train": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+    "validation": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+    "final-test": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+  },
+  "serialized_resume_fields_present": [
+    "accumulation_progress",
+    "augment_rng",
+    "cuda_rng",
+    "dataset_fingerprint",
+    "effective_batch_size",
+    "numpy_rng",
+    "optimizer",
+    "precision",
+    "python_rng",
+    "scheduler",
+    "torch_rng"
+  ],
+  "serialized_scalar_values_verified": {
+    "effective_batch_size": 4,
+    "accumulation_progress": 0,
+    "updates": 1625,
+    "next_index": 6500,
+    "epoch": 0
+  },
+  "state_inspection_scope": "Checkpoint hashes, pickle opcode key/primitive scalar inspection without executing pickle or importing Torch. Not a fresh optimizer tensor reload smoke; actual earlier exact-resume smoke preserved.",
+  "replayed_examples_compared": 360,
+  "exact_replayed_loss_matches": 360,
+  "replayed_loss_records": {
+    "6001": {
+      "earlier_loss": 0.001507116248831153,
+      "resumed_loss": 0.001507116248831153,
+      "exact_match": true
+    },
+    "6002": {
+      "earlier_loss": 0.6537492871284485,
+      "resumed_loss": 0.6537492871284485,
+      "exact_match": true
+    },
+    "6003": {
+      "earlier_loss": 0.004563761409372091,
+      "resumed_loss": 0.004563761409372091,
+      "exact_match": true
+    },
+    "6004": {
+      "earlier_loss": 0.001937500317580998,
+      "resumed_loss": 0.001937500317580998,
+      "exact_match": true
+    },
+    "6005": {
+      "earlier_loss": 0.0031149459537118673,
+      "resumed_loss": 0.0031149459537118673,
+      "exact_match": true
+    },
+    "6006": {
+      "earlier_loss": 0.6898211240768433,
+      "resumed_loss": 0.6898211240768433,
+      "exact_match": true
+    },
+    "6007": {
+      "earlier_loss": 1.9988508224487305,
+      "resumed_loss": 1.9988508224487305,
+      "exact_match": true
+    },
+    "6008": {
+      "earlier_loss": 0.04578500986099243,
+      "resumed_loss": 0.04578500986099243,
+      "exact_match": true
+    },
+    "6009": {
+      "earlier_loss": 0.035025689750909805,
+      "resumed_loss": 0.035025689750909805,
+      "exact_match": true
+    },
+    "6010": {
+      "earlier_loss": 0.005519495811313391,
+      "resumed_loss": 0.005519495811313391,
+      "exact_match": true
+    },
+    "6011": {
+      "earlier_loss": 0.6823744177818298,
+      "resumed_loss": 0.6823744177818298,
+      "exact_match": true
+    },
+    "6012": {
+      "earlier_loss": 0.1823519617319107,
+      "resumed_loss": 0.1823519617319107,
+      "exact_match": true
+    },
+    "6013": {
+      "earlier_loss": 0.03169836848974228,
+      "resumed_loss": 0.03169836848974228,
+      "exact_match": true
+    },
+    "6014": {
+      "earlier_loss": 0.0017551537603139877,
+      "resumed_loss": 0.0017551537603139877,
+      "exact_match": true
+    },
+    "6015": {
+      "earlier_loss": 0.0014586042379960418,
+      "resumed_loss": 0.0014586042379960418,
+      "exact_match": true
+    },
+    "6016": {
+      "earlier_loss": 0.6206895112991333,
+      "resumed_loss": 0.6206895112991333,
+      "exact_match": true
+    },
+    "6017": {
+      "earlier_loss": 0.44426482915878296,
+      "resumed_loss": 0.44426482915878296,
+      "exact_match": true
+    },
+    "6018": {
+      "earlier_loss": 0.004098806064575911,
+      "resumed_loss": 0.004098806064575911,
+      "exact_match": true
+    },
+    "6019": {
+      "earlier_loss": 0.0007090737344697118,
+      "resumed_loss": 0.0007090737344697118,
+      "exact_match": true
+    },
+    "6020": {
+      "earlier_loss": 1.2781391143798828,
+      "resumed_loss": 1.2781391143798828,
+      "exact_match": true
+    },
+    "6021": {
+      "earlier_loss": 0.014149527065455914,
+      "resumed_loss": 0.014149527065455914,
+      "exact_match": true
+    },
+    "6022": {
+      "earlier_loss": 0.021239524707198143,
+      "resumed_loss": 0.021239524707198143,
+      "exact_match": true
+    },
+    "6023": {
+      "earlier_loss": 6.219328880310059,
+      "resumed_loss": 6.219328880310059,
+      "exact_match": true
+    },
+    "6024": {
+      "earlier_loss": 4.8712615966796875,
+      "resumed_loss": 4.8712615966796875,
+      "exact_match": true
+    },
+    "6025": {
+      "earlier_loss": 0.1098296046257019,
+      "resumed_loss": 0.1098296046257019,
+      "exact_match": true
+    },
+    "6026": {
+      "earlier_loss": 0.07473377883434296,
+      "resumed_loss": 0.07473377883434296,
+      "exact_match": true
+    },
+    "6027": {
+      "earlier_loss": 0.3092738389968872,
+      "resumed_loss": 0.3092738389968872,
+      "exact_match": true
+    },
+    "6028": {
+      "earlier_loss": 2.390151023864746,
+      "resumed_loss": 2.390151023864746,
+      "exact_match": true
+    },
+    "6029": {
+      "earlier_loss": 0.0873781219124794,
+      "resumed_loss": 0.0873781219124794,
+      "exact_match": true
+    },
+    "6030": {
+      "earlier_loss": 0.6955075263977051,
+      "resumed_loss": 0.6955075263977051,
+      "exact_match": true
+    },
+    "6031": {
+      "earlier_loss": 1.00121009349823,
+      "resumed_loss": 1.00121009349823,
+      "exact_match": true
+    },
+    "6032": {
+      "earlier_loss": 0.019943395629525185,
+      "resumed_loss": 0.019943395629525185,
+      "exact_match": true
+    },
+    "6033": {
+      "earlier_loss": 0.017313165590167046,
+      "resumed_loss": 0.017313165590167046,
+      "exact_match": true
+    },
+    "6034": {
+      "earlier_loss": 0.009450585581362247,
+      "resumed_loss": 0.009450585581362247,
+      "exact_match": true
+    },
+    "6035": {
+      "earlier_loss": 0.03131041303277016,
+      "resumed_loss": 0.03131041303277016,
+      "exact_match": true
+    },
+    "6036": {
+      "earlier_loss": 1.4594924449920654,
+      "resumed_loss": 1.4594924449920654,
+      "exact_match": true
+    },
+    "6037": {
+      "earlier_loss": 0.10815172642469406,
+      "resumed_loss": 0.10815172642469406,
+      "exact_match": true
+    },
+    "6038": {
+      "earlier_loss": 0.031153274700045586,
+      "resumed_loss": 0.031153274700045586,
+      "exact_match": true
+    },
+    "6039": {
+      "earlier_loss": 0.40718793869018555,
+      "resumed_loss": 0.40718793869018555,
+      "exact_match": true
+    },
+    "6040": {
+      "earlier_loss": 1.7609872817993164,
+      "resumed_loss": 1.7609872817993164,
+      "exact_match": true
+    },
+    "6041": {
+      "earlier_loss": 0.005983869545161724,
+      "resumed_loss": 0.005983869545161724,
+      "exact_match": true
+    },
+    "6042": {
+      "earlier_loss": 0.9480973482131958,
+      "resumed_loss": 0.9480973482131958,
+      "exact_match": true
+    },
+    "6043": {
+      "earlier_loss": 0.44661664962768555,
+      "resumed_loss": 0.44661664962768555,
+      "exact_match": true
+    },
+    "6044": {
+      "earlier_loss": 0.009569479152560234,
+      "resumed_loss": 0.009569479152560234,
+      "exact_match": true
+    },
+    "6045": {
+      "earlier_loss": 0.0011654359987005591,
+      "resumed_loss": 0.0011654359987005591,
+      "exact_match": true
+    },
+    "6046": {
+      "earlier_loss": 1.6885089874267578,
+      "resumed_loss": 1.6885089874267578,
+      "exact_match": true
+    },
+    "6047": {
+      "earlier_loss": 0.05585361644625664,
+      "resumed_loss": 0.05585361644625664,
+      "exact_match": true
+    },
+    "6048": {
+      "earlier_loss": 0.0393449068069458,
+      "resumed_loss": 0.0393449068069458,
+      "exact_match": true
+    },
+    "6049": {
+      "earlier_loss": 0.02640000358223915,
+      "resumed_loss": 0.02640000358223915,
+      "exact_match": true
+    },
+    "6050": {
+      "earlier_loss": 2.421116828918457,
+      "resumed_loss": 2.421116828918457,
+      "exact_match": true
+    },
+    "6051": {
+      "earlier_loss": 0.0030024899169802666,
+      "resumed_loss": 0.0030024899169802666,
+      "exact_match": true
+    },
+    "6052": {
+      "earlier_loss": 0.006291277706623077,
+      "resumed_loss": 0.006291277706623077,
+      "exact_match": true
+    },
+    "6053": {
+      "earlier_loss": 0.04333803057670593,
+      "resumed_loss": 0.04333803057670593,
+      "exact_match": true
+    },
+    "6054": {
+      "earlier_loss": 0.013574810698628426,
+      "resumed_loss": 0.013574810698628426,
+      "exact_match": true
+    },
+    "6055": {
+      "earlier_loss": 0.006224586628377438,
+      "resumed_loss": 0.006224586628377438,
+      "exact_match": true
+    },
+    "6056": {
+      "earlier_loss": 0.00467101763933897,
+      "resumed_loss": 0.00467101763933897,
+      "exact_match": true
+    },
+    "6057": {
+      "earlier_loss": 0.4946367144584656,
+      "resumed_loss": 0.4946367144584656,
+      "exact_match": true
+    },
+    "6058": {
+      "earlier_loss": 1.6887181997299194,
+      "resumed_loss": 1.6887181997299194,
+      "exact_match": true
+    },
+    "6059": {
+      "earlier_loss": 0.04080146551132202,
+      "resumed_loss": 0.04080146551132202,
+      "exact_match": true
+    },
+    "6060": {
+      "earlier_loss": 0.7030142545700073,
+      "resumed_loss": 0.7030142545700073,
+      "exact_match": true
+    },
+    "6061": {
+      "earlier_loss": 0.025228915736079216,
+      "resumed_loss": 0.025228915736079216,
+      "exact_match": true
+    },
+    "6062": {
+      "earlier_loss": 0.17961113154888153,
+      "resumed_loss": 0.17961113154888153,
+      "exact_match": true
+    },
+    "6063": {
+      "earlier_loss": 0.20885469019412994,
+      "resumed_loss": 0.20885469019412994,
+      "exact_match": true
+    },
+    "6064": {
+      "earlier_loss": 0.7704803347587585,
+      "resumed_loss": 0.7704803347587585,
+      "exact_match": true
+    },
+    "6065": {
+      "earlier_loss": 0.06080779805779457,
+      "resumed_loss": 0.06080779805779457,
+      "exact_match": true
+    },
+    "6066": {
+      "earlier_loss": 0.0653158649802208,
+      "resumed_loss": 0.0653158649802208,
+      "exact_match": true
+    },
+    "6067": {
+      "earlier_loss": 0.04886012524366379,
+      "resumed_loss": 0.04886012524366379,
+      "exact_match": true
+    },
+    "6068": {
+      "earlier_loss": 0.11324707418680191,
+      "resumed_loss": 0.11324707418680191,
+      "exact_match": true
+    },
+    "6069": {
+      "earlier_loss": 0.048853788524866104,
+      "resumed_loss": 0.048853788524866104,
+      "exact_match": true
+    },
+    "6070": {
+      "earlier_loss": 0.19540661573410034,
+      "resumed_loss": 0.19540661573410034,
+      "exact_match": true
+    },
+    "6071": {
+      "earlier_loss": 0.001326989964582026,
+      "resumed_loss": 0.001326989964582026,
+      "exact_match": true
+    },
+    "6072": {
+      "earlier_loss": 0.03104376792907715,
+      "resumed_loss": 0.03104376792907715,
+      "exact_match": true
+    },
+    "6073": {
+      "earlier_loss": 0.01760321669280529,
+      "resumed_loss": 0.01760321669280529,
+      "exact_match": true
+    },
+    "6074": {
+      "earlier_loss": 1.2698954343795776,
+      "resumed_loss": 1.2698954343795776,
+      "exact_match": true
+    },
+    "6075": {
+      "earlier_loss": 0.9021360278129578,
+      "resumed_loss": 0.9021360278129578,
+      "exact_match": true
+    },
+    "6076": {
+      "earlier_loss": 0.40119558572769165,
+      "resumed_loss": 0.40119558572769165,
+      "exact_match": true
+    },
+    "6077": {
+      "earlier_loss": 0.09967245161533356,
+      "resumed_loss": 0.09967245161533356,
+      "exact_match": true
+    },
+    "6078": {
+      "earlier_loss": 0.00703894579783082,
+      "resumed_loss": 0.00703894579783082,
+      "exact_match": true
+    },
+    "6079": {
+      "earlier_loss": 0.13564780354499817,
+      "resumed_loss": 0.13564780354499817,
+      "exact_match": true
+    },
+    "6080": {
+      "earlier_loss": 0.0004277681582607329,
+      "resumed_loss": 0.0004277681582607329,
+      "exact_match": true
+    },
+    "6081": {
+      "earlier_loss": 0.04916059970855713,
+      "resumed_loss": 0.04916059970855713,
+      "exact_match": true
+    },
+    "6082": {
+      "earlier_loss": 0.021903475746512413,
+      "resumed_loss": 0.021903475746512413,
+      "exact_match": true
+    },
+    "6083": {
+      "earlier_loss": 1.361402988433838,
+      "resumed_loss": 1.361402988433838,
+      "exact_match": true
+    },
+    "6084": {
+      "earlier_loss": 0.029489682987332344,
+      "resumed_loss": 0.029489682987332344,
+      "exact_match": true
+    },
+    "6085": {
+      "earlier_loss": 0.5850759148597717,
+      "resumed_loss": 0.5850759148597717,
+      "exact_match": true
+    },
+    "6086": {
+      "earlier_loss": 0.050909049808979034,
+      "resumed_loss": 0.050909049808979034,
+      "exact_match": true
+    },
+    "6087": {
+      "earlier_loss": 0.004892598371952772,
+      "resumed_loss": 0.004892598371952772,
+      "exact_match": true
+    },
+    "6088": {
+      "earlier_loss": 0.7089253067970276,
+      "resumed_loss": 0.7089253067970276,
+      "exact_match": true
+    },
+    "6089": {
+      "earlier_loss": 0.1234903335571289,
+      "resumed_loss": 0.1234903335571289,
+      "exact_match": true
+    },
+    "6090": {
+      "earlier_loss": 0.2877890467643738,
+      "resumed_loss": 0.2877890467643738,
+      "exact_match": true
+    },
+    "6091": {
+      "earlier_loss": 0.07056408375501633,
+      "resumed_loss": 0.07056408375501633,
+      "exact_match": true
+    },
+    "6092": {
+      "earlier_loss": 0.001281278789974749,
+      "resumed_loss": 0.001281278789974749,
+      "exact_match": true
+    },
+    "6093": {
+      "earlier_loss": 2.0475220680236816,
+      "resumed_loss": 2.0475220680236816,
+      "exact_match": true
+    },
+    "6094": {
+      "earlier_loss": 0.09995343536138535,
+      "resumed_loss": 0.09995343536138535,
+      "exact_match": true
+    },
+    "6095": {
+      "earlier_loss": 0.20727843046188354,
+      "resumed_loss": 0.20727843046188354,
+      "exact_match": true
+    },
+    "6096": {
+      "earlier_loss": 0.21121914684772491,
+      "resumed_loss": 0.21121914684772491,
+      "exact_match": true
+    },
+    "6097": {
+      "earlier_loss": 8.6071195602417,
+      "resumed_loss": 8.6071195602417,
+      "exact_match": true
+    },
+    "6098": {
+      "earlier_loss": 0.0037029595114290714,
+      "resumed_loss": 0.0037029595114290714,
+      "exact_match": true
+    },
+    "6099": {
+      "earlier_loss": 0.028702786192297935,
+      "resumed_loss": 0.028702786192297935,
+      "exact_match": true
+    },
+    "6100": {
+      "earlier_loss": 2.446326971054077,
+      "resumed_loss": 2.446326971054077,
+      "exact_match": true
+    },
+    "6101": {
+      "earlier_loss": 0.2098277360200882,
+      "resumed_loss": 0.2098277360200882,
+      "exact_match": true
+    },
+    "6102": {
+      "earlier_loss": 1.4009037017822266,
+      "resumed_loss": 1.4009037017822266,
+      "exact_match": true
+    },
+    "6103": {
+      "earlier_loss": 3.070138454437256,
+      "resumed_loss": 3.070138454437256,
+      "exact_match": true
+    },
+    "6104": {
+      "earlier_loss": 0.04687642306089401,
+      "resumed_loss": 0.04687642306089401,
+      "exact_match": true
+    },
+    "6105": {
+      "earlier_loss": 0.0028562480583786964,
+      "resumed_loss": 0.0028562480583786964,
+      "exact_match": true
+    },
+    "6106": {
+      "earlier_loss": 0.2094477117061615,
+      "resumed_loss": 0.2094477117061615,
+      "exact_match": true
+    },
+    "6107": {
+      "earlier_loss": 0.040873944759368896,
+      "resumed_loss": 0.040873944759368896,
+      "exact_match": true
+    },
+    "6108": {
+      "earlier_loss": 0.003077866043895483,
+      "resumed_loss": 0.003077866043895483,
+      "exact_match": true
+    },
+    "6109": {
+      "earlier_loss": 0.01842217519879341,
+      "resumed_loss": 0.01842217519879341,
+      "exact_match": true
+    },
+    "6110": {
+      "earlier_loss": 0.0674106776714325,
+      "resumed_loss": 0.0674106776714325,
+      "exact_match": true
+    },
+    "6111": {
+      "earlier_loss": 0.5149925351142883,
+      "resumed_loss": 0.5149925351142883,
+      "exact_match": true
+    },
+    "6112": {
+      "earlier_loss": 0.00026333698770031333,
+      "resumed_loss": 0.00026333698770031333,
+      "exact_match": true
+    },
+    "6113": {
+      "earlier_loss": 0.005115697160363197,
+      "resumed_loss": 0.005115697160363197,
+      "exact_match": true
+    },
+    "6114": {
+      "earlier_loss": 0.689801812171936,
+      "resumed_loss": 0.689801812171936,
+      "exact_match": true
+    },
+    "6115": {
+      "earlier_loss": 0.12378344684839249,
+      "resumed_loss": 0.12378344684839249,
+      "exact_match": true
+    },
+    "6116": {
+      "earlier_loss": 0.24581436812877655,
+      "resumed_loss": 0.24581436812877655,
+      "exact_match": true
+    },
+    "6117": {
+      "earlier_loss": 0.0032065340783447027,
+      "resumed_loss": 0.0032065340783447027,
+      "exact_match": true
+    },
+    "6118": {
+      "earlier_loss": 0.004507648758590221,
+      "resumed_loss": 0.004507648758590221,
+      "exact_match": true
+    },
+    "6119": {
+      "earlier_loss": 0.0026935189962387085,
+      "resumed_loss": 0.0026935189962387085,
+      "exact_match": true
+    },
+    "6120": {
+      "earlier_loss": 0.00915740430355072,
+      "resumed_loss": 0.00915740430355072,
+      "exact_match": true
+    },
+    "6121": {
+      "earlier_loss": 0.7479549646377563,
+      "resumed_loss": 0.7479549646377563,
+      "exact_match": true
+    },
+    "6122": {
+      "earlier_loss": 0.020930688828229904,
+      "resumed_loss": 0.020930688828229904,
+      "exact_match": true
+    },
+    "6123": {
+      "earlier_loss": 2.521552324295044,
+      "resumed_loss": 2.521552324295044,
+      "exact_match": true
+    },
+    "6124": {
+      "earlier_loss": 0.013816975057125092,
+      "resumed_loss": 0.013816975057125092,
+      "exact_match": true
+    },
+    "6125": {
+      "earlier_loss": 1.3051661252975464,
+      "resumed_loss": 1.3051661252975464,
+      "exact_match": true
+    },
+    "6126": {
+      "earlier_loss": 1.8928911685943604,
+      "resumed_loss": 1.8928911685943604,
+      "exact_match": true
+    },
+    "6127": {
+      "earlier_loss": 0.0010330508230254054,
+      "resumed_loss": 0.0010330508230254054,
+      "exact_match": true
+    },
+    "6128": {
+      "earlier_loss": 0.007330062333494425,
+      "resumed_loss": 0.007330062333494425,
+      "exact_match": true
+    },
+    "6129": {
+      "earlier_loss": 0.04715220630168915,
+      "resumed_loss": 0.04715220630168915,
+      "exact_match": true
+    },
+    "6130": {
+      "earlier_loss": 0.32630348205566406,
+      "resumed_loss": 0.32630348205566406,
+      "exact_match": true
+    },
+    "6131": {
+      "earlier_loss": 0.037069402635097504,
+      "resumed_loss": 0.037069402635097504,
+      "exact_match": true
+    },
+    "6132": {
+      "earlier_loss": 0.7503015995025635,
+      "resumed_loss": 0.7503015995025635,
+      "exact_match": true
+    },
+    "6133": {
+      "earlier_loss": 3.8200252056121826,
+      "resumed_loss": 3.8200252056121826,
+      "exact_match": true
+    },
+    "6134": {
+      "earlier_loss": 0.005301204044371843,
+      "resumed_loss": 0.005301204044371843,
+      "exact_match": true
+    },
+    "6135": {
+      "earlier_loss": 0.24447214603424072,
+      "resumed_loss": 0.24447214603424072,
+      "exact_match": true
+    },
+    "6136": {
+      "earlier_loss": 0.10284426063299179,
+      "resumed_loss": 0.10284426063299179,
+      "exact_match": true
+    },
+    "6137": {
+      "earlier_loss": 0.011922787874937057,
+      "resumed_loss": 0.011922787874937057,
+      "exact_match": true
+    },
+    "6138": {
+      "earlier_loss": 0.0087775569409132,
+      "resumed_loss": 0.0087775569409132,
+      "exact_match": true
+    },
+    "6139": {
+      "earlier_loss": 0.1228087842464447,
+      "resumed_loss": 0.1228087842464447,
+      "exact_match": true
+    },
+    "6140": {
+      "earlier_loss": 1.2423185110092163,
+      "resumed_loss": 1.2423185110092163,
+      "exact_match": true
+    },
+    "6141": {
+      "earlier_loss": 0.6313877105712891,
+      "resumed_loss": 0.6313877105712891,
+      "exact_match": true
+    },
+    "6142": {
+      "earlier_loss": 0.3549220561981201,
+      "resumed_loss": 0.3549220561981201,
+      "exact_match": true
+    },
+    "6143": {
+      "earlier_loss": 0.007639523595571518,
+      "resumed_loss": 0.007639523595571518,
+      "exact_match": true
+    },
+    "6144": {
+      "earlier_loss": 0.5274206399917603,
+      "resumed_loss": 0.5274206399917603,
+      "exact_match": true
+    },
+    "6145": {
+      "earlier_loss": 0.0006574393482878804,
+      "resumed_loss": 0.0006574393482878804,
+      "exact_match": true
+    },
+    "6146": {
+      "earlier_loss": 0.3596557378768921,
+      "resumed_loss": 0.3596557378768921,
+      "exact_match": true
+    },
+    "6147": {
+      "earlier_loss": 0.0033467754255980253,
+      "resumed_loss": 0.0033467754255980253,
+      "exact_match": true
+    },
+    "6148": {
+      "earlier_loss": 0.010962631553411484,
+      "resumed_loss": 0.010962631553411484,
+      "exact_match": true
+    },
+    "6149": {
+      "earlier_loss": 0.005543726496398449,
+      "resumed_loss": 0.005543726496398449,
+      "exact_match": true
+    },
+    "6150": {
+      "earlier_loss": 0.9546327590942383,
+      "resumed_loss": 0.9546327590942383,
+      "exact_match": true
+    },
+    "6151": {
+      "earlier_loss": 0.021586116403341293,
+      "resumed_loss": 0.021586116403341293,
+      "exact_match": true
+    },
+    "6152": {
+      "earlier_loss": 0.003317533526569605,
+      "resumed_loss": 0.003317533526569605,
+      "exact_match": true
+    },
+    "6153": {
+      "earlier_loss": 0.0023119293618947268,
+      "resumed_loss": 0.0023119293618947268,
+      "exact_match": true
+    },
+    "6154": {
+      "earlier_loss": 0.5745298862457275,
+      "resumed_loss": 0.5745298862457275,
+      "exact_match": true
+    },
+    "6155": {
+      "earlier_loss": 0.7355933785438538,
+      "resumed_loss": 0.7355933785438538,
+      "exact_match": true
+    },
+    "6156": {
+      "earlier_loss": 0.0003382366558071226,
+      "resumed_loss": 0.0003382366558071226,
+      "exact_match": true
+    },
+    "6157": {
+      "earlier_loss": 0.008143368177115917,
+      "resumed_loss": 0.008143368177115917,
+      "exact_match": true
+    },
+    "6158": {
+      "earlier_loss": 0.03538934141397476,
+      "resumed_loss": 0.03538934141397476,
+      "exact_match": true
+    },
+    "6159": {
+      "earlier_loss": 0.01711893454194069,
+      "resumed_loss": 0.01711893454194069,
+      "exact_match": true
+    },
+    "6160": {
+      "earlier_loss": 0.04208732023835182,
+      "resumed_loss": 0.04208732023835182,
+      "exact_match": true
+    },
+    "6161": {
+      "earlier_loss": 1.9152201414108276,
+      "resumed_loss": 1.9152201414108276,
+      "exact_match": true
+    },
+    "6162": {
+      "earlier_loss": 0.023150606080889702,
+      "resumed_loss": 0.023150606080889702,
+      "exact_match": true
+    },
+    "6163": {
+      "earlier_loss": 0.003969542216509581,
+      "resumed_loss": 0.003969542216509581,
+      "exact_match": true
+    },
+    "6164": {
+      "earlier_loss": 0.1994309425354004,
+      "resumed_loss": 0.1994309425354004,
+      "exact_match": true
+    },
+    "6165": {
+      "earlier_loss": 0.1558886617422104,
+      "resumed_loss": 0.1558886617422104,
+      "exact_match": true
+    },
+    "6166": {
+      "earlier_loss": 0.0027950506191700697,
+      "resumed_loss": 0.0027950506191700697,
+      "exact_match": true
+    },
+    "6167": {
+      "earlier_loss": 0.10346990078687668,
+      "resumed_loss": 0.10346990078687668,
+      "exact_match": true
+    },
+    "6168": {
+      "earlier_loss": 0.0017952935304492712,
+      "resumed_loss": 0.0017952935304492712,
+      "exact_match": true
+    },
+    "6169": {
+      "earlier_loss": 0.001565829268656671,
+      "resumed_loss": 0.001565829268656671,
+      "exact_match": true
+    },
+    "6170": {
+      "earlier_loss": 0.8220993280410767,
+      "resumed_loss": 0.8220993280410767,
+      "exact_match": true
+    },
+    "6171": {
+      "earlier_loss": 0.0005592438392341137,
+      "resumed_loss": 0.0005592438392341137,
+      "exact_match": true
+    },
+    "6172": {
+      "earlier_loss": 0.0165391955524683,
+      "resumed_loss": 0.0165391955524683,
+      "exact_match": true
+    },
+    "6173": {
+      "earlier_loss": 1.2150828838348389,
+      "resumed_loss": 1.2150828838348389,
+      "exact_match": true
+    },
+    "6174": {
+      "earlier_loss": 1.6729830503463745,
+      "resumed_loss": 1.6729830503463745,
+      "exact_match": true
+    },
+    "6175": {
+      "earlier_loss": 1.2602101564407349,
+      "resumed_loss": 1.2602101564407349,
+      "exact_match": true
+    },
+    "6176": {
+      "earlier_loss": 0.002057271311059594,
+      "resumed_loss": 0.002057271311059594,
+      "exact_match": true
+    },
+    "6177": {
+      "earlier_loss": 0.003205824876204133,
+      "resumed_loss": 0.003205824876204133,
+      "exact_match": true
+    },
+    "6178": {
+      "earlier_loss": 0.003610091982409358,
+      "resumed_loss": 0.003610091982409358,
+      "exact_match": true
+    },
+    "6179": {
+      "earlier_loss": 0.09061628580093384,
+      "resumed_loss": 0.09061628580093384,
+      "exact_match": true
+    },
+    "6180": {
+      "earlier_loss": 0.08058219403028488,
+      "resumed_loss": 0.08058219403028488,
+      "exact_match": true
+    },
+    "6181": {
+      "earlier_loss": 2.2492618560791016,
+      "resumed_loss": 2.2492618560791016,
+      "exact_match": true
+    },
+    "6182": {
+      "earlier_loss": 0.020847005769610405,
+      "resumed_loss": 0.020847005769610405,
+      "exact_match": true
+    },
+    "6183": {
+      "earlier_loss": 0.024450430646538734,
+      "resumed_loss": 0.024450430646538734,
+      "exact_match": true
+    },
+    "6184": {
+      "earlier_loss": 0.02631663717329502,
+      "resumed_loss": 0.02631663717329502,
+      "exact_match": true
+    },
+    "6185": {
+      "earlier_loss": 0.4481908679008484,
+      "resumed_loss": 0.4481908679008484,
+      "exact_match": true
+    },
+    "6186": {
+      "earlier_loss": 0.6110419631004333,
+      "resumed_loss": 0.6110419631004333,
+      "exact_match": true
+    },
+    "6187": {
+      "earlier_loss": 0.40051060914993286,
+      "resumed_loss": 0.40051060914993286,
+      "exact_match": true
+    },
+    "6188": {
+      "earlier_loss": 0.12008289992809296,
+      "resumed_loss": 0.12008289992809296,
+      "exact_match": true
+    },
+    "6189": {
+      "earlier_loss": 0.0839332714676857,
+      "resumed_loss": 0.0839332714676857,
+      "exact_match": true
+    },
+    "6190": {
+      "earlier_loss": 0.008734644390642643,
+      "resumed_loss": 0.008734644390642643,
+      "exact_match": true
+    },
+    "6191": {
+      "earlier_loss": 0.013056078925728798,
+      "resumed_loss": 0.013056078925728798,
+      "exact_match": true
+    },
+    "6192": {
+      "earlier_loss": 0.001992712263017893,
+      "resumed_loss": 0.001992712263017893,
+      "exact_match": true
+    },
+    "6193": {
+      "earlier_loss": 0.11456038802862167,
+      "resumed_loss": 0.11456038802862167,
+      "exact_match": true
+    },
+    "6194": {
+      "earlier_loss": 0.031402312219142914,
+      "resumed_loss": 0.031402312219142914,
+      "exact_match": true
+    },
+    "6195": {
+      "earlier_loss": 0.002586689544841647,
+      "resumed_loss": 0.002586689544841647,
+      "exact_match": true
+    },
+    "6196": {
+      "earlier_loss": 0.16411831974983215,
+      "resumed_loss": 0.16411831974983215,
+      "exact_match": true
+    },
+    "6197": {
+      "earlier_loss": 0.00946236401796341,
+      "resumed_loss": 0.00946236401796341,
+      "exact_match": true
+    },
+    "6198": {
+      "earlier_loss": 0.4569251835346222,
+      "resumed_loss": 0.4569251835346222,
+      "exact_match": true
+    },
+    "6199": {
+      "earlier_loss": 0.04605267569422722,
+      "resumed_loss": 0.04605267569422722,
+      "exact_match": true
+    },
+    "6200": {
+      "earlier_loss": 4.2800822257995605,
+      "resumed_loss": 4.2800822257995605,
+      "exact_match": true
+    },
+    "6201": {
+      "earlier_loss": 0.011032497510313988,
+      "resumed_loss": 0.011032497510313988,
+      "exact_match": true
+    },
+    "6202": {
+      "earlier_loss": 0.7311599254608154,
+      "resumed_loss": 0.7311599254608154,
+      "exact_match": true
+    },
+    "6203": {
+      "earlier_loss": 0.46712055802345276,
+      "resumed_loss": 0.46712055802345276,
+      "exact_match": true
+    },
+    "6204": {
+      "earlier_loss": 0.002418739255517721,
+      "resumed_loss": 0.002418739255517721,
+      "exact_match": true
+    },
+    "6205": {
+      "earlier_loss": 0.0060012200847268105,
+      "resumed_loss": 0.0060012200847268105,
+      "exact_match": true
+    },
+    "6206": {
+      "earlier_loss": 0.010715004988014698,
+      "resumed_loss": 0.010715004988014698,
+      "exact_match": true
+    },
+    "6207": {
+      "earlier_loss": 0.008654280565679073,
+      "resumed_loss": 0.008654280565679073,
+      "exact_match": true
+    },
+    "6208": {
+      "earlier_loss": 0.004827974829822779,
+      "resumed_loss": 0.004827974829822779,
+      "exact_match": true
+    },
+    "6209": {
+      "earlier_loss": 0.575888454914093,
+      "resumed_loss": 0.575888454914093,
+      "exact_match": true
+    },
+    "6210": {
+      "earlier_loss": 0.019720887765288353,
+      "resumed_loss": 0.019720887765288353,
+      "exact_match": true
+    },
+    "6211": {
+      "earlier_loss": 0.01877816580235958,
+      "resumed_loss": 0.01877816580235958,
+      "exact_match": true
+    },
+    "6212": {
+      "earlier_loss": 0.12795701622962952,
+      "resumed_loss": 0.12795701622962952,
+      "exact_match": true
+    },
+    "6213": {
+      "earlier_loss": 0.9075239300727844,
+      "resumed_loss": 0.9075239300727844,
+      "exact_match": true
+    },
+    "6214": {
+      "earlier_loss": 0.34721094369888306,
+      "resumed_loss": 0.34721094369888306,
+      "exact_match": true
+    },
+    "6215": {
+      "earlier_loss": 1.1218111515045166,
+      "resumed_loss": 1.1218111515045166,
+      "exact_match": true
+    },
+    "6216": {
+      "earlier_loss": 0.03593083471059799,
+      "resumed_loss": 0.03593083471059799,
+      "exact_match": true
+    },
+    "6217": {
+      "earlier_loss": 1.4300419092178345,
+      "resumed_loss": 1.4300419092178345,
+      "exact_match": true
+    },
+    "6218": {
+      "earlier_loss": 2.147068738937378,
+      "resumed_loss": 2.147068738937378,
+      "exact_match": true
+    },
+    "6219": {
+      "earlier_loss": 0.03700197488069534,
+      "resumed_loss": 0.03700197488069534,
+      "exact_match": true
+    },
+    "6220": {
+      "earlier_loss": 3.3206470012664795,
+      "resumed_loss": 3.3206470012664795,
+      "exact_match": true
+    },
+    "6221": {
+      "earlier_loss": 0.01319285947829485,
+      "resumed_loss": 0.01319285947829485,
+      "exact_match": true
+    },
+    "6222": {
+      "earlier_loss": 0.01699065789580345,
+      "resumed_loss": 0.01699065789580345,
+      "exact_match": true
+    },
+    "6223": {
+      "earlier_loss": 0.17225077748298645,
+      "resumed_loss": 0.17225077748298645,
+      "exact_match": true
+    },
+    "6224": {
+      "earlier_loss": 0.005513438023626804,
+      "resumed_loss": 0.005513438023626804,
+      "exact_match": true
+    },
+    "6225": {
+      "earlier_loss": 0.17747607827186584,
+      "resumed_loss": 0.17747607827186584,
+      "exact_match": true
+    },
+    "6226": {
+      "earlier_loss": 0.005658860784024,
+      "resumed_loss": 0.005658860784024,
+      "exact_match": true
+    },
+    "6227": {
+      "earlier_loss": 0.22336871922016144,
+      "resumed_loss": 0.22336871922016144,
+      "exact_match": true
+    },
+    "6228": {
+      "earlier_loss": 0.008918346837162971,
+      "resumed_loss": 0.008918346837162971,
+      "exact_match": true
+    },
+    "6229": {
+      "earlier_loss": 2.801692008972168,
+      "resumed_loss": 2.801692008972168,
+      "exact_match": true
+    },
+    "6230": {
+      "earlier_loss": 0.011926100589334965,
+      "resumed_loss": 0.011926100589334965,
+      "exact_match": true
+    },
+    "6231": {
+      "earlier_loss": 0.016248833388090134,
+      "resumed_loss": 0.016248833388090134,
+      "exact_match": true
+    },
+    "6232": {
+      "earlier_loss": 0.8162352442741394,
+      "resumed_loss": 0.8162352442741394,
+      "exact_match": true
+    },
+    "6233": {
+      "earlier_loss": 0.007192937191575766,
+      "resumed_loss": 0.007192937191575766,
+      "exact_match": true
+    },
+    "6234": {
+      "earlier_loss": 0.14746524393558502,
+      "resumed_loss": 0.14746524393558502,
+      "exact_match": true
+    },
+    "6235": {
+      "earlier_loss": 0.017142515629529953,
+      "resumed_loss": 0.017142515629529953,
+      "exact_match": true
+    },
+    "6236": {
+      "earlier_loss": 1.0069271326065063,
+      "resumed_loss": 1.0069271326065063,
+      "exact_match": true
+    },
+    "6237": {
+      "earlier_loss": 0.010234848596155643,
+      "resumed_loss": 0.010234848596155643,
+      "exact_match": true
+    },
+    "6238": {
+      "earlier_loss": 0.02375674806535244,
+      "resumed_loss": 0.02375674806535244,
+      "exact_match": true
+    },
+    "6239": {
+      "earlier_loss": 0.002831498859450221,
+      "resumed_loss": 0.002831498859450221,
+      "exact_match": true
+    },
+    "6240": {
+      "earlier_loss": 0.5790268778800964,
+      "resumed_loss": 0.5790268778800964,
+      "exact_match": true
+    },
+    "6241": {
+      "earlier_loss": 1.6231017112731934,
+      "resumed_loss": 1.6231017112731934,
+      "exact_match": true
+    },
+    "6242": {
+      "earlier_loss": 0.043151069432497025,
+      "resumed_loss": 0.043151069432497025,
+      "exact_match": true
+    },
+    "6243": {
+      "earlier_loss": 0.015776682645082474,
+      "resumed_loss": 0.015776682645082474,
+      "exact_match": true
+    },
+    "6244": {
+      "earlier_loss": 0.04213258624076843,
+      "resumed_loss": 0.04213258624076843,
+      "exact_match": true
+    },
+    "6245": {
+      "earlier_loss": 0.39860081672668457,
+      "resumed_loss": 0.39860081672668457,
+      "exact_match": true
+    },
+    "6246": {
+      "earlier_loss": 1.3393118381500244,
+      "resumed_loss": 1.3393118381500244,
+      "exact_match": true
+    },
+    "6247": {
+      "earlier_loss": 0.8745844960212708,
+      "resumed_loss": 0.8745844960212708,
+      "exact_match": true
+    },
+    "6248": {
+      "earlier_loss": 0.0025270364712923765,
+      "resumed_loss": 0.0025270364712923765,
+      "exact_match": true
+    },
+    "6249": {
+      "earlier_loss": 0.45775482058525085,
+      "resumed_loss": 0.45775482058525085,
+      "exact_match": true
+    },
+    "6250": {
+      "earlier_loss": 0.04234006628394127,
+      "resumed_loss": 0.04234006628394127,
+      "exact_match": true
+    },
+    "6251": {
+      "earlier_loss": 1.1828012466430664,
+      "resumed_loss": 1.1828012466430664,
+      "exact_match": true
+    },
+    "6252": {
+      "earlier_loss": 0.006862676236778498,
+      "resumed_loss": 0.006862676236778498,
+      "exact_match": true
+    },
+    "6253": {
+      "earlier_loss": 0.0036325452383607626,
+      "resumed_loss": 0.0036325452383607626,
+      "exact_match": true
+    },
+    "6254": {
+      "earlier_loss": 0.049606435000896454,
+      "resumed_loss": 0.049606435000896454,
+      "exact_match": true
+    },
+    "6255": {
+      "earlier_loss": 0.706497073173523,
+      "resumed_loss": 0.706497073173523,
+      "exact_match": true
+    },
+    "6256": {
+      "earlier_loss": 0.10691769421100616,
+      "resumed_loss": 0.10691769421100616,
+      "exact_match": true
+    },
+    "6257": {
+      "earlier_loss": 0.008822807110846043,
+      "resumed_loss": 0.008822807110846043,
+      "exact_match": true
+    },
+    "6258": {
+      "earlier_loss": 0.015181134454905987,
+      "resumed_loss": 0.015181134454905987,
+      "exact_match": true
+    },
+    "6259": {
+      "earlier_loss": 0.01676098257303238,
+      "resumed_loss": 0.01676098257303238,
+      "exact_match": true
+    },
+    "6260": {
+      "earlier_loss": 0.01596876047551632,
+      "resumed_loss": 0.01596876047551632,
+      "exact_match": true
+    },
+    "6261": {
+      "earlier_loss": 0.12129783630371094,
+      "resumed_loss": 0.12129783630371094,
+      "exact_match": true
+    },
+    "6262": {
+      "earlier_loss": 0.002506699413061142,
+      "resumed_loss": 0.002506699413061142,
+      "exact_match": true
+    },
+    "6263": {
+      "earlier_loss": 0.09817905724048615,
+      "resumed_loss": 0.09817905724048615,
+      "exact_match": true
+    },
+    "6264": {
+      "earlier_loss": 0.001416363287717104,
+      "resumed_loss": 0.001416363287717104,
+      "exact_match": true
+    },
+    "6265": {
+      "earlier_loss": 0.20827598869800568,
+      "resumed_loss": 0.20827598869800568,
+      "exact_match": true
+    },
+    "6266": {
+      "earlier_loss": 0.02639905922114849,
+      "resumed_loss": 0.02639905922114849,
+      "exact_match": true
+    },
+    "6267": {
+      "earlier_loss": 0.588600754737854,
+      "resumed_loss": 0.588600754737854,
+      "exact_match": true
+    },
+    "6268": {
+      "earlier_loss": 0.08608544617891312,
+      "resumed_loss": 0.08608544617891312,
+      "exact_match": true
+    },
+    "6269": {
+      "earlier_loss": 0.03621509298682213,
+      "resumed_loss": 0.03621509298682213,
+      "exact_match": true
+    },
+    "6270": {
+      "earlier_loss": 0.0005401366506703198,
+      "resumed_loss": 0.0005401366506703198,
+      "exact_match": true
+    },
+    "6271": {
+      "earlier_loss": 0.2697230875492096,
+      "resumed_loss": 0.2697230875492096,
+      "exact_match": true
+    },
+    "6272": {
+      "earlier_loss": 0.39412015676498413,
+      "resumed_loss": 0.39412015676498413,
+      "exact_match": true
+    },
+    "6273": {
+      "earlier_loss": 0.0018540149321779609,
+      "resumed_loss": 0.0018540149321779609,
+      "exact_match": true
+    },
+    "6274": {
+      "earlier_loss": 0.006770558655261993,
+      "resumed_loss": 0.006770558655261993,
+      "exact_match": true
+    },
+    "6275": {
+      "earlier_loss": 0.01628793217241764,
+      "resumed_loss": 0.01628793217241764,
+      "exact_match": true
+    },
+    "6276": {
+      "earlier_loss": 1.1869330406188965,
+      "resumed_loss": 1.1869330406188965,
+      "exact_match": true
+    },
+    "6277": {
+      "earlier_loss": 0.0024173599667847157,
+      "resumed_loss": 0.0024173599667847157,
+      "exact_match": true
+    },
+    "6278": {
+      "earlier_loss": 0.19259676337242126,
+      "resumed_loss": 0.19259676337242126,
+      "exact_match": true
+    },
+    "6279": {
+      "earlier_loss": 0.04115952178835869,
+      "resumed_loss": 0.04115952178835869,
+      "exact_match": true
+    },
+    "6280": {
+      "earlier_loss": 0.004746132530272007,
+      "resumed_loss": 0.004746132530272007,
+      "exact_match": true
+    },
+    "6281": {
+      "earlier_loss": 0.004163970705121756,
+      "resumed_loss": 0.004163970705121756,
+      "exact_match": true
+    },
+    "6282": {
+      "earlier_loss": 0.003229467198252678,
+      "resumed_loss": 0.003229467198252678,
+      "exact_match": true
+    },
+    "6283": {
+      "earlier_loss": 0.008197205141186714,
+      "resumed_loss": 0.008197205141186714,
+      "exact_match": true
+    },
+    "6284": {
+      "earlier_loss": 0.46628081798553467,
+      "resumed_loss": 0.46628081798553467,
+      "exact_match": true
+    },
+    "6285": {
+      "earlier_loss": 0.0017114588990807533,
+      "resumed_loss": 0.0017114588990807533,
+      "exact_match": true
+    },
+    "6286": {
+      "earlier_loss": 0.259981632232666,
+      "resumed_loss": 0.259981632232666,
+      "exact_match": true
+    },
+    "6287": {
+      "earlier_loss": 0.029343247413635254,
+      "resumed_loss": 0.029343247413635254,
+      "exact_match": true
+    },
+    "6288": {
+      "earlier_loss": 1.104081630706787,
+      "resumed_loss": 1.104081630706787,
+      "exact_match": true
+    },
+    "6289": {
+      "earlier_loss": 0.022371195256710052,
+      "resumed_loss": 0.022371195256710052,
+      "exact_match": true
+    },
+    "6290": {
+      "earlier_loss": 0.07166176289319992,
+      "resumed_loss": 0.07166176289319992,
+      "exact_match": true
+    },
+    "6291": {
+      "earlier_loss": 0.020077960565686226,
+      "resumed_loss": 0.020077960565686226,
+      "exact_match": true
+    },
+    "6292": {
+      "earlier_loss": 0.7522299885749817,
+      "resumed_loss": 0.7522299885749817,
+      "exact_match": true
+    },
+    "6293": {
+      "earlier_loss": 0.21380749344825745,
+      "resumed_loss": 0.21380749344825745,
+      "exact_match": true
+    },
+    "6294": {
+      "earlier_loss": 0.15108227729797363,
+      "resumed_loss": 0.15108227729797363,
+      "exact_match": true
+    },
+    "6295": {
+      "earlier_loss": 0.038474176079034805,
+      "resumed_loss": 0.038474176079034805,
+      "exact_match": true
+    },
+    "6296": {
+      "earlier_loss": 0.03198070451617241,
+      "resumed_loss": 0.03198070451617241,
+      "exact_match": true
+    },
+    "6297": {
+      "earlier_loss": 0.2407146692276001,
+      "resumed_loss": 0.2407146692276001,
+      "exact_match": true
+    },
+    "6298": {
+      "earlier_loss": 2.814136505126953,
+      "resumed_loss": 2.814136505126953,
+      "exact_match": true
+    },
+    "6299": {
+      "earlier_loss": 0.2534322738647461,
+      "resumed_loss": 0.2534322738647461,
+      "exact_match": true
+    },
+    "6300": {
+      "earlier_loss": 0.009628061205148697,
+      "resumed_loss": 0.009628061205148697,
+      "exact_match": true
+    },
+    "6301": {
+      "earlier_loss": 0.049095023423433304,
+      "resumed_loss": 0.049095023423433304,
+      "exact_match": true
+    },
+    "6302": {
+      "earlier_loss": 0.5063123106956482,
+      "resumed_loss": 0.5063123106956482,
+      "exact_match": true
+    },
+    "6303": {
+      "earlier_loss": 0.02853735350072384,
+      "resumed_loss": 0.02853735350072384,
+      "exact_match": true
+    },
+    "6304": {
+      "earlier_loss": 0.002631276613101363,
+      "resumed_loss": 0.002631276613101363,
+      "exact_match": true
+    },
+    "6305": {
+      "earlier_loss": 0.19080965220928192,
+      "resumed_loss": 0.19080965220928192,
+      "exact_match": true
+    },
+    "6306": {
+      "earlier_loss": 0.002322003711014986,
+      "resumed_loss": 0.002322003711014986,
+      "exact_match": true
+    },
+    "6307": {
+      "earlier_loss": 0.23484408855438232,
+      "resumed_loss": 0.23484408855438232,
+      "exact_match": true
+    },
+    "6308": {
+      "earlier_loss": 0.08138196170330048,
+      "resumed_loss": 0.08138196170330048,
+      "exact_match": true
+    },
+    "6309": {
+      "earlier_loss": 0.001435115234926343,
+      "resumed_loss": 0.001435115234926343,
+      "exact_match": true
+    },
+    "6310": {
+      "earlier_loss": 0.028871551156044006,
+      "resumed_loss": 0.028871551156044006,
+      "exact_match": true
+    },
+    "6311": {
+      "earlier_loss": 3.3808295726776123,
+      "resumed_loss": 3.3808295726776123,
+      "exact_match": true
+    },
+    "6312": {
+      "earlier_loss": 0.09669632464647293,
+      "resumed_loss": 0.09669632464647293,
+      "exact_match": true
+    },
+    "6313": {
+      "earlier_loss": 0.02810489572584629,
+      "resumed_loss": 0.02810489572584629,
+      "exact_match": true
+    },
+    "6314": {
+      "earlier_loss": 0.013962744735181332,
+      "resumed_loss": 0.013962744735181332,
+      "exact_match": true
+    },
+    "6315": {
+      "earlier_loss": 0.2630501687526703,
+      "resumed_loss": 0.2630501687526703,
+      "exact_match": true
+    },
+    "6316": {
+      "earlier_loss": 0.18367980420589447,
+      "resumed_loss": 0.18367980420589447,
+      "exact_match": true
+    },
+    "6317": {
+      "earlier_loss": 0.13390906155109406,
+      "resumed_loss": 0.13390906155109406,
+      "exact_match": true
+    },
+    "6318": {
+      "earlier_loss": 0.666182816028595,
+      "resumed_loss": 0.666182816028595,
+      "exact_match": true
+    },
+    "6319": {
+      "earlier_loss": 0.018475178629159927,
+      "resumed_loss": 0.018475178629159927,
+      "exact_match": true
+    },
+    "6320": {
+      "earlier_loss": 0.1041199192404747,
+      "resumed_loss": 0.1041199192404747,
+      "exact_match": true
+    },
+    "6321": {
+      "earlier_loss": 0.03544127568602562,
+      "resumed_loss": 0.03544127568602562,
+      "exact_match": true
+    },
+    "6322": {
+      "earlier_loss": 0.001550411805510521,
+      "resumed_loss": 0.001550411805510521,
+      "exact_match": true
+    },
+    "6323": {
+      "earlier_loss": 0.9165829420089722,
+      "resumed_loss": 0.9165829420089722,
+      "exact_match": true
+    },
+    "6324": {
+      "earlier_loss": 0.01573140174150467,
+      "resumed_loss": 0.01573140174150467,
+      "exact_match": true
+    },
+    "6325": {
+      "earlier_loss": 0.0019425186328589916,
+      "resumed_loss": 0.0019425186328589916,
+      "exact_match": true
+    },
+    "6326": {
+      "earlier_loss": 0.005805286578834057,
+      "resumed_loss": 0.005805286578834057,
+      "exact_match": true
+    },
+    "6327": {
+      "earlier_loss": 0.13662093877792358,
+      "resumed_loss": 0.13662093877792358,
+      "exact_match": true
+    },
+    "6328": {
+      "earlier_loss": 0.006009463686496019,
+      "resumed_loss": 0.006009463686496019,
+      "exact_match": true
+    },
+    "6329": {
+      "earlier_loss": 0.006970319896936417,
+      "resumed_loss": 0.006970319896936417,
+      "exact_match": true
+    },
+    "6330": {
+      "earlier_loss": 0.005749084986746311,
+      "resumed_loss": 0.005749084986746311,
+      "exact_match": true
+    },
+    "6331": {
+      "earlier_loss": 0.45440611243247986,
+      "resumed_loss": 0.45440611243247986,
+      "exact_match": true
+    },
+    "6332": {
+      "earlier_loss": 0.02816973812878132,
+      "resumed_loss": 0.02816973812878132,
+      "exact_match": true
+    },
+    "6333": {
+      "earlier_loss": 0.052203208208084106,
+      "resumed_loss": 0.052203208208084106,
+      "exact_match": true
+    },
+    "6334": {
+      "earlier_loss": 0.014755629934370518,
+      "resumed_loss": 0.014755629934370518,
+      "exact_match": true
+    },
+    "6335": {
+      "earlier_loss": 0.26211583614349365,
+      "resumed_loss": 0.26211583614349365,
+      "exact_match": true
+    },
+    "6336": {
+      "earlier_loss": 0.011847857385873795,
+      "resumed_loss": 0.011847857385873795,
+      "exact_match": true
+    },
+    "6337": {
+      "earlier_loss": 0.0029675178229808807,
+      "resumed_loss": 0.0029675178229808807,
+      "exact_match": true
+    },
+    "6338": {
+      "earlier_loss": 0.8837553262710571,
+      "resumed_loss": 0.8837553262710571,
+      "exact_match": true
+    },
+    "6339": {
+      "earlier_loss": 1.011112928390503,
+      "resumed_loss": 1.011112928390503,
+      "exact_match": true
+    },
+    "6340": {
+      "earlier_loss": 0.0639299601316452,
+      "resumed_loss": 0.0639299601316452,
+      "exact_match": true
+    },
+    "6341": {
+      "earlier_loss": 0.0936678797006607,
+      "resumed_loss": 0.0936678797006607,
+      "exact_match": true
+    },
+    "6342": {
+      "earlier_loss": 0.0011205571936443448,
+      "resumed_loss": 0.0011205571936443448,
+      "exact_match": true
+    },
+    "6343": {
+      "earlier_loss": 0.036360133439302444,
+      "resumed_loss": 0.036360133439302444,
+      "exact_match": true
+    },
+    "6344": {
+      "earlier_loss": 0.048755012452602386,
+      "resumed_loss": 0.048755012452602386,
+      "exact_match": true
+    },
+    "6345": {
+      "earlier_loss": 0.08649446070194244,
+      "resumed_loss": 0.08649446070194244,
+      "exact_match": true
+    },
+    "6346": {
+      "earlier_loss": 0.021984616294503212,
+      "resumed_loss": 0.021984616294503212,
+      "exact_match": true
+    },
+    "6347": {
+      "earlier_loss": 0.004508594051003456,
+      "resumed_loss": 0.004508594051003456,
+      "exact_match": true
+    },
+    "6348": {
+      "earlier_loss": 0.031796738505363464,
+      "resumed_loss": 0.031796738505363464,
+      "exact_match": true
+    },
+    "6349": {
+      "earlier_loss": 0.412054181098938,
+      "resumed_loss": 0.412054181098938,
+      "exact_match": true
+    },
+    "6350": {
+      "earlier_loss": 0.012257572263479233,
+      "resumed_loss": 0.012257572263479233,
+      "exact_match": true
+    },
+    "6351": {
+      "earlier_loss": 0.1535361409187317,
+      "resumed_loss": 0.1535361409187317,
+      "exact_match": true
+    },
+    "6352": {
+      "earlier_loss": 0.027609897777438164,
+      "resumed_loss": 0.027609897777438164,
+      "exact_match": true
+    },
+    "6353": {
+      "earlier_loss": 0.007183544337749481,
+      "resumed_loss": 0.007183544337749481,
+      "exact_match": true
+    },
+    "6354": {
+      "earlier_loss": 1.2725749015808105,
+      "resumed_loss": 1.2725749015808105,
+      "exact_match": true
+    },
+    "6355": {
+      "earlier_loss": 0.13260643184185028,
+      "resumed_loss": 0.13260643184185028,
+      "exact_match": true
+    },
+    "6356": {
+      "earlier_loss": 1.2397892475128174,
+      "resumed_loss": 1.2397892475128174,
+      "exact_match": true
+    },
+    "6357": {
+      "earlier_loss": 0.4697907865047455,
+      "resumed_loss": 0.4697907865047455,
+      "exact_match": true
+    },
+    "6358": {
+      "earlier_loss": 0.011499249376356602,
+      "resumed_loss": 0.011499249376356602,
+      "exact_match": true
+    },
+    "6359": {
+      "earlier_loss": 0.10038263350725174,
+      "resumed_loss": 0.10038263350725174,
+      "exact_match": true
+    },
+    "6360": {
+      "earlier_loss": 0.19636085629463196,
+      "resumed_loss": 0.19636085629463196,
+      "exact_match": true
+    }
+  },
+  "preserved_checkpoint_generations": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500",
+    "step-0000625",
+    "step-0000750",
+    "step-0000875",
+    "step-0001000",
+    "step-0001125",
+    "step-0001250",
+    "step-0001375",
+    "step-0001500",
+    "step-0001625"
+  ],
+  "progress": {
+    "epoch": 1,
+    "example": 6540,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 1635,
+    "loss": 1.220156192779541,
+    "lr": 7.771977096665545e-06,
+    "elapsed_seconds": 13825.565260648727,
+    "peak_allocated_vram_bytes": 2130651136
+  },
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261013T214730Z-d0e394db",
+  "snapshot_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1500,
+    "epoch": 0,
+    "next_index": 6000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "all_study_processes_live": true,
+  "ram_available_bytes": 5125013504,
+  "epoch_count_unchanged": 1,
+  "candidate_validation_pending": true,
+  "sealed_final_test_pending": true,
+  "website_api_parity_pending": true
+}
