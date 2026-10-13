@@ -1,0 +1,9 @@
+{
+  "recorded_utc": "2026-10-13T21:34:55.352959+00:00",
+  "passed": true,
+  "actual_windows_handle_without_delete_sharing": true,
+  "old_destination_preserved_while_locked": true,
+  "replace_committed_after_handle_release": true,
+  "elapsed_seconds": 0.23420360000091023,
+  "scope": "Synthetic filesystem execution probe only; no OCR examples or accuracy credit."
+}
