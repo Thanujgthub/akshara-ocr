@@ -1,0 +1,78 @@
+{
+  "observed_utc": "2026-10-13T21:21:36.126936+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0001500",
+  "checksums": {
+    "adapter/adapter_config.json": "322bcb8ec13eec0fa80d04e9dc0ee1a8e687e42f68742ae3745abf6ebea918f0",
+    "adapter/adapter_model.safetensors": "709cfffdb9cb9a53d1359c8fa83657a5febcd857b6af09a921aa528e32ee2bcd",
+    "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+    "recovery.json": "22ef8179234555b5883a30e118bcaa7ce053b8b514129b90addf8fae3f1dca15",
+    "state.pt": "ad039421ada1892a7284c199e9f518ffa138880b3606fd63bafcf7feffc0b1ec"
+  },
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1500,
+    "epoch": 0,
+    "next_index": 6000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "unchanged_verified_configuration_and_dataset_signatures": true,
+  "frozen_manifest_hashes": {
+    "train": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+    "validation": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+    "final-test": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+  },
+  "serialized_resume_fields_present": [
+    "accumulation_progress",
+    "augment_rng",
+    "cuda_rng",
+    "dataset_fingerprint",
+    "effective_batch_size",
+    "numpy_rng",
+    "optimizer",
+    "precision",
+    "python_rng",
+    "scheduler",
+    "torch_rng"
+  ],
+  "state_inspection_scope": "Hash-verified state.pt and pickle opcode key inspection without executing pickle/importing Torch; not another GPU reload smoke. Prior exact-resume smoke and5000 full-state audit preserved.",
+  "preserved_checkpoint_generations": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500",
+    "step-0000625",
+    "step-0000750",
+    "step-0000875",
+    "step-0001000",
+    "step-0001125",
+    "step-0001250",
+    "step-0001375",
+    "step-0001500"
+  ],
+  "progress": {
+    "epoch": 1,
+    "example": 6040,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 1510,
+    "loss": 1.7609872817993164,
+    "lr": 7.982485685415967e-06,
+    "elapsed_seconds": 13007.619395256042,
+    "peak_allocated_vram_bytes": 2153790464
+  },
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261013T211824Z-30810958",
+  "snapshot_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1375,
+    "epoch": 0,
+    "next_index": 5500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "all_study_processes_live": true,
+  "ram_available_bytes": 5567901696,
+  "epoch_count_unchanged": 1,
+  "candidate_validation_pending": true,
+  "sealed_final_test_pending": true,
+  "website_api_parity_pending": true
+}
