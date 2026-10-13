@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-10-13T17:55:40.728522+00:00",
+  "trainer_pid": 496,
+  "progress": {
+    "epoch": 1,
+    "example": 880,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 220,
+    "loss": 0.013325038366019726,
+    "lr": 7.083333333333335e-06,
+    "elapsed_seconds": 1731.0997114181519,
+    "peak_allocated_vram_bytes": 2154064384
+  },
+  "recent_timing": {
+    "recent_median_seconds_per_word": 1.62893807888031,
+    "samples": 100,
+    "current_epoch_remaining_seconds_excluding_pauses": 39280.2128341198,
+    "long_gap_count_in_log_tail": 0,
+    "scope": "Recent per-word wall durations; excludes long gaps, model load, future validation and later stages. Not a measured GPU-kernel time."
+  },
+  "ram_available_bytes": 4172054528,
+  "battery": {
+    "percent": 80,
+    "secsleft": -2,
+    "power_plugged": true
+  },
+  "gpu_observation": "name, memory.used [MiB], utilization.gpu [%], temperature.gpu, clocks.current.sm [MHz], power.draw [W]\nNVIDIA GeForce RTX 3050 4GB Laptop GPU, 2237 MiB, 96 %, 87, 1380 MHz, 32.36 W",
+  "scope": "Observed ongoing training resource state. Recent per-word wall timing is not kernel timing; remaining-epoch projection excludes future validation/testing and pauses. Power is an instantaneous sample, not measured energy cost."
+}
