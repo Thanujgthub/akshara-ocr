@@ -12,3 +12,8 @@ Pillow==12.3.0
 fastapi==0.143.0
 uvicorn==0.54.0
 python-multipart==0.0.32
+httpx==0.28.1
+httpcore==1.0.9
+starlette==1.7.0
+pydantic==2.14.1
+anyio==4.15.1
