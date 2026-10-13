@@ -1,0 +1,211 @@
+{
+  "observed_utc": "2026-10-13T14:06:43.125848+00:00",
+  "git_revision": "5cdda2f14d931767b505dfab0010ad10f5797de7",
+  "original_revision": "cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25",
+  "model_files": [
+    {
+      "file": "ARCHITECTURE.md",
+      "sha256": "603e7a6f2d9f92f4ea3a69a5069edb55c37ac97a5f4ff3c80b4ae69f5991c2ca"
+    },
+    {
+      "file": "Bodhan_AI_Open_Model_License.md",
+      "sha256": "b39f2a9cb2d5ace3a03f4425cbc6db38ebd9a53ab7a7648d67dc1e0998ad75c2"
+    },
+    {
+      "file": "config.json",
+      "sha256": "3c2a72b1388a09adf54ba3c8796f1795e69a2a324616c8a2657600bae1ad5afb"
+    },
+    {
+      "file": "idp_blocks.py",
+      "sha256": "b65af79774251927471d845159fda82e210f13264255e76189b567cd28e9e5b8"
+    },
+    {
+      "file": "idp_contract.py",
+      "sha256": "1fb05fe684f40f273f9cd2e4a12f50fddb48ada49cc8ca100da4ebfd97ba20a0"
+    },
+    {
+      "file": "idp_crops.py",
+      "sha256": "e6c5af2de1c01ef7720e76673fbd87c1356d03127e9d3d11d500ecd212fb266e"
+    },
+    {
+      "file": "idp_layout.py",
+      "sha256": "f29f18719baa44c24475b278a0b36104db3e6601988440a8418d56046c42c843"
+    },
+    {
+      "file": "idp_model_infer.py",
+      "sha256": "0a48b7e29039399543cd016de500463809d9de74049572172783af2a4240cfb9"
+    },
+    {
+      "file": "idp_model_labels.py",
+      "sha256": "1161876fba687515cd5ec4b1db815668eb2315917aa8ffdab0ae9ef7c0704299"
+    },
+    {
+      "file": "idp_model_order_loss.py",
+      "sha256": "97d66b74f93ba282c6bab1a20cffafa3fdd207757819191e6f57ea1d97020e42"
+    },
+    {
+      "file": "idp_model_ppdoc.py",
+      "sha256": "2d9e1e6f5cc62957340dd8a13e810c6143285daf48403bdc76410b4e103fa3c8"
+    },
+    {
+      "file": "idp_offline.py",
+      "sha256": "66a1b7ae26cbbec4b3ec11bdf572ba1c3f32cc4efb339b7c4bc947842482eced"
+    },
+    {
+      "file": "idp_recognizer.py",
+      "sha256": "2ea3418e4f86b3b8d31b631da7a1e05ea79ec38546d5622e63d1b789e27c50b0"
+    },
+    {
+      "file": "idp_reconstruct.py",
+      "sha256": "8d73b53087e0bd442b0d8f2e19c9a74b4f600fcfb562e8e9eb78534b0c91beaf"
+    },
+    {
+      "file": "idp_types.py",
+      "sha256": "8a9972734abbecea8c81b237a17e2e0b07a4971d9e1322c20763756d76c37c60"
+    },
+    {
+      "file": "indic-open-license.md",
+      "sha256": "5dd97d2327cdd4fc87e974528fee8bbe16420c1fed41f33778be58ab809386a0"
+    },
+    {
+      "file": "indic_ocr.py",
+      "sha256": "6670a61fed6c3312f9a518a4a4eea345fd1552821dd2a24e198ee9b6aa550469"
+    },
+    {
+      "file": "install.sh",
+      "sha256": "1b49c78741ffef8d91c6237d46bc8692a2b1552235bda9ce2dd20346eeaa1ad7"
+    },
+    {
+      "file": "README.md",
+      "sha256": "3fade9ea92504739e463c6f762cca183717f547ee8510f0101be5c440f7765e1"
+    },
+    {
+      "file": "requirements.txt",
+      "sha256": "d8723a4109ae2a55e812c8e33105d2702b18373b0bdf1fb240a83b08c36131bf"
+    },
+    {
+      "file": "TROUBLESHOOTING.md",
+      "sha256": "23c7b624fbe6164bf512d4308167de362202066dbadc9abae2bc538604ea5d61"
+    },
+    {
+      "file": "weights/layout/config.json",
+      "sha256": "00dffa062ec1571830ae67a2006a4cd54b13f055675c068e6faad9fcfe05dc6b"
+    },
+    {
+      "file": "weights/layout/model.safetensors",
+      "sha256": "051fa9741b713f164eef74ef25b88defa87670ab64995cfe431d413685bf0a3f"
+    },
+    {
+      "file": "weights/ocr/chat_template.jinja",
+      "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80"
+    },
+    {
+      "file": "weights/ocr/config.json",
+      "sha256": "8f926dfaac3e504048489309d7e2a64ce1474c9b3b2547dc7d6a505378863e3f"
+    },
+    {
+      "file": "weights/ocr/generation_config.json",
+      "sha256": "84370a2dd8f15a6c4779e602eeca7c72a0f37177bb696c6023b17519e5e1d0ba"
+    },
+    {
+      "file": "weights/ocr/model-00001-of-00001.safetensors",
+      "sha256": "40f6a5ce321d65ce18db429c9e8c8b2d2d22d4ec7d71737d150cc0a6edf9ae5f"
+    },
+    {
+      "file": "weights/ocr/model.safetensors.index.json",
+      "sha256": "a2be0b43308ffe6b76b8ab74c22e77652d4ce2e73403477aca7a677edf0e3d97"
+    },
+    {
+      "file": "weights/ocr/processor_config.json",
+      "sha256": "d89ef49ce9cd37fbf510158e13c1ef063d9286411c1ec9049932dbe0487143b1"
+    },
+    {
+      "file": "weights/ocr/tokenizer.json",
+      "sha256": "aa502d4d33e68344b0702e5dfd90466bc1e152d36ed906bad34c48dfd3e06d41"
+    },
+    {
+      "file": "weights/ocr/tokenizer_config.json",
+      "sha256": "c5f57600258bb60ad70c2440f0fafe576094783f2679815ef3bd394db39600c8"
+    }
+  ],
+  "frozen_manifests": {
+    "train": {
+      "count": 25000,
+      "sha256": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496"
+    },
+    "validation": {
+      "count": 5000,
+      "sha256": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4"
+    },
+    "final-test": {
+      "count": 3000,
+      "sha256": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+    }
+  },
+  "pilot_adapter_files": [
+    {
+      "file": "adapter_config.json",
+      "sha256": "3dee5683dd5ee23ad1a9dd84c49ffd2b90732bfb328bbd6b981ced160b5fe4f1"
+    },
+    {
+      "file": "adapter_model.safetensors",
+      "sha256": "04262fcb507891c7ffe8639c08babca8bae03b585a8ab3443c21453f0cd82af2"
+    },
+    {
+      "file": "README.md",
+      "sha256": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17"
+    }
+  ],
+  "transfer_archives": [
+    {
+      "file": "akshara-source.zip",
+      "bytes": 417603,
+      "sha256": "d5af5980ec18316b9a72f5782f3fdf83459b3aa5d6517e6510cebe5a953ae041"
+    },
+    {
+      "file": "indic-ocr-original.zip",
+      "bytes": 1901495464,
+      "sha256": "bbb2eb2abee136fee6e29c0120b5fdbdd669267d9b8c000926c90c0536cb33df"
+    },
+    {
+      "file": "pilot-adapter.zip",
+      "bytes": 1289334,
+      "sha256": "233d5b4566a90e1ec45dbb06ddc69ef549fc5bfa6a5c8bc1c10e5a3297710f99"
+    },
+    {
+      "file": "frozen-protocol.zip",
+      "bytes": 38871586,
+      "sha256": "4a9a8fbc2de38a4ea7c39e8d89251eea083f0cf93e0715fde44c9563cf1208f0"
+    },
+    {
+      "file": "selected-images-001.zip",
+      "bytes": 1003388418,
+      "sha256": "820df1b57e46dd9232e5e4309a0e2b611d862124c6b26b4cefc2d2c90f644b35"
+    }
+  ],
+  "transfer_source_revision": "55b2902e51531639dd9d0c872d651a6531ee3306",
+  "pipeline_lock_acquirable": true,
+  "notebook_code_cells_ast_valid": 12,
+  "notebook_schema": "nbformat unavailable; JSON format4 and code AST checked",
+  "original_validation": {
+    "examples": 5000,
+    "raw_micro_cer": 0.10695569318723201,
+    "micro_cer": 0.10695569318723201,
+    "micro_wer": 0.3238,
+    "raw_exact_match": 0.7324,
+    "elapsed_seconds_this_process": 3063.938363313675,
+    "peak_allocated_vram_bytes": 1931154432
+  },
+  "original_prediction_lines": 5000,
+  "software_tests": {
+    "count": 49,
+    "result": "passed",
+    "elapsed_test_seconds": 2.029
+  },
+  "process_observation": "Win32_Process query found no Python process; historical coordinator PID10604 absent",
+  "gpu_observation": "nvidia-smi: RTX3050 4GB Laptop GPU; driver617.42;76MiB/4096MiB used at inspection",
+  "full_training_started": false,
+  "selection_locked": false,
+  "elapsed_verification_seconds": 5.616325299999971,
+  "scope": "Read-only existing local hashes, counts, stored metrics and run-lock probe. No GPU training, new smoke/benchmark, cloud authentication, final-label inspection or final prediction. Prior 33000-image payload/decode verification was not repeated. No current Colab GPU/smoke/benchmark output supplied."
+}
