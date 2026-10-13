@@ -1,0 +1,23 @@
+{
+  "archives_verified": 5,
+  "archive_bytes": 2945455311,
+  "selected_image_payload_hashes_and_decode_verified": 33000,
+  "counts": {
+    "train": 25000,
+    "validation": 5000,
+    "final-test": 3000
+  },
+  "frozen_manifest_hashes_and_group_separation_verified": true,
+  "original_checkpoint_payload_files_verified": 31,
+  "pilot_adapter_payload_verified": true,
+  "packaged_python_ast_files_valid": 45,
+  "packaged_notebook_code_cells_valid": 12,
+  "original_preservation_hashes_verified": {
+    "original_model": 31,
+    "frozen_pilot": 32,
+    "original_manifests": 6
+  },
+  "elapsed_seconds": 19.841145992279053,
+  "scope": "Local archive-payload and source verification only. No Linux install, Colab authorization/GPU execution or final-test predictions. Source labels not all human verified.",
+  "source_git_commit": "b672f47a13ee396436a057d64932c2c3f3ef7d9a"
+}
