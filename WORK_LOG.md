@@ -174,3 +174,12 @@ Temporary progress page /progress.html added to existing studio; live frozen cou
 - 2026-10-13T16:52:58.644037+00:00: While the existing pilot validation worker remains active, extended only the progress-page frontend with a completed-study gate for final word-crop metrics, paired intervals and raw diagnostics/subgroup metadata. API final summary remains unavailable until coordinator status completed; no final labels, predictions or GPU modules changed. Node syntax check passed and Playwright visibly confirmed the sealed state; screenshot output/playwright/akshara-final-results-sealed.png. Actual final-results rendering must still be verified after the study finishes.
 
 - 2026-10-13T17:01:09.008056+00:00: Existing pilot validation worker28016 and controller26260 verified live. Pilot validation reached 2580/5000, elapsed 1470.11s. No full-validation quality result or initialization selection yet; original5000 validation remains preserved, full25000 epoch and sealed3000 testing still pending. Continue the same coordinator; do not restart or use smoke/benchmark weights for full training.
+
+- 2026-10-13T17:25:27Z: Capped training smoke and exact resume. 
+
+- 2026-10-13T17:26:28Z: Capped25000-word training: epoch1. One initial epoch only. No additional epochs scheduled.
+
+
+## Validation-selected pilot initialization - 2026-10-13T17:26:48.012990+00:00
+
+Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 2925.96s, 1.80GiB peak. Original5000 prediction/metric hashes unchanged. Paired215 source-document/duplicate groups,2000 bootstrap replicates seed42: CER reduction interval [0.3548,3.6485]pp supports pilot initialization on validation. Writer identity remains unknown; this is not an independent final result. Config fixes25k maximum, one epoch, seed42, rank8 q/v, LR1e-5, effective batch4 and preserved pilot adapter SHA. New optimizer/scheduler, not a historical optimizer resume. Exact-resume smoke for selected initialization is now live (worker15852); full training, candidate selection, sealed3k and API parity pending. Evidence reports/colab-migration/windows-initialization-selection-20261013.json.
