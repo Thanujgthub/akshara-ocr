@@ -223,3 +223,32 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 - 2026-10-13T20:31:18.598528+00:00: Full trainer/coordinator/controller exited after a CPU image-processor allocation failure (~10.3MiB), not CUDA OOM. Versioned failure logs preserved in recovery/cpu-memory-failure-20261013T202629Z. Full step0001125 checksums verified:4500 committed examples,1125 updates,epoch0,BF16,unchanged dataset/config signature. Later unsaved work must replay from optimizer/RNG checkpoint; no epoch reset or smoke initialization. At verified safe boundary, released duplicate prefix image batch before supervised processing and previous training batch/loss after backward/scalar recording.53 software tests pass including token/label preservation and prefix-buffer lifetime regression. Original31-file provenance and frozen25k/5k/3k hashes reverified; both run locks free and RTX3050 nativeBF16 confirmed. Fresh exact-resume smoke in recovery/cpu-memory-preflight-v1/smoke is running; benchmark and safe full resume pending. Candidate validation, sealed final3k and selected-model API parity remain incomplete.
 
 - 2026-10-13T20:34:37.376723+00:00: Fresh recovery smoke passed every actual forward/backward, finite gradient, changed-weight, mid-epoch exact-resume and final-reload inference check in BF16, unchanged selected-init signature 266194952cff5629b36fd132285ca79fe297e1dbcec3c99c37e0ef9bf46ed929. User confirmed unused apps closed; afterward availableRAM~5.0GiB and commit headroom~5.7GiB. Fresh64-example synchronized benchmark now running in recovery/cpu-memory-preflight-v1/benchmark; its weights are excluded from full training. Snapshot exceptions now retain type and traceback instead of empty-message-only evidence.53 tests passed again. Full4500 checkpoint remains preserved, full resume pending benchmark.
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Validation: curated-efficient-original",
+  "updated_utc": "2026-10-13T20:36:54Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\experiments\\curated-efficient-original"
+}
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Validation: curated-efficient-pilot",
+  "updated_utc": "2026-10-13T20:36:54Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\experiments\\curated-efficient-pilot"
+}
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Capped25000-word training: epoch1",
+  "updated_utc": "2026-10-13T20:36:56Z",
+  "note": "One initial epoch only. No additional epochs scheduled.",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\full"
+}
+
+- 2026-10-13T20:37:48.289614+00:00: Recovery64-word benchmark completed:0.646752images/s,2.01GiB peakVRAM,0.154448s checkpoint cost; all losses finite. Fresh smoke adapter byte-identical to previous selected-init smoke. User closed unused apps; host memory rechecked before launch. Single existing coordinator resumed full checkpointstep1125 at4500 examples, preserving optimizer/scheduler/RNG/BF16/manifest signature. Actual new log advanced to4525; first8 replayed losses match exactly=True. Reapplied reversible faster-core affinity0..11 only to verified new trainer20148, normal priority/system power unchanged. Controller9084/coordinator18732; new controller logs under recovery/cpu-memory-preflight-v1. Durable snapshot still contains identical4500 checkpoint; old artifacts/failure logs preserved.53 tests pass. Candidate validation, sealed3000 evaluation and selected-model website/API parity still pending. Evidence windows-cpu-memory-recovery-resume-20261014.json.
