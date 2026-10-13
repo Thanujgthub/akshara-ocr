@@ -62,7 +62,7 @@ Use mode=page for the official layout → cropped-block recognition → reconstr
 
 Do not rerun audit or overwrite frozen study outputs during an experiment. Use a separate output directory for new audits and new runs. The audit's word-limit is a bounded sample count per official split, not a claim that the full archives have been verified. Review dataset versions, source labels, visual duplicate candidates and writer metadata before larger studies. Original images/labels/weights remain unchanged.
 
-The experiment CLI also accepts --repo, --data-root, --device, --epochs, --limit and --adapter. It uses the official tokenizer, template, prompt and preprocessing. Checkpoints and optimizer state are saved every 100 examples; automatic interrupted-run resume is not implemented. A clean rerun is reproducible by seed; the same GPU/kernel environment is needed for strict numerical parity. The Colab notebook is an optional launch path, not a claim of a cloud run.
+The original pilot experiment CLI also accepts --repo, --data-root, --device, --epochs, --limit and --adapter. It uses the official tokenizer, template, prompt and preprocessing. Checkpoints and optimizer state are saved every 100 examples; automatic interrupted-run resume is not implemented. A clean rerun is reproducible by seed; the same GPU/kernel environment is needed for strict numerical parity. The Colab notebook is an optional launch path, not a claim of a cloud run.
 
 ## Evidence and limits
 
@@ -71,3 +71,13 @@ The results deliverable contains 1,000 / 500 / 500 frozen manifests, raw predict
 Dataset attribution: IIIT Hyderabad, IIIT-INDIC-HW-WORDS Telugu, CC BY 4.0 stated at https://ilocr.iiit.ac.in/dataset/23/. Page source: https://ilocr.iiit.ac.in/icdar_2024_hwd/dataset.html. See data_registry and reports/data_audit.md for actual counts and version discrepancies.
 
 Model connection includes an original/adapted weight selector; the REST/CLI variant parameter accepts original or adapted. API parity and browser transcription were verified on a held-out word.
+
+## Scale research and validation-selected handoff
+
+Resume the existing scale pipeline with `./Resume-Scale-Training.ps1`; it refuses a second active pipeline and restores optimizer, scheduler and RNG checkpoints. It preserves the original model and frozen pilot. New data/runs live under D:/OCR/research-v2 and D:/OCR/runs/word-scale-v2. Do not edit training modules while a process is active.
+
+Open http://127.0.0.1:8765/research-v2 for measured progress and /review-v2 for separate versioned annotations. Word training uses 80,083 eligible image/label pairs with 11,723 distinct labels; source labels are not all human verified. Trial results are exploratory validation evidence, not independent test performance. Inference remains paused while GPU experiments run.
+
+After completed full training, validation selection and sealed final testing, use `./Start-Selected-Scale-Model.ps1`. It refuses unfinished runs, serves the validation-selected original/pilot/scale variant and applies the selected word prompt/preprocessing. Original and adapted selectors use identical selected input policy. Actual GPU parity of the new word API path remains to be checked after training; unit checks establish explicit greedy/EOS/PAD settings and raw whitespace preservation only. Page inference retains the official experimental pipeline and has no measured page benchmark.
+
+Word API responses include uncertainty flags, truncation, generated token IDs and resource abstention where applicable. No-text is not inferred from an empty abstention. Studio JSON schema 1.1 retains these diagnostics and model identity in queue/library/export records. Text confidence is not calibrated. Literal transcription is never silently spelling-corrected or replaced with contextual guesses.

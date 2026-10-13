@@ -18,7 +18,6 @@ def _run(parser,path,mode):
     if mode=='page':return parser.parse(str(path))
     if mode!='word':raise ValueError('Mode must be page or word')
     from PIL import Image
-    from idp_recognizer import CropRequest
     from idp_contract import TEXT_PROMPT
     from idp_crops import area_clamp
     backend=parser._ocr.backend;original_config=backend.config
@@ -35,7 +34,8 @@ def _run(parser,path,mode):
                 if cfg.get('preprocessing')=='white_margin':
                     from PIL import ImageOps
                     image=ImageOps.expand(image,border=4,fill='white')
-            return {'markdown':backend.transcribe([CropRequest(area_clamp(image),prompt)])[0],'blocks':[]}
+            from .word_inference import transcribe_word
+            return transcribe_word(backend,area_clamp(image),prompt)
     finally:backend.config=original_config
 
 def predict(path,mode='page',variant='adapted'):
@@ -84,7 +84,9 @@ def predict(path,mode='page',variant='adapted'):
         if not isinstance(result,dict) or not isinstance(result.get('markdown'),str):
             raise RuntimeError('Checkpoint output contract changed: expected dict with markdown.')
         from .research_policy import flags
-        return {**result,**flags(result['markdown']),'review_required':True,'granularity':mode,'model':{'id':'bodhan-ai/indic-ocr','revision':os.environ.get('INDIC_OCR_REVISION','unrecorded'),'adapter':os.environ.get('INDIC_OCR_ADAPTER') if variant=='adapted' else None},'confidence_note':'Layout scores are not text confidence. Word adaptation does not establish page accuracy.'}
+        diagnostic=flags(result['markdown'],result.get('truncated',False),result.get('image_quality'))
+        if result.get('abstention'):diagnostic['uncertainty_flags'].append(result['abstention'])
+        return {**result,**diagnostic,'review_required':True,'granularity':mode,'model':{'id':'bodhan-ai/indic-ocr','revision':os.environ.get('INDIC_OCR_REVISION','unrecorded'),'adapter':os.environ.get('INDIC_OCR_ADAPTER') if variant=='adapted' else None},'confidence_note':'Layout scores are not text confidence. Word adaptation does not establish page accuracy.'}
 
 def loaded():
     return _parser is not None

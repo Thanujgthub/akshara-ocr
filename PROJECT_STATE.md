@@ -39,11 +39,19 @@ New diagnostics/control-v2 review queue has 87 matched 287-subset disagreements,
 
 Current owned API tool session 71468, server actual PID 25704, logfile work/scale-review-server-v3.log. Pipeline 50982 remains active; trainer actual PID 28116 (verify commands before any action). Diagnosis partial v1 is preserved after a Windows text-decoding error; v2 successfully completed with explicit UTF-8. Delivery evidence: outputs/word-scale-v2-diagnostics and Telugu_OCR_Data_Coverage_and_Diagnosis.md.
 
+## API/studio handoff and second trial
+
+Rank16 completed 1,000 train / 287 validation: raw/NFC CER 8.2845%, WER 29.2683%, exact 74.5645%, matched-original CER CI [-0.1596,+1.1804] pp, inconclusive. Q/k/v/o trial active. Full 80,083-word training and final test still pending.
+
+Fixed word API mismatch with research decoding: shipped HfRecognizer.transcribe strips whitespace; new isolated word_inference preserves exact decoded whitespace and disables tokenization-space cleanup, sets greedy beam/EOS/PAD/64-token settings explicitly, returns token IDs/truncation, applies the same processed-uniform and 1,024-prefix resource abstention. Original checkpoint and source files untouched. Page path remains official/experimental. Actual GPU prediction parity must be checked after the GPU study; unit checks are not a model-accuracy result. No active training runtime files edited.
+
+Studio schema 1.1 retains uncertainty/abstention/truncation/model data through queue/library/import/export, marks abstentions for review, and links to the live local research monitor. Browser imported a real constant-image abstention, exported JSON and verified diagnostics intact with no model loaded. Fixture never counted as OCR accuracy or saved to library. 36 software tests and JS syntax checks pass. API now runs session 43426, actual PID 33768, work/scale-review-server-v4.log, launched with official revision environment.
+
 ## Latest automated milestone
 {
   "status": "running",
-  "stage": "Controlled training trial: rank16",
-  "updated_utc": "2026-10-13T02:35:34Z",
+  "stage": "Controlled training trial: qkvo",
+  "updated_utc": "2026-10-13T03:08:48Z",
   "note": "1,000 training words; settings selected on validation only.",
-  "experiment_directory": "D:\\OCR\\runs\\word-scale-v2\\trials\\rank16"
+  "experiment_directory": "D:\\OCR\\runs\\word-scale-v2\\trials\\qkvo"
 }
