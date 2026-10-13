@@ -1,0 +1,14 @@
+# Working Windows versions; Linux installation and GPU smoke must verify compatibility.
+transformers==5.7.0
+peft==0.21.2
+accelerate==1.15.0
+safetensors==0.8.0
+tokenizers==0.22.2
+huggingface-hub==1.33.0
+numpy==2.5.2
+psutil==7.2.2
+regex==2026.9.29
+Pillow==12.3.0
+fastapi==0.143.0
+uvicorn==0.54.0
+python-multipart==0.0.32

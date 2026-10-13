@@ -1,0 +1,1 @@
+{"seed":42,"prompt":"telugu_literal","preprocessing":"official","rank":8,"targets":["q","v"],"lr":0.00001,"augmentation":false,"accumulation":4,"microbatch_size":1,"gradient_clip":1.0,"maximum_training_examples":25000,"maximum_epochs":1}

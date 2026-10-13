@@ -29,7 +29,10 @@ class Experiment:
             raise FileNotFoundError('Actual IndicOCR recognizer weight file is missing; no substitute model will be loaded')
         self.processor=AutoProcessor.from_pretrained(ckpt,local_files_only=True)
         self.processor.tokenizer.padding_side='left'
-        self.dtype=torch.bfloat16 if device=='cpu' or torch.cuda.is_bf16_supported() else torch.float32
+        precision=os.environ.get('OCR_PRECISION')
+        if precision not in {None,'bf16','fp32'}:raise ValueError('Only existing BF16 or explicit FP32 precision is supported; FP16/GradScaler is not silently enabled')
+        if precision=='bf16' and device!='cpu' and not torch.cuda.is_bf16_supported():raise RuntimeError('This GPU cannot run the frozen BF16 precision contract')
+        self.dtype=(torch.bfloat16 if precision=='bf16' else torch.float32) if precision else (torch.bfloat16 if device=='cpu' or torch.cuda.is_bf16_supported() else torch.float32)
         from ocr.stream_load import load_model
         self.model=load_model(ckpt,device,self.dtype)
         self.model.eval();self.adapter=adapter

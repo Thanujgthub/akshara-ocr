@@ -6,6 +6,8 @@ from ocr.experiment import Experiment,read_manifest
 from ocr.research_policy import TELUGU_PROMPT,quality,flags,augment,length_bin,crop_review_reasons,image_token_budget,uniform_visible_input
 from ocr.metrics import corpus,compare
 from ocr.research_io import save
+from ocr.portable_paths import resolve_path
+from ocr.checkpoint_io import save_checkpoint,recovery_folder,save_adapter_export
 
 def sha(path):
     h=hashlib.sha256()
@@ -27,7 +29,7 @@ class ScaleExperiment(Experiment):
         self.cfg=cfg;self.augmenting=False;self.aug_rng=random.Random(cfg['seed'])
         torch.manual_seed(cfg['seed']);random.seed(cfg['seed'])
         if torch.cuda.is_available():torch.cuda.manual_seed_all(cfg['seed'])
-        super().__init__('D:/OCR/models/indic-ocr','D:/OCR/research-v2','cuda',adapter)
+        super().__init__(resolve_path(os.environ.get('INDIC_OCR_REPO','D:/OCR/models/indic-ocr')),resolve_path(os.environ.get('OCR_DATA_ROOT','D:/OCR/research-v2')),os.environ.get('OCR_DEVICE','cuda'),str(resolve_path(adapter)) if adapter else None)
         if cfg.get('prompt')=='telugu_literal':self.prompt=TELUGU_PROMPT
         self.contract.update({'prompt':self.prompt,'research_config':cfg,'preprocessing':cfg.get('preprocessing','official'),
             'raw_output_policy':'exact decoded content preserved; no strip, spelling repair, numeral replacement or cleanup'})
@@ -55,7 +57,7 @@ class ScaleExperiment(Experiment):
         self.model=get_peft_model(self.model,LoraConfig(r=rank,lora_alpha=rank*2,lora_dropout=.05,target_modules=names,bias='none',task_type='CAUSAL_LM'))
         initial=self.cfg.get('initial_adapter')
         if initial:
-            initial=Path(initial);saved=json.loads((initial/'adapter_config.json').read_text(encoding='utf-8'))
+            initial=resolve_path(initial);saved=json.loads((initial/'adapter_config.json').read_text(encoding='utf-8'))
             if saved['r']!=rank or saved['lora_alpha']!=rank*2 or set(saved['target_modules'])!=set(names):
                 raise RuntimeError('Follow-up adapter contract differs from requested LoRA structure')
             expected=self.cfg.get('initial_adapter_sha256')
@@ -90,7 +92,7 @@ class ScaleExperiment(Experiment):
         out=Path(out);out.mkdir(parents=True,exist_ok=True);predictions=[];self.torch.cuda.reset_peak_memory_stats();started=time.time()
         save(out/'contract.json',self.contract)
         # Resume completed prediction records only when this exact input/config contract matches.
-        signature=hashlib.sha256(json.dumps({'ids':[r['example_id'] for r in rows],'config':self.cfg,'adapter':self.adapter,'max_tokens':max_tokens},sort_keys=True).encode()).hexdigest()
+        signature=hashlib.sha256(json.dumps({'ids':[r['example_id'] for r in rows],'config':self.cfg,'adapter':self.adapter,'max_tokens':max_tokens,'precision':str(self.dtype)},sort_keys=True).encode()).hexdigest()
         if (out/'evaluation_contract.json').exists():
             if json.loads((out/'evaluation_contract.json').read_text())['signature']!=signature:raise RuntimeError('Evaluation resume contract mismatch')
             if (out/'predictions.jsonl').exists():
@@ -112,6 +114,9 @@ class ScaleExperiment(Experiment):
                     'reference_token_ids':self.processor.tokenizer.encode(row['transcription_raw'],add_special_tokens=False),
                     **meta,**flags(raw,meta['truncated'],q)}
                 f.write(json.dumps(record,ensure_ascii=False)+'\n');f.flush();predictions.append(record)
+                sentinel=os.environ.get('OCR_STOP_FILE');budget=float(os.environ.get('OCR_RUNTIME_BUDGET_SECONDS','0'))
+                if (sentinel and Path(sentinel).exists()) or (budget>0 and time.time()-started>=budget):
+                    save(out/'progress.json',{'evaluated':i+1,'total':len(rows),'elapsed_seconds':time.time()-started});raise SystemExit(75)
                 if (i+1)%20==0:save(out/'progress.json',{'evaluated':i+1,'total':len(rows),'elapsed_seconds':time.time()-started})
         report=corpus(predictions);report.pop('per_example',None)
         lat=sorted(r['latency_seconds'] for r in predictions)
@@ -128,7 +133,7 @@ class ScaleExperiment(Experiment):
         report['resumed_predictions_count']=resumed_predictions
         report['generated_predictions_this_process']=len(predictions)-resumed_predictions
         report['peak_vram_scope']='entire_evaluation' if not resumed_predictions else 'remaining_examples_in_this_process_only'
-        report['cost']={'provider':'local laptop','cloud_charges_incurred':0,'energy_cost_measured':False,'evaluation_wall_seconds_this_process':time.time()-started}
+        report['cost']={'provider':os.environ.get('OCR_COMPUTE_PROVIDER','local laptop'),'cloud_charges_incurred':None if os.environ.get('OCR_COMPUTE_PROVIDER')=='google-colab' else 0,'energy_cost_measured':False,'evaluation_wall_seconds_this_process':time.time()-started}
         groups=defaultdict(list)
         for r in predictions:
             for key in ['length:'+r['length_bin'],'source:'+r['source_dataset'],'document:'+r.get('source_document_id','unknown'),
@@ -158,32 +163,46 @@ class ScaleExperiment(Experiment):
         if self.cfg.get('microbatch_size',1)!=1:raise ValueError('Verified microbatch size is1')
         out=Path(out);out.mkdir(parents=True,exist_ok=True);torch=self.torch
         signature=hashlib.sha256(json.dumps({'cfg':self.cfg,'ids':[r['example_id'] for r in rows],'validation':[r['example_id'] for r in validation],'epochs':epochs},sort_keys=True).encode()).hexdigest()
+        prior_contract=json.loads((out/'contract.json').read_text(encoding='utf-8')) if (out/'contract.json').exists() else {}
         self.add_lora();save(out/'contract.json',self.contract)
         initialization_file=out/'adapter-initialization.json'
         if not initialization_file.exists():save(initialization_file,{'tensor_digest':self.adapter_digest(),'strategy':self.contract.get('adapter_initialization','new LoRA from original base')})
+        dataset_fingerprint=hashlib.sha256(json.dumps([[{k:r.get(k) for k in ['example_id','original_sha256','pixel_sha256','transcription_raw','leakage_group','group_id']} for r in subset] for subset in [rows,validation]],ensure_ascii=False,sort_keys=True).encode('utf-8')).hexdigest()
         params=[p for p in self.model.parameters() if p.requires_grad]
         optimizer=torch.optim.AdamW(params,lr=self.cfg['lr']);acc=self.cfg.get('accumulation',4)
         steps_per_epoch=math.ceil(len(rows)/acc);total_steps=steps_per_epoch*epochs;warmup=max(1,round(total_steps*.05))
         scheduler=torch.optim.lr_scheduler.LambdaLR(optimizer,lambda step:(step+1)/warmup if step<warmup else max(0.,(total_steps-step)/max(1,total_steps-warmup)))
         start_epoch=start_index=updates=0;elapsed_prior=0.;best=None;start=time.time();torch.cuda.reset_peak_memory_stats()
-        if (out/'resume.json').exists():
-            resume=json.loads((out/'resume.json').read_text());folder=out/resume['checkpoint']
-            state=torch.load(folder/'state.pt',map_location='cpu',weights_only=False)
+        if (out/'resume.json').exists() or any((out/'checkpoints').glob('step-*')):
+            folder=recovery_folder(out,expected_signature=signature)
+            state=torch.load(folder/'state.pt',map_location='cpu',weights_only=True)
             if state['signature']!=signature:raise RuntimeError('Training resume manifest/config mismatch')
+            if state.get('dataset_fingerprint',dataset_fingerprint)!=dataset_fingerprint:raise RuntimeError('Checkpoint image/label/group fingerprints differ')
+            if state.get('precision',prior_contract.get('dtype'))!=str(self.dtype):raise RuntimeError('Checkpoint precision differs; do not silently cast or restart training')
             from peft import set_peft_model_state_dict
             from safetensors.torch import load_file
             set_peft_model_state_dict(self.model,load_file(str(folder/'adapter/adapter_model.safetensors')))
             optimizer.load_state_dict(state['optimizer']);scheduler.load_state_dict(state['scheduler'])
             torch.set_rng_state(state['torch_rng']);torch.cuda.set_rng_state_all(state['cuda_rng']);random.setstate(state['python_rng']);self.aug_rng.setstate(state['augment_rng'])
+            if 'numpy_rng' in state:
+                import numpy as np
+                n=state['numpy_rng'];np.random.set_state((n['kind'],np.asarray(n['keys'],dtype=np.uint32),n['position'],n['has_gauss'],n['cached_gaussian']))
             start_epoch=state['epoch'];start_index=state['next_index'];updates=state['updates'];elapsed_prior=state['elapsed'];best=state['best']
         def checkpoint(epoch,next_index):
-            folder=out/f'checkpoints/step-{updates:07d}'
-            folder.mkdir(parents=True,exist_ok=True);self.model.save_pretrained(folder/'adapter')
+            import numpy as np
+            n=np.random.get_state()
             state={'signature':signature,'optimizer':optimizer.state_dict(),'scheduler':scheduler.state_dict(),
                 'torch_rng':torch.get_rng_state(),'cuda_rng':torch.cuda.get_rng_state_all(),'python_rng':random.getstate(),'augment_rng':self.aug_rng.getstate(),
+                'numpy_rng':{'kind':n[0],'keys':n[1].tolist(),'position':int(n[2]),'has_gauss':int(n[3]),'cached_gaussian':float(n[4])},
+                'precision':str(self.dtype),'dataset_fingerprint':dataset_fingerprint,'gradient_scaler':None,'accumulation_progress':0,'effective_batch_size':acc,
                 'epoch':epoch,'next_index':next_index,'updates':updates,'elapsed':elapsed_prior+time.time()-start,'best':best}
-            torch.save(state,folder/'state.tmp');os.replace(folder/'state.tmp',folder/'state.pt')
-            save(out/'resume.json',{'checkpoint':str(folder.relative_to(out)),'signature':signature})
+            save_checkpoint(out,updates,self.model,state,torch)
+        cadence=int(os.environ.get('OCR_CHECKPOINT_EVERY_UPDATES','125'))
+        if cadence<1:raise ValueError('Checkpoint cadence must be positive')
+        budget=float(os.environ.get('OCR_RUNTIME_BUDGET_SECONDS','0'))
+        def stop_requested():
+            sentinel=os.environ.get('OCR_STOP_FILE')
+            return (sentinel and Path(sentinel).exists()) or (budget>0 and time.time()-start>=budget)
         with (out/'training.jsonl').open('a',encoding='utf-8') as log:
             for epoch in range(start_epoch,epochs):
                 shuffled=list(rows);random.Random(self.cfg['seed']+epoch).shuffle(shuffled)
@@ -191,7 +210,11 @@ class ScaleExperiment(Experiment):
                 if begin%acc and begin!=len(shuffled):raise RuntimeError('Resume is not at an optimizer boundary')
                 optimizer.zero_grad(set_to_none=True)
                 for i in range(begin,len(shuffled)):
-                    self.model.train();loss=self.training_loss(self.inputs(shuffled[i],True))
+                    profile=os.environ.get('OCR_PROFILE_BATCHES')=='1'
+                    if profile:torch.cuda.synchronize();batch_started=time.perf_counter()
+                    self.model.train();batch=self.inputs(shuffled[i],True)
+                    if profile:torch.cuda.synchronize();input_finished=time.perf_counter()
+                    loss=self.training_loss(batch)
                     if not torch.isfinite(loss):raise RuntimeError('Nonfinite loss')
                     window_size=min(acc,len(shuffled)-(i//acc)*acc)
                     (loss/window_size).backward()
@@ -202,12 +225,18 @@ class ScaleExperiment(Experiment):
                         optimizer.step();scheduler.step();optimizer.zero_grad(set_to_none=True);updates+=1
                     record={'epoch':epoch+1,'example':i+1,'examples_per_epoch':len(shuffled),'optimizer_updates':updates,'loss':float(loss.detach()),
                             'lr':scheduler.get_last_lr()[0],'elapsed_seconds':elapsed_prior+time.time()-start,'peak_allocated_vram_bytes':torch.cuda.max_memory_allocated()}
+                    if profile:
+                        torch.cuda.synchronize();record.update(batch_seconds=time.perf_counter()-batch_started,input_processing_transfer_seconds=input_finished-batch_started)
                     log.write(json.dumps(record)+'\n');log.flush()
                     if (i+1)%20==0 or i+1==len(shuffled):save(out/'training_progress.json',record)
-                    if boundary and updates%125==0:checkpoint(epoch,i+1)
+                    if boundary and updates%cadence==0:checkpoint(epoch,i+1)
+                    if boundary and stop_requested():
+                        checkpoint(epoch,i+1);save(out/'stop-requested.json',{'safe_optimizer_boundary':True,'updates':updates,'next_index':i+1});raise SystemExit(75)
                     if boundary and stop_after_updates and updates>=stop_after_updates:
                         checkpoint(epoch,i+1);return
-                self.model.save_pretrained(out/f'epoch-{epoch+1}/adapter');self.processor.save_pretrained(out/'processor')
+                checkpoint(epoch,len(shuffled))  # Durable optimizer boundary before possibly long validation.
+                save_adapter_export(self.model,out/f'epoch-{epoch+1}/adapter')
+                if not (out/'processor').exists():self.processor.save_pretrained(out/'processor')
                 result=self.evaluate(validation,out/f'epoch-{epoch+1}/validation')
                 previous=best
                 if best is None or (result['micro_cer'],-result['raw_exact_match'])<(best['cer'],-best['exact']):
@@ -218,7 +247,7 @@ class ScaleExperiment(Experiment):
         progress=json.loads((out/'training_progress.json').read_text()) if (out/'training_progress.json').exists() else {}
         changed=self.adapter_digest()!=json.loads(initialization_file.read_text(encoding='utf-8'))['tensor_digest']
         if not changed:raise RuntimeError('Adapter tensors did not change from initialization')
-        save(out/'training_complete.json',{'config':self.cfg,'best':best,'elapsed_seconds':elapsed_prior+time.time()-start,'optimizer_updates':updates,'manifest_examples':len(rows),'signature':signature,'adapter_weights_changed_from_initial':changed,'peak_training_allocated_vram_bytes':progress.get('peak_allocated_vram_bytes'),'cloud_charges_incurred':0,'energy_cost_measured':False})
+        save(out/'training_complete.json',{'config':self.cfg,'best':best,'elapsed_seconds':elapsed_prior+time.time()-start,'optimizer_updates':updates,'manifest_examples':len(rows),'signature':signature,'adapter_weights_changed_from_initial':changed,'peak_training_allocated_vram_bytes':progress.get('peak_allocated_vram_bytes'),'cloud_charges_incurred':None if os.environ.get('OCR_COMPUTE_PROVIDER')=='google-colab' else 0,'energy_cost_measured':False})
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('mode',choices=['evaluate','train','smoke']);p.add_argument('--config',required=True);p.add_argument('--manifest',required=True);p.add_argument('--validation');p.add_argument('--output',required=True);p.add_argument('--adapter');p.add_argument('--epochs',type=int,default=1);p.add_argument('--limit',type=int,default=0);a=p.parse_args()
@@ -229,6 +258,8 @@ def main():
         exp=ScaleExperiment(cfg,a.adapter)
         save(out/'environment.json',{'python':sys.version,'torch':torch.__version__,'transformers':transformers.__version__,'peft':peft.__version__,'regex':regex.__version__,'pillow':PIL.__version__,'cuda':torch.version.cuda,'gpu':torch.cuda.get_device_name(0),'argv':sys.argv,'load_seconds':time.time()-started})
         rows=read_manifest(a.manifest,a.limit)
+        import numpy as np
+        np.random.seed(cfg['seed'])
         if a.mode=='evaluate':exp.evaluate(rows,out)
         elif a.mode=='smoke':
             exp.train_scale(rows[:8],rows[:2],out/'resumed',1,stop_after_updates=1)
@@ -246,7 +277,7 @@ def main():
             exp=ScaleExperiment(cfg,str(out/'resumed/epoch-1/adapter'))
             reloaded=[exp.generate(row)[0] for row in rows[:2]]
             if reloaded!=expected:raise RuntimeError('Final adapter reload inference differs from saved smoke predictions')
-            save(out/'smoke_passed.json',{'forward_backward':True,'finite_loss_and_gradients':True,'adapter_weights_changed':True,'final_adapter_reload_inference_matches':True,'mid_epoch_resume_exact_adapter_weights':True,'optimizer_rng_scheduler_resume':True})
+            save(out/'smoke_passed.json',{'forward_backward':True,'finite_loss_and_gradients':True,'adapter_weights_changed':True,'final_adapter_reload_inference_matches':True,'mid_epoch_resume_exact_adapter_weights':True,'optimizer_rng_scheduler_resume':True,'config_signature':hashlib.sha256(json.dumps(cfg,sort_keys=True).encode()).hexdigest(),'precision':str(exp.dtype)})
         else:exp.train_scale(rows,read_manifest(a.validation),out,a.epochs)
     except Exception as e:
         import traceback

@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-13T06:31:46.517660+00:00",
+  "tests_passed": 48,
+  "notebook_schema_valid": true,
+  "code_cells_ast_valid": 12,
+  "actual_colab_executed": false,
+  "actual_local_gpu_smoke_passed": true,
+  "actual_local_benchmark_examples": 64,
+  "cloud_authentication": "not performed; connector USER_NOT_LOGGED_IN"
+}

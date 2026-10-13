@@ -98,3 +98,13 @@
 - 2026-10-13T05:23:07Z: Validation: curated-efficient-original. 
 
 - 2026-10-13T05:44:12.319583+00:00: User requested Colab migration. Read complete updated objective. Verified active capped25k/5k/3k one-epoch protocol, frozen33k technical checks, local original5k validation live. Oldv2 parent retired afterLR child finished; old80k stage blocked. Preparing isolated portable source/notebook without altering the active evaluation. Historical pilot Colab notebook inspected and preserved. No Google/Colab access or performance claimed.
+
+## Verified Colab migration milestone — 2026-10-13T06:31:46.517660+00:00
+
+Original5000 validation finished without interruption: CER10.6956%, WER32.38%, exact73.24%,3063.94s,1.80GiB peak allocated. No candidate gain claimed. Local portability GPU smoke passed exact resumed/uninterrupted adapter tensor equality and reload inference.64-example benchmark:0.63117images/s,1.54281s median batch,2.01GiB peak,11.00h training-only projection for25k.48 software tests passed; new notebook schema and12 code cells validated. Source/processor/model/labels/manifests/pilot and historical results preserved.
+
+Coordinator10604 is suspended with no live children; original worker29648 exited. No active local GPU training remains. Do not resume this coordinator while using Colab. Active capped25k/5k/3k, one-epoch protocol unchanged. Cloud uses named word-efficient-v3-colab-bf16 lineage with matched frozen examples and fresh matched original/pilot validation; it never mixes Windows and cloud prediction files. No full25k training, full pilot5k comparison, candidate validation, sealed3k final evaluation or API parity completed yet.
+
+Preferred notebook notebooks/akshara_ocr_colab_training.ipynb and COLAB_MIGRATION.md added; scripts reuse existing trainer. Versioned checksummed optimizer/RNG checkpoints, immutable epoch exports, safe-boundary stops, private archive staging, verified Drive snapshots/restore and actual-GPU benchmark implemented. Old pilot notebook untouched. Linux/Colab installation, actual cloud GPU/Drive authorization, throughput and cross-session resume remain pending. Drive connector returned USER_NOT_LOGGED_IN.
+
+Next action: upload outputs/Akshara_Colab_Transfer_v1 files to private MyDrive/akshara-telugu-ocr/inputs/colab-transfer-v1, open notebook in Colab, select GPU, authorize Drive, run cells1–7 and inspect actual smoke/benchmark before enabling cell8. Native BF16 required; no silentFP16/precision conversion. Reuse the same cloud run name/config for resumption; retain previous snapshots.

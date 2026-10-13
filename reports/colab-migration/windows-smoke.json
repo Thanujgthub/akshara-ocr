@@ -1,0 +1,10 @@
+{
+  "forward_backward": true,
+  "finite_loss_and_gradients": true,
+  "adapter_weights_changed": true,
+  "final_adapter_reload_inference_matches": true,
+  "mid_epoch_resume_exact_adapter_weights": true,
+  "optimizer_rng_scheduler_resume": true,
+  "config_signature": "93aa00d6b7d0bf663c8c28e6e499600b0e4eb4c66d80a99c7d6b17e71e46bd03",
+  "precision": "torch.bfloat16"
+}

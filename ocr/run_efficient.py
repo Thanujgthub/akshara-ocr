@@ -6,9 +6,10 @@ from .run_scale import command,config,evaluate,register,milestone,PROJECT
 from .scale_experiment import sha
 from .research_io import save
 from .scale_analysis import load,paired
+from .portable_paths import resolve_path,run_lock
 
-ROOT=Path('D:/OCR/runs/word-efficient-v3')
-PILOT=Path('D:/OCR/runs/word-pilot-v1/trained/adapter')
+ROOT=Path(os.environ.get('OCR_RUN_ROOT','D:/OCR/runs/word-efficient-v3'))
+PILOT=resolve_path(os.environ.get('OCR_PILOT_ADAPTER','D:/OCR/runs/word-pilot-v1/trained/adapter'))
 
 
 def verify():
@@ -20,7 +21,7 @@ def verify():
         if sha(ROOT/(name+'.jsonl'))!=v['sha256']:raise RuntimeError('Frozen manifest changed: '+name)
     original=json.loads((PROJECT/'reports/model_provenance.json').read_text(encoding='utf-8'))
     for entry in original['files']:
-        if sha(Path('D:/OCR/models/indic-ocr')/entry['file'])!=entry['sha256']:raise RuntimeError('Original checkpoint/processor snapshot changed')
+        if sha(resolve_path(os.environ.get('INDIC_OCR_REPO','D:/OCR/models/indic-ocr'))/entry['file'])!=entry['sha256']:raise RuntimeError('Original checkpoint/processor snapshot changed')
     return p
 
 
@@ -29,20 +30,17 @@ def resource_snapshot():
     nvidia=subprocess.run(['nvidia-smi','--query-gpu=name,memory.total,memory.used,temperature.gpu','--format=csv,noheader,nounits'],capture_output=True,text=True,check=True)
     return {'created_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'gpu_observation':nvidia.stdout.strip(),
         'ram_total_bytes':psutil.virtual_memory().total,'ram_available_bytes':psutil.virtual_memory().available,
-        'storage_free_bytes':shutil.disk_usage('D:/OCR').free,'python':sys.version,'platform':platform.platform(),
+        'storage_free_bytes':shutil.disk_usage(ROOT).free,'python':sys.version,'platform':platform.platform(),
         'versions':{n:version(n) for n in ['torch','transformers','peft','accelerate','safetensors','regex','Pillow']},
-        'model':'D:/OCR/models/indic-ocr','revision':'cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25'}
+        'model':os.environ.get('INDIC_OCR_REPO','D:/OCR/models/indic-ocr'),'revision':'cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25'}
 
 
 def main():
     ROOT.mkdir(parents=True,exist_ok=True)
     if not (ROOT/'protocol.json').exists():raise RuntimeError('Allow the existing capped data audit to finish before starting this pipeline')
-    import msvcrt
-    lock=(ROOT/'pipeline.lock').open('a+b');lock.seek(0);lock.write(b'0');lock.flush();lock.seek(0)
-    try:msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
-    except OSError:raise RuntimeError('A capped pipeline is already running')
+    lock_context=run_lock(ROOT/'pipeline.lock');lock_context.__enter__()
     if (ROOT/'final-summary.json').exists() and (ROOT/'status.json').exists() and json.loads((ROOT/'status.json').read_text())['status']=='completed':
-        print('Capped study already completed; no repeated final evaluation.');return
+        print('Capped study already completed; no repeated final evaluation.');lock_context.__exit__(None,None,None);return
     try:
         protocol=verify()
         if not (ROOT/'resource-environment.json').exists():save(ROOT/'resource-environment.json',resource_snapshot())
@@ -62,6 +60,8 @@ def main():
         save(ROOT/'initialization-selection.json',{'variant':'pilot' if use_pilot else 'original','paired':initial_ci,
             'basis':'Pilot initialization only for supported CER reduction on5000 validation; otherwise original base conservatively. New optimizer/scheduler for this new manifest, not historical optimizer resume.'})
         cf=config('full',cfg,root=ROOT);smoke=ROOT/'smoke-resume'
+        expected_smoke=__import__('hashlib').sha256(json.dumps(cfg,sort_keys=True).encode()).hexdigest()
+        if (smoke/'smoke_passed.json').exists() and json.loads((smoke/'smoke_passed.json').read_text()).get('config_signature')!=expected_smoke:smoke=ROOT/('smoke-resume-'+expected_smoke[:12])
         if not (smoke/'smoke_passed.json').exists():
             milestone('Capped training smoke and exact resume',smoke,root=ROOT)
             command(['smoke','--config',str(cf),'--manifest',str(ROOT/'train.jsonl'),'--output',str(smoke)],smoke/'execution.log')
@@ -113,9 +113,12 @@ def main():
         save(ROOT/'status.json',{'status':'completed','stage':'Capped word study complete; selected-model API parity and user handoff remain','selection':selected_variant})
         with (PROJECT/'WORK_LOG.md').open('a',encoding='utf-8') as f:f.write('\n- Capped study completed with sealed3000 final evaluation. No further training scheduled; verify selected-model API and finish human-readable handoff.\n')
     except Exception as e:
+        if isinstance(e,subprocess.CalledProcessError) and e.returncode==75:
+            save(ROOT/'status.json',{'status':'paused_at_checkpoint','stage':'Safe runtime-budget/stop boundary; resume same run and configuration'});return
         save(ROOT/'failure.json',{'error':str(e),'traceback':traceback.format_exc()})
         save(ROOT/'status.json',{'status':'failed','stage':'Capped study needs attention','error':str(e)})
         raise
+    finally:lock_context.__exit__(None,None,None)
 
 
 if __name__=='__main__':main()

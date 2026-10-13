@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-10-13T05:23:07Z",
+  "gpu_observation": "NVIDIA GeForce RTX 3050 4GB Laptop GPU, 4096, 108, 58",
+  "ram_total_bytes": 16830922752,
+  "ram_available_bytes": 3086221312,
+  "storage_free_bytes": 187725635584,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.7.0",
+    "peft": "0.21.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0",
+    "regex": "2026.9.29",
+    "Pillow": "12.3.0"
+  },
+  "model": "D:/OCR/models/indic-ocr",
+  "revision": "cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25"
+}
