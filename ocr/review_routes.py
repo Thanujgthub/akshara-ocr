@@ -9,13 +9,18 @@ from pydantic import BaseModel,Field
 from .study_routes import read
 
 router=APIRouter();ROOT=Path('D:/OCR/runs/word-scale-v2');DATA=Path('D:/OCR/research-v2')
-Source=Literal['training-quarantine','validation-errors']
+Source=Literal['training-quarantine','validation-errors','scale-validation-errors']
 
 def queue(source):
-    path=ROOT/('crop-review-quarantine.jsonl' if source=='training-quarantine' else 'pilot-validation-review-queue.jsonl')
+    path=ROOT/({'training-quarantine':'crop-review-quarantine.jsonl',
+                'validation-errors':'pilot-validation-review-queue.jsonl',
+                'scale-validation-errors':'diagnostics/control-v2/review-queue.jsonl'}[source])
     if not path.exists():return []
     rows=[json.loads(s) for s in path.read_text(encoding='utf-8').splitlines() if s.strip()]
     if source=='training-quarantine':rows=[r for r in rows if r['original_split']=='train']
+    if source=='scale-validation-errors':
+        if any(r.get('split')!='validation' for r in rows):raise HTTPException(409,'Validation review queue contains an invalid split')
+        rows=[{**r,'prediction':r['outputs']['literal_control']['prediction'],'original_split':'validation'} for r in rows]
     return rows
 
 def row_at(source,index):
@@ -31,14 +36,15 @@ def item(source:Source='training-quarantine',index:int=0):
     row,total=row_at(source,index)
     folder=annotation_folder(source,row['example_id']);versions=sorted(folder.glob('*.json'))
     latest=read(versions[-1]) if versions else None
-    reasons=list(row.get('review_reasons',row.get('uncertainty_flags',[])))
+    reasons=list(row.get('review_reasons',row.get('observed_categories',row.get('uncertainty_flags',[]))))
     if row.get('prediction') is not None:
         from .research_policy import flags
         reasons=sorted(set(reasons+flags(row['prediction'])['uncertainty_flags']))
     return {'source':source,'index':index,'total':total,'example_id':row['example_id'],
             'source_label':row.get('transcription_raw',row.get('reference','')),
             'prediction':row.get('prediction'),'reasons':reasons,
-            'source_label_status':row.get('label_status','source-ground-truth'),
+            'source_label_status':row.get('label_status',row.get('source_label_status','source-ground-truth')),
+            'matched_outputs':{name:record['prediction'] for name,record in row.get('outputs',{}).items()},
             'image_url':f'/api/review-v2/image?source={source}&index={index}',
             'latest_annotation':latest,'annotation_versions':len(versions),
             'training_policy':'Review is saved separately. No automatic relabeling, recropping, training or changes to frozen manifests. Validation examples remain held out.'}
@@ -46,7 +52,7 @@ def item(source:Source='training-quarantine',index:int=0):
 @router.get('/api/review-v2/image')
 def image(source:Source='training-quarantine',index:int=0):
     row,_=row_at(source,index)
-    if source=='training-quarantine':candidate=(DATA/row['local_relative_path']).resolve();allowed=(DATA/'images').resolve()
+    if source!='validation-errors':candidate=(DATA/row['local_relative_path']).resolve();allowed=(DATA/'images').resolve()
     else:candidate=Path(row['image_path']).resolve();allowed=Path('D:/OCR/research/images').resolve()
     if not candidate.is_relative_to(allowed) or not candidate.is_file():raise HTTPException(404,'Image unavailable')
     return FileResponse(candidate)

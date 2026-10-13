@@ -31,6 +31,14 @@ Local research monitor shows recent speed excluding long pauses; not GPU kernel 
 
 Resume handles for this session: pipeline tool session 50982 (pipeline-resume-20261013.log); API tool session 44621; CPU uniform-training audit session 38282. Verify OS commands before killing/restarting anything.
 
+## Coverage and error diagnosis continuation
+
+Read-only scans of all 80,083 train / 13,462 validation labels completed, frozen hashes checked. Distinct train labels 11,723; numeral-bearing train examples 175, full-validation 29, trial-validation zero. Observed digits are Telugu, no Arabic numerals. No empty/NFC-change/orphan-mark/control-or-replacement/non-Telugu-letter source labels under the audit definitions. This does not verify image/label semantic alignment. Train/validation share zero example/file-hash/pixel-hash/leakage-group IDs.
+
+New diagnostics/control-v2 review queue has 87 matched 287-subset disagreements, retaining original/literal/control raw outputs and token IDs; four control fewer-edit cases, one more-edit case, 282 same-edits. Twelve crop images visually inspected; pending human source-label review. Current /review-v2 offers these 87 cases with expandable matched outputs. No final-test data exposed, source edits or fabricated human annotations. All 31 tests pass. Training runtime modules remain unchanged this turn.
+
+Current owned API tool session 71468, server actual PID 25704, logfile work/scale-review-server-v3.log. Pipeline 50982 remains active; trainer actual PID 28116 (verify commands before any action). Diagnosis partial v1 is preserved after a Windows text-decoding error; v2 successfully completed with explicit UTF-8. Delivery evidence: outputs/word-scale-v2-diagnostics and Telugu_OCR_Data_Coverage_and_Diagnosis.md.
+
 ## Latest automated milestone
 {
   "status": "running",

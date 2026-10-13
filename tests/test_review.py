@@ -6,6 +6,23 @@ from fastapi.testclient import TestClient
 from ocr import review_routes
 
 class ReviewTests(unittest.TestCase):
+    def test_scale_validation_queue_keeps_split_and_raw_outputs(self):
+        with tempfile.TemporaryDirectory() as td,patch.object(review_routes,'ROOT',Path(td)):
+            path=Path(td)/'diagnostics/control-v2/review-queue.jsonl';path.parent.mkdir(parents=True)
+            row={'example_id':'val:a','split':'validation','reference':'౯ తెలుగు','original_sha256':'known',
+                 'observed_categories':['recognition_disagreement'],'outputs':{'literal_control':{'prediction':'9 తెలుగు'},'literal_original':{'prediction':'౯ తెలుగు'}}}
+            path.write_text(json.dumps(row,ensure_ascii=False)+'\n',encoding='utf-8')
+            app=FastAPI();app.include_router(review_routes.router);client=TestClient(app)
+            item=client.get('/api/review-v2?source=scale-validation-errors').json()
+            self.assertEqual(item['prediction'],'9 తెలుగు')
+            self.assertEqual(item['matched_outputs']['literal_original'],'౯ తెలుగు')
+            payload={'source':'scale-validation-errors','index':0,'example_id':'val:a','decision':'unsure','human_verified':True}
+            self.assertEqual(client.post('/api/review-v2',json=payload).status_code,200)
+            item=client.get('/api/review-v2?source=scale-validation-errors').json()
+            self.assertEqual(item['latest_annotation']['original_split'],'validation')
+            self.assertFalse(item['latest_annotation']['included_in_training'])
+            row['split']='train';path.write_text(json.dumps(row)+'\n',encoding='utf-8')
+            self.assertEqual(client.get('/api/review-v2?source=scale-validation-errors').status_code,409)
     def test_review_never_changes_frozen_labels(self):
         with tempfile.TemporaryDirectory() as td,patch.object(review_routes,'ROOT',Path(td)):
             root=Path(td);path=root/'crop-review-quarantine.jsonl'
