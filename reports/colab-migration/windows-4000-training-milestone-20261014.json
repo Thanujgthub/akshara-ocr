@@ -1,0 +1,38 @@
+{
+  "observed_utc": "2026-10-13T20:04:34.552182+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0001000",
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1000,
+    "epoch": 0,
+    "next_index": 4000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "preserved_verified_checkpoints": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500",
+    "step-0000625",
+    "step-0000750",
+    "step-0000875",
+    "step-0001000"
+  ],
+  "progress": {
+    "epoch": 1,
+    "example": 4020,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 1005,
+    "loss": 0.016777051612734795,
+    "lr": 8.832940383967666e-06,
+    "elapsed_seconds": 9471.622807264328,
+    "peak_allocated_vram_bytes": 2154180608
+  },
+  "snapshot": {
+    "snapshot": "snapshot-20261013T200322Z-ee54fbd2",
+    "verified": true,
+    "time": 1791921802.2130601
+  },
+  "scope": "4000 training examples and checkpoint integrity only; candidate validation/final test/API parity not complete."
+}
