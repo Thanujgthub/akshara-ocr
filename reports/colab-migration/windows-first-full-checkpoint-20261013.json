@@ -1,0 +1,32 @@
+{
+  "verified_utc": "2026-10-13T17:44:43.643825+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0000125",
+  "backup_checkpoint": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261013T174312Z-6426e08b\\full\\checkpoints\\step-0000125",
+  "checksum_verified_files": 5,
+  "state_fields_verified": [
+    "optimizer",
+    "scheduler",
+    "python_rng",
+    "torch_rng",
+    "cuda_rng",
+    "numpy_rng",
+    "augment_rng",
+    "precision",
+    "dataset_fingerprint",
+    "gradient_scaler",
+    "accumulation_progress",
+    "effective_batch_size",
+    "epoch",
+    "next_index",
+    "updates"
+  ],
+  "updates": 125,
+  "next_index": 500,
+  "precision": "torch.bfloat16",
+  "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23",
+  "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+  "checkpoint_index_sha256": "b42025af145f1a5d1534a2c37cf9abb2789823c9f4f9b8ee09f7313b82b2e8a4",
+  "state_bytes": 2591269,
+  "read_on_cpu_only": true,
+  "audit_order_correction": "Initial standalone audit used file order and failed fingerprint comparison. Recomputed with existing read_manifest deterministic seed42 shuffle; fingerprint and signature now exactly match. No trainer/checkpoint mutation."
+}
