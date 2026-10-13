@@ -1,0 +1,39 @@
+{
+  "observed_utc": "2026-10-13T17:28:10.829375+00:00",
+  "trainer_pid": 496,
+  "trainer_wrapper_pid": 29860,
+  "controller_pid": 26260,
+  "config_signature": "266194952cff5629b36fd132285ca79fe297e1dbcec3c99c37e0ef9bf46ed929",
+  "selected_initialization_smoke": {
+    "forward_backward": true,
+    "finite_loss_and_gradients": true,
+    "adapter_weights_changed": true,
+    "final_adapter_reload_inference_matches": true,
+    "mid_epoch_resume_exact_adapter_weights": true,
+    "optimizer_rng_scheduler_resume": true,
+    "config_signature": "266194952cff5629b36fd132285ca79fe297e1dbcec3c99c37e0ef9bf46ed929",
+    "precision": "torch.bfloat16"
+  },
+  "full_initialization": {
+    "tensor_digest": "c71d0e00a8d0fb3bfce351bc82e3aac6b336ffc45596cab027dbacac58840738",
+    "strategy": {
+      "path": "D:\\OCR\\runs\\word-pilot-v1\\trained\\adapter",
+      "sha256": "04262fcb507891c7ffe8639c08babca8bae03b585a8ab3443c21453f0cd82af2",
+      "strategy": "Existing adapter tensor initialization; new optimizer/scheduler. Not exact historical optimizer resume."
+    }
+  },
+  "training_progress": {
+    "epoch": 1,
+    "example": 40,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 10,
+    "loss": 0.03144782409071922,
+    "lr": 3.525641025641026e-07,
+    "elapsed_seconds": 63.65273928642273,
+    "peak_allocated_vram_bytes": 2154064384
+  },
+  "epochs_authorized": 1,
+  "manifest_examples": 25000,
+  "latest_full_checkpoint": "Pending first125-update checkpoint boundary; do not substitute smoke checkpoints.",
+  "scope": "Full training underway; no candidate validation or sealed final-test result."
+}
