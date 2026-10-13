@@ -1,0 +1,85 @@
+{
+  "verified_utc": "2026-10-13T16:36:03.941611+00:00",
+  "hardware": {
+    "observed_utc": "2026-10-13T16:30:28.190703+00:00",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "native_bf16_supported": true,
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "vram_total_bytes": 4294508544,
+    "free_total_vram": [
+      3458465792,
+      4294508544
+    ],
+    "ram": {
+      "total": 16830922752,
+      "available": 3287961600,
+      "percent": 80.5,
+      "used": 13542961152,
+      "free": 3287961600
+    },
+    "software_tests_passed": 50,
+    "user_approved_local_full_protocol": true,
+    "config": "configs/colab-base.json",
+    "full_training_resume_from_smoke_forbidden": true
+  },
+  "smoke": {
+    "forward_backward": true,
+    "finite_loss_and_gradients": true,
+    "adapter_weights_changed": true,
+    "final_adapter_reload_inference_matches": true,
+    "mid_epoch_resume_exact_adapter_weights": true,
+    "optimizer_rng_scheduler_resume": true,
+    "config_signature": "93aa00d6b7d0bf663c8c28e6e499600b0e4eb4c66d80a99c7d6b17e71e46bd03",
+    "precision": "torch.bfloat16"
+  },
+  "benchmark": {
+    "examples": 64,
+    "warmup_examples": 8,
+    "warmup_seconds": 13.055727300001308,
+    "steady_examples_per_second": 0.6418625751594979,
+    "median_batch_seconds": 1.5315435499996966,
+    "median_input_processing_transfer_seconds": 0.03856809999979305,
+    "model_load_seconds": 7.872425999999905,
+    "wall_seconds_including_checkpoint": 101.47905010000068,
+    "checkpoint_write_seconds": [
+      0.1332559999991645
+    ],
+    "peak_allocated_vram_bytes": 2154064384,
+    "remaining_25000_word_training_hours_projection": 10.819207589286234,
+    "projection_limitations": "Short64-example sample; excludes full validation, final testing, initialization, Drive sync and disconnects. Benchmark weights never selected or credited toward final training. Full25000-row scheduler retained. Synchronized timings add profiling overhead.",
+    "data_loader": "Direct sequential microbatch1 loop; DataLoader workers/pin_memory/persistent_workers not applicable.",
+    "precision": "torch.bfloat16",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "config": {
+      "seed": 42,
+      "prompt": "telugu_literal",
+      "preprocessing": "official",
+      "rank": 8,
+      "targets": [
+        "q",
+        "v"
+      ],
+      "lr": 1e-05,
+      "augmentation": false,
+      "accumulation": 4,
+      "microbatch_size": 1,
+      "gradient_clip": 1.0,
+      "maximum_training_examples": 25000,
+      "maximum_epochs": 1
+    }
+  },
+  "loss_min": 0.006989849731326103,
+  "loss_max": 4.994024753570557,
+  "loss_all_finite": true,
+  "gpu_utilization_percent_mean": 78.80208333333333,
+  "gpu_utilization_samples": 96,
+  "original_validation_hashes": {
+    "metrics.json": "111bc7d89b3ec6b34da7685e4a13960b719dcfe7fe5abd446229375d9e9cb347",
+    "predictions.jsonl": "b60ccfd9e3be3dfa304303ee8c28e44f9cd4a4dc5ef056d437a852dcd00363db"
+  },
+  "full_training_uses_smoke_weights": false,
+  "protocol": "25000/5000/3000; one epoch; validation-only selection; no cloud prediction mixing"
+}

@@ -136,3 +136,19 @@ Colab browser is signed in and the existing named notebook was visibly empty. On
 Executed a hardware-only cell in the signed-in existing Colab notebook: Tesla T4,15360MiB total VRAM,14913MiB free, driver580.82.07, Torch2.11.0+cu130, CUDA13.0; native_bf16_supported=false. Output and screenshot saved to reports/colab-migration/colab-hardware-preflight-20261013.json and colab-t4-preflight-20261013.jpg. This establishes cloud runtime access and hardware only. No Drive mount, dependency installation, actual-image smoke, benchmark, training or evaluation has run. H100/G4/A100/L4 choices are disabled in this account. Stop before training: no FP16/FP32 conversion or duplicate local run. Existing formerly blank notebook contains only this diagnostic, not the complete prepared training notebook. Upload attempt stalled and was cancelled.
 
 Version3 transfer bundle now exists at the sibling Akshara_Colab_Transfer_v3 directory, source commit cfcc3b0. All5 archives passed read-back SHA256, ZIP CRC, unique-entry and entry-count checks; model/pilot/frozen protocol/33000-image archives are byte-identical to v2. Evidence: reports/colab-migration/transfer-verification-v3.json. Earlier bundles preserved. The prepared local notebook has all12 workflow cells; compile check and50 software tests pass. Full25000 training, validation-only selection, sealed3000 final testing and API parity remain incomplete. Required external action: obtain a native-BF16 GPU (such as L4/A100/H100), upload the prepared notebook/v3 package and run preflight through smoke/benchmark. No project-completion claim.
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Approved Windows native BF16 preflight",
+  "updated_utc": "2026-10-13T16:30:28Z",
+  "note": "50 software tests pass. Fresh smoke then synchronized benchmark. Full training not started.",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\local-preflight-approved-v1"
+}
+
+
+## Approved Windows continuation - 2026-10-13T16:36:03.941611+00:00
+
+User approved local preflight, complete capped study, website integration and Playwright testing. 50 software tests pass. Fresh RTX3050 native BF16 exact-resume/reload smoke passed. Fresh64-example benchmark: 0.641863 images/s, 2.01GiB peak, [0.1332559999991645]s checkpoint cost, 10.82h training-only projection. Losses all finite; no accuracy gain claimed. Details: reports/colab-migration/windows-approved-preflight-20261013.json. Full training checkpoint absent; smoke/benchmark checkpoints are excluded from initialization. Original5000 validation hashes recorded for reuse verification.
+
+Temporary progress page /progress.html added to existing studio; live frozen counts, active-stage progress, validation metrics, selection and API status come from current research endpoints. Playwright visible Chrome confirmed desktop/mobile rendering and API inference paused during GPU work; screenshots output/playwright/akshara-progress-preflight.png and akshara-progress-mobile.png. New coordinator will continue at pilot5000 validation, then selected-initialization smoke, one25000 epoch, validation selection and sealed3000 evaluation. Local recovery snapshots use D:/OCR/backups/word-efficient-v3-local-approved-v1 via existing verified snapshot/controller code. No Colab run or final model claim.
