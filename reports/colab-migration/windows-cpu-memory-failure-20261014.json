@@ -1,0 +1,19 @@
+{
+  "recorded_utc": "2026-10-13T20:26:29.432786+00:00",
+  "preserved_failure_directory": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\cpu-memory-failure-20261013T202629Z",
+  "last_verified_full_checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0001125",
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1125,
+    "epoch": 0,
+    "next_index": 4500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "error": {
+    "type": "RuntimeError",
+    "error": "[enforce fail at alloc_cpu.cpp:117] data. DefaultCPUAllocator: not enough memory: you tried to allocate 10838016 bytes.",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr\\ocr\\scale_experiment.py\", line 281, in main\n    else:exp.train_scale(rows,read_manifest(a.validation),out,a.epochs)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr\\ocr\\scale_experiment.py\", line 215, in train_scale\n    self.model.train();batch=self.inputs(shuffled[i],True)\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr\\ocr\\scale_experiment.py\", line 48, in inputs\n    try:return super().inputs(row,training)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr\\ocr\\experiment.py\", line 59, in inputs\n    prefix=self.processor(text=[text],images=[image],padding=True,return_tensors='pt')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\OCR\\runtime\\venv\\Lib\\site-packages\\transformers\\models\\qwen3_vl\\processing_qwen3_vl.py\", line 105, in __call__\n    image_inputs = self.image_processor(images=images, **output_kwargs[\"images_kwargs\"])\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\OCR\\runtime\\venv\\Lib\\site-packages\\transformers\\image_processing_utils.py\", line 217, in __call__\n    return self.preprocess(images, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\OCR\\runtime\\venv\\Lib\\site-packages\\transformers\\models\\qwen2_vl\\image_processing_qwen2_vl.py\", line 146, in preprocess\n    return super().preprocess(images, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\OCR\\runtime\\venv\\Lib\\site-packages\\transformers\\image_processing_utils.py\", line 400, in preprocess\n    return self._preprocess_image_like_inputs(images, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\OCR\\runtime\\venv\\Lib\\site-packages\\transformers\\image_processing_utils.py\", line 312, in _preprocess_image_like_inputs\n    return self._preprocess(images, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\OCR\\runtime\\venv\\Lib\\site-packages\\transformers\\models\\qwen2_vl\\image_processing_qwen2_vl.py\", line 198, in _preprocess\n    patches = torch.cat([patches, repeats], dim=1)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: [enforce fail at alloc_cpu.cpp:117] data. DefaultCPUAllocator: not enough memory: you tried to allocate 10838016 bytes.\n"
+  },
+  "precision_and_protocol_unchanged": true
+}

@@ -1,5 +1,5 @@
 """Run the existing capped coordinator with periodic verified Drive snapshots."""
-import argparse,json,os,subprocess,sys,time
+import argparse,json,os,subprocess,sys,time,traceback
 from pathlib import Path
 from .colab_storage import snapshot_run
 from .research_io import save
@@ -25,7 +25,7 @@ def main():
                         try:
                             latest=snapshot_run(run,durable);save(run/'drive-sync-status.json',{'snapshot':latest.name,'verified':True,'time':time.time()})
                         except Exception as e:
-                            save(run/'drive-sync-status.json',{'verified':False,'error':str(e),'time':time.time()})
+                            save(run/'drive-sync-status.json',{'verified':False,'error':str(e),'type':type(e).__name__,'traceback':traceback.format_exc(),'time':time.time()})
                         next_sync=time.monotonic()+a.sync_seconds
                     print(json.loads((run/'status.json').read_text()) if (run/'status.json').exists() else {'status':'starting'},flush=True)
                     time.sleep(15)

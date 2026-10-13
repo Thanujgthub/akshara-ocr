@@ -227,6 +227,9 @@ class ScaleExperiment(Experiment):
                             'lr':scheduler.get_last_lr()[0],'elapsed_seconds':elapsed_prior+time.time()-start,'peak_allocated_vram_bytes':torch.cuda.max_memory_allocated()}
                     if profile:
                         torch.cuda.synchronize();record.update(batch_seconds=time.perf_counter()-batch_started,input_processing_transfer_seconds=input_finished-batch_started)
+                    # Backward is complete and scalar evidence is captured. Do not keep
+                    # the previous image batch or autograd graph during the next input.
+                    del batch,loss
                     log.write(json.dumps(record)+'\n');log.flush()
                     if (i+1)%20==0 or i+1==len(shuffled):save(out/'training_progress.json',record)
                     if boundary and updates%cadence==0:checkpoint(epoch,i+1)

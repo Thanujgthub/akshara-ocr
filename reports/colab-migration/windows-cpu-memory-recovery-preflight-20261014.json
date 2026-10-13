@@ -1,0 +1,41 @@
+{
+  "recorded_utc": "2026-10-13T20:34:37.379346+00:00",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "native_bf16": true,
+    "cuda": "12.8",
+    "provenance_files": 31,
+    "manifests": {
+      "train": {
+        "count": 25000,
+        "sha256": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496"
+      },
+      "validation": {
+        "count": 5000,
+        "sha256": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4"
+      },
+      "final-test": {
+        "count": 3000,
+        "sha256": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+      }
+    },
+    "run_locks_available": true
+  },
+  "smoke": {
+    "forward_backward": true,
+    "finite_loss_and_gradients": true,
+    "adapter_weights_changed": true,
+    "final_adapter_reload_inference_matches": true,
+    "mid_epoch_resume_exact_adapter_weights": true,
+    "optimizer_rng_scheduler_resume": true,
+    "config_signature": "266194952cff5629b36fd132285ca79fe297e1dbcec3c99c37e0ef9bf46ed929",
+    "precision": "torch.bfloat16"
+  },
+  "software_tests_passed": 53,
+  "benchmark_directory": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\cpu-memory-preflight-v1\\benchmark",
+  "benchmark_complete": false,
+  "full_resume_checkpoint": "D:/OCR/runs/word-efficient-v3/full/checkpoints/step-0001125",
+  "committed_full_examples": 4500,
+  "user_closed_unused_apps": true,
+  "training_contract_unchanged": true
+}

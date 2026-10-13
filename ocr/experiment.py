@@ -58,11 +58,15 @@ class Experiment:
         image=self.image(row);text=self.prompt_text()
         prefix=self.processor(text=[text],images=[image],padding=True,return_tensors='pt')
         if not training:return prefix.to(self.model.device)
+        # Retain only the token boundary, releasing the duplicate CPU image tensors
+        # before processing the supervised sequence with the same shipped processor.
+        prefix_ids=prefix['input_ids']
+        n=prefix_ids.shape[-1]
+        del prefix
         # Match the exact inference prefix and append verbatim assistant content plus real EOS.
         target=row['transcription_raw']+self.processor.tokenizer.eos_token
         full=self.processor(text=[text+target],images=[image],padding=True,return_tensors='pt')
-        n=prefix['input_ids'].shape[-1]
-        if not self.torch.equal(prefix['input_ids'],full['input_ids'][:,:n]):
+        if not self.torch.equal(prefix_ids,full['input_ids'][:,:n]):
             raise RuntimeError('Prompt token boundary differs between inference and training')
         labels=full['input_ids'].clone();labels[:,:n]=-100;labels[full['attention_mask']==0]=-100
         special_ids=[self.model.config.image_token_id,self.model.config.video_token_id]
