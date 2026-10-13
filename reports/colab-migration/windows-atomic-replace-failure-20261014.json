@@ -1,0 +1,22 @@
+{
+  "recorded_utc": "2026-10-13T21:32:15.126258+00:00",
+  "preserved_failure_directory": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\atomic-replace-failure-20261013T213214Z",
+  "error": {
+    "type": "PermissionError",
+    "error": "[WinError 5] Access is denied: 'D:\\\\OCR\\\\runs\\\\word-efficient-v3\\\\full\\\\training_progress.json.tmp' -> 'D:\\\\OCR\\\\runs\\\\word-efficient-v3\\\\full\\\\training_progress.json'",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr\\ocr\\scale_experiment.py\", line 284, in main\n    else:exp.train_scale(rows,read_manifest(a.validation),out,a.epochs)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr\\ocr\\scale_experiment.py\", line 234, in train_scale\n    if (i+1)%20==0 or i+1==len(shuffled):save(out/'training_progress.json',record)\n                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr\\ocr\\research_io.py\", line 12, in save\n    os.replace(tmp, path)\nPermissionError: [WinError 5] Access is denied: 'D:\\\\OCR\\\\runs\\\\word-efficient-v3\\\\full\\\\training_progress.json.tmp' -> 'D:\\\\OCR\\\\runs\\\\word-efficient-v3\\\\full\\\\training_progress.json'\n"
+  },
+  "last_verified_full_checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0001500",
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1500,
+    "epoch": 0,
+    "next_index": 6000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "last_raw_logged_example": 6360,
+  "all_study_processes_exited": true,
+  "checkpoint_preserved": true,
+  "unsaved_work_will_replay": true
+}
