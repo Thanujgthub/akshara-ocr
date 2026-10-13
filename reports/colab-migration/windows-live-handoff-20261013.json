@@ -1,0 +1,27 @@
+{
+  "observed_utc": "2026-10-13T16:42:41.680814+00:00",
+  "stage": "pilot validation",
+  "progress": {
+    "evaluated": 660,
+    "total": 5000,
+    "elapsed_seconds": 363.0153591632843
+  },
+  "controller_wrapper_pid": 30668,
+  "controller_pid": 26260,
+  "coordinator_pid": 11224,
+  "gpu_worker_pid": 28016,
+  "original_validation_hashes_unchanged": true,
+  "snapshot": {
+    "snapshot": "snapshot-20261013T164133Z-efc2b133",
+    "verified": true,
+    "time": 1791909693.2401125
+  },
+  "tests_passed": 52,
+  "website": "http://127.0.0.1:8765",
+  "progress_page": "http://127.0.0.1:8765/progress.html",
+  "actual_api_gpu_guard_http_status": 409,
+  "actual_selected_model_api_parity": "not executed; waiting for study completion",
+  "prepared_launcher": "Start-AksharaSelected.ps1",
+  "prepared_parity_checker": "ocr/verify_api_parity.py",
+  "no_full_training_or_final_test_completion_claim": true
+}
