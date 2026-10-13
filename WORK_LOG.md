@@ -73,3 +73,5 @@
 
 - 2026-10-13T02:39:00.787158+00:00: Continuation verified 6 matched screening comparisons, all 287 control validation predictions, 1,000 trained control words / 250 updates. Matched-policy CER CI [-0.319,+0.641] pp: inconclusive. Training peak 2,115,812,352 bytes. Preserved import failure evidence and checkpoint; removed analysis-to-training dependency; resumed without retraining completed words. Rank16 actively advances. Full 80,083-word run and final testing pending.
 - Added separate human review UI/API, exact-uniform input abstention, recent throughput display, dependency-isolation regression. All 26 tests pass; browser verified review source/image/raw output and live rank16 stage. No human annotations fabricated or submitted. Source snapshot recorded after recovery, with its scope limitation.
+
+- Full exact-uniform pixel audit completed on all 80,083 curated TRAIN images: zero uniform images, zero read errors, 1,025.04 s CPU wall time. No final-test examples opened. No data changes were needed. Audit evidence copied to outputs/word-scale-v2-preparation.
