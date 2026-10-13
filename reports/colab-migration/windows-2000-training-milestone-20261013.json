@@ -1,0 +1,35 @@
+{
+  "observed_utc": "2026-10-13T19:02:05.107322+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0000500",
+  "verified_files": 5,
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 500,
+    "epoch": 0,
+    "next_index": 2000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "preserved_valid_checkpoints": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500"
+  ],
+  "progress": {
+    "epoch": 1,
+    "example": 2000,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 500,
+    "loss": 0.016680089756846428,
+    "lr": 9.683395082519368e-06,
+    "elapsed_seconds": 5682.182509183884,
+    "peak_allocated_vram_bytes": 2154064384
+  },
+  "snapshot": {
+    "snapshot": "snapshot-20261013T190124Z-172e2863",
+    "verified": true,
+    "time": 1791918084.9866087
+  },
+  "scope": "2000-example training and checkpoint preservation milestone, not candidate accuracy or final-test evidence."
+}
