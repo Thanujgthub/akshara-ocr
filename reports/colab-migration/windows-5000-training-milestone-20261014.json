@@ -1,0 +1,56 @@
+{
+  "recorded_utc": "2026-10-13T20:54:04.992250+00:00",
+  "full_checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0001250",
+  "checkpoint_checksums": {
+    "adapter/adapter_config.json": "322bcb8ec13eec0fa80d04e9dc0ee1a8e687e42f68742ae3745abf6ebea918f0",
+    "adapter/adapter_model.safetensors": "4781f59a94f24fe98ca5451e5376463aaca57e3819a16578ad2fea84d5596c2d",
+    "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+    "recovery.json": "e88de812c4807672061c722ae12854fda4393a85e063df58f4e715ac00bf7716",
+    "state.pt": "8dcdb9ca318d934b672ab3f156ce1ead0cee4a102e2ee4ab0d0a807202b3432e"
+  },
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1250,
+    "epoch": 0,
+    "next_index": 5000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "optimizer_scheduler_all_rng_fields_verified_in_first_audit_before_manifest_memory_error": true,
+  "effective_batch_verified_in_first_audit": 4,
+  "signature_fingerprint_matches_prior_verified_run": true,
+  "full_config_matches_recovery_benchmark": true,
+  "frozen_manifest_hashes": {
+    "train": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+    "validation": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+    "final-test": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+  },
+  "audit_method": "First CPU-only Torch state load/optimizer/RNG assertions succeeded before whole-manifest read MemoryError. Second Torch-loaded audit failed allocating hash buffer. Final lightweight audit without importing Torch independently verified all checkpoint hashes, recovery metadata, preserved signatures, config and streamed manifests. GPU trainer remained live.",
+  "all_prior_checkpoints_verified": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500",
+    "step-0000625",
+    "step-0000750",
+    "step-0000875",
+    "step-0001000",
+    "step-0001125",
+    "step-0001250"
+  ],
+  "normal_scheduled_snapshot_verified": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261013T205223Z-9bf6a62d",
+  "snapshot_full_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1250,
+    "epoch": 0,
+    "next_index": 5000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "trainer_pid": 20148,
+  "coordinator_pid": 18732,
+  "controller_pid": 9084,
+  "candidate_validation_pending": true,
+  "sealed_final_test_pending": true,
+  "selected_model_api_parity_pending": true
+}
