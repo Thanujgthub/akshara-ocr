@@ -1,0 +1,9 @@
+{
+  "cause": "Archived resume.json was interpreted as an active recovery pointer by recursive snapshot scanner; archive contains evidence logs, not checkpoint copies.",
+  "preserved_file": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\cpu-memory-failure-20261013T202629Z\\full\\resume-pointer.evidence.json",
+  "sha256": "38d65e2c474de5649e2ab82879aaeea420921502ec167ffbef2cc4b5089db3c2",
+  "byte_preserving_rename": true,
+  "live_checkpoint_verified": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0001125",
+  "training_restarted": false,
+  "training_modules_changed": false
+}
