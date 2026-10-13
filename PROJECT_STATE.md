@@ -53,11 +53,19 @@ Studio source fbb46e93a2e39cf5cac51ff308926d321803fd2d privately deployed succes
 
 Live pipeline tool session 50982; q/k/v/o actual trainer PID 24556 and wrapper 27052 (verify commands). API session 43426, PID 33768, no model loaded. q/k/v/o advanced beyond 400/1000 words; rank16 fully completed and registered. Remaining scope unchanged: other trials, full training, full validation, immutable final test, final model handoff, sentence/page evidence and terms.
 
+## User planning report — 13 October 2026 09:59 IST
+
+Saved Telugu_OCR_Progress_Report_2026-10-13_095917_IST.md. Three of five short trials complete; LR3e-5 running at 240/1000 in the snapshot, then augmentation. Full 80,083-example run and final testing have not started. Current scheduled two epochs need roughly80–105 active hours at earlier1.6–2.1s/word rates; latest median3.97s/word implies roughly187–203h if sustained, with wall-clock pauses extra; report explains the first-epoch decision-gate alternative, not applied. No overall percent complete or 99% claim.
+
+Completed q/k/v/o: raw/NFC CER8.6192%, WER28.9199%, exact74.9129%; paired original CER interval[-0.3454,+0.6717]pp inconclusive. Controlled rank16-vs-rank8 CI[-0.0821,+0.8681]pp, qkvo-vs-rank8[-0.2451,+0.2510]pp inconclusive. Fingerprinted all completed trial artifacts; no metric/prediction/weight rewrites. Control validation peak is unavailable for comparison because recovery reused saved predictions (0.045s metrics process vs168.53s recorded generation); independent resource-scope annotation and monitor correct the interpretation.
+
+38 tests pass. API updated solely for monitoring resource scope, session81339, PID28744, work/scale-review-server-v5.log, no GPU model loaded. LR worker10504/wrapper3764 and pipeline23656 verified live; verify before actions. The user asked for a report before the five-hour usage limit: observed64% used,36% remaining, reset12:49:24 PM IST; no exact remaining token countdown is available.
+
 ## Latest automated milestone
 {
   "status": "running",
-  "stage": "Controlled training trial: qkvo",
-  "updated_utc": "2026-10-13T03:08:48Z",
+  "stage": "Controlled training trial: lr3e-5",
+  "updated_utc": "2026-10-13T04:17:51Z",
   "note": "1,000 training words; settings selected on validation only.",
-  "experiment_directory": "D:\\OCR\\runs\\word-scale-v2\\trials\\qkvo"
+  "experiment_directory": "D:\\OCR\\runs\\word-scale-v2\\trials\\lr3e-5"
 }

@@ -39,10 +39,16 @@ def status():
         if (validation.parent/'adapter').exists() and not (validation/'metrics.json').exists():
             state={**state,'pipeline_stage':state['stage'],'stage':f"Validation after epoch {progress['epoch']}: {active.name}"}
             progress=None;evaluation=read(validation/'progress.json')
+    experiments=read(ROOT/'experiments.json') or []
+    for experiment in experiments:
+        if experiment['name'].startswith('trial-'):
+            folder=ROOT/'trials'/experiment['name'][6:]
+            best=read(folder/'best.json')
+            if best:experiment['resource_scope']=read(folder/f"epoch-{best['epoch']}/validation/resource-scope.json")
     return {'status':state,'protocol':protocol,'curation':curation,'selection':read(ROOT/'selection.json'),
             'progress':progress,'evaluation':evaluation,
             'training_timing':recent_timing(active/'training.jsonl'),
-            'experiments':read(ROOT/'experiments.json'),'final':read(ROOT/'final-summary.json') if state['status']=='completed' else None,
+            'experiments':experiments,'final':read(ROOT/'final-summary.json') if state['status']=='completed' else None,
             'audit_tail':log.read_text(encoding='utf-8',errors='replace')[-1200:] if log.exists() else '',
             'failure':read(ROOT/'failure.json') if state['status']=='failed' else None}
 
