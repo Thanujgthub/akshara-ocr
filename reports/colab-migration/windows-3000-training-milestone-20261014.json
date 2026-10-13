@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-10-13T19:35:43.764620+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0000750",
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 750,
+    "epoch": 0,
+    "next_index": 3000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "preserved_verified_checkpoints": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500",
+    "step-0000625",
+    "step-0000750"
+  ],
+  "progress": {
+    "epoch": 1,
+    "example": 3020,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 755,
+    "loss": 0.01118175033479929,
+    "lr": 9.253957561468509e-06,
+    "elapsed_seconds": 7728.094331264496,
+    "peak_allocated_vram_bytes": 2154180608
+  },
+  "snapshot": {
+    "snapshot": "snapshot-20261013T193222Z-50b2c0a8",
+    "verified": true,
+    "time": 1791919942.5927432
+  },
+  "scope": "Training and recovery checkpoint milestone. Candidate validation and sealed final-test metrics not available."
+}
