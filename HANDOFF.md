@@ -29,3 +29,11 @@ The user's D:/OCR archives and original model remain unchanged. Executed run art
 Establish page dataset terms, obtain authoritative writer metadata and a representative user handwriting sample, review source labels/near-duplicate candidates, and run a separately frozen page/domain evaluation. Do not represent the word pilot as a production-ready full-page or historical-manuscript OCR system. If broader deployment is intended, follow the original model license's hosting conditions.
 
 Executed final checks: 13 unit tests passed; both JavaScript files passed Node syntax checks; real original/adapted API outputs matched their saved test predictions; a real held-out image was uploaded and transcribed in the browser. Screenshot: ../akshara-working-preview.png. The local API remains running on 127.0.0.1:8765.
+
+## Current continuation state — 13 October 2026
+
+The earlier pilot summary above is historical. The active protocol is now the capped v3 study: 25,000 training pairs, 5,000 validation pairs, 3,000 sealed final-test pairs and one initial epoch. The exact frozen manifests are under `D:/OCR/runs/word-efficient-v3`; the original model and all prior runs remain unchanged.
+
+The original-model v3 validation completed: raw/NFC grapheme CER 10.6956%, WER 32.38%, exact-word accuracy 73.24%, 5,000 examples, 1.80 GiB peak allocated VRAM. No candidate improvement has been demonstrated. A real local BF16 resume smoke passed, and the 64-example local benchmark measured 0.63117 images/second with a short-run 25,000-example training projection of about 11 active hours. These are local measurements, not Colab results.
+
+The preferred continuation is the Colab workflow in `notebooks/akshara_ocr_colab_training.ipynb`, documented in `COLAB_MIGRATION.md`. The private transfer package is `../Akshara_Colab_Transfer_v2`; it contains the original model snapshot, pilot adapter, frozen protocol and selected image archives. Google Drive authorization, a supported Colab GPU, full training, candidate validation, sealed final testing and API parity are still pending. Do not resume the held local coordinator while a cloud run is active. Use `CODEX_CLI_HANDOFF.md` and `CODEX_CLI_PROMPT.md` when moving this work to another Codex CLI account.
