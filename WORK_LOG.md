@@ -141,3 +141,10 @@ User requested adding the dashboard to the existing Akshara Studio site. sites_g
 
 - 2026-10-13: User requested running the project and showing the website. Existing Start-Akshara.ps1 launched in background with capped-v3 paths. Launcher PID17348 and API PID7568 verified. GET http://127.0.0.1:8765/ returned HTTP200; health status=ok, model_ready=true, model_load_verified=false, training_active=false. Logs: outputs/akshara-server-20261013-200210.stdout.log and .stderr.log. Browser inventory empty; default-browser launch was rejected by execution policy. Website link provided instead; visual rendering unverified. No training, evaluation or model inference launched.
 
+
+
+## Recovery and Colab browser preflight - 2026-10-13T16:05:55.219201+00:00
+
+Verified no local OCR trainer is active and the pipeline lock is available. Original31 checkpoint hashes and frozen25k/5k/3k manifest hashes/counts match. Full training has no resumable full checkpoint yet; original validation remains CER10.6956%, WER32.38%, exact73.24%. No candidate gain or final-test result is claimed. Fixed the shared milestone writer, which previously truncated state after an old automated milestone heading and erased later migration/handoff notes. Successive milestones now preserve all existing history; 50 software tests pass and all12 notebook code cells compile. Notebook adds an early native-BF16 guard, explicit hardware evidence, strict benchmark JSON and checkpoint paths. Preparing version3 source package while preserving v1/v2 and unchanged model/data/pilot archives.
+
+Colab browser is signed in and the existing named notebook was visibly empty. Only T4 is selectable; H100/G4/A100/L4 options are disabled. Attempted prepared-notebook upload remained at Uploading and was cancelled. Added a hardware-only diagnostic to the empty cloud notebook, selected T4 and queued it; allocation is still pending at this milestone. No Drive mount, package installation, smoke, benchmark, training or evaluation has been executed in the cloud. Notebook tools remain unavailable despite successful bootstrap connection.

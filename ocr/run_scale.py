@@ -17,7 +17,7 @@ def milestone(stage,directory=None,note='',root=ROOT):
     save(root/'status.json',state)
     with (PROJECT/'WORK_LOG.md').open('a',encoding='utf-8') as f:f.write(f"\n- {state['updated_utc']}: {stage}. {note}\n")
     text=(PROJECT/'PROJECT_STATE.md').read_text(encoding='utf-8')
-    text=text.split('\n## Latest automated milestone')[0]
+    # Preserve migration and handoff notes written after earlier milestones.
     (PROJECT/'PROJECT_STATE.md').write_text(text+'\n## Latest automated milestone\n'+json.dumps(state,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 def command(args,log):
     log.parent.mkdir(parents=True,exist_ok=True)

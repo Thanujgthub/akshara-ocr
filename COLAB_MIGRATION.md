@@ -56,3 +56,7 @@ The existing studio should show the active model/version, training versus infere
 ## Recovery update v2
 
 49 software tests now pass, including repeated restore/snapshot cycles. Restore honors a verified latest pointer; fallback uses recorded creation time rather than random filename suffixes. Snapshot bookkeeping is excluded from the restored active run and subsequent snapshots. Use the source ZIP and transfer index in Akshara_Colab_Transfer_v2. If the5 large archives from v1 are already uploaded, only replace akshara-source.zip and transfer-index.json; model/data/pilot archives are unchanged. The notebook itself is unchanged.
+
+## Recovery update v3
+
+Use the sibling `Akshara_Colab_Transfer_v3` folder and the current notebook. Model, pilot, manifests and image archives are copied unchanged from verified v2; v1/v2 remain preserved. Automated milestones now append to project state instead of truncating subsequent handoff notes. A regression test covers successive milestones and retained migration history; 50 software tests pass. The notebook checks native BF16 before large transfers or dependency installation and prints strict benchmark JSON and actual recovery-pointer paths. These checks are not evidence of a successful cloud smoke or completed training. A T4-only runtime cannot continue the frozen BF16 lineage; obtain a native-BF16-capable GPU rather than converting precision.
