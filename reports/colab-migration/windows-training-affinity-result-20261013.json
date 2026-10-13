@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-10-13T18:55:17.108285+00:00",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "conservative_post_trial_start_example": 1680,
+  "post_trial_samples": 171,
+  "post_trial_median_seconds_per_example": 2.370086908340454,
+  "pretrial_recent_median_seconds_per_example": 5.093330383300781,
+  "latest_example": 1851,
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0000375",
+  "checkpoint_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 375,
+    "epoch": 0,
+    "next_index": 1500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "gpu_observation": "utilization.gpu [%], clocks.current.sm [MHz], power.draw [W], memory.used [MiB]\n73 %, 652 MHz, 25.15 W, 2317 MiB",
+  "scope": "Observational wall-time comparison on different training words and changing host resource conditions. Not a controlled causal speedup benchmark and not OCR accuracy. No model/protocol/library/precision/power-plan change. Original20-CPU affinity is stored for rollback."
+}
