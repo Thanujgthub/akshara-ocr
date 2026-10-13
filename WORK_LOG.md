@@ -94,3 +94,7 @@
 - Added completed-trial hash/resource-scope audit. Control metrics recovery reused predictions; full validation VRAM peak unavailable, original scores untouched. Matched controlled CIs saved, all inconclusive. 38 tests pass. Local monitor/API updated and restarted independently of trainer; no active training-module edits. Account-window snapshot64% used,36% remaining, reset12:49:24 IST; no reset/purchase action.
 
 - Planning-report correction before delivery: recent100-word LR median slowed to3.97s/word. Included both prior80–105h and sustained-slow187–203h full-plan scenarios; cause unverified, no system settings changed. Report now clearly budgets four to eight-plus active days rather than relying on earlier optimistic throughput.
+
+- 2026-10-13T05:23:07Z: Validation: curated-efficient-original. 
+
+- 2026-10-13T05:44:12.319583+00:00: User requested Colab migration. Read complete updated objective. Verified active capped25k/5k/3k one-epoch protocol, frozen33k technical checks, local original5k validation live. Oldv2 parent retired afterLR child finished; old80k stage blocked. Preparing isolated portable source/notebook without altering the active evaluation. Historical pilot Colab notebook inspected and preserved. No Google/Colab access or performance claimed.

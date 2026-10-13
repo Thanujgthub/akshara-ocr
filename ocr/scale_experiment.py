@@ -1,5 +1,5 @@
 """Versioned, resumable experiments on the exact original IndicOCR checkpoint."""
-import argparse,hashlib,json,math,os,random,time,sys
+import argparse,hashlib,json,math,os,random,time,sys,unicodedata
 from pathlib import Path
 from collections import defaultdict
 from ocr.experiment import Experiment,read_manifest
@@ -14,6 +14,14 @@ def sha(path):
     return h.hexdigest()
 
 class ScaleExperiment(Experiment):
+    def adapter_digest(self):
+        from peft import get_peft_model_state_dict
+        h=hashlib.sha256()
+        for name,value in sorted(get_peft_model_state_dict(self.model).items()):
+            value=value.detach().cpu().contiguous()
+            h.update(name.encode());h.update(str(value.dtype).encode());h.update(str(tuple(value.shape)).encode())
+            h.update(value.view(self.torch.uint8).numpy().tobytes())
+        return h.hexdigest()
     def __init__(self,cfg,adapter=None):
         import torch
         self.cfg=cfg;self.augmenting=False;self.aug_rng=random.Random(cfg['seed'])
@@ -38,12 +46,28 @@ class ScaleExperiment(Experiment):
         try:return super().inputs(row,training)
         finally:self.augmenting=False
     def add_lora(self):
+        if self.adapter:raise RuntimeError('Use hashed initial_adapter configuration for follow-up training; --adapter is an inference initialization, not exact training resume')
         from peft import LoraConfig,get_peft_model
         suffixes=tuple('.self_attn.'+x+'_proj' for x in self.cfg.get('targets',['q','v']))
         names=[n for n,m in self.model.named_modules() if isinstance(m,self.torch.nn.Linear) and '.language_model.' in n and n.endswith(suffixes)]
         if not names:raise RuntimeError('No exact expected LoRA modules')
         rank=self.cfg.get('rank',8)
         self.model=get_peft_model(self.model,LoraConfig(r=rank,lora_alpha=rank*2,lora_dropout=.05,target_modules=names,bias='none',task_type='CAUSAL_LM'))
+        initial=self.cfg.get('initial_adapter')
+        if initial:
+            initial=Path(initial);saved=json.loads((initial/'adapter_config.json').read_text(encoding='utf-8'))
+            if saved['r']!=rank or saved['lora_alpha']!=rank*2 or set(saved['target_modules'])!=set(names):
+                raise RuntimeError('Follow-up adapter contract differs from requested LoRA structure')
+            expected=self.cfg.get('initial_adapter_sha256')
+            if not expected or sha(initial/'adapter_model.safetensors')!=expected:raise RuntimeError('Initial adapter hash mismatch')
+            from peft import set_peft_model_state_dict,get_peft_model_state_dict
+            from safetensors.torch import load_file
+            weights=load_file(str(initial/'adapter_model.safetensors'));expected_weights=get_peft_model_state_dict(self.model)
+            if set(weights)!=set(expected_weights) or any(weights[k].shape!=expected_weights[k].shape for k in weights):
+                raise RuntimeError('Initial adapter tensor names/shapes differ')
+            loaded=set_peft_model_state_dict(self.model,weights)
+            if loaded.unexpected_keys or any('lora_' in k for k in loaded.missing_keys):raise RuntimeError('Incomplete initial adapter tensors')
+            self.contract['adapter_initialization']={'path':str(initial),'sha256':expected,'strategy':'Existing adapter tensor initialization; new optimizer/scheduler. Not exact historical optimizer resume.'}
         self.model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant':False})
         self.model.enable_input_require_grads();self.model.config.use_cache=False
         self.contract.update({'lora_modules':names,'trainable_parameters':sum(p.numel() for p in self.model.parameters() if p.requires_grad)})
@@ -77,11 +101,13 @@ class ScaleExperiment(Experiment):
                 if [r['example_id'] for r in predictions]!=[r['example_id'] for r in rows[:len(predictions)]]:raise RuntimeError('Evaluation ordering mismatch')
                 (out/'predictions.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in predictions),encoding='utf-8')
         else:save(out/'evaluation_contract.json',{'signature':signature})
+        resumed_predictions=len(predictions)
         with (out/'predictions.jsonl').open('a',encoding='utf-8') as f:
             for i,row in enumerate(rows[len(predictions):],start=len(predictions)):
                 raw,meta=self.generate(row,max_tokens);q=quality(self.image(row))
                 record={'example_id':row['example_id'],'reference':row['transcription_raw'],'prediction':raw,
                     'source_dataset':row['source_dataset'],'granularity':'word','group_id':row['leakage_group'],
+                    'source_document_id':row['group_id'],
                     'length_bin':length_bin(row['transcription_raw']),'image_quality':q,'label_status':row['label_status'],'crop_review_reasons':crop_review_reasons(row),
                     'reference_token_ids':self.processor.tokenizer.encode(row['transcription_raw'],add_special_tokens=False),
                     **meta,**flags(raw,meta['truncated'],q)}
@@ -98,10 +124,16 @@ class ScaleExperiment(Experiment):
             'malformed_output_rate':sum(r['malformed_output'] for r in predictions)/len(predictions)})
         report['abstention_rate']=sum(bool(r.get('abstention')) for r in predictions)/len(predictions)
         report['resource_abstention_rate']=sum(r.get('abstention')=='resource_token_budget' for r in predictions)/len(predictions)
+        report['repetition_candidate_rate']=sum(bool(r.get('repeat_candidate')) for r in predictions)/len(predictions)
+        report['resumed_predictions_count']=resumed_predictions
+        report['generated_predictions_this_process']=len(predictions)-resumed_predictions
+        report['peak_vram_scope']='entire_evaluation' if not resumed_predictions else 'remaining_examples_in_this_process_only'
         report['cost']={'provider':'local laptop','cloud_charges_incurred':0,'energy_cost_measured':False,'evaluation_wall_seconds_this_process':time.time()-started}
         groups=defaultdict(list)
         for r in predictions:
-            for key in ['length:'+r['length_bin'],'source:'+r['source_dataset'],'quality:'+('low_contrast' if r['image_quality']['low_contrast'] else 'other'),
+            for key in ['length:'+r['length_bin'],'source:'+r['source_dataset'],'document:'+r.get('source_document_id','unknown'),
+                        'numerals:'+('present' if any(unicodedata.category(c)=='Nd' for c in r['reference']) else 'absent'),
+                        'quality:'+('low_contrast' if r['image_quality']['low_contrast'] else 'other'),
                         'script:'+('mixed' if flags(r['reference'])['script_contamination'] else 'Telugu'),
                         'crop_quality:'+('review' if r['crop_review_reasons'] else 'eligible'),
                         *['error:'+x for x in r['uncertainty_flags']]]:groups[key].append(r)
@@ -120,9 +152,15 @@ class ScaleExperiment(Experiment):
         (out/'error-queue.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in queue),encoding='utf-8')
         return report
     def train_scale(self,rows,validation,out,epochs,stop_after_updates=None):
+        cap=self.cfg.get('maximum_training_examples',25000)
+        if not 0<cap<=25000 or not 0<len(rows)<=cap:raise ValueError('Training examples exceed the active25000 cap or are empty')
+        if not 0<epochs<=self.cfg.get('maximum_epochs',1):raise ValueError('Validate the initial epoch before scheduling additional training')
+        if self.cfg.get('microbatch_size',1)!=1:raise ValueError('Verified microbatch size is1')
         out=Path(out);out.mkdir(parents=True,exist_ok=True);torch=self.torch
         signature=hashlib.sha256(json.dumps({'cfg':self.cfg,'ids':[r['example_id'] for r in rows],'validation':[r['example_id'] for r in validation],'epochs':epochs},sort_keys=True).encode()).hexdigest()
         self.add_lora();save(out/'contract.json',self.contract)
+        initialization_file=out/'adapter-initialization.json'
+        if not initialization_file.exists():save(initialization_file,{'tensor_digest':self.adapter_digest(),'strategy':self.contract.get('adapter_initialization','new LoRA from original base')})
         params=[p for p in self.model.parameters() if p.requires_grad]
         optimizer=torch.optim.AdamW(params,lr=self.cfg['lr']);acc=self.cfg.get('accumulation',4)
         steps_per_epoch=math.ceil(len(rows)/acc);total_steps=steps_per_epoch*epochs;warmup=max(1,round(total_steps*.05))
@@ -178,7 +216,9 @@ class ScaleExperiment(Experiment):
                 checkpoint(epoch+1,0)
                 if previous and best==previous:break
         progress=json.loads((out/'training_progress.json').read_text()) if (out/'training_progress.json').exists() else {}
-        save(out/'training_complete.json',{'config':self.cfg,'best':best,'elapsed_seconds':elapsed_prior+time.time()-start,'optimizer_updates':updates,'manifest_examples':len(rows),'signature':signature,'peak_training_allocated_vram_bytes':progress.get('peak_allocated_vram_bytes'),'cloud_charges_incurred':0,'energy_cost_measured':False})
+        changed=self.adapter_digest()!=json.loads(initialization_file.read_text(encoding='utf-8'))['tensor_digest']
+        if not changed:raise RuntimeError('Adapter tensors did not change from initialization')
+        save(out/'training_complete.json',{'config':self.cfg,'best':best,'elapsed_seconds':elapsed_prior+time.time()-start,'optimizer_updates':updates,'manifest_examples':len(rows),'signature':signature,'adapter_weights_changed_from_initial':changed,'peak_training_allocated_vram_bytes':progress.get('peak_allocated_vram_bytes'),'cloud_charges_incurred':0,'energy_cost_measured':False})
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('mode',choices=['evaluate','train','smoke']);p.add_argument('--config',required=True);p.add_argument('--manifest',required=True);p.add_argument('--validation');p.add_argument('--output',required=True);p.add_argument('--adapter');p.add_argument('--epochs',type=int,default=1);p.add_argument('--limit',type=int,default=0);a=p.parse_args()
@@ -192,6 +232,7 @@ def main():
         if a.mode=='evaluate':exp.evaluate(rows,out)
         elif a.mode=='smoke':
             exp.train_scale(rows[:8],rows[:2],out/'resumed',1,stop_after_updates=1)
+            if exp.adapter_digest()==json.loads((out/'resumed/adapter-initialization.json').read_text())['tensor_digest']:raise RuntimeError('Smoke optimizer update did not change adapter tensors')
             del exp;import gc;gc.collect();torch.cuda.empty_cache()
             exp=ScaleExperiment(cfg);exp.train_scale(rows[:8],rows[:2],out/'resumed',1)
             del exp;gc.collect();torch.cuda.empty_cache()
@@ -200,7 +241,12 @@ def main():
             x=load_file(str(out/'resumed/epoch-1/adapter/adapter_model.safetensors'));y=load_file(str(out/'uninterrupted/epoch-1/adapter/adapter_model.safetensors'))
             identical=all(torch.equal(x[k],y[k]) for k in x)
             if not identical:raise RuntimeError('Mid-epoch resume differs from uninterrupted adapter weights')
-            save(out/'smoke_passed.json',{'forward_backward':True,'mid_epoch_resume_exact_adapter_weights':True,'optimizer_rng_scheduler_resume':True})
+            expected=[r['prediction'] for r in [json.loads(s) for s in (out/'resumed/epoch-1/validation/predictions.jsonl').read_text(encoding='utf-8').splitlines()]]
+            del exp;gc.collect();torch.cuda.empty_cache()
+            exp=ScaleExperiment(cfg,str(out/'resumed/epoch-1/adapter'))
+            reloaded=[exp.generate(row)[0] for row in rows[:2]]
+            if reloaded!=expected:raise RuntimeError('Final adapter reload inference differs from saved smoke predictions')
+            save(out/'smoke_passed.json',{'forward_backward':True,'finite_loss_and_gradients':True,'adapter_weights_changed':True,'final_adapter_reload_inference_matches':True,'mid_epoch_resume_exact_adapter_weights':True,'optimizer_rng_scheduler_resume':True})
         else:exp.train_scale(rows,read_manifest(a.validation),out,a.epochs)
     except Exception as e:
         import traceback

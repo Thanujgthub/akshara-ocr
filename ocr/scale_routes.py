@@ -1,10 +1,10 @@
 """Local-only live scale-up monitor; never exposes final-test examples during selection."""
 from pathlib import Path
-import json,statistics
+import json,statistics,os
 from fastapi import APIRouter
 from fastapi.responses import HTMLResponse
 from .study_routes import read
-router=APIRouter();ROOT=Path('D:/OCR/runs/word-scale-v2')
+router=APIRouter();ROOT=Path(os.environ.get('OCR_RESEARCH_RUN','D:/OCR/runs/word-efficient-v3' if Path('D:/OCR/runs/word-efficient-v3/status.json').exists() else 'D:/OCR/runs/word-scale-v2'))
 
 def recent_timing(path):
     if not path.exists():return None
@@ -45,7 +45,7 @@ def status():
             folder=ROOT/'trials'/experiment['name'][6:]
             best=read(folder/'best.json')
             if best:experiment['resource_scope']=read(folder/f"epoch-{best['epoch']}/validation/resource-scope.json")
-    return {'status':state,'protocol':protocol,'curation':curation,'selection':read(ROOT/'selection.json'),
+    return {'run_directory':str(ROOT),'status':state,'protocol':protocol,'curation':curation,'selection':read(ROOT/'selection.json'),
             'progress':progress,'evaluation':evaluation,
             'training_timing':recent_timing(active/'training.jsonl'),
             'experiments':experiments,'final':read(ROOT/'final-summary.json') if state['status']=='completed' else None,

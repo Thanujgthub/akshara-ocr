@@ -14,7 +14,9 @@ app.add_middleware(CORSMiddleware,allow_origins=origins,allow_methods=['GET','PO
 
 def study_busy():
     from .study_routes import ROOT,read
-    return (read(ROOT/'status.json') or {}).get('status')=='running' or (read(Path('D:/OCR/runs/word-scale-v2/status.json')) or {}).get('status')=='running'
+    return (read(ROOT/'status.json') or {}).get('status')=='running' or any(
+        (read(Path('D:/OCR/runs')/name/'status.json') or {}).get('status') in {'running','preparing','prepared'}
+        for name in ['word-scale-v2','word-efficient-v3'])
 
 @app.get('/api/health')
 def health():

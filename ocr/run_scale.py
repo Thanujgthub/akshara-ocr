@@ -11,10 +11,10 @@ from ocr.curate_scale import main as curate
 from ocr.scale_analysis import load,paired
 
 PROJECT=Path(__file__).resolve().parents[1]
-def milestone(stage,directory=None,note=''):
+def milestone(stage,directory=None,note='',root=ROOT):
     state={'status':'running','stage':stage,'updated_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'note':note}
     if directory:state['experiment_directory']=str(directory)
-    save(ROOT/'status.json',state)
+    save(root/'status.json',state)
     with (PROJECT/'WORK_LOG.md').open('a',encoding='utf-8') as f:f.write(f"\n- {state['updated_utc']}: {stage}. {note}\n")
     text=(PROJECT/'PROJECT_STATE.md').read_text(encoding='utf-8')
     text=text.split('\n## Latest automated milestone')[0]
@@ -23,20 +23,20 @@ def command(args,log):
     log.parent.mkdir(parents=True,exist_ok=True)
     with log.open('a',encoding='utf-8') as f:
         subprocess.run([sys.executable,'-u','-m','ocr.scale_experiment',*args],cwd=PROJECT,stdout=f,stderr=subprocess.STDOUT,check=True)
-def config(name,cfg):
-    path=ROOT/'configs'/f'{name}.json'
+def config(name,cfg,root=ROOT):
+    path=root/'configs'/f'{name}.json'
     if path.exists() and json.loads(path.read_text())!=cfg:raise RuntimeError('Refusing altered experiment config: '+name)
     save(path,cfg);return path
-def evaluate(name,cfg,manifest,adapter=None):
-    out=ROOT/'experiments'/name;cf=config(name,cfg)
-    milestone('Validation: '+name,out)
+def evaluate(name,cfg,manifest,adapter=None,root=ROOT):
+    out=root/'experiments'/name;cf=config(name,cfg,root=root)
+    milestone('Validation: '+name,out,root=root)
     if not (out/'metrics.json').exists():
         args=['evaluate','--config',str(cf),'--manifest',str(manifest),'--output',str(out)]
         if adapter:args+=['--adapter',str(adapter)]
         command(args,out/'execution.log')
     return json.loads((out/'metrics.json').read_text())
-def register(name,metrics,comparison=None):
-    p=ROOT/'experiments.json';items=json.loads(p.read_text()) if p.exists() else []
+def register(name,metrics,comparison=None,root=ROOT):
+    p=root/'experiments.json';items=json.loads(p.read_text()) if p.exists() else []
     item={'name':name,'metrics':metrics,'comparison':comparison}
     items=[i for i in items if i['name']!=name]+[item];save(p,items)
 def key(m):return (m['micro_cer'],-m['raw_exact_match'])
@@ -69,6 +69,8 @@ def verify_frozen():
 
 def main():
     ROOT.mkdir(parents=True,exist_ok=True)
+    if (ROOT/'superseded-by-efficient-v3.json').exists():
+        raise RuntimeError('Historical v2 pipeline retired by the capped plan. Use ocr.run_efficient; do not start the 80,083-example stage.')
     # Prevent accidentally running two pipelines. OS lock is released on crash.
     import msvcrt
     lock=(ROOT/'pipeline.lock').open('a+b');lock.seek(0);lock.write(b'0');lock.flush();lock.seek(0)

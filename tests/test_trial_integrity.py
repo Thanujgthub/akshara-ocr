@@ -11,6 +11,8 @@ class IntegrityTests(unittest.TestCase):
         r=resource_scope({'elapsed_seconds_this_process':8},[{'latency_seconds':2},{'latency_seconds':3}])
         self.assertFalse(r['prediction_reuse_evidence']);self.assertIsNone(r['validation_peak_comparable'])
         self.assertIsNone(resource_scope({},[{}])['generation_latency_sum_seconds'])
+        self.assertFalse(resource_scope({'elapsed_seconds_this_process':8,'resumed_predictions_count':1},[{'latency_seconds':2}])['validation_peak_comparable'])
+        self.assertTrue(resource_scope({'elapsed_seconds_this_process':8,'resumed_predictions_count':0},[{'latency_seconds':2}])['validation_peak_comparable'])
 
     def test_audit_hashes_completed_only_and_does_not_rewrite_results(self):
         with tempfile.TemporaryDirectory() as td:

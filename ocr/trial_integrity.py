@@ -18,10 +18,11 @@ def resource_scope(metrics, predictions):
     valid=bool(latencies) and all(isinstance(x,(int,float)) and math.isfinite(x) and x>=0 for x in latencies)
     total=sum(latencies) if valid else None
     elapsed=metrics.get('elapsed_seconds_this_process')
-    evidence=valid and isinstance(elapsed,(int,float)) and elapsed+.5<total
+    explicit=metrics.get('resumed_predictions_count')
+    evidence=(isinstance(explicit,int) and explicit>0) or (valid and isinstance(elapsed,(int,float)) and elapsed+.5<total)
     return {'generation_latency_sum_seconds':total,'metrics_process_elapsed_seconds':elapsed,
             'prediction_reuse_evidence':bool(evidence),
-            'validation_peak_comparable':False if evidence else None,
+            'validation_peak_comparable':False if evidence else (True if explicit==0 else None),
             'validation_peak_scope':'Resumed process only; full evaluation peak unavailable' if evidence else
                 'Recorded metrics process only; complete fresh evaluation cannot be proved from stored metadata alone',
             'method':'Single-sample serial generation: stored generation latencies exceed metrics-process elapsed time when earlier predictions were reused. No peak is reconstructed or estimated.',

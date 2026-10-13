@@ -61,11 +61,21 @@ Completed q/k/v/o: raw/NFC CER8.6192%, WER28.9199%, exact74.9129%; paired origin
 
 38 tests pass. API updated solely for monitoring resource scope, session81339, PID28744, work/scale-review-server-v5.log, no GPU model loaded. LR worker10504/wrapper3764 and pipeline23656 verified live; verify before actions. The user asked for a report before the five-hour usage limit: observed64% used,36% remaining, reset12:49:24 PM IST; no exact remaining token countdown is available.
 
+## Active capped protocol and Colab migration
+
+The user capped the experiment at25,000/5,000/3,000 pairs and one initial epoch. Exactly these manifests were frozen at D:/OCR/runs/word-efficient-v3 after all33,000 selected image/path/label/hash checks passed; old1016 final and all prior data/results remain unchanged. Eligible pools80,083/13,462/7,835; unused-pool exclusion9,069 rows, mostly prior-exposed components (reason counts overlap). No new downloads. Full human semantic label verification remains incomplete. Official IIIT word license CC BY4.0 rechecked13October2026.
+
+Original checkpoint/processor31-file hashes verified; pilotrank8 adapter preserved; complete v2 checkpoint optimizer/scheduler/Python/Torch/CUDA/augmentation RNG keys verified. Dataset changed, so v3 is a named new experiment, not an exact historical optimizer resume. New full training has not started. Capped pipeline compares original and pilot on5000 validation, then selected-initialization smoke and one25k epoch, validation selection, one sealed3k comparison per original/pilot/candidate.42 software tests pass; newGPU smoke pending.
+
+Colab request appended older80k/two-epoch report references, but says to follow actual updated state. Preserve current capped v3, do not silently restore historical training. Existing notebooks/colab_train.ipynb is a historical optional pilot launcher, not a resilient migration notebook. New preferred notebook will reuse the trainer through an isolated portability checkout. Active local original validation must finish untouched; coordinator may be held for handoff so no duplicate stage starts. No Colab authentication, GPU assignment, speedup or successful cloud training is claimed.
+
+Live local pipeline session70940, actual coordinator10604/wrapper33444, original-evaluation worker29648/wrapper33644. API session75823, PID24972, run_directory v3. Verify live commands before any action. Pre-cap backup: work/capped-plan-prechange-backup-20261013T045046Z.zip. Latest capped source snapshot will be Git checkpoint before isolation.
+
 ## Latest automated milestone
 {
   "status": "running",
-  "stage": "Controlled training trial: lr3e-5",
-  "updated_utc": "2026-10-13T04:17:51Z",
-  "note": "1,000 training words; settings selected on validation only.",
-  "experiment_directory": "D:\\OCR\\runs\\word-scale-v2\\trials\\lr3e-5"
+  "stage": "Validation: curated-efficient-original",
+  "updated_utc": "2026-10-13T05:23:07Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\experiments\\curated-efficient-original"
 }
