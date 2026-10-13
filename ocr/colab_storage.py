@@ -81,6 +81,7 @@ def snapshot_run(run,durable):
     for p in sorted(run.rglob('*')):
         if not p.is_file():continue
         rel=p.relative_to(run);key=rel.as_posix()
+        if key in {'snapshot-checksums.json','snapshot-metadata.json'}:continue
         if 'checkpoints' in rel.parts or p.name.endswith(('.tmp','.lock')) or any(part.startswith('.') for part in rel.parts):continue
         if p.name=='resume.json':data=recovery.get(key)
         else:
@@ -90,6 +91,7 @@ def snapshot_run(run,durable):
         if p.suffix=='.jsonl' and data and not data.endswith(b'\n'):data=data[:data.rfind(b'\n')+1]
         if p.suffix=='.json':json.loads(data)  # Never commit partial JSON.
         target=staging/rel;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+    save(staging/'snapshot-metadata.json',{'created_ns':time.time_ns(),'source_run':str(run.resolve())})
     for p in staging.rglob('*'):
         if p.is_file():hashes[p.relative_to(staging).as_posix()]=sha(p)
     save(staging/'snapshot-checksums.json',hashes)
@@ -113,11 +115,25 @@ def verify_snapshot(folder):
 def restore_run(durable,run):
     durable=Path(durable);run=Path(run)
     if run.exists() and any(run.iterdir()):raise RuntimeError('Restore requires an empty runtime run directory')
-    candidates=sorted(durable.glob('snapshot-*'),reverse=True)
+    def order(folder):
+        try:return int(json.loads((folder/'snapshot-metadata.json').read_text())['created_ns'])
+        except (OSError,ValueError,KeyError,TypeError):return folder.stat().st_mtime_ns
+    candidates=sorted(durable.glob('snapshot-*'),key=order,reverse=True)
+    pointer_index=None;pointed=None
+    try:
+        pointer=json.loads((durable/'latest-snapshot.json').read_text())
+        pointed=(durable/pointer['directory']).resolve()
+        if not pointed.is_relative_to(durable.resolve()) or pointed.parent!=durable.resolve():raise ValueError('Snapshot pointer escapes durable directory')
+        pointer_index=pointer['index_sha256']
+        if sha(pointed/'snapshot-checksums.json')==pointer_index:
+            candidates=[pointed]+[p for p in candidates if p.resolve()!=pointed]
+    except (OSError,ValueError,KeyError,TypeError):pointed=None
     for folder in candidates:
         try:verify_snapshot(folder)
         except (OSError,ValueError,RuntimeError):continue
-        shutil.copytree(folder,run,dirs_exist_ok=True);return folder
+        shutil.copytree(folder,run,dirs_exist_ok=True,ignore=shutil.ignore_patterns('snapshot-checksums.json','snapshot-metadata.json'))
+        save(run/'restore-source.json',{'snapshot':folder.name,'index_sha256':sha(folder/'snapshot-checksums.json')})
+        return folder
     raise RuntimeError('No intact durable snapshot; do not reset training silently')
 
 

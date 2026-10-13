@@ -27,3 +27,21 @@ class StorageTests(unittest.TestCase):
             selected=restore_run(drive,root/'restored');self.assertEqual(selected,first)
             self.assertEqual(recovery_folder(root/'restored/full').name,'step-0000001')
             with self.assertRaises(RuntimeError):restore_run(drive,root/'restored')
+
+    def test_latest_pointer_and_restore_snapshot_cycles(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);run=root/'run';drive=root/'drive'
+            save_checkpoint(run/'full',1,FakeModel(),{'signature':'s','updates':1},FakeTorch())
+            first=snapshot_run(run,drive)
+            older=drive/'snapshot-99999999-old';first.rename(older)
+            save_checkpoint(run/'full',2,FakeModel(),{'signature':'s','updates':2},FakeTorch())
+            newest=snapshot_run(run,drive)
+            self.assertEqual(restore_run(drive,root/'restored'),newest)
+            self.assertFalse((root/'restored/snapshot-checksums.json').exists())
+            # A restored run must remain snapshot-able across multiple sessions.
+            third=snapshot_run(root/'restored',drive)
+            self.assertEqual(restore_run(drive,root/'twice-restored'),third)
+            self.assertEqual(recovery_folder(root/'twice-restored/full').name,'step-0000002')
+            # Corrupt pointer: chronological metadata, not random/path-name order.
+            (drive/'latest-snapshot.json').write_text('broken')
+            self.assertEqual(restore_run(drive,root/'fallback'),third)
