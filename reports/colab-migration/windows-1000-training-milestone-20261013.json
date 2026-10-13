@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-10-13T18:00:39.067920+00:00",
+  "full_checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0000250",
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 250,
+    "epoch": 0,
+    "next_index": 1000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "verified_backup": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261013T175840Z-f4330aac\\full\\checkpoints\\step-0000125",
+  "backup_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 125,
+    "epoch": 0,
+    "next_index": 500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "backup_matches_latest_full_state": false,
+  "training_progress": {
+    "epoch": 1,
+    "example": 1060,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 265,
+    "loss": 0.1757790595293045,
+    "lr": 8.525641025641026e-06,
+    "elapsed_seconds": 2033.1602680683136,
+    "peak_allocated_vram_bytes": 2154064384
+  },
+  "scope": "Training checkpoint and preservation milestone; no candidate validation or final-test claim."
+}
