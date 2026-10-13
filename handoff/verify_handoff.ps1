@@ -15,7 +15,11 @@ git -C $ProjectRoot status --short
 $python = $env:OCR_HANDOFF_PYTHON
 if (-not $python) { $python = 'D:\OCR\runtime\venv\Scripts\python.exe' }
 if (Test-Path -LiteralPath $python) {
-  & $python -m unittest discover -s (Join-Path $ProjectRoot 'tests') -q
+  $oldPythonPath = $env:PYTHONPATH
+  if ($oldPythonPath) { $env:PYTHONPATH = "$ProjectRoot;$oldPythonPath" } else { $env:PYTHONPATH = $ProjectRoot }
+  Push-Location $ProjectRoot
+  try { & $python -m unittest discover -s tests -q }
+  finally { Pop-Location; $env:PYTHONPATH = $oldPythonPath }
   if ($LASTEXITCODE -ne 0) { throw 'Software tests failed.' }
 } else {
   Write-Warning "Python runtime not found at $python; run tests after configuring the new environment."
