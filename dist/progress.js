@@ -17,6 +17,26 @@ async function refresh(){
     byId('metrics').replaceChildren();
     for(const e of d.experiments||[]){const row=document.createElement('tr');for(const v of [e.name,e.metrics.examples,percent(e.metrics.micro_cer),percent(e.metrics.raw_exact_match)]){const cell=document.createElement('td');cell.textContent=v;row.append(cell)}byId('metrics').append(row)}
     byId('selection').textContent=d.selection?`Validation-locked selection: ${d.selection.variant}. Final test cannot change it.`:'Selection has not been locked.';
+    const final=d.status.status==='completed'?d.final:null;
+    byId('finalResults').hidden=!final;
+    byId('finalStatus').textContent=final?'Completed sealed comparison on identical frozen inputs.':'Sealed; final results appear only after the complete study is recorded.';
+    byId('finalMetrics').replaceChildren();
+    if(final){
+      const diagnostics={};
+      for(const [name,m] of Object.entries(final.final_metrics||{})){
+        const row=document.createElement('tr');
+        for(const value of [name,m.examples,percent(m.raw_micro_cer),percent(m.micro_cer),percent(m.micro_wer),percent(m.raw_exact_match)]){const cell=document.createElement('td');cell.textContent=value;row.append(cell)}
+        byId('finalMetrics').append(row);
+        diagnostics[name]=Object.fromEntries(['script_contamination_rate','refusal_rate','malformed_output_rate','repetition_candidate_rate','abstention_rate','truncated_count','latency_median_seconds','latency_p95_seconds','peak_allocated_vram_bytes','peak_vram_scope','resumed_predictions_count','subgroups'].filter(key=>key in m).map(key=>[key,m[key]]));
+      }
+      byId('finalDiagnostics').textContent=JSON.stringify(diagnostics,null,2);
+      const intervals=[];
+      for(const [label,key] of [['Original versus candidate','final_paired_original_candidate'],['Pilot versus candidate','final_paired_pilot_candidate']]){
+        const comparison=final[key],interval=comparison?.cer_reduction_95;
+        if(Array.isArray(interval)&&interval.length===2)intervals.push(`${label}: paired 95% interval for NFC CER reduction [${(100*interval[0]).toFixed(2)}, ${(100*interval[1]).toFixed(2)}] percentage points. ${comparison.interpretation||''}`);
+      }
+      byId('pairedIntervals').textContent=intervals.join(' ');
+    }
     byId('api').textContent=health.training_active?'API inference paused for GPU training/testing.':health.model_load_verified?'API model loaded; parity verification is a separate check.':'API responding; model has not been loaded or verified in this server session.';
     byId('failure').textContent=d.failure?JSON.stringify(d.failure,null,2):'No reported coordinator failure.';
   }catch(e){byId('state').textContent=e.message;byId('bar').removeAttribute('value')}
