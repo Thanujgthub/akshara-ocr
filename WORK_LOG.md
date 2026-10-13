@@ -40,3 +40,36 @@
 - 2026-10-12T21:45:31Z: Validation: curated-original-telugu_literal-white_margin. 
 
 - Final software validation: 20 tests passed. Image-token estimates matched the original processor on five image shapes. Mild skew augmentation reverts to the source when expansion would exceed the word budget.
+
+- 2026-10-12T21:48:33Z: Validation: curated-pilot-official-official. 
+
+- 2026-10-12T21:51:26Z: Validation: curated-pilot-telugu_literal-official. 
+
+- 2026-10-12T21:54:24Z: Validation: curated-pilot-telugu_literal-white_margin. 
+
+- 2026-10-12T21:57:30Z: Controlled training trial: control. 1,000 training words; settings selected on validation only.
+
+- Scale pipeline failed: Command '['D:\\OCR\\runtime\\venv\\Scripts\\python.exe', '-u', '-m', 'ocr.scale_experiment', 'train', '--config', 'D:\\OCR\\runs\\word-scale-v2\\configs\\trial-control.json', '--manifest', 'D:\\OCR\\runs\\word-scale-v2\\trial-train-curated.jsonl', '--validation', 'D:\\OCR\\runs\\word-scale-v2\\trial-validation-curated.jsonl', '--output', 'D:\\OCR\\runs\\word-scale-v2\\trials\\control', '--epochs', '1']' returned non-zero exit status 1.
+
+- 2026-10-13T02:35:19Z: Snapshot and full word audit. Inspecting all supplied labeled word pairs; source labels are not newly human verified.
+
+- 2026-10-13T02:35:20Z: Freeze leakage-checked scale manifests. 
+
+- 2026-10-13T02:35:20Z: Validation: curated-original-official-official. 
+
+- 2026-10-13T02:35:20Z: Validation: curated-original-telugu_literal-official. 
+
+- 2026-10-13T02:35:20Z: Validation: curated-original-telugu_literal-white_margin. 
+
+- 2026-10-13T02:35:20Z: Validation: curated-pilot-official-official. 
+
+- 2026-10-13T02:35:20Z: Validation: curated-pilot-telugu_literal-official. 
+
+- 2026-10-13T02:35:20Z: Validation: curated-pilot-telugu_literal-white_margin. 
+
+- 2026-10-13T02:35:20Z: Controlled training trial: control. 1,000 training words; settings selected on validation only.
+
+- 2026-10-13T02:35:34Z: Controlled training trial: rank16. 1,000 training words; settings selected on validation only.
+
+- 2026-10-13T02:39:00.787158+00:00: Continuation verified 6 matched screening comparisons, all 287 control validation predictions, 1,000 trained control words / 250 updates. Matched-policy CER CI [-0.319,+0.641] pp: inconclusive. Training peak 2,115,812,352 bytes. Preserved import failure evidence and checkpoint; removed analysis-to-training dependency; resumed without retraining completed words. Rank16 actively advances. Full 80,083-word run and final testing pending.
+- Added separate human review UI/API, exact-uniform input abstention, recent throughput display, dependency-isolation regression. All 26 tests pass; browser verified review source/image/raw output and live rank16 stage. No human annotations fabricated or submitted. Source snapshot recorded after recovery, with its scope limitation.

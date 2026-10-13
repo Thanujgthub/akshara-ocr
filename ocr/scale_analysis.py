@@ -3,7 +3,7 @@ import json,random,math
 from pathlib import Path
 from collections import defaultdict
 from ocr.metrics import compare
-from ocr.scale_experiment import save
+from ocr.research_io import save
 
 def load(p):return [json.loads(s) for s in Path(p).read_text(encoding='utf-8').splitlines() if s.strip()]
 def paired(base,adapted,reps=2000):

@@ -43,6 +43,14 @@ def predict(path,mode='page',variant='adapted'):
     repo=os.environ.get('INDIC_OCR_REPO')
     if not available():
         raise RuntimeError('Authorized IndicOCR snapshot unavailable. Accept model terms, download official snapshot, install its dependencies, then set INDIC_OCR_REPO. No model inference has been performed.')
+    from PIL import Image
+    from .research_policy import uniform_visible_input
+    with Image.open(path) as image:
+        if uniform_visible_input(image):
+            return {'markdown':'','blocks':[],'review_required':True,'granularity':mode,'model':None,
+                    'abstention':'uniform_pixels','uncertainty_flags':['uniform_image_review'],
+                    'confidence':None,'confidence_calibrated':False,
+                    'confidence_note':'No recognition attempted: the input has exactly constant pixels. Review the source; no hidden or unreadable content was inferred.'}
     with _lock:
         if _parser is None:
             sys.path.insert(0,str(Path(repo).resolve()))

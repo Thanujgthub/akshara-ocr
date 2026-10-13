@@ -3,12 +3,10 @@ import argparse,hashlib,json,math,os,random,time,sys
 from pathlib import Path
 from collections import defaultdict
 from ocr.experiment import Experiment,read_manifest
-from ocr.research_policy import TELUGU_PROMPT,quality,flags,augment,length_bin,crop_review_reasons,image_token_budget
+from ocr.research_policy import TELUGU_PROMPT,quality,flags,augment,length_bin,crop_review_reasons,image_token_budget,uniform_visible_input
 from ocr.metrics import corpus,compare
+from ocr.research_io import save
 
-def save(path,value):
-    path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    tmp=path.with_suffix(path.suffix+'.tmp');tmp.write_text(json.dumps(value,ensure_ascii=False,indent=2),encoding='utf-8');os.replace(tmp,path)
 def sha(path):
     h=hashlib.sha256()
     with Path(path).open('rb') as f:
@@ -51,6 +49,8 @@ class ScaleExperiment(Experiment):
         self.contract.update({'lora_modules':names,'trainable_parameters':sum(p.numel() for p in self.model.parameters() if p.requires_grad)})
     def generate(self,row,max_tokens=64):
         torch=self.torch;self.model.eval()
+        if uniform_visible_input(self.image(row)):
+            return '',{'generated_tokens':0,'truncated':False,'latency_seconds':0.,'generated_token_ids':[],'abstention':'uniform_pixels'}
         try:inputs=self.inputs(row)
         except ValueError as e:
             return '',{'generated_tokens':0,'truncated':False,'latency_seconds':0.,'generated_token_ids':[],'abstention':'invalid_processor_input','abstention_detail':str(e)}
@@ -96,7 +96,8 @@ class ScaleExperiment(Experiment):
             'script_contamination_rate':sum(r['script_contamination'] for r in predictions)/len(predictions),
             'refusal_rate':sum(r['refusal'] for r in predictions)/len(predictions),
             'malformed_output_rate':sum(r['malformed_output'] for r in predictions)/len(predictions)})
-        report['resource_abstention_rate']=sum(bool(r.get('abstention')) for r in predictions)/len(predictions)
+        report['abstention_rate']=sum(bool(r.get('abstention')) for r in predictions)/len(predictions)
+        report['resource_abstention_rate']=sum(r.get('abstention')=='resource_token_budget' for r in predictions)/len(predictions)
         report['cost']={'provider':'local laptop','cloud_charges_incurred':0,'energy_cost_measured':False,'evaluation_wall_seconds_this_process':time.time()-started}
         groups=defaultdict(list)
         for r in predictions:

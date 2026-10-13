@@ -50,4 +50,6 @@ from .study_routes import router
 app.include_router(router)
 from .scale_routes import router as scale_router
 app.include_router(scale_router)
+from .review_routes import router as review_router
+app.include_router(review_router)
 app.mount('/',StaticFiles(directory=str(Path(__file__).resolve().parents[1]/'dist'),html=True),name='website')

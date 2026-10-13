@@ -13,6 +13,10 @@ TELUGU_PROMPT = (
     'For an unreadable span write [అస్పష్టం]. If the image is completely blank, return an empty string.'
 )
 
+def uniform_visible_input(image):
+    """Abstain on exactly constant RGB pixels; never infer hidden/unreadable text."""
+    return all(low==high for low,high in image.convert('RGB').getextrema())
+
 def quality(image):
     gray=image.convert('L')
     stat=ImageStat.Stat(gray)

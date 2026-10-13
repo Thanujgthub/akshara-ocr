@@ -39,7 +39,29 @@ class ResearchTests(unittest.TestCase):
         self.assertEqual(result['cer_reduction_95'],[0,0])
         self.assertFalse(result['cer_improvement_supported'])
         with self.assertRaises(ValueError):paired(rows,list(reversed(rows)),reps=100)
+    def test_analysis_does_not_import_training_runtime(self):
+        import subprocess,sys
+        code = "import sys; from ocr.scale_analysis import paired; assert 'ocr.scale_experiment' not in sys.modules; assert 'torch' not in sys.modules"
+        subprocess.run([sys.executable,'-c',code],check=True)
     def test_malformed_table_not_transcription(self):
         self.assertTrue(flags('<table><tr><td>తెలుగు</td></tr></table>')['malformed_output'])
+    def test_exact_uniform_gate_preserves_faint_marks(self):
+        from ocr.research_policy import uniform_visible_input
+        im=Image.new('RGB',(30,20),'white')
+        self.assertTrue(uniform_visible_input(im))
+        im.putpixel((15,10),(254,254,254))
+        self.assertFalse(uniform_visible_input(im))
+    def test_uniform_input_does_not_load_or_call_model(self):
+        import tempfile
+        from pathlib import Path
+        from unittest.mock import patch
+        from ocr import model
+        with tempfile.TemporaryDirectory() as td:
+            path=Path(td)/'uniform.png';Image.new('RGB',(30,20),'white').save(path)
+            with patch.object(model,'available',return_value=True),patch.object(model,'_run') as run:
+                result=model.predict(path,'word')
+                run.assert_not_called()
+                self.assertEqual(result['markdown'],'');self.assertEqual(result['abstention'],'uniform_pixels')
+                self.assertIsNone(result['model']);self.assertTrue(result['review_required'])
 
 if __name__=='__main__':unittest.main()
