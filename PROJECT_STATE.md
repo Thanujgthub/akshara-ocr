@@ -47,6 +47,12 @@ Fixed word API mismatch with research decoding: shipped HfRecognizer.transcribe 
 
 Studio schema 1.1 retains uncertainty/abstention/truncation/model data through queue/library/import/export, marks abstentions for review, and links to the live local research monitor. Browser imported a real constant-image abstention, exported JSON and verified diagnostics intact with no model loaded. Fixture never counted as OCR accuracy or saved to library. 36 software tests and JS syntax checks pass. API now runs session 43426, actual PID 33768, work/scale-review-server-v4.log, launched with official revision environment.
 
+## Published handoff milestone
+
+Studio source fbb46e93a2e39cf5cac51ff308926d321803fd2d privately deployed successfully (appgdep_6acda3b6f2088191986d839d1fcf91c5); existing audience preserved. Browser verified new links and fixed narrow-sidebar icons. Final website https://akshara-telugu-ocr-studio.proud-cocoa-4474.chatgpt.site. Metadata at outputs/word-scale-v2-preparation/studio-handoff-release.json; report Telugu_OCR_Training_and_API_Handoff.md. Actual GPU parity of new word inference remains a required check after GPU study, not claimed by mocks.
+
+Live pipeline tool session 50982; q/k/v/o actual trainer PID 24556 and wrapper 27052 (verify commands). API session 43426, PID 33768, no model loaded. q/k/v/o advanced beyond 400/1000 words; rank16 fully completed and registered. Remaining scope unchanged: other trials, full training, full validation, immutable final test, final model handoff, sentence/page evidence and terms.
+
 ## Latest automated milestone
 {
   "status": "running",
