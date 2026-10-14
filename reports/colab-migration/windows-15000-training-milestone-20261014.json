@@ -1,0 +1,169 @@
+{
+  "observed_utc": "2026-10-14T10:00:01.351672+00:00",
+  "verified_checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0003750",
+  "checksums": {
+    "adapter/adapter_config.json": "872ef8ff12812ace4493c94bb28bb69bed853d47028b7401ded27b94a6fb4ee4",
+    "adapter/adapter_model.safetensors": "9af59d1f3cc510cdd8d2f39931b792e733f24853eb1a5098f73d16601cb1215e",
+    "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+    "recovery.json": "6b3bef45f4ff07e203a85bb4f56bac35a515770e57f907736b3ad7328dda4eb4",
+    "state.pt": "235c629fa6bc2f2df4efcb628015a1432f7775f78ef75db5fa963f7775f81f1e"
+  },
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 3750,
+    "epoch": 0,
+    "next_index": 15000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "verified_live_resume_pointer": {
+    "checkpoint": "checkpoints/step-0003750",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "27de995a15470c40d668e3597f4d2eb3f48197bdad97adee2c26f30acbd5b719"
+  },
+  "serialized_scalars": {
+    "effective_batch_size": 4,
+    "accumulation_progress": 0,
+    "updates": 3750,
+    "next_index": 15000,
+    "epoch": 0
+  },
+  "serialized_resume_fields_present": [
+    "accumulation_progress",
+    "augment_rng",
+    "cuda_rng",
+    "dataset_fingerprint",
+    "effective_batch_size",
+    "numpy_rng",
+    "optimizer",
+    "precision",
+    "python_rng",
+    "scheduler",
+    "torch_rng"
+  ],
+  "state_inspection_scope": "Hash and safe pickle opcode inspection; no pickle execution, Torch import, or new tensor reload smoke.",
+  "frozen_manifest_hashes": {
+    "train": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+    "validation": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+    "final-test": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+  },
+  "preserved_checkpoint_generations": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500",
+    "step-0000625",
+    "step-0000750",
+    "step-0000875",
+    "step-0001000",
+    "step-0001125",
+    "step-0001250",
+    "step-0001375",
+    "step-0001500",
+    "step-0001625",
+    "step-0001750",
+    "step-0001875",
+    "step-0002000",
+    "step-0002125",
+    "step-0002250",
+    "step-0002375",
+    "step-0002500",
+    "step-0002625",
+    "step-0002750",
+    "step-0002875",
+    "step-0003000",
+    "step-0003125",
+    "step-0003250",
+    "step-0003375",
+    "step-0003500",
+    "step-0003625",
+    "step-0003750"
+  ],
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T095508Z-ddb5fd8d",
+  "snapshot_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 3625,
+    "epoch": 0,
+    "next_index": 14500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "snapshot_state_matches_corresponding_immutable_live": true,
+  "processes": {
+    "18796": {
+      "created": 1791967896.1521745,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "train",
+        "--config",
+        "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+        "--manifest",
+        "D:\\OCR\\runs\\word-efficient-v3\\train.jsonl",
+        "--validation",
+        "D:\\OCR\\runs\\word-efficient-v3\\validation.jsonl",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\full",
+        "--epochs",
+        "1"
+      ]
+    },
+    "36580": {
+      "created": 1791967891.5067585,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.run_efficient"
+      ]
+    },
+    "23348": {
+      "created": 1791967891.4214,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.colab_runner",
+        "--durable",
+        "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+        "--seconds",
+        "86400",
+        "--sync-seconds",
+        "300"
+      ]
+    },
+    "1972": {
+      "created": 1791967926.0853803,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.windows_keep_awake",
+        "--pid",
+        "23348",
+        "--created",
+        "1791967891.4214",
+        "--output",
+        "D:/OCR/runs/word-efficient-v3/recovery/power-request-v2"
+      ]
+    }
+  },
+  "progress": {
+    "epoch": 1,
+    "example": 15020,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 3755,
+    "loss": 0.09282955527305603,
+    "lr": 4.201751431458404e-06,
+    "elapsed_seconds": 51031.68248939514,
+    "peak_allocated_vram_bytes": 2172328960
+  },
+  "ram_available_bytes": 3269558272,
+  "candidate_validation_pending": true,
+  "selection_lock_absent": true,
+  "final_summary_absent": true,
+  "website_api_parity_pending": true,
+  "full_software_tests_latest_verified_count": 75
+}
