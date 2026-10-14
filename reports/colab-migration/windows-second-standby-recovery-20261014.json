@@ -1,0 +1,161 @@
+{
+  "observed_utc": "2026-10-14T14:40:12.466770+00:00",
+  "large_gaps_in_recent_training_log": [
+    {
+      "from_example": 15661,
+      "to_example": 15662,
+      "wall_gap_seconds": 57.79727101325989
+    },
+    {
+      "from_example": 15662,
+      "to_example": 15663,
+      "wall_gap_seconds": 4248.761871576309
+    },
+    {
+      "from_example": 15671,
+      "to_example": 15672,
+      "wall_gap_seconds": 10928.50145816803
+    }
+  ],
+  "windows_power_events": [
+    {
+      "utc": "2026-10-14T14:35:38.3850300Z",
+      "id": 507,
+      "message": "The system is exiting Modern Standby \r\n\r\nReason: Lid."
+    },
+    {
+      "utc": "2026-10-14T14:35:37.5306128Z",
+      "id": 506,
+      "message": "The system is entering Modern Standby \r\n\r\nReason: Sleep, Hibernate, or Shutdown."
+    },
+    {
+      "utc": "2026-10-14T11:33:00.7621036Z",
+      "id": 507,
+      "message": "The system is exiting Modern Standby \r\n\r\nReason: Sleep, Hibernate, or Shutdown."
+    },
+    {
+      "utc": "2026-10-14T10:33:20.7548869Z",
+      "id": 506,
+      "message": "The system is entering Modern Standby \r\n\r\nReason: Austerity Battery Drain Budget Exceeded."
+    },
+    {
+      "utc": "2026-10-14T10:33:20.7521508Z",
+      "id": 507,
+      "message": "The system is exiting Modern Standby \r\n\r\nReason: Austerity Battery Drain Budget Exceeded."
+    },
+    {
+      "utc": "2026-10-14T10:22:09.9335056Z",
+      "id": 506,
+      "message": "The system is entering Modern Standby \r\n\r\nReason: AC/DC Display Burst Suppressed."
+    },
+    {
+      "utc": "2026-10-14T10:22:09.9234766Z",
+      "id": 507,
+      "message": "The system is exiting Modern Standby \r\n\r\nReason: AC/DC Display Burst Suppressed."
+    },
+    {
+      "utc": "2026-10-14T10:21:17.4110307Z",
+      "id": 506,
+      "message": "The system is entering Modern Standby \r\n\r\nReason: Lid."
+    },
+    {
+      "utc": "2026-10-14T08:40:33.3342723Z",
+      "id": 507,
+      "message": "The system is exiting Modern Standby \r\n\r\nReason: Lid."
+    }
+  ],
+  "interpretation": "Long per-word wall gaps coincide with Modern Standby events including Lid and battery-budget reasons. No exact cause assigned to every gap. Temporary execution-state request cannot override lid/manual sleep or all system power policy.",
+  "processes_same_live_owners": [
+    {
+      "pid": 18796,
+      "created": 1791967896.1521745,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "train",
+        "--config",
+        "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+        "--manifest",
+        "D:\\OCR\\runs\\word-efficient-v3\\train.jsonl",
+        "--validation",
+        "D:\\OCR\\runs\\word-efficient-v3\\validation.jsonl",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\full",
+        "--epochs",
+        "1"
+      ]
+    },
+    {
+      "pid": 36580,
+      "created": 1791967891.5067585,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.run_efficient"
+      ]
+    },
+    {
+      "pid": 23348,
+      "created": 1791967891.4214,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.colab_runner",
+        "--durable",
+        "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+        "--seconds",
+        "86400",
+        "--sync-seconds",
+        "300"
+      ]
+    },
+    {
+      "pid": 1972,
+      "created": 1791967926.0853803,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.windows_keep_awake",
+        "--pid",
+        "23348",
+        "--created",
+        "1791967891.4214",
+        "--output",
+        "D:/OCR/runs/word-efficient-v3/recovery/power-request-v2"
+      ]
+    }
+  ],
+  "progress": {
+    "epoch": 1,
+    "example": 15800,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 3950,
+    "loss": 0.04861006513237953,
+    "lr": 3.873358033007747e-06,
+    "elapsed_seconds": 67836.2443139553,
+    "peak_allocated_vram_bytes": 2172328960
+  },
+  "last100_losses_finite": true,
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0003875",
+  "checkpoint_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 3875,
+    "epoch": 0,
+    "next_index": 15500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "battery": {
+    "percent": 77,
+    "secsleft": -2,
+    "power_plugged": true
+  },
+  "no_training_restart_or_code_edit": true,
+  "wall_elapsed_is_not_active_gpu_time": true,
+  "candidate_validation_sealed_final_api_parity_pending": true
+}
