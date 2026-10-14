@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-10-14T15:19:02.189289+00:00",
+  "hosting_project_id": "appgprj_6accf32e12f08191892e9c788ee1c852",
+  "hosting_file_sha256": "dd39c30d4d7cd0d07166a2f99c880a4bc500c00f0c2640edb35a2ef3d64fd2d6",
+  "sites_get_site_result": "Sites project not found",
+  "sites_list_sites_success": true,
+  "sites_list_limit": 50,
+  "accessible_sites_count": 0,
+  "site_identity_and_audience_unmodified": true,
+  "source_write_credentials_requested": false,
+  "remote_source_or_deployment_changed": false,
+  "missing_for_hosted_existing_site": "Sites connection with access to the existing owner/editor project; current account lists no Sites. User connection question pending asynchronously.",
+  "local_studio_url": "http://127.0.0.1:8765",
+  "local_progress_url": "http://127.0.0.1:8765/progress.html",
+  "actual_local_api_health": {
+    "status": "ok",
+    "model_ready": false,
+    "model_load_verified": false,
+    "training_active": true,
+    "note": "Inference waits until the local GPU study completes."
+  },
+  "trainer_pid": 18796,
+  "trainer_created": 1791967896.1521745,
+  "progress": {
+    "epoch": 1,
+    "example": 17080,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4270,
+    "loss": 0.008033240213990211,
+    "lr": 3.3344560458066694e-06,
+    "elapsed_seconds": 70187.53455376625,
+    "peak_allocated_vram_bytes": 2172328960
+  },
+  "cloud_gpu_or_model_execution_claimed": false,
+  "full_study_and_api_parity_incomplete": true
+}
