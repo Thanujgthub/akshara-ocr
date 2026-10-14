@@ -1,0 +1,107 @@
+{
+  "observed_utc": "2026-10-14T03:10:40.705154+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0002000",
+  "checksums": {
+    "adapter/adapter_config.json": "b6138cdda31528a01149ce0bb92e92814a629b533644848aba70ca852a1a08c2",
+    "adapter/adapter_model.safetensors": "007fdba4fca5ca70da79ced36b376311dee8b710406a788421379c79ec44df27",
+    "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+    "recovery.json": "6d8b485985b7e4f7c3b6c45268301c9efaf16422e85c14e70097d582970ec84d",
+    "state.pt": "7465a95d3d8c922031b46da5620119f49ce4e89a88c8f913013d5b0e168d5e7a"
+  },
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 2000,
+    "epoch": 0,
+    "next_index": 8000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "unchanged_configuration_and_dataset_signatures": true,
+  "frozen_manifest_hashes": {
+    "train": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+    "validation": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+    "final-test": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+  },
+  "serialized_resume_fields_present": [
+    "accumulation_progress",
+    "augment_rng",
+    "cuda_rng",
+    "dataset_fingerprint",
+    "effective_batch_size",
+    "numpy_rng",
+    "optimizer",
+    "precision",
+    "python_rng",
+    "scheduler",
+    "torch_rng"
+  ],
+  "serialized_scalar_values_verified": {
+    "effective_batch_size": 4,
+    "accumulation_progress": 0,
+    "updates": 2000,
+    "next_index": 8000,
+    "epoch": 0
+  },
+  "state_inspection_scope": "Hashes and pickle opcode keys/primitive values without executing pickle or importing Torch; prior actual exact-resume smoke preserved.",
+  "preserved_checkpoint_generations": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500",
+    "step-0000625",
+    "step-0000750",
+    "step-0000875",
+    "step-0001000",
+    "step-0001125",
+    "step-0001250",
+    "step-0001375",
+    "step-0001500",
+    "step-0001625",
+    "step-0001750",
+    "step-0001875",
+    "step-0002000"
+  ],
+  "progress": {
+    "epoch": 1,
+    "example": 8080,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 2020,
+    "loss": 1.816523790359497,
+    "lr": 7.123610643314248e-06,
+    "elapsed_seconds": 32931.1021232605,
+    "peak_allocated_vram_bytes": 2153225216
+  },
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T031036Z-6ca1474f",
+  "snapshot_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 2000,
+    "epoch": 0,
+    "next_index": 8000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "snapshot_state_matches_corresponding_immutable_live_checkpoint": true,
+  "trainer_coordinator_controller_and_power_helper_live": true,
+  "ram_available_bytes": 2988732416,
+  "gpu_performance_temperature_observation": "\n==============NVSMI LOG==============\n\nTimestamp                                              : Wed Oct 14 08:40:40 2026\nDriver Version                                         : 617.42 [Deprecated; will be removed in CUDA 14.0. Use KMD Version instead]\nCUDA Version                                           : 13.4 [Deprecated; will be removed in CUDA 14.0. Use CUDA UMD Version instead]\nKMD Version                                            : 617.42\nCUDA UMD Version                                       : 13.4\n\nAttached GPUs                                          : 1\nGPU 00000000:01:00.0\n    Performance State                                  : P0\n    Clocks Event Reasons\n        Idle                                           : Not Active\n        Applications Clocks Setting                    : Not Active\n        SW Power Cap                                   : Not Active\n        HW Slowdown                                    : Not Active\n            HW Thermal Slowdown                        : Not Active\n            HW Power Brake Slowdown                    : Not Active\n        Sync Boost                                     : Not Active\n        SW Thermal Slowdown                            : Active\n        Display Clock Setting                          : Not Active\n        Board Limit                                    : Not Active\n        Reliability                                    : Not Active\n    Clocks Event Reasons Counters\n        SW Power Capping                               : 36139361 us\n        Sync Boost                                     : 0 us\n        SW Thermal Slowdown                            : 312412755 us\n        HW Thermal Slowdown                            : 0 us\n        HW Power Braking                               : 82303 us\n    Sparse Operation Mode                              : N/A\n    Temperature\n        GPU Current Temp                               : 86 C\n        GPU Current Max Temp                           : N/A\n        GPU Current T.Limit Temp                       : N/A\n        GPU Shutdown Temp                              : 100 C\n        GPU Slowdown Temp                              : 97 C\n        GPU Max Operating Temp                         : 105 C\n        GPU Target Temperature Specification           : 87 C\n        Memory Current Temp                            : N/A\n        Memory Max Operating Temp                      : N/A\n\n",
+  "earlier_resource_observation": {
+    "utc": "2026-10-14T02:56:17Z",
+    "available_memory_mb": 781,
+    "committed_bytes": 25594380288,
+    "commit_limit_bytes": 27061243904,
+    "gpu_temperature_c": 87,
+    "software_thermal_slowdown": "Active"
+  },
+  "memory_recovery_observed_without_attributing_cause": true,
+  "additional_wall_gaps_seconds": {
+    "7459_to_7460": 96.17160940170288,
+    "7537_to_7538": 279.285187959671
+  },
+  "sleep_request_limit": "Registered idle-sleep request does not establish that every standby/user sleep action is prevented.",
+  "wall_elapsed_includes_standby_not_active_gpu_time": true,
+  "epoch_count_unchanged": 1,
+  "candidate_validation_pending": true,
+  "selection_lock_absent": true,
+  "sealed_final_test_pending": true,
+  "website_api_parity_pending": true
+}
