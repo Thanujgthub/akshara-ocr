@@ -1,0 +1,32 @@
+{
+  "observed_utc": "2026-10-14T08:58:21.484337+00:00",
+  "scheduled_sync": {
+    "snapshot": "snapshot-20261014T085649Z-15f5fde8",
+    "verified": true,
+    "time": 1791968209.5540128
+  },
+  "snapshot_verified_independently": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T085649Z-15f5fde8",
+  "checkpoint_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 3250,
+    "epoch": 0,
+    "next_index": 13000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "state_matches_corresponding_immutable_live_checkpoint": true,
+  "live_trainer_pid": 18796,
+  "live_coordinator_pid": 36580,
+  "live_controller_pid": 23348,
+  "progress": {
+    "epoch": 1,
+    "example": 13200,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 3300,
+    "loss": 0.0011353099253028631,
+    "lr": 4.968002694509936e-06,
+    "elapsed_seconds": 47333.1521089077,
+    "peak_allocated_vram_bytes": 2106511360
+  },
+  "pre_recovery_memoryerror_preserved_in_versioned_archive": true
+}
