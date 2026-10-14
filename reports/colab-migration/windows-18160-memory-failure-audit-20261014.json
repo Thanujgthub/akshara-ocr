@@ -1,0 +1,167 @@
+{
+  "observed_utc": "2026-10-14T16:08:01.234607+00:00",
+  "archive": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\cpu-memory-failure-20261014T160801Z",
+  "archived_sha256": {
+    "status.json": "3e8d510a124a51d930db229853cae1a7e9208a6779f1c49521136523519c6419",
+    "failure.json": "b5d3a36170b58d864a1ef0569c1c354b5a08762bc6cfd0270509c252955dc790",
+    "full/failure.json": "fee83fb4d05ddca07fd3af7f9be912d5b89edf2a8b5228efd49b47bae8f36701",
+    "full/training_progress.json": "82500f3f93380b905443ecf9f4a9a6aa4fac0833d397575c8a63092c562fa920",
+    "full/training.jsonl": "faeab2cb3312ee0d2e7b5c31a34a55a9115bb8f3d7263f7f01602d209f80cb72",
+    "full/execution.log": "2d52e5422d3f3591a5e11163614d9b2ac2dbba7877f5143ff9a8c444d6b7f862",
+    "full/resume.json": "ec8a001a641941e4dc102809bfc1fe5af519a2614910ed25478f44f851769c69",
+    "drive-sync-status.json": "3e4a0d48cc0ff4c5e2478bf5b32a619bd3258075bc8973b8dcc241f3e18716d6",
+    "colab-pipeline.log": "e88301ca224167e411759ccf08d76b0601d7125f8f5fd11394e0d6805126a611",
+    "recovery/cpu-memory-preflight-v2/controller.stdout.log": "768b8863fd51aa62433ff6db8b57ceb896bb4519858a75a7749f4797ed415c0b",
+    "recovery/cpu-memory-preflight-v2/controller.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "workers": [],
+  "resume_pointer": {
+    "checkpoint": "checkpoints/step-0004500",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "bf4d45f64a92b56dc3d4c7c8621acd7d11abab0ee8cb18e61283b9f06453e735"
+  },
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4500,
+    "epoch": 0,
+    "next_index": 18000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "commit_total_bytes": 20504719360,
+  "commit_limit_bytes": 25752944640,
+  "commit_headroom_bytes": 5248225280,
+  "available_ram_bytes": 2768347136,
+  "largest_current_private_memory_processes": [
+    {
+      "pid": 35896,
+      "name": "msedgewebview2.exe",
+      "private_bytes": 629747712,
+      "rss_bytes": 5677056
+    },
+    {
+      "pid": 6896,
+      "name": "mysqld.exe",
+      "private_bytes": 615182336,
+      "rss_bytes": 21790720
+    },
+    {
+      "pid": 15028,
+      "name": "codex.exe",
+      "private_bytes": 584237056,
+      "rss_bytes": 461795328
+    },
+    {
+      "pid": 5284,
+      "name": "MsMpEng.exe",
+      "private_bytes": 569503744,
+      "rss_bytes": 447455232
+    },
+    {
+      "pid": 6708,
+      "name": "NodeManager.exe",
+      "private_bytes": 526147584,
+      "rss_bytes": 174235648
+    },
+    {
+      "pid": 28356,
+      "name": "ChatGPT.exe",
+      "private_bytes": 411082752,
+      "rss_bytes": 397324288
+    },
+    {
+      "pid": 11768,
+      "name": "explorer.exe",
+      "private_bytes": 392724480,
+      "rss_bytes": 409849856
+    },
+    {
+      "pid": 21556,
+      "name": "ChatGPT.exe",
+      "private_bytes": 378904576,
+      "rss_bytes": 290234368
+    },
+    {
+      "pid": 1436,
+      "name": "brave.exe",
+      "private_bytes": 371777536,
+      "rss_bytes": 453623808
+    },
+    {
+      "pid": 11064,
+      "name": "WindowsTerminal.exe",
+      "private_bytes": 341164032,
+      "rss_bytes": 214282240
+    },
+    {
+      "pid": 25096,
+      "name": "brave.exe",
+      "private_bytes": 327995392,
+      "rss_bytes": 406941696
+    },
+    {
+      "pid": 18684,
+      "name": "brave.exe",
+      "private_bytes": 322125824,
+      "rss_bytes": 403636224
+    }
+  ],
+  "scope": "Post-failure memory observation, not proof of exact memory state at failure; no process killed, setting changed or new training run.",
+  "windows_low_virtual_memory_events": [
+    {
+      "utc": "2026-10-14T16:07:06.5193940Z",
+      "Id": 2004,
+      "Message": "Windows successfully diagnosed a low virtual memory condition. The following programs consumed the most virtual memory: python.exe (20928) consumed 5985320960 bytes, msedgewebview2.exe (35896) consumed 629051392 bytes, and mysqld.exe (6896) consumed 615215104 bytes."
+    },
+    {
+      "utc": "2026-10-14T16:07:06.5037736Z",
+      "Id": 1003,
+      "Message": "The Windows Resource Exhaustion Detector received a notification that the computer is low on virtual memory."
+    },
+    {
+      "utc": "2026-10-14T15:37:48.6045157Z",
+      "Id": 2004,
+      "Message": "Windows successfully diagnosed a low virtual memory condition. The following programs consumed the most virtual memory: python.exe (18796) consumed 5559230464 bytes, msedgewebview2.exe (35896) consumed 722862080 bytes, and mysqld.exe (6896) consumed 615182336 bytes."
+    },
+    {
+      "utc": "2026-10-14T15:37:48.5896347Z",
+      "Id": 1003,
+      "Message": "The Windows Resource Exhaustion Detector received a notification that the computer is low on virtual memory."
+    }
+  ],
+  "configured_pagefiles": [
+    {
+      "Name": "c:\\pagefile.sys",
+      "InitialSize": 8000,
+      "MaximumSize": 10000
+    },
+    {
+      "Name": "d:\\pagefile.sys",
+      "InitialSize": 8000,
+      "MaximumSize": 10000
+    }
+  ],
+  "active_pagefiles": {
+    "Name": "C:\\pagefile.sys",
+    "AllocatedBaseSize": 8249,
+    "CurrentUsage": 820,
+    "PeakUsage": 1731
+  },
+  "final_controller_snapshot": {
+    "directory": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T160728Z-8b4089a7",
+    "index": {
+      "directory": "snapshot-20261014T160728Z-8b4089a7",
+      "index_sha256": "3dc9dcf18bbbaa57ef086dbf74ef27a3f0154b561ebfafccc0051f09a2dd46b0"
+    },
+    "checkpoint": {
+      "checkpoint": "checkpoints/step-0004500",
+      "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+      "checkpoint_index_sha256": "bf4d45f64a92b56dc3d4c7c8621acd7d11abab0ee8cb18e61283b9f06453e735"
+    },
+    "state_byte_equal_to_source_generation": true
+  },
+  "all_study_workers_exited_verified": true,
+  "next_action": "Save user work and restart Windows to attempt activation of already-configured inactive D pagefile. After reconnect verify actual runtime pagefiles and commit headroom before fresh tests/nativeBF16/smoke/benchmark/full18000resume. No reboot or pagefile setting changed by agent.",
+  "documentation": "https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-pagefilesetting",
+  "limits": "Runtime C-only versus configured C+D supports pending/inactive pagefile diagnosis; successful activation after reboot not guaranteed until measured."
+}

@@ -4,7 +4,7 @@ A clean transcription/review website with a local IndicOCR API, executed word-re
 
 ## Active capped study — 14 October 2026
 
-Read `AGENTS.md`, `PROJECT_STATE.md`, `WORK_LOG.md` and `CODEX_CLI_HANDOFF.md` before resuming. The active Windows run is `D:/OCR/runs/word-efficient-v3`: frozen **25,000 training / 5,000 validation / 3,000 sealed final-test** pairs, **one initial epoch**, native BF16. The local RTX 3050 continuation is approved and currently running; inspect live processes and the latest checkpoint before any launch. Never start a duplicate run or resume full training from smoke/benchmark checkpoints.
+Read `AGENTS.md`, `PROJECT_STATE.md`, `WORK_LOG.md` and `CODEX_CLI_HANDOFF.md` before resuming. The active Windows run is `D:/OCR/runs/word-efficient-v3`: frozen **25,000 training / 5,000 validation / 3,000 sealed final-test** pairs, **one initial epoch**, native BF16. The local RTX 3050 continuation is approved; use current state and live-process evidence to determine whether it is running or awaiting recovery. Inspect the latest checkpoint before any launch. Never start a duplicate run or resume full training from smoke/benchmark checkpoints.
 
 Original-model validation is complete (5,000 words: CER 10.6956%, WER 32.38%, raw exact-word accuracy 73.24%). Pilot validation is also complete (CER 9.1996%, WER 30.38%, raw exact-word accuracy 74.14%) and supports pilot initialization using validation only. Full candidate training, candidate validation, locked selection, sealed final testing and selected-model API parity remain unfinished. These are Windows measurements, not Colab results. All 77 software tests passed during the latest recovery preflight; software checks do not establish OCR accuracy.
 
