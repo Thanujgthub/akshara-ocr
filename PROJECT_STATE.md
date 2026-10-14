@@ -421,3 +421,33 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-14T15:42:20.006892+00:00: Trainer18796/coordinator36580/controller23348 exited with CPU MemoryError in PIL image-to-array preprocessing at rawprogress17580/25000. All GPUstudy workers verified absent. Preserved failure/status/rawlog/progress/controller evidence in D:\OCR\runs\word-efficient-v3\recovery\cpu-memory-failure-20261014T154220Z. All35 checkpoint generations SHA-verified including17000 and17500; atomic pointer points to full17500/4375 updates, BF16, unchanged signatures. No restart or precision/model/data changes. Recovery preflight pending; final selection/test/API still incomplete. Deployment deferred per user. Evidence reports\colab-migration\windows-17500-memory-failure-audit-20261014.json.
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Validation: curated-efficient-original",
+  "updated_utc": "2026-10-14T15:48:02Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\experiments\\curated-efficient-original"
+}
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Validation: curated-efficient-pilot",
+  "updated_utc": "2026-10-14T15:48:02Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\experiments\\curated-efficient-pilot"
+}
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Capped25000-word training: epoch1",
+  "updated_utc": "2026-10-14T15:48:04Z",
+  "note": "One initial epoch only. No additional epochs scheduled.",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\full"
+}
+
+
+- 2026-10-14T15:49:34.407924+00:00: CPU-memory recovery passed77fullsoftwaretests, nativeBF16 real-image interrupted/resumed/reload smoke and64-image synchronizedbenchmark (0.618166images/s, peak2154064384bytes). Original31/frozen25k/5k/3k and freepipeline/controller locks reverified. Actual trainer20928/coordinator23964/controller36060 resumed full17500/4375update checkpoint; wrapper processes distinct, not duplicate studies. Sameprecision/config/epoch, process-only coreaffinity0..11/normalpriority, temporaryidle-sleep helper boundcontrollerwrapper11252. 48replayedpost17500losses exactlymatch archivedlog; currentprogress17540. Normal snapshot scheduling remainsactive. No source/model/data/learning change; memoryfailure preserved, exact initiatingpressure cause remainsunknown. Candidateval/selection/sealedfinal/APIparity stillpending. Vercel/GitHub deployment deferred. Evidence reports\colab-migration\windows-17500-memory-recovery-resume-20261014.json.

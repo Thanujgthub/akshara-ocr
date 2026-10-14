@@ -60,5 +60,29 @@
     "commit_headroom_bytes": 7562678272,
     "available_ram_bytes": 5566107648
   },
-  "scope": "Failure preservation and SHA-verified full checkpoints; no model or precision changes, no tensor reload or new run."
+  "scope": "Failure preservation and SHA-verified full checkpoints; no model or precision changes, no tensor reload or new run.",
+  "durable_verified": {
+    "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T153833Z-42722061",
+    "checkpoint": "checkpoints/step-0004375",
+    "metadata": {
+      "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+      "updates": 4375,
+      "epoch": 0,
+      "next_index": 17500,
+      "precision": "torch.bfloat16",
+      "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+    },
+    "state_byte_equal_to_source_generation": true
+  },
+  "serialized_scalars": {
+    "accumulation_progress": 0,
+    "effective_batch_size": 4,
+    "epoch": 0,
+    "next_index": 17500,
+    "updates": 4375
+  },
+  "software_tests": {
+    "passed": 77,
+    "scope": "Full unittest discover after GPU workers exited; actual smoke pending"
+  }
 }
