@@ -1,0 +1,285 @@
+{
+  "observed_utc": "2026-10-14T14:59:36.944672+00:00",
+  "counts": {
+    "train": 25000,
+    "validation": 5000,
+    "final-test": 3000
+  },
+  "frozen_manifest_hashes": {
+    "train": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+    "validation": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+    "final-test": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+  },
+  "pilot_manifest_counts": {
+    "train": 1000,
+    "validation": 500,
+    "test": 500
+  },
+  "pilot_manifest_hashes": {
+    "train": "5489cd7a0e7ebd852ee8e44d2277a60c2ff4175c663ce3b2f009137114cd6d25",
+    "validation": "34fa161db5c37e9fe7860a57f714675dffa64157ed500a62f8ed31e033cd6f08",
+    "test": "5ca6d0070cdaed46966ac57e99d2b376190fb3a912ea14161a82d52d775a51fd"
+  },
+  "historical_pilot_all_splits_vs_v3_final_overlap_counts": {
+    "example_id": 0,
+    "group_id": 0,
+    "original_sha256": 0,
+    "pixel_sha256": 0
+  },
+  "historical_pilot_training_vs_v3_validation_overlap_counts": {
+    "example_id": 0,
+    "group_id": 0,
+    "original_sha256": 0,
+    "pixel_sha256": 0
+  },
+  "v3_pairwise_overlap_counts": {
+    "train__validation": {
+      "example_id": 0,
+      "group_id": 0,
+      "original_sha256": 0,
+      "pixel_sha256": 0,
+      "leakage_group": 0
+    },
+    "train__final-test": {
+      "example_id": 0,
+      "group_id": 0,
+      "original_sha256": 0,
+      "pixel_sha256": 0,
+      "leakage_group": 0
+    },
+    "validation__final-test": {
+      "example_id": 0,
+      "group_id": 0,
+      "original_sha256": 0,
+      "pixel_sha256": 0,
+      "leakage_group": 0
+    }
+  },
+  "historical_exposure_unique_ids": 3277,
+  "historical_exposure_vs_v3_final_id_overlap_count": 0,
+  "historical_identity_sources": [
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\trial-train-curated.jsonl",
+      "sha256": "781876db7a9861e4a0eedb6bf4298cc9b2a3686acb3b1b8e8707f5d5af664d96",
+      "records": 1000
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-pilot-v1\\adapted-test\\predictions.jsonl",
+      "sha256": "0d73ddb59c4f33c38943c19cfaf9d6cac13ceeff2c090ef417be7de69c6db2ff",
+      "records": 500
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-pilot-v1\\baseline-test\\predictions.jsonl",
+      "sha256": "c24b9038583d0cd3587768ead8fefeab813e337b62ec3ab0ed9e9eb4ffdef659",
+      "records": 500
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-pilot-v1\\trained\\validation\\predictions.jsonl",
+      "sha256": "837865fb4229dc096a27ecdc9bcbe02cb2c59ae947bb53f44635bc7b9ebfd7d6",
+      "records": 500
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-original-official-official\\predictions.jsonl",
+      "sha256": "7a26d7ffd269c6cfea57abefab434a5e5199b8c694030d42d37ce84c5a0f3dcd",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-original-telugu_literal-official\\predictions.jsonl",
+      "sha256": "b0ac0f54ba16759b53c9c5aa065f74a79b72800d6755317a1f4ab3e6d22cb247",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-original-telugu_literal-white_margin\\predictions.jsonl",
+      "sha256": "de95725b361f06514f6ef1017be1ad0307fab0df8776e96cc571073e5c87fe72",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-pilot-official-official\\predictions.jsonl",
+      "sha256": "eef68f1b0341e4a159447d118f8ae490e20c43d4a7d1cd7a11e7b251a8478ec1",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-pilot-telugu_literal-official\\predictions.jsonl",
+      "sha256": "d53a9d39e89fccd7466356648d25d5480a5ed8d09a3c58a2f75829d43b8ef7c3",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-pilot-telugu_literal-white_margin\\predictions.jsonl",
+      "sha256": "4032d93f8d12b5e118e64fbeb8de0a4410b831d9ba65353403a2f39c2866a5ee",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\experiments\\original-official-official\\predictions.jsonl",
+      "sha256": "19788e9f2d05ca9fc1ceccdfd64701b096578aa1012afd6057d064a2436b6f6f",
+      "records": 300
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\experiments\\original-telugu_literal-official\\predictions.jsonl",
+      "sha256": "baa0268d244bf1bc9e91147e00c8a57bc6c893d7975335e2b65a00d148d64085",
+      "records": 261
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\smoke\\epoch-1\\validation\\predictions.jsonl",
+      "sha256": "3a6916177244a304b34aaea4dbdf10c0101686371b4dc8cbc36e80129d430c4f",
+      "records": 2
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\smoke-resume-v2\\resumed\\epoch-1\\validation\\predictions.jsonl",
+      "sha256": "d183a4cc2e6984422fa74a35c2add0d64adc6ccabbf33426c6be42ddffa3a326",
+      "records": 2
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\smoke-resume-v2\\uninterrupted\\epoch-1\\validation\\predictions.jsonl",
+      "sha256": "c381fc4b2916e5dea270bd3569be4593677827fd43ad16a8048138e1abbf02ef",
+      "records": 2
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\trials\\control\\epoch-1\\validation\\predictions.jsonl",
+      "sha256": "ad70d0164cc57485d889fa20e756adeab5612c111971d551e2aa24c1efe8b317",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\trials\\lr3e-5\\epoch-1\\validation\\predictions.jsonl",
+      "sha256": "60a3602f56b971dadec8fc2d8f75a7a935ce7f4ca380d98ff085229385261965",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\trials\\qkvo\\epoch-1\\validation\\predictions.jsonl",
+      "sha256": "7ddfca6b33acca5aaa7290f6924f113a5810be0a8d904b75d9b9024d676c790d",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\word-scale-v2\\trials\\rank16\\epoch-1\\validation\\predictions.jsonl",
+      "sha256": "4fc602b5d01da8127fd121bf0f3831ab3614c9da940f633e668f0c4093cb2b34",
+      "records": 287
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe\\environment.json",
+      "sha256": "b1e2f50e19e2ba53d87485d3b1757a2246f575794ee3752c44a9daa7e6ffce72",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe\\failure.json",
+      "sha256": "39e60a74a5e3380751af966d0799043097da75a1cba9f5e4725be116a6d9e73d",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-cpu\\contract.json",
+      "sha256": "db2e2e261511c59f59d8f16f442486f4f54bf0b3840a59733d89352e474259b2",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-cpu\\environment.json",
+      "sha256": "e8e6ca31c2595776b1af8bd10e9c20b4f8a270be2d48fb222f7ee83104b621b7",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-cpu\\failure.json",
+      "sha256": "265a475f75bf26115456ebab1fe22e722e4a51116686c41fdf38488c3213770c",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-cpu-target\\baseline_example.json",
+      "sha256": "99a9efb2446cc40ade9393148eafbe6b40062904bd8eb9c04ca5d3924677c87b",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-cpu-target\\contract.json",
+      "sha256": "db2e2e261511c59f59d8f16f442486f4f54bf0b3840a59733d89352e474259b2",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-cpu-target\\environment.json",
+      "sha256": "0b5f549a593f485e0bbfd06bc90dd6b7344d0aec117d456a5fa2d10d3859c484",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-gpu-target\\baseline_example.json",
+      "sha256": "99a9efb2446cc40ade9393148eafbe6b40062904bd8eb9c04ca5d3924677c87b",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-gpu-target\\contract.json",
+      "sha256": "db2e2e261511c59f59d8f16f442486f4f54bf0b3840a59733d89352e474259b2",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-gpu-target\\environment.json",
+      "sha256": "11777f12a3d279b12aed0475b59f435433ab2931c80d4b07cd4152c882a8746a",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-gpu-target\\probe.json",
+      "sha256": "616c89a69779b316cf6f9386c00b1e784e77659cc47f298fae3672c922f08df7",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-gpu-target\\adapter\\adapter_config.json",
+      "sha256": "582628af78528e66de4927b4cf832ff2890854d304ee2bddb4aec98a02531c3e",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-overfit\\baseline_example.json",
+      "sha256": "99a9efb2446cc40ade9393148eafbe6b40062904bd8eb9c04ca5d3924677c87b",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-overfit\\contract.json",
+      "sha256": "db2e2e261511c59f59d8f16f442486f4f54bf0b3840a59733d89352e474259b2",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-overfit\\environment.json",
+      "sha256": "c704bc8ecc2ab0433dbe9fdd21cd2a16a2ef7d749e7b9865fa64df1a62d548e1",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-overfit\\probe.json",
+      "sha256": "9a8dae181d93df9971cc2595c5ec539e660f5a3cacab5f1489ab087d223fa08f",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-overfit\\adapter\\adapter_config.json",
+      "sha256": "60ec64bd7044cfba4e8cc270a2ba2a1b40d31a73c7c5b4b4bda42a4b95d645c6",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-read\\environment.json",
+      "sha256": "8182bf82879c3c5fba759a759834b27dfc90447a117ac220b017b8d04414dce3",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-read\\failure.json",
+      "sha256": "4d2ef6628113757565d96c8e515c9bbce16c002f5e83589460f61df5cee8a0f0",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-stream\\environment.json",
+      "sha256": "80204efe7636ad401c73c0adf2df156aad339bc0be0777ee4e40150d8941309f",
+      "records": "recursive identity fields only"
+    },
+    {
+      "path": "D:\\OCR\\runs\\probe-stream\\failure.json",
+      "sha256": "59909e12d9192742d2aa572f0b0d80737ecd537f04eb5fa2020a5cc6a162a8f8",
+      "records": "recursive identity fields only"
+    }
+  ],
+  "scope": "Identity/hash/source-component audit only; no prediction outcomes or final label semantics analyzed, no inference, no selection change. Historical exposure record counts are not new verified training examples.",
+  "limits": [
+    "Unknown writer identities; no writer-disjoint claim.",
+    "Unknown original-model pretraining overlap.",
+    "Technical source-label verification does not complete human semantic review."
+  ],
+  "live_trainer_pid": 18796,
+  "progress": {
+    "epoch": 1,
+    "example": 16420,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4105,
+    "loss": 0.23029513657093048,
+    "lr": 3.612327382957225e-06,
+    "elapsed_seconds": 69029.74159431458,
+    "peak_allocated_vram_bytes": 2172328960
+  },
+  "frozen_files_and_original_artifacts_unmodified": true
+}
