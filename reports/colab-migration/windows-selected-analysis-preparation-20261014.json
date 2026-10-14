@@ -1,0 +1,25 @@
+{
+  "recorded_utc": "2026-10-14T06:03:47.747078+00:00",
+  "selected_analysis_focused_tests_passed": 6,
+  "selected_export_focused_tests_passed": 8,
+  "scope": "Synthetic metric/filesystem fixtures only; no OCR accuracy evidence.",
+  "actual_running_report_gate_rejected_without_final_data_access_or_output": true,
+  "active_gpu_modules_edited": false,
+  "training_progress": {
+    "epoch": 1,
+    "example": 11140,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 2785,
+    "loss": 1.518213152885437,
+    "lr": 5.835298080161671e-06,
+    "elapsed_seconds": 43337.6775124073,
+    "peak_allocated_vram_bytes": 2155797504
+  },
+  "analysis_execution_pending": true,
+  "actual_export_pending": true,
+  "complete_73_test_suite_pending_safe_boundary": true,
+  "report_command": "D:/OCR/runtime/venv/Scripts/python.exe -m ocr.selected_analysis --run D:/OCR/runs/word-efficient-v3 --output D:/OCR/runs/word-efficient-v3/reports/final-selected-analysis-v1.json",
+  "export_command_after_report": "D:/OCR/runtime/venv/Scripts/python.exe -m ocr.export_selected --run D:/OCR/runs/word-efficient-v3",
+  "report_fields": "Raw/NFC grapheme CER,raw/NFC WER,raw/NFC exact and grouped paired original-versus-locked-selected intervals.",
+  "preservation": "Source predictions,labels,selection and prior summary are never modified. SHA checks bind input/output selection and raw sources."
+}

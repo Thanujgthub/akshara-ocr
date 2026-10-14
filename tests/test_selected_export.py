@@ -71,3 +71,21 @@ class SelectedExportTests(unittest.TestCase):
             self.assertIsNone(metadata['adapter_relative_path'])
             self.assertFalse((folder/'adapter').exists())
             self.assertEqual(len(json.loads((folder/'model-provenance.json').read_text())['files']),31)
+
+    def test_bound_reporting_supplement_included(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);self.fixture(root);(root/'reports').mkdir()
+            protocol=json.loads((root/'protocol.json').read_text())
+            supplement={'selection':'candidate','selection_sha256':sha(root/'selection.json'),
+                        'final_manifest_sha256':protocol['manifests']['final-test']['sha256']}
+            (root/'reports/final-selected-analysis-v1.json').write_text(json.dumps(supplement))
+            folder,_,_=export_selected(root)
+            self.assertEqual(json.loads((folder/'selected-analysis.json').read_text()),supplement)
+            verify_export(folder)
+
+    def test_mismatched_reporting_supplement_rejected(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);self.fixture(root);(root/'reports').mkdir()
+            (root/'reports/final-selected-analysis-v1.json').write_text(json.dumps({'selection':'pilot','selection_sha256':'wrong','final_manifest_sha256':'wrong'}))
+            with self.assertRaises(RuntimeError):export_selected(root)
+            self.assertFalse((root/'selected-exports/latest.json').exists())

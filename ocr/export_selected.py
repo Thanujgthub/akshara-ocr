@@ -41,6 +41,18 @@ def verify_export(folder):
     metadata=read(folder/'metadata.json')
     if sha(folder/'selection.json')!=metadata['selection_sha256']:
         raise RuntimeError('Export differs from its locked selection reference')
+    selection=read(folder/'selection.json');summary=read(folder/'final-summary.json');protocol=read(folder/'protocol.json')
+    if selection['variant']!=metadata['variant'] or selection['adapter']!=metadata['source_adapter'] or summary['selection']!=selection:
+        raise RuntimeError('Exported selected-model references are inconsistent')
+    if sha(folder/'model-provenance.json')!=metadata['original_provenance_sha256']:
+        raise RuntimeError('Exported original-model provenance reference differs')
+    for relative,expected in metadata['source_adapter_hashes'].items():
+        if sha(folder/'adapter'/relative)!=expected:raise RuntimeError('Selected adapter copy differs from source reference')
+    supplement=folder/'selected-analysis.json'
+    if supplement.exists():
+        analysis=read(supplement)
+        if analysis['selection_sha256']!=metadata['selection_sha256'] or analysis['selection']!=metadata['variant'] or analysis['final_manifest_sha256']!=protocol['manifests']['final-test']['sha256']:
+            raise RuntimeError('Exported reporting supplement differs from locked selection/final inputs')
     return metadata
 
 
@@ -80,6 +92,12 @@ def export_selected(root, parent=None, provenance=None):
              'final-summary.json':root/'final-summary.json','training_complete.json':root/'full/training_complete.json',
              'best.json':root/'full/best.json','full-config.json':root/'configs/full.json',
              'model-provenance.json':provenance}
+    supplement=root/'reports/final-selected-analysis-v1.json'
+    if supplement.exists():
+        analysis=read(supplement)
+        if analysis['selection_sha256']!=sha(root/'selection.json') or analysis['final_manifest_sha256']!=protocol['manifests']['final-test']['sha256'] or analysis['selection']!=selection['variant']:
+            raise RuntimeError('Reporting supplement differs from locked selection/frozen final inputs')
+        sources['selected-analysis.json']=supplement
     for relative,source in sources.items():copy_verified(source,staging/relative)
     metadata={'created_utc':datetime.now(timezone.utc).isoformat(),'role':'final-selected-artifact',
               'selection_sha256':sha(root/'selection.json'),'source_adapter':selection['adapter'],
