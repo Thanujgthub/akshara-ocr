@@ -1,0 +1,64 @@
+{
+  "observed_utc": "2026-10-14T15:42:20.006892+00:00",
+  "archive": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\cpu-memory-failure-20261014T154220Z",
+  "archived_sha256": {
+    "status.json": "3e8d510a124a51d930db229853cae1a7e9208a6779f1c49521136523519c6419",
+    "failure.json": "b5d3a36170b58d864a1ef0569c1c354b5a08762bc6cfd0270509c252955dc790",
+    "full/failure.json": "438ae4d3f663b019fcde63659d2532377f899d7a43d2c1bdacd295a06ae2edcc",
+    "full/training_progress.json": "3337a4bdf89b769f36bf6fff6b95c186805dd579143ca7fca9ab0c98c31764e5",
+    "full/training.jsonl": "33ce58f4bd7b7b2afb32fdd8afa8208984b18f153ac877c113350e3f01ce1907",
+    "full/execution.log": "ed7cf2728a0c7fdbd77b6e208ba7ba3b933a1e6afdc035406524e69a65cdea9f",
+    "full/resume.json": "7a5c4c208f2793cf6ac2b88a8f09c446e74e5c6f0f93279268a53ea60203dfc8",
+    "drive-sync-status.json": "77623cc129aa523eefd1f4351551312da2cf3a2e0ee1d1b6451e4623488deaaa",
+    "recovery/cuda-memory-preflight-v1/controller.stdout.log": "0729346164023f94b3f9fb016f4b04f91d21df745156b7f4d275712bbe914fa5",
+    "recovery/cuda-memory-preflight-v1/controller.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "workers": [],
+  "checkpoints": {
+    "step-0004250": {
+      "checksums": {
+        "adapter/adapter_config.json": "872ef8ff12812ace4493c94bb28bb69bed853d47028b7401ded27b94a6fb4ee4",
+        "adapter/adapter_model.safetensors": "7b33226bccfb4001be2c400a6cc43c22ef6afc32afb764bb7637d49bf85cd584",
+        "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+        "recovery.json": "27f8fefefa231c4bd1969adeba8216757eaa2ab0ad27a69bdbd4ac771c96da5f",
+        "state.pt": "c12c7e2237f558617cbf434ac99c099c1ada3fd89e755c90eb64f938b1a48953"
+      },
+      "metadata": {
+        "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+        "updates": 4250,
+        "epoch": 0,
+        "next_index": 17000,
+        "precision": "torch.bfloat16",
+        "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+      }
+    },
+    "step-0004375": {
+      "checksums": {
+        "adapter/adapter_config.json": "872ef8ff12812ace4493c94bb28bb69bed853d47028b7401ded27b94a6fb4ee4",
+        "adapter/adapter_model.safetensors": "233f7e173def9467de0747ff196e4e0f743852952898edf3491f031e3193c671",
+        "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+        "recovery.json": "b2e00f827ffea5db22365c9bba92581ec15d8c3ee05aa180f6c02e63b1f8b4d4",
+        "state.pt": "d3c8ebe9b25108b3cdfa1fec53e4b8527af4fb107e100c9e3686d303f6a3ef5e"
+      },
+      "metadata": {
+        "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+        "updates": 4375,
+        "epoch": 0,
+        "next_index": 17500,
+        "precision": "torch.bfloat16",
+        "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+      }
+    }
+  },
+  "preserved_generations": 35,
+  "resume_pointer": {
+    "checkpoint": "checkpoints/step-0004375",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "a8f9d71ca9aed7cd28393a7d19986396a43d6df7f4a6ce66218916c1ad10b1c9"
+  },
+  "memory": {
+    "commit_headroom_bytes": 7562678272,
+    "available_ram_bytes": 5566107648
+  },
+  "scope": "Failure preservation and SHA-verified full checkpoints; no model or precision changes, no tensor reload or new run."
+}
