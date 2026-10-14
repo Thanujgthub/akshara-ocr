@@ -463,3 +463,6 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-14T16:04:51.640037+00:00: Normal scheduled snapshot snapshot-20261014T160345Z-e11111e1 containsfull18000/4500updatecheckpoint; snapshotindex/fullcheckpoint checksums and statebyteidentity tocorresponding immutablelive generation independentlyverified. Same trainer20928 live at18080. No restart/sourceedit/extraepoch/inference. Candidateval/selection/sealedfinal/APIparity remainpending; Vercel/GitHub publication deferred. Evidence reports\colab-migration\windows-18000-durable-snapshot-20261014.json.
+
+
+- 2026-10-14T16:06:40.341603+00:00: Corrected README onboarding toleadwith activefrozen25k/5k/3k,oneinitialepoch, nativeBF16Windowsprotocol, completedoriginal/pilotvalidation, unfinishedcandidate/final/APIstages andcurrentcappedlauncher. Markedold80,083/twoepochlaunchers explicitlyretired/historical whilepreservingtheirreferences/artifacts. Vercel/GitHubpublication deferredperuser. gitdiffcheckpasses; documentationonly,noactiveGPUmodule/artifact edit,no newGPU/tests/launch. Sameactualtrainer20928 liveat18140.

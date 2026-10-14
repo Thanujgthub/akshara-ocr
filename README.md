@@ -2,7 +2,17 @@
 
 A clean transcription/review website with a local IndicOCR API, executed word-recognizer LoRA experiment, frozen data manifests and measured original-versus-adapted test results. Read `reports/evaluation.md` for the actual results and limitations. Word-crop performance does not establish full-page quality.
 
-## Open on this computer
+## Active capped study — 14 October 2026
+
+Read `AGENTS.md`, `PROJECT_STATE.md`, `WORK_LOG.md` and `CODEX_CLI_HANDOFF.md` before resuming. The active Windows run is `D:/OCR/runs/word-efficient-v3`: frozen **25,000 training / 5,000 validation / 3,000 sealed final-test** pairs, **one initial epoch**, native BF16. The local RTX 3050 continuation is approved and currently running; inspect live processes and the latest checkpoint before any launch. Never start a duplicate run or resume full training from smoke/benchmark checkpoints.
+
+Original-model validation is complete (5,000 words: CER 10.6956%, WER 32.38%, raw exact-word accuracy 73.24%). Pilot validation is also complete (CER 9.1996%, WER 30.38%, raw exact-word accuracy 74.14%) and supports pilot initialization using validation only. Full candidate training, candidate validation, locked selection, sealed final testing and selected-model API parity remain unfinished. These are Windows measurements, not Colab results. All 77 software tests passed during the latest recovery preflight; software checks do not establish OCR accuracy.
+
+Use [the local progress dashboard](http://127.0.0.1:8765/progress.html) while the existing service is running. GPU inference waits for the study to finish. After measured training, validation selection and sealed testing are complete, `./Start-AksharaSelected.ps1` launches the validation-selected model; verify actual API parity and browser transcription before claiming integration. Vercel deployment and GitHub publication are deferred by the user until testing and analysis are finished. No current hosting authentication is implied.
+
+Preserve the original checkpoint/processor/tokenizer, pilot, prior reports and all frozen artifacts. Never choose settings using final-test labels. Unknown writer identity, possible pretraining overlap, incomplete human label review and word-crop scope remain limitations. Current recovery details and measured progress belong in `PROJECT_STATE.md` and `WORK_LOG.md`.
+
+## Historical pilot: open on this computer
 
 From this project folder in PowerShell:
 
@@ -72,12 +82,14 @@ Dataset attribution: IIIT Hyderabad, IIIT-INDIC-HW-WORDS Telugu, CC BY 4.0 state
 
 Model connection includes an original/adapted weight selector; the REST/CLI variant parameter accepts original or adapted. API parity and browser transcription were verified on a held-out word.
 
-## Scale research and validation-selected handoff
+## Retired scale research and historical handoff
 
-Resume the existing scale pipeline with `./Resume-Scale-Training.ps1`; it refuses a second active pipeline and restores optimizer, scheduler and RNG checkpoints. It preserves the original model and frozen pilot. New data/runs live under D:/OCR/research-v2 and D:/OCR/runs/word-scale-v2. Do not edit training modules while a process is active.
+**Historical v2 plan only. Do not launch its commands for the active study.** The 80,083-pair/two-epoch plan and `D:/OCR/runs/word-scale-v2` lineage are retired. Preserve their records; use the capped v3 protocol above. The following paths and interface descriptions document the earlier work, not authorization to resume it.
 
-Open http://127.0.0.1:8765/research-v2 for measured progress and /review-v2 for separate versioned annotations. Word training uses 80,083 eligible image/label pairs with 11,723 distinct labels; source labels are not all human verified. Trial results are exploratory validation evidence, not independent test performance. Inference remains paused while GPU experiments run.
+The historical scale pipeline used `./Resume-Scale-Training.ps1`; it refuses a second active pipeline and restores optimizer, scheduler and RNG checkpoints. It preserves the original model and frozen pilot. Its data/runs live under D:/OCR/research-v2 and D:/OCR/runs/word-scale-v2. Do not run this retired launcher or edit training modules while a process is active.
 
-After completed full training, validation selection and sealed final testing, use `./Start-Selected-Scale-Model.ps1`. It refuses unfinished runs, serves the validation-selected original/pilot/scale variant and applies the selected word prompt/preprocessing. Original and adapted selectors use identical selected input policy. Actual GPU parity of the new word API path remains to be checked after training; unit checks establish explicit greedy/EOS/PAD settings and raw whitespace preservation only. Page inference retains the official experimental pipeline and has no measured page benchmark.
+The existing http://127.0.0.1:8765/research-v2 monitor and /review-v2 annotation interface also remain available. The retired plan covered 80,083 eligible image/label pairs with 11,723 distinct labels; this does not establish completed training on that count. Source labels are not all human verified. Historical trial results are exploratory validation evidence, not independent test performance. Inference remains paused while GPU experiments run.
+
+The historical `./Start-Selected-Scale-Model.ps1` launcher belongs to the retired lineage; the active capped launcher is `./Start-AksharaSelected.ps1`. Original and adapted selectors use identical selected input policy. Actual GPU parity of the current word API path remains to be checked after the capped study; unit checks establish explicit greedy/EOS/PAD settings and raw whitespace preservation only. Page inference retains the official experimental pipeline and has no measured page benchmark.
 
 Word API responses include uncertainty flags, truncation, generated token IDs and resource abstention where applicable. No-text is not inferred from an empty abstention. Studio JSON schema 1.1 retains these diagnostics and model identity in queue/library/export records. Text confidence is not calibrated. Literal transcription is never silently spelling-corrected or replaced with contextual guesses.
