@@ -1,0 +1,23 @@
+{
+  "recorded_utc": "2026-10-14T05:12:46.105788+00:00",
+  "focused_export_software_tests_passed": 6,
+  "scope": "Synthetic filesystem fixtures only; no OCR examples/accuracy evidence.",
+  "actual_running_study_gate_rejected_export": true,
+  "actual_selected_exports_directory_exists": false,
+  "legacy_single_zip_currently_exists": false,
+  "active_gpu_modules_edited": false,
+  "training_progress": {
+    "epoch": 1,
+    "example": 9740,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 2435,
+    "loss": 0.004947939421981573,
+    "lr": 6.42472212866285e-06,
+    "elapsed_seconds": 40262.772344112396,
+    "peak_allocated_vram_bytes": 2153225216
+  },
+  "export_source": "ocr/export_selected.py",
+  "post_study_command": "D:/OCR/runtime/venv/Scripts/python.exe -m ocr.export_selected --run D:/OCR/runs/word-efficient-v3",
+  "export_execution_pending": true,
+  "complete_65_test_suite_pending_safe_boundary": true
+}
