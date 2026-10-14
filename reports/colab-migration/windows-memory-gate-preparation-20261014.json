@@ -1,0 +1,24 @@
+{
+  "observed_utc": "2026-10-14T16:14:39.590548+00:00",
+  "software_tests_passed": 80,
+  "command": "D:/OCR/runtime/venv/Scripts/python.exe -m unittest discover -s tests -q",
+  "new_module": "ocr/windows_memory.py",
+  "actual_memory_gate": {
+    "passed": false,
+    "measurement": {
+      "observed_utc": "2026-10-14T16:13:52.759798+00:00",
+      "commit_total_bytes": 20462161920,
+      "commit_limit_bytes": 25391124480,
+      "commit_headroom_bytes": 4928962560,
+      "available_ram_bytes": 2916581376,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9663676416,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 3.0,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "scope": "Read-only nativeWindows pre-load commit-capacity gate, no GPU/model imports/launch/processkill/systemsettingchanges. Conservative6GiBmodelallowance plus3GiBreserve; notproof offuturestablememory, modelquality, BF16 or completedstudy.",
+  "recovery_next_step": "PendinguserrestartWindows; afterreconnect inspectboot/activeDpagefile, run new memory gate with fresh report, then other required preflight gates before full18000resume."
+}
