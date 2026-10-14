@@ -1,0 +1,27 @@
+{
+  "observed_utc": "2026-10-14T06:56:44.984193+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T065346Z-f7942490",
+  "index_sha256": "c3b101195d0d9b213c4ab714ea1216cf3ab9a127d686887bc163d54383631679",
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 3125,
+    "epoch": 0,
+    "next_index": 12500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "state_bytes_match_corresponding_immutable_live_checkpoint": true,
+  "trainer_pid": 30976,
+  "trainer_created": 1791927423.1429949,
+  "progress": {
+    "epoch": 1,
+    "example": 12720,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 3180,
+    "loss": 0.029830045998096466,
+    "lr": 5.170090939710341e-06,
+    "elapsed_seconds": 46495.79648280144,
+    "peak_allocated_vram_bytes": 2172276224
+  },
+  "no_restart_or_active_gpu_edit": true
+}
