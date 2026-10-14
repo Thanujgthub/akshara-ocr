@@ -1,0 +1,89 @@
+{
+  "observed_utc": "2026-10-14T02:34:49.690780+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0001750",
+  "checksums": {
+    "adapter/adapter_config.json": "b6138cdda31528a01149ce0bb92e92814a629b533644848aba70ca852a1a08c2",
+    "adapter/adapter_model.safetensors": "6e6bbe7b922aa605fa9cde6976358ae652565732871525ac604e805aa336aacd",
+    "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+    "recovery.json": "6c69518b80c9f3b8e9ffcbb2e592d5c78d0a05794c7126e6abbadcec4ee7ad84",
+    "state.pt": "c2260ebf63285f660fc620fc2a7a1eef440a156b7c1c1fdbf781a020e00a5a0f"
+  },
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1750,
+    "epoch": 0,
+    "next_index": 7000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "unchanged_configuration_and_dataset_signatures": true,
+  "frozen_manifest_hashes": {
+    "train": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+    "validation": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+    "final-test": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+  },
+  "serialized_resume_fields_present": [
+    "accumulation_progress",
+    "augment_rng",
+    "cuda_rng",
+    "dataset_fingerprint",
+    "effective_batch_size",
+    "numpy_rng",
+    "optimizer",
+    "precision",
+    "python_rng",
+    "scheduler",
+    "torch_rng"
+  ],
+  "serialized_scalar_values_verified": {
+    "effective_batch_size": 4,
+    "accumulation_progress": 0,
+    "updates": 1750,
+    "next_index": 7000,
+    "epoch": 0
+  },
+  "state_inspection_scope": "Hashes and pickle opcode keys/primitive values without executing pickle or importing Torch; prior actual exact-resume smoke preserved.",
+  "preserved_checkpoint_generations": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500",
+    "step-0000625",
+    "step-0000750",
+    "step-0000875",
+    "step-0001000",
+    "step-0001125",
+    "step-0001250",
+    "step-0001375",
+    "step-0001500",
+    "step-0001625",
+    "step-0001750"
+  ],
+  "progress": {
+    "epoch": 1,
+    "example": 7060,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 1765,
+    "loss": 0.006388623267412186,
+    "lr": 7.553048164365107e-06,
+    "elapsed_seconds": 30775.16027212143,
+    "peak_allocated_vram_bytes": 2153225216
+  },
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T022948Z-e47fdbc1",
+  "snapshot_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 1625,
+    "epoch": 0,
+    "next_index": 6500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "trainer_coordinator_controller_and_power_helper_live": true,
+  "ram_available_bytes": 3750641664,
+  "wall_elapsed_includes_standby_not_active_gpu_time": true,
+  "standby_evidence": "reports/colab-migration/windows-standby-recovery-20261014.json",
+  "epoch_count_unchanged": 1,
+  "candidate_validation_pending": true,
+  "sealed_final_test_pending": true,
+  "website_api_parity_pending": true
+}
