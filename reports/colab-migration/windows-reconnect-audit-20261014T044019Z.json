@@ -1,0 +1,42 @@
+{
+  "recorded_utc": "2026-10-14T04:40:19.421323+00:00",
+  "colab_connection_attempt_result": false,
+  "notebook_edit_or_runtime_tools_unlocked": false,
+  "local_workers": {
+    "30976": {
+      "live": true,
+      "module": "ocr.scale_experiment"
+    },
+    "24528": {
+      "live": true,
+      "module": "ocr.run_efficient"
+    },
+    "22780": {
+      "live": true,
+      "module": "ocr.colab_runner"
+    },
+    "29516": {
+      "live": true,
+      "module": "ocr.windows_keep_awake"
+    }
+  },
+  "website_health": {
+    "status": "ok",
+    "model_ready": false,
+    "model_load_verified": false,
+    "training_active": true,
+    "note": "Inference waits until the local GPU study completes."
+  },
+  "training_progress": {
+    "epoch": 1,
+    "example": 8640,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 2160,
+    "loss": 0.04294579103589058,
+    "lr": 6.887841023913776e-06,
+    "elapsed_seconds": 38326.12366652489,
+    "peak_allocated_vram_bytes": 2153225216
+  },
+  "duplicate_run_started": false,
+  "colab_cells_edited_or_executed": false
+}
