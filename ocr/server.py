@@ -12,11 +12,27 @@ app=FastAPI(title='Akshara OCR API',version='0.1.0')
 origins=os.environ.get('OCR_ALLOWED_ORIGINS','http://127.0.0.1:8765,http://localhost:8765').split(',')
 app.add_middleware(CORSMiddleware,allow_origins=origins,allow_methods=['GET','POST'],allow_headers=['Content-Type'],allow_credentials=False)
 
+def gpu_worker_active():
+    """Preflight workers can be live while the prior coordinator state says failed."""
+    import psutil
+    for process in psutil.process_iter(['cmdline']):
+        try:
+            command=process.info.get('cmdline') or []
+            if '-m' not in command:continue
+            index=command.index('-m')+1
+            if index>=len(command):continue
+            module=command[index]
+            if module=='ocr.colab_benchmark':return True
+            if module=='ocr.scale_experiment' and index+1<len(command) and command[index+1] in {'train','smoke','evaluate'}:
+                return True
+        except psutil.Error:continue
+    return False
+
 def study_busy():
     from .study_routes import ROOT,read
     return (read(ROOT/'status.json') or {}).get('status')=='running' or any(
         (read(Path('D:/OCR/runs')/name/'status.json') or {}).get('status') in {'running','preparing','prepared'}
-        for name in ['word-scale-v2','word-efficient-v3'])
+        for name in ['word-scale-v2','word-efficient-v3']) or gpu_worker_active()
 
 @app.get('/api/health')
 def health():

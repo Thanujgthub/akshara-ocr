@@ -1,0 +1,32 @@
+{
+  "observed_utc": "2026-10-14T10:04:10.526367+00:00",
+  "observed_issue": "During actual recovery benchmark, APIhealth model_ready=True/training_active=False with old failed study state; no API model was loaded.",
+  "fix": "Also check exact -m OCR GPU worker commands; exclude API parity and shell text.",
+  "focused_regression_tests_passed": 2,
+  "real_live_worker_detection_verified": true,
+  "trainer_pid": 18796,
+  "trainer_created": 1791967896.1521745,
+  "progress": {
+    "epoch": 1,
+    "example": 15140,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 3785,
+    "loss": 0.049285393208265305,
+    "lr": 4.151229370158303e-06,
+    "elapsed_seconds": 51280.178926706314,
+    "peak_allocated_vram_bytes": 2172328960
+  },
+  "actual_existing_api_health": {
+    "status": "ok",
+    "model_ready": false,
+    "model_load_verified": false,
+    "training_active": true,
+    "note": "Inference waits until the local GPU study completes."
+  },
+  "live_api_restarted": false,
+  "active_gpu_training_modules_edited": false,
+  "activation": "At selected-model API launch after study finishes. On future recovery, mark preflight status preparing before GPU smoke/benchmark so current API also stays paused.",
+  "full77_test_suite_pending_safe_gpu_boundary": true,
+  "previous_full75_passed_before_current_run": true,
+  "candidate_validation_final_evaluation_and_api_parity_pending": true
+}
