@@ -1,0 +1,112 @@
+{
+  "observed_utc": "2026-10-14T08:46:16.912461+00:00",
+  "failure_audit": {
+    "observed_utc": "2026-10-14T08:43:25.832320+00:00",
+    "archive": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\cuda-memory-failure-20261014T084325Z",
+    "all_four_previous_workers_exited": true,
+    "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0003250",
+    "checkpoint_recovery": {
+      "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+      "updates": 3250,
+      "epoch": 0,
+      "next_index": 13000,
+      "precision": "torch.bfloat16",
+      "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+    },
+    "checkpoint_hashes_identical_to_prior_audit": true,
+    "failure": "CUDA out-of-memory during gradient-checkpoint recomputation; controller also recorded MemoryError hashing an8MiB buffer. Exact initiating cause not established.",
+    "raw_last_progress": {
+      "epoch": 1,
+      "example": 13340,
+      "examples_per_epoch": 25000,
+      "optimizer_updates": 3335,
+      "loss": 0.01020860206335783,
+      "lr": 4.909060289659818e-06,
+      "elapsed_seconds": 49652.89522957802,
+      "peak_allocated_vram_bytes": 2172276224
+    },
+    "commit_used_bytes": 19578187776,
+    "commit_limit_bytes": 25219530752,
+    "commit_headroom_bytes": 5641342976,
+    "ram_available_bytes": 3147755520,
+    "candidate_validation_pending": true,
+    "final_test_pending": true
+  },
+  "last_raw_training_record": {
+    "epoch": 1,
+    "example": 13347,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 3336,
+    "loss": 1.27308189868927,
+    "lr": 4.907376220949815e-06,
+    "elapsed_seconds": 52751.37785577774,
+    "peak_allocated_vram_bytes": 2172276224
+  },
+  "preflight_hardware": {
+    "observed_utc": "2026-10-14T08:45:30.810391+00:00",
+    "original_checkpoint_files_verified": 31,
+    "frozen_manifests_verified": {
+      "train": {
+        "count": 25000,
+        "sha256": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496"
+      },
+      "validation": {
+        "count": 5000,
+        "sha256": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4"
+      },
+      "final-test": {
+        "count": 3000,
+        "sha256": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+      }
+    },
+    "both_run_locks_available": true,
+    "no_active_study_process": true,
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "gpu_vram_bytes": 4294508544,
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "native_bf16": true,
+    "ram_available_bytes": 2672406528,
+    "software_tests_passed": 75,
+    "checkpoint_to_resume": "full/checkpoints/step-0003250",
+    "precision": "bf16"
+  },
+  "smoke_workers": [
+    {
+      "cmdline": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "smoke",
+        "--config",
+        "D:/OCR/runs/word-efficient-v3/configs/full.json",
+        "--manifest",
+        "D:/OCR/runs/word-efficient-v3/train.jsonl",
+        "--output",
+        "D:/OCR/runs/word-efficient-v3/recovery/cuda-memory-preflight-v1/smoke"
+      ],
+      "pid": 20896
+    },
+    {
+      "cmdline": [
+        "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "smoke",
+        "--config",
+        "D:/OCR/runs/word-efficient-v3/configs/full.json",
+        "--manifest",
+        "D:/OCR/runs/word-efficient-v3/train.jsonl",
+        "--output",
+        "D:/OCR/runs/word-efficient-v3/recovery/cuda-memory-preflight-v1/smoke"
+      ],
+      "pid": 27004
+    }
+  ],
+  "bounded_hash_buffer_bytes": 262144,
+  "hash_and_training_semantics_unchanged": true,
+  "software_tests_passed": 75,
+  "smoke_benchmark_full_resume_pending": true
+}

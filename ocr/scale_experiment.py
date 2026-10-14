@@ -7,13 +7,7 @@ from ocr.research_policy import TELUGU_PROMPT,quality,flags,augment,length_bin,c
 from ocr.metrics import corpus,compare
 from ocr.research_io import save
 from ocr.portable_paths import resolve_path
-from ocr.checkpoint_io import save_checkpoint,recovery_folder,save_adapter_export
-
-def sha(path):
-    h=hashlib.sha256()
-    with Path(path).open('rb') as f:
-        for b in iter(lambda:f.read(8*1024*1024),b''):h.update(b)
-    return h.hexdigest()
+from ocr.checkpoint_io import save_checkpoint,recovery_folder,save_adapter_export,sha
 
 class ScaleExperiment(Experiment):
     def adapter_digest(self):

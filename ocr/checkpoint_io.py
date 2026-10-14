@@ -7,7 +7,8 @@ from .research_io import save
 def sha(path):
     h=hashlib.sha256()
     with Path(path).open('rb') as f:
-        for b in iter(lambda:f.read(8*1024*1024),b''):h.update(b)
+        # Hash unchanged bytes with bounded buffers even under Windows commit pressure.
+        for b in iter(lambda:f.read(256*1024),b''):h.update(b)
     return h.hexdigest()
 
 
