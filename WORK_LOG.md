@@ -354,3 +354,6 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-14T15:50:57.261944+00:00: Full17500 recovery replay confirmed: all80 archivedlosses17501..17580 exactlymatch resumed run; actualtrainer20928 advancedrawto17588 beyondpriorfailure boundary,finite losses. APIhealth verifiestraining_activeTrue/model_readyFalse/model_load_verifiedFalse; no concurrentinference. Memorypressure rootcause notestablished orclaimedfixed. Samefrozenprotocol; finalvalidation/selection/sealedtesting/APIparity pending. Evidence reports\colab-migration\windows-17500-recovery-replay-confirmed-20261014.json.
+
+
+- 2026-10-14T15:54:16.914419+00:00: Normal recoverycontroller scheduledsnapshot snapshot-20261014T155315Z-b2124814 independentlyverified afterfull17500resume; snapshotindex/fullcheckpointSHA and statebyteidentity tocorrespondingsource generation pass. Trainer20928 stilllive at17700; no restart,newepoch,sourceedit or inference.77fulltests and freshsmoke/benchmark passedbeforelaunch. Candidateval/lockedselection/sealedfinal/APIparity unfinished; publicationdeferred. Evidence reports\colab-migration\windows-17500-recovery-scheduled-backup-20261014.json.

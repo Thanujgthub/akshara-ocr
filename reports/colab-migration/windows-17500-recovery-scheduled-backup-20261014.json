@@ -1,0 +1,37 @@
+{
+  "observed_utc": "2026-10-14T15:54:16.914419+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T155315Z-b2124814",
+  "verified_snapshot_index": {
+    "directory": "snapshot-20261014T155315Z-b2124814",
+    "index_sha256": "fc1b5ea4e857f642daae6fa7b0c3ef5f1db524d16763bc829cc425ed04360b92"
+  },
+  "checkpoint": {
+    "checkpoint": "checkpoints/step-0004375",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "a8f9d71ca9aed7cd28393a7d19986396a43d6df7f4a6ce66218916c1ad10b1c9"
+  },
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4375,
+    "epoch": 0,
+    "next_index": 17500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "state_byte_equal_to_corresponding_source_generation": true,
+  "live_trainer": {
+    "pid": 20928,
+    "created": 1791992884.1803534
+  },
+  "progress": {
+    "epoch": 1,
+    "example": 17700,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4425,
+    "loss": 0.05281705781817436,
+    "lr": 3.073425395756147e-06,
+    "elapsed_seconds": 71513.69979977608,
+    "peak_allocated_vram_bytes": 2109107200
+  },
+  "scope": "Normal scheduled durable snapshot after verified recovery; does not establish completed training or candidate improvement."
+}
