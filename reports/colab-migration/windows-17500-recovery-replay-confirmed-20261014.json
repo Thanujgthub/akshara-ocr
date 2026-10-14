@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-10-14T15:50:57.261944+00:00",
+  "actual_trainer_pid": 20928,
+  "trainer_created": 1791992884.1803534,
+  "replayed_examples": 80,
+  "range": [
+    17501,
+    17580
+  ],
+  "all_replayed_losses_exact": true,
+  "observed_raw_example": 17588,
+  "observed_committed_progress": 17580,
+  "live_api_health": {
+    "training_active": true,
+    "model_ready": false,
+    "model_load_verified": false
+  },
+  "scope": "Replay losses equal archived run through previous failure boundary; not proof of eliminated Windows memory pressure or model improvement."
+}
