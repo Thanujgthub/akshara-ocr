@@ -1,10 +1,25 @@
 """Local-only live scale-up monitor; never exposes final-test examples during selection."""
 from pathlib import Path
-import json,statistics,os
+import json,statistics,os,hashlib
 from fastapi import APIRouter
 from fastapi.responses import HTMLResponse
 from .study_routes import read
 router=APIRouter();ROOT=Path(os.environ.get('OCR_RESEARCH_RUN','D:/OCR/runs/word-efficient-v3' if Path('D:/OCR/runs/word-efficient-v3/status.json').exists() else 'D:/OCR/runs/word-scale-v2'))
+
+def selected_analysis(root,state,summary,selection,protocol):
+    """Expose only completed reporting bound to the locked comparison; no predictions read."""
+    if state.get('status')!='completed' or not summary or not selection or summary.get('selection')!=selection:
+        return None
+    report=read(root/'reports/final-selected-analysis-v1.json')
+    if not report:return None
+    try:
+        expected={'selection':selection['variant'],
+                  'selection_sha256':hashlib.sha256((root/'selection.json').read_bytes()).hexdigest(),
+                  'final_summary_sha256':hashlib.sha256((root/'final-summary.json').read_bytes()).hexdigest(),
+                  'final_manifest_sha256':protocol['manifests']['final-test']['sha256']}
+        if any(report.get(k)!=v for k,v in expected.items()):return None
+        return report
+    except (OSError,KeyError,TypeError):return None
 
 def recent_timing(path):
     if not path.exists():return None
@@ -45,10 +60,13 @@ def status():
             folder=ROOT/'trials'/experiment['name'][6:]
             best=read(folder/'best.json')
             if best:experiment['resource_scope']=read(folder/f"epoch-{best['epoch']}/validation/resource-scope.json")
-    return {'run_directory':str(ROOT),'status':state,'protocol':protocol,'curation':curation,'selection':read(ROOT/'selection.json'),
+    selection=read(ROOT/'selection.json')
+    final=read(ROOT/'final-summary.json') if state['status']=='completed' else None
+    return {'run_directory':str(ROOT),'status':state,'protocol':protocol,'curation':curation,'selection':selection,
             'progress':progress,'evaluation':evaluation,
             'training_timing':recent_timing(active/'training.jsonl'),
-            'experiments':experiments,'final':read(ROOT/'final-summary.json') if state['status']=='completed' else None,
+            'experiments':experiments,'final':final,
+            'selected_analysis':selected_analysis(ROOT,state,final,selection,protocol),
             'audit_tail':log.read_text(encoding='utf-8',errors='replace')[-1200:] if log.exists() else '',
             'failure':read(ROOT/'failure.json') if state['status']=='failed' else None}
 

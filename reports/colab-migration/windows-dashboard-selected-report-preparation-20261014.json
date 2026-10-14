@@ -1,0 +1,34 @@
+{
+  "observed_utc": "2026-10-14T06:23:54.386239+00:00",
+  "progress": {
+    "epoch": 1,
+    "example": 11800,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 2950,
+    "loss": 0.020315609872341156,
+    "lr": 5.557426743011115e-06,
+    "elapsed_seconds": 44540.163660526276,
+    "peak_allocated_vram_bytes": 2172276224
+  },
+  "trainer_pid": 30976,
+  "trainer_created": 1791927423.1429949,
+  "changes": [
+    "Prepared completed-only, selection/summary/manifest-hash-bound reporting supplement exposure in website API.",
+    "Frontend raw/NFC CER,WER,exact and original-versus-selected six paired intervals."
+  ],
+  "active_gpu_modules_edited": false,
+  "api_process_restarted": false,
+  "new_route_activation": "At selected-model API launch after GPU study completion.",
+  "focused_monitor_tests_passed": 4,
+  "javascript_syntax_check_passed": true,
+  "full_75_suite_pending_safe_boundary": true,
+  "playwright_live_page_verified": true,
+  "playwright_screenshot": "C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr\\output\\playwright\\akshara-reconnect-live-20261014.png",
+  "screenshot_sha256": "d8a985a399be0053e522a150cf55bb5658ed9d704dfc9f9d1d17914a005e4f7a",
+  "playwright_scope": "Actual live progress/sealed results/inference-paused render only; completed metrics and actual selected-model upload/parity still pending.",
+  "browser_closed_after_check": true,
+  "console_errors": [
+    "favicon.ico404; no functional application error observed"
+  ],
+  "final_outputs_read": false
+}

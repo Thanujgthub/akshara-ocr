@@ -22,10 +22,12 @@ async function refresh(){
     byId('finalStatus').textContent=final?'Completed sealed comparison on identical frozen inputs.':'Sealed; final results appear only after the complete study is recorded.';
     byId('finalMetrics').replaceChildren();
     if(final){
+      const analysis=d.selected_analysis;
       const diagnostics={};
       for(const [name,m] of Object.entries(final.final_metrics||{})){
+        const supplemental=analysis?.raw_nfc_final_metrics?.[name];
         const row=document.createElement('tr');
-        for(const value of [name,m.examples,percent(m.raw_micro_cer),percent(m.micro_cer),percent(m.micro_wer),percent(m.raw_exact_match)]){const cell=document.createElement('td');cell.textContent=value;row.append(cell)}
+        for(const value of [name,m.examples,percent(supplemental?.raw_micro_cer??m.raw_micro_cer),percent(supplemental?.nfc_micro_cer??m.micro_cer),percent(supplemental?.raw_micro_wer),percent(supplemental?.nfc_micro_wer??m.micro_wer),percent(supplemental?.raw_exact_match??m.raw_exact_match),percent(supplemental?.nfc_exact_match??m.nfc_exact_match)]){const cell=document.createElement('td');cell.textContent=value;row.append(cell)}
         byId('finalMetrics').append(row);
         diagnostics[name]=Object.fromEntries(['script_contamination_rate','refusal_rate','malformed_output_rate','repetition_candidate_rate','abstention_rate','truncated_count','latency_median_seconds','latency_p95_seconds','peak_allocated_vram_bytes','peak_vram_scope','resumed_predictions_count','subgroups'].filter(key=>key in m).map(key=>[key,m[key]]));
       }
@@ -34,6 +36,14 @@ async function refresh(){
       for(const [label,key] of [['Original versus candidate','final_paired_original_candidate'],['Pilot versus candidate','final_paired_pilot_candidate']]){
         const comparison=final[key],interval=comparison?.cer_reduction_95;
         if(Array.isArray(interval)&&interval.length===2)intervals.push(`${label}: paired 95% interval for NFC CER reduction [${(100*interval[0]).toFixed(2)}, ${(100*interval[1]).toFixed(2)}] percentage points. ${comparison.interpretation||''}`);
+      }
+      const selected=analysis?.paired_original_selected;
+      if(selected){
+        for(const [key,label] of [['raw_cer_reduction','raw CER reduction'],['nfc_cer_reduction','NFC CER reduction'],['raw_wer_reduction','raw WER reduction'],['nfc_wer_reduction','NFC WER reduction'],['raw_exact_gain','raw exact gain'],['nfc_exact_gain','NFC exact gain']]){
+          const interval=selected.intervals_95?.[key];
+          if(Array.isArray(interval)&&interval.length===2)intervals.push(`Original versus selected (${analysis.selection}): ${label} paired 95% interval [${(100*interval[0]).toFixed(2)}, ${(100*interval[1]).toFixed(2)}] percentage points.`);
+        }
+        intervals.push(selected.interpretation||'',...(selected.warnings||[]));
       }
       byId('pairedIntervals').textContent=intervals.join(' ');
     }
