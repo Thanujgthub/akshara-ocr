@@ -1,0 +1,27 @@
+{
+  "observed_utc": "2026-10-14T09:46:51.752889+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T094432Z-080dbbbf",
+  "index_sha256": "e329c435c3f4cc1c76f89a0f31d54ffab0521f7eb1d0826554d2dde52adeffdc",
+  "checkpoint_recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 3625,
+    "epoch": 0,
+    "next_index": 14500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "state_matches_corresponding_immutable_live": true,
+  "trainer_pid": 18796,
+  "trainer_created": 1791967896.1521745,
+  "progress": {
+    "epoch": 1,
+    "example": 14640,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 3660,
+    "loss": 0.22673431038856506,
+    "lr": 4.361737958908724e-06,
+    "elapsed_seconds": 50265.698805332184,
+    "peak_allocated_vram_bytes": 2150743552
+  },
+  "candidate_validation_final_test_and_api_parity_pending": true
+}
