@@ -1,0 +1,59 @@
+{
+  "recorded_utc": "2026-10-14T02:29:32.555057+00:00",
+  "largest_logged_batch_wall_gaps": [
+    [
+      15556.464247226715,
+      6730,
+      6731
+    ],
+    [
+      463.25777792930603,
+      6733,
+      6734
+    ],
+    [
+      6.676168441772461,
+      1383,
+      1384
+    ]
+  ],
+  "power_request": {
+    "status": "active",
+    "updated_utc": "2026-10-14T02:28:13.571772+00:00",
+    "helper_pid": 29516,
+    "owner_pid": 22780,
+    "owner_created": 1791927418.73121,
+    "request_flags": 2147483649,
+    "scope": "Idle system-sleep request only; controller identity checked every30seconds.",
+    "manual_sleep_and_lid_actions_can_pause": true,
+    "power_plan_changed": false,
+    "display_request": false,
+    "documentation": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate"
+  },
+  "helper_and_owner_verified_live": true,
+  "focused_helper_tests_passed": 3,
+  "last_full_software_suite_passed": 56,
+  "full_suite_with_new_helper_pending_safe_boundary": true,
+  "trainer_pid": 30976,
+  "latest_training_example": 6902,
+  "monitor_host_generation_lost": true,
+  "trainer_was_not_restarted": true,
+  "elapsed_time_limit": "Training elapsed_seconds includes machine standby/wall pauses; cannot call it active GPU time.",
+  "windows_events_observed": [
+    {
+      "utc": "2026-10-13T21:41:55.6313264Z",
+      "event_id": 506,
+      "message": "Modern Standby: Idle Timeout"
+    },
+    {
+      "utc": "2026-10-14T02:10:48.1096380Z",
+      "event_id": 506,
+      "message": "Modern Standby: Austerity Battery Drain Budget Exceeded"
+    },
+    {
+      "utc": "2026-10-14T02:24:12.1853920Z",
+      "event_id": 507,
+      "message": "Modern Standby exit"
+    }
+  ]
+}
