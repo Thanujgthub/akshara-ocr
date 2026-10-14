@@ -1,0 +1,172 @@
+{
+  "observed_utc": "2026-10-14T16:03:03.657462+00:00",
+  "verified_checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0004500",
+  "checksums": {
+    "adapter/adapter_config.json": "2ac63bda453c0400922f4a3050b612882721fd66be180c095e5e7b56172a2d2c",
+    "adapter/adapter_model.safetensors": "3256db8fa6b5b14eda8fef27eab24571c4b421b7b3438424db17c9ab92357ae9",
+    "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+    "recovery.json": "d2577f56c17dc1d2dcef7f2248e55fef2e553462792d8e2b16705eea0ba34fa6",
+    "state.pt": "1fecd2900bad5bc96e4aad2d68c38dc2bfd65afb3cdb158f65961453ce5fa544"
+  },
+  "recovery": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4500,
+    "epoch": 0,
+    "next_index": 18000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "verified_live_resume_pointer": {
+    "checkpoint": "checkpoints/step-0004500",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "bf4d45f64a92b56dc3d4c7c8621acd7d11abab0ee8cb18e61283b9f06453e735"
+  },
+  "serialized_scalars": {
+    "accumulation_progress": 0,
+    "effective_batch_size": 4,
+    "epoch": 0,
+    "next_index": 18000,
+    "updates": 4500
+  },
+  "serialized_resume_fields_present": [
+    "optimizer",
+    "scheduler",
+    "python_rng",
+    "numpy_rng",
+    "torch_rng",
+    "cuda_rng",
+    "augment_rng",
+    "effective_batch_size",
+    "accumulation_progress",
+    "precision",
+    "dataset_fingerprint"
+  ],
+  "state_inspection_scope": "SHA and safe pickle opcode/primitive inspection, no Torch import or tensor reload; real BF16 smoke passed before this resumed run.",
+  "frozen_manifest_hashes": {
+    "train": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+    "validation": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+    "final-test": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+  },
+  "preserved_checkpoint_generations": [
+    "step-0000125",
+    "step-0000250",
+    "step-0000375",
+    "step-0000500",
+    "step-0000625",
+    "step-0000750",
+    "step-0000875",
+    "step-0001000",
+    "step-0001125",
+    "step-0001250",
+    "step-0001375",
+    "step-0001500",
+    "step-0001625",
+    "step-0001750",
+    "step-0001875",
+    "step-0002000",
+    "step-0002125",
+    "step-0002250",
+    "step-0002375",
+    "step-0002500",
+    "step-0002625",
+    "step-0002750",
+    "step-0002875",
+    "step-0003000",
+    "step-0003125",
+    "step-0003250",
+    "step-0003375",
+    "step-0003500",
+    "step-0003625",
+    "step-0003750",
+    "step-0003875",
+    "step-0004000",
+    "step-0004125",
+    "step-0004250",
+    "step-0004375",
+    "step-0004500"
+  ],
+  "live_workers": {
+    "20928": {
+      "created": 1791992884.1803534,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "train",
+        "--config",
+        "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+        "--manifest",
+        "D:\\OCR\\runs\\word-efficient-v3\\train.jsonl",
+        "--validation",
+        "D:\\OCR\\runs\\word-efficient-v3\\validation.jsonl",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\full",
+        "--epochs",
+        "1"
+      ]
+    },
+    "23964": {
+      "created": 1791992880.7444332,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.run_efficient"
+      ]
+    },
+    "36060": {
+      "created": 1791992880.6586573,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.colab_runner",
+        "--durable",
+        "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+        "--seconds",
+        "86400",
+        "--sync-seconds",
+        "300"
+      ]
+    }
+  },
+  "progress": {
+    "epoch": 1,
+    "example": 18020,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4505,
+    "loss": 0.22091755270957947,
+    "lr": 2.9386998989558773e-06,
+    "elapsed_seconds": 72055.12992835045,
+    "peak_allocated_vram_bytes": 2109107200
+  },
+  "latest100_losses_finite": true,
+  "durable_snapshot": {
+    "path": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T155831Z-ae43ffcc",
+    "checkpoint": {
+      "checkpoint": "checkpoints/step-0004375",
+      "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+      "checkpoint_index_sha256": "a8f9d71ca9aed7cd28393a7d19986396a43d6df7f4a6ce66218916c1ad10b1c9"
+    },
+    "metadata": {
+      "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+      "updates": 4375,
+      "epoch": 0,
+      "next_index": 17500,
+      "precision": "torch.bfloat16",
+      "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+    },
+    "byte_equal_to_corresponding_source_generation": true
+  },
+  "tests_passed": 77,
+  "incomplete": [
+    "candidate validation",
+    "locked selection",
+    "sealed final comparison",
+    "reporting/export",
+    "selected API parity",
+    "selected website Playwright testing"
+  ],
+  "deployment": "Vercel/GitHub deferred by user until analysis."
+}
