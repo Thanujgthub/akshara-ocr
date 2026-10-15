@@ -1,0 +1,35 @@
+{
+  "observed_utc": "2026-10-15T13:12:16.449792+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0005875",
+  "pointer": {
+    "checkpoint": "checkpoints/step-0005875",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "9ef44e0cbcd316d5052692adb482f74992b8f72fb742189f4fcda58daf502d86"
+  },
+  "metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 5875,
+    "epoch": 0,
+    "next_index": 23500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "checkpoint_verified": true,
+  "frozen_manifests_verified": true,
+  "raw_latest": 23528,
+  "raw_contiguous_finite_update_positions": true,
+  "trainer_pid": 14864,
+  "memory": {
+    "observed_utc": "2026-10-15T13:12:16.449792+00:00",
+    "commit_total_bytes": 20711022592,
+    "commit_limit_bytes": 25219530752,
+    "commit_headroom_bytes": 4508508160,
+    "available_ram_bytes": 5487050752,
+    "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+  },
+  "STOP_exists": false,
+  "latest_snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T131052Z-5c4fdf72",
+  "snapshot_saved_examples": 23000,
+  "snapshot_verified_this_check": false,
+  "scope": "94%one epoch,not accuracy.25k/5k/3k,BF16 unchanged; candidate validation,selection,sealedfinal,API/browser pending; rankings/publication deferred."
+}
