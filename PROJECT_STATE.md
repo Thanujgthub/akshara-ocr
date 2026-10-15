@@ -729,3 +729,15 @@ The existing user action is to close unused heavy apps/browser windows while kee
 
 
 - 2026-10-15T14:20:53.524829+00:00: Candidate5000 validation continues in same actualtrainer14864; liveprogress{'evaluated': 2900, 'total': 5000, 'elapsed_seconds': 1688.7669746875763}. Midpoint recovery audit verified snapshot snapshot-20261015T141529Z-11d7d73a allSHA/full25000 state byte identity and2336 durable predictions: unique IDs/reference/component/source-document order matches existing seed42-shuffled loader, exact live rawprefix, completeJSONL. Initial audit assumed file order and failed without file changes; corrected to actual existing ordering. No partial accuracy choice/inference/final-test output read; selection unlocked. Local D backup,actualrestore not executed. SourceGPU/protocol/BF16 unchanged; progress-only API30284/wrapper22620 unconfigured. Selection,sealedfinal,analysis/export,selected API/Playwright pending; rankings/publication deferred. Evidence reports/colab-migration/windows-candidate-validation-midpoint-recovery-20261015.json.
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Sealed3000-word final evaluation: original",
+  "updated_utc": "2026-10-15T14:42:24Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\final\\original"
+}
+
+
+- 2026-10-15T14:45:03.808526+00:00: Full25k training and candidate5000 validation complete; training_complete confirms6,250updates/one epoch and adapter tensor change from initialization. Candidate raw/NFC CER5.7027156%,WER19.30%,raw/NFC exact81.38%; original validation CER10.695569%,WER32.38%,exact73.24%; pilot CER9.199619%,WER30.38%,exact74.14%. Paired215component/2000seed42 bootstrap supports candidate over pilot (CERreduction95%CI2.859473..4.359686pp) and original (3.505213..7.487647pp). Validation-only selection locked CANDIDATE atfull/epoch-1/adapter; selectionSHA256=32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b. Allthree5000prediction files match frozen seed42-orderedIDs/rawreferences/component groups. Postvalidation resumable checkpoint verified: epoch_index1,next_index0,updates6250,BF16/fingerprint unchanged; this position means completed epoch,never restarttraining. Selectiontimestamp precedes first final prediction. Sealed3000 comparison nowrunning ORIGINAL in actualGPUworker33644/wrapper14776; controller13228/wrapper25560 and coordinator7456/wrapper26700 continue. Remaining pilot/candidatefinalpasses follow automatically; finaloutcomes cannot change selection. Candidate validation time2982.05s,medianlatency0.53408s,p95.799465s,peak1943608320B,no resumedpredictions/truncation/contamination/refusal/malformed/abstention/repetition flags. These are validation results; independentfinalresults pending. Progress-only API30284/wrapper22620 remains unconfigured until study/analysis/export and selected API parity/browser checks. Rankings/comparison/publication deferred. Evidence reports/colab-migration/windows-candidate-validation-selection-locked-20261015.json.
