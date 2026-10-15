@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-10-15T14:49:34.980946+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T144758Z-79266e68",
+  "all_hashes_verified": true,
+  "post_validation_state_identical": true,
+  "checkpoint_metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 6250,
+    "epoch": 1,
+    "next_index": 0,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+  "completed5000_validation_and_best_identical": true,
+  "selection_source_bundle_present_and_identical": true,
+  "selection_source_head": "2313233",
+  "scope": "Local D backup; actualrestore/offsite not claimed. Candidate selected before final evaluation; final original now in progress."
+}
