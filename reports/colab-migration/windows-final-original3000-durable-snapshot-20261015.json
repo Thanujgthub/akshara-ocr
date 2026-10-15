@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-10-15T15:39:01.167788+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T153834Z-a23818cb",
+  "all_snapshot_hashes_verified": true,
+  "completed_original3000_raw_and_metrics_identical": true,
+  "locked_selection_identical": true,
+  "pilot_saved_prefix": 306,
+  "source_bundle_head": "47f29e2c75c7cf694df33213f3f798679af35ed4",
+  "source_bundle_identical": true,
+  "scope": "Local D backup, not offsite or actual restore. Completed baseline final pass preserved; pilot/candidate still running/pending."
+}
