@@ -1,0 +1,115 @@
+{
+  "observed_utc": "2026-10-15T06:31:20.334010+00:00",
+  "software_tests": {
+    "observed_utc": "2026-10-15T06:23:22.919215+00:00",
+    "returncode": 0,
+    "tests": 85,
+    "scope": "Software suite only; no OCR GPU inference or training launched."
+  },
+  "input_integrity": {
+    "observed_utc": "2026-10-15T06:30:24.420914+00:00",
+    "original_model_files_verified": 31,
+    "frozen_splits": {
+      "train": {
+        "count": 25000,
+        "manifest_sha256": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+        "image_bytes_verified": 752256094
+      },
+      "validation": {
+        "count": 5000,
+        "manifest_sha256": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+        "image_bytes_verified": 150044446
+      },
+      "final-test": {
+        "count": 3000,
+        "manifest_sha256": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4",
+        "image_bytes_verified": 92507856
+      }
+    },
+    "all_33000_image_byte_hashes_and_headers_verified": true,
+    "no_duplicate_byte_or_pixel_identities_within_splits": true,
+    "no_byte_pixel_or_leakage_group_overlap_between_splits": true,
+    "seconds": 179.20299999999952,
+    "source_commit_unchanged_training": "e23e7d2ec2c429a37ea8e338bc66d671f2703cc3",
+    "scope": "CPU-only original-file/hash/path/image-header technical audit; no GPU import, OCR prediction, label-quality reassessment, test-label model choice or frozen-manifest change."
+  },
+  "known_prior_exposure_identity_audit": {
+    "observed_utc": "2026-10-15T06:30:53.214415+00:00",
+    "final_rows": 3000,
+    "known_historical_exposed_identities": 3277,
+    "exposure_sources_enumerated": [
+      "D:\\OCR\\runs\\word-pilot-v1\\train.jsonl",
+      "D:\\OCR\\runs\\word-pilot-v1\\validation.jsonl",
+      "D:\\OCR\\runs\\word-pilot-v1\\test.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\trial-train-curated.jsonl",
+      "D:\\OCR\\runs\\word-pilot-v1\\adapted-test\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-pilot-v1\\baseline-test\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-pilot-v1\\trained\\validation\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-original-official-official\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-original-telugu_literal-official\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-original-telugu_literal-white_margin\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-pilot-official-official\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-pilot-telugu_literal-official\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\experiments\\curated-pilot-telugu_literal-white_margin\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\experiments\\original-official-official\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\experiments\\original-telugu_literal-official\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\smoke\\epoch-1\\validation\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\smoke-resume-v2\\resumed\\epoch-1\\validation\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\smoke-resume-v2\\uninterrupted\\epoch-1\\validation\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\trials\\control\\epoch-1\\validation\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\trials\\lr3e-5\\epoch-1\\validation\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\trials\\qkvo\\epoch-1\\validation\\predictions.jsonl",
+      "D:\\OCR\\runs\\word-scale-v2\\trials\\rank16\\epoch-1\\validation\\predictions.jsonl",
+      "D:\\OCR\\runs\\probe\\environment.json",
+      "D:\\OCR\\runs\\probe\\failure.json",
+      "D:\\OCR\\runs\\probe-cpu\\contract.json",
+      "D:\\OCR\\runs\\probe-cpu\\environment.json",
+      "D:\\OCR\\runs\\probe-cpu\\failure.json",
+      "D:\\OCR\\runs\\probe-cpu-target\\baseline_example.json",
+      "D:\\OCR\\runs\\probe-cpu-target\\contract.json",
+      "D:\\OCR\\runs\\probe-cpu-target\\environment.json",
+      "D:\\OCR\\runs\\probe-gpu-target\\baseline_example.json",
+      "D:\\OCR\\runs\\probe-gpu-target\\contract.json",
+      "D:\\OCR\\runs\\probe-gpu-target\\environment.json",
+      "D:\\OCR\\runs\\probe-gpu-target\\probe.json",
+      "D:\\OCR\\runs\\probe-gpu-target\\adapter\\adapter_config.json",
+      "D:\\OCR\\runs\\probe-overfit\\baseline_example.json",
+      "D:\\OCR\\runs\\probe-overfit\\contract.json",
+      "D:\\OCR\\runs\\probe-overfit\\environment.json",
+      "D:\\OCR\\runs\\probe-overfit\\probe.json",
+      "D:\\OCR\\runs\\probe-overfit\\adapter\\adapter_config.json",
+      "D:\\OCR\\runs\\probe-read\\environment.json",
+      "D:\\OCR\\runs\\probe-read\\failure.json",
+      "D:\\OCR\\runs\\probe-stream\\environment.json",
+      "D:\\OCR\\runs\\probe-stream\\failure.json"
+    ],
+    "source_metadata_rows_scanned": 118515,
+    "historical_overlap_counts": {
+      "example_id": 0,
+      "group_id": 0,
+      "original_sha256": 0,
+      "pixel_sha256": 0
+    },
+    "seconds": 1.3119999999998981,
+    "frozen_policy": "Old1,016 final examples not used; new final selected only from unused holdout, excluding all known trained/evaluated/probe identities/components.",
+    "scope": "Identity-only audit against known historical trained/evaluated/probe artifacts enumerated by existing freeze code. No labels or prediction text used for model choice. Does not establish unknown writer identity or absence of pretraining overlap. No frozen data changed or final inference run."
+  },
+  "memory_gate": {
+    "passed": false,
+    "measurement": {
+      "observed_utc": "2026-10-15T06:31:20.347139+00:00",
+      "commit_total_bytes": 17375371264,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 7844159488,
+      "available_ram_bytes": 4494925824,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9126805504,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 2.5,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "gpu_stages_started": false,
+  "scope": "Second consecutive post19748 memory-block audit. All useful CPU-only recovery preparation complete; actual capacity must meet pre-load gate before fresh native BF16/smoke/benchmark/full19748 resume. Pending unused-app closure action; no new permission/credential question."
+}
