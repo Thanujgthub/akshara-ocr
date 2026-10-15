@@ -1,0 +1,37 @@
+{
+  "observed_utc": "2026-10-15T06:32:57.495148+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T063232Z-9b46b751",
+  "verified": true,
+  "memory_gate": {
+    "passed": false,
+    "measurement": {
+      "observed_utc": "2026-10-15T06:32:57.495148+00:00",
+      "commit_total_bytes": 17240616960,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 7978913792,
+      "available_ram_bytes": 4431241216,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9126805504,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 2.5,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "source_bundle_head": "560c9e0",
+  "paused_api_guard": {
+    "observed_utc": "2026-10-15T06:32:17.627420+00:00",
+    "health": {
+      "status": "ok",
+      "model_ready": false,
+      "model_load_verified": false,
+      "training_active": true,
+      "note": "Inference waits until the local GPU study completes."
+    },
+    "predict_status": 409,
+    "detail": "{\"detail\":\"Inference is paused for study preparation, training or testing. Open Study progress for the current stage.\"}",
+    "keep_awake_released": true,
+    "scope": "Actual paused-state concurrency safeguard only, not selected-model inference/API parity."
+  },
+  "scope": "Second blocked-audit turn CPU preparation complete. No GPUmodel/smoke/benchmark/full19748 resume; unused-app closure remains pending."
+}
