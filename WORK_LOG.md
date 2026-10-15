@@ -584,3 +584,8 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-15T16:02:03.224376+00:00: Corrected only studio help copy: active25k/5k/3k Telugu word-crop study, link currentprogress, retaintypeset-sample and unmeasuredwhole-page scope. Removed stale assertion that connectedmodel is historical500-test pilot; historicalpilot artifacts/pages preserved. HTMLparsed and actualHTTPcontentverified, previewmodel_load_verified=False. NoJS/GPUmodule/scientificconfig/evaluationchanges; Playwright realselectedmodel checks await completedstudy. Evidence reports/colab-migration/windows-studio-current-study-guide-20261015.json.
+
+- 2026-10-15T16:10:11Z: Sealed3000-word final evaluation: candidate. 
+
+
+- 2026-10-15T16:10:56.705054+00:00: PILOT sealedfinal complete3000 unique frozenseed42 IDs/rawreferences/component+source-document groups;0resumed/3000new records and entire-evaluation VRAMscope. Raw/metrics/contract SHA recorded. CompletedORIGINAL3000rawunchanged. Existingcontroller31852/12724 moved toCANDIDATE3000 final pass; no training worker or modelchoicechange. Candidate remains validation-selected; selectionSHA32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b unchanged. Do not report finalcomparison until allpasses/pairedanalysis finish. Nextscheduledsnapshot will preservepilotcompletion. Full25kepoch/5000validation reused; analysis/export/selected API parity/Playwright unfinished; comparisons/publication deferred. Evidence reports/colab-migration/windows-final-pilot3000-complete-20261015.json.
