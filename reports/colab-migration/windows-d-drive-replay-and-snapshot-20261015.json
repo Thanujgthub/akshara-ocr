@@ -1,0 +1,39 @@
+{
+  "observed_utc": "2026-10-15T05:17:20.356944+00:00",
+  "actual_trainer_pid": 10768,
+  "trainer_created": 1792041047.4604032,
+  "progress": {
+    "epoch": 1,
+    "example": 18200,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4550,
+    "loss": 1.316798210144043,
+    "lr": 2.862916807005726e-06,
+    "elapsed_seconds": 72366.87637734413,
+    "peak_allocated_vram_bytes": 2153615872
+  },
+  "latest_raw_example": 18218,
+  "exact_replayed_losses": 165,
+  "replayed_range": [
+    18001,
+    18165
+  ],
+  "previous_failure_boundary_passed": true,
+  "memory": {
+    "observed_utc": "2026-10-15T05:17:20.356944+00:00",
+    "commit_total_bytes": 22118686720,
+    "commit_limit_bytes": 25219530752,
+    "commit_headroom_bytes": 3100844032,
+    "available_ram_bytes": 3017461760,
+    "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+  },
+  "STOP_exists": false,
+  "normal_scheduled_snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T051604Z-fdbdda93",
+  "durable_checkpoint": {
+    "checkpoint": "checkpoints/step-0004500",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "bf4d45f64a92b56dc3d4c7c8621acd7d11abab0ee8cb18e61283b9f06453e735"
+  },
+  "durable_state_byte_equal_to_corresponding_source_generation": true,
+  "scope": "Recovery replay and normally scheduled Windows local durable snapshot; not completed epoch, candidate validation or model improvement."
+}
