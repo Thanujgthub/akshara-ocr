@@ -669,3 +669,6 @@ The existing user action is to close unused heavy apps/browser windows while kee
 
 
 - 2026-10-15T11:34:00Z: Scheduled snapshot snapshot-20261015T113341Z-9c896e5c independently verified allSHA/full20000 checkpoint/state byte identity; source-history bundle HEADfb46e53 is byte-identical and carries20k report/history. Same actualtrainer14864 continues, noSTOP; no code/config/precision/epoch/inference change. Local D backup,not offsite or actualrestore. Remaining training/validation/selection/sealedfinal/API/selected browser work unchanged. Evidence reports/colab-migration/windows-20000-durable-snapshot-20261015.json.
+
+
+- 2026-10-15T11:35:25Z: Closed/checksummed180sample process-group/native memory trace;125observations cover currentfull19804 recovery initialization/training from11:22:57to11:34:40UTC. Minimum observed headroom5,209,649,152B remains above unchanged2GiB runtime reserve; Bravegroup private memory0 throughout this full-run window. Not a remaining-run stability guarantee or diagnosis of earlier transient. Read-only monitor exited normally; long study watcher/controller continue, no GPU module/OS change/inference.20k checkpoint already independently verified in local durable snapshot. Evidence reports/colab-migration/windows-19804-memory-trajectory-20261015.json and recovery/windows-d-drive-preflight-v6/system-memory-trajectory-closed.json.

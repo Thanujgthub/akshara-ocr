@@ -1,0 +1,13 @@
+{
+  "observed_utc": "2026-10-15T11:35:25.061351+00:00",
+  "trace_sha256": "fe90a7511fd096248f6ad9a8f42bad9694408af84795e6af8cf2061d9030bd36",
+  "all_samples": 180,
+  "full_training_samples": 125,
+  "window_start": "2026-10-15T11:22:57.042733+00:00",
+  "window_end": "2026-10-15T11:34:40.958502+00:00",
+  "full_min_headroom_bytes": 5209649152,
+  "full_max_headroom_bytes": 9997295616,
+  "max_python_group_private_bytes": 6453805056,
+  "max_brave_group_private_bytes": 0,
+  "scope": "Read-only native/process-group observations, not a guarantee of remaining-run stability. No GPU model, OS change, process termination or claim about earlier transient cause."
+}
