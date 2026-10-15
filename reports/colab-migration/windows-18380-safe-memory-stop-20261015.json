@@ -1,0 +1,35 @@
+{
+  "observed_utc": "2026-10-15T05:27:00.653199+00:00",
+  "archive": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\memory-guard-stop-20261015T052700Z",
+  "verified_checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0004595",
+  "checkpoint": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4595,
+    "epoch": 0,
+    "next_index": 18380,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "pointer": {
+    "checkpoint": "checkpoints/step-0004595",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "27a3c807d7bb52cf8c1860a99ab235afb2870693cb2fe5d9da2bc50afbb04622"
+  },
+  "verified_snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T052237Z-122595b7",
+  "snapshot_state_byte_equal_to_source": true,
+  "reason": {
+    "measurement": {
+      "observed_utc": "2026-10-15T05:22:07.309928+00:00",
+      "commit_total_bytes": 23398600704,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 1820930048,
+      "available_ram_bytes": 1993404416,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "minimum_headroom_gib": 2.0,
+    "action": "STOP sentinel only; no process killed, OS setting or scientific configuration changed.",
+    "scope": "Periodic observation cannot guarantee protection from abrupt allocation spikes."
+  },
+  "new_allocation_failure": false,
+  "scope": "Verified graceful STOP/optimizer boundary and final controller exit0; prior full/failure.json is historical. No checkpoint or STOP removed."
+}

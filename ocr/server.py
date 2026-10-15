@@ -35,6 +35,12 @@ def gpu_worker_active():
 
 def study_busy():
     from .study_routes import ROOT,read
+    capped=Path(os.environ.get('OCR_RESEARCH_RUN','D:/OCR/runs/word-efficient-v3'))
+    state=read(capped/'status.json')
+    # A paused/failed capped study still owns model selection. Do not expose the
+    # historical pilot as the selected model between recovery attempts.
+    if state is not None:
+        return state.get('status')!='completed' or gpu_worker_active()
     return (read(ROOT/'status.json') or {}).get('status')=='running' or any(
         (read(Path('D:/OCR/runs')/name/'status.json') or {}).get('status') in {'running','preparing','prepared'}
         for name in ['word-scale-v2','word-efficient-v3']) or gpu_worker_active()

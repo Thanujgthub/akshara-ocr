@@ -7,6 +7,23 @@ from ocr import server
 
 
 class GpuServingGuardTests(unittest.TestCase):
+    def test_unfinished_capped_study_refuses_inference_without_live_worker(self):
+        client=TestClient(server.app)
+        for status in ('paused_at_checkpoint','failed','preparing','prepared'):
+            with self.subTest(status=status),patch('ocr.study_routes.read',return_value={'status':status}),\
+                    patch('psutil.process_iter',return_value=[]),\
+                    patch.object(server,'available',return_value=True),patch.object(server,'predict') as predict:
+                self.assertFalse(client.get('/api/health').json()['model_ready'])
+                response=client.post('/api/predict',files={'file':('word.png',b'guard before decode','image/png')},data={'mode':'word'})
+                self.assertEqual(response.status_code,409)
+                predict.assert_not_called()
+
+    def test_completed_capped_study_ignores_retired_run_status(self):
+        def read(path):
+            return {'status':'completed' if path.parent.name=='word-efficient-v3' else 'running'}
+        with patch('ocr.study_routes.read',side_effect=read),patch('psutil.process_iter',return_value=[]):
+            self.assertFalse(server.study_busy())
+
     def test_failed_study_with_live_preflight_refuses_inference(self):
         client=TestClient(server.app)
         commands=[['python','-u','-m','ocr.colab_benchmark'],
