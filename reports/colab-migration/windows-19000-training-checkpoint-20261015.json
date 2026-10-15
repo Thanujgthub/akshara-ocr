@@ -1,0 +1,48 @@
+{
+  "observed_utc": "2026-10-15T05:54:47.478984+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0004750",
+  "metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4750,
+    "epoch": 0,
+    "next_index": 19000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "pointer": {
+    "checkpoint": "checkpoints/step-0004750",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "3c2bc52b2143c9dad7711823dec96c7a4da7f87cd9cf00688738f0d3d0a18be6"
+  },
+  "verified_files": 5,
+  "trainer_pid": 23612,
+  "trainer_created": 1792042557.9789948,
+  "progress": {
+    "epoch": 1,
+    "example": 19000,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4750,
+    "loss": 2.1790623664855957,
+    "lr": 2.5261030650050524e-06,
+    "elapsed_seconds": 73789.6489007473,
+    "peak_allocated_vram_bytes": 2153141760
+  },
+  "memory": {
+    "observed_utc": "2026-10-15T05:54:47.499273+00:00",
+    "commit_total_bytes": 20125011968,
+    "commit_limit_bytes": 25219530752,
+    "commit_headroom_bytes": 5094518784,
+    "available_ram_bytes": 5012090880,
+    "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+  },
+  "stop_exists": false,
+  "contiguous_raw_segment": [
+    18380,
+    19009
+  ],
+  "finite_segment_losses": true,
+  "frozen_manifest_hashes_verified": true,
+  "selection_locked": false,
+  "final_summary_present": false,
+  "scope": "76% of one training epoch; not model accuracy or completed selection/final testing."
+}

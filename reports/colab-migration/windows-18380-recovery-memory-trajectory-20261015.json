@@ -1,0 +1,21 @@
+{
+  "observed_utc": "2026-10-15T05:52:52.120355+00:00",
+  "raw_telemetry": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\windows-d-drive-preflight-v2\\runtime-observations-20261015T0542Z.jsonl",
+  "raw_sha256": "5afeee764821e8218b61f10cd313f3ea6a87443ada8b9adf6917452c0041d21a",
+  "samples": 20,
+  "first_utc": "2026-10-15T05:42:36.237988+00:00",
+  "last_utc": "2026-10-15T05:52:06.515740+00:00",
+  "headroom_min_bytes": 5118988288,
+  "headroom_max_bytes": 5311500288,
+  "trainer_private_min_bytes": 5498699776,
+  "trainer_private_max_bytes": 5526888448,
+  "sampled_progress_first": 18580,
+  "sampled_progress_last": 18900,
+  "same_trainer_live": true,
+  "new_segment_contiguous_examples": [
+    18380,
+    18943
+  ],
+  "saved_boundary_replay_examples": 0,
+  "scope": "Ten-minute read-only native memory trajectory and actual raw training-log continuity; no runtime safety guarantee or accuracy result. No GPU model loaded by monitor."
+}
