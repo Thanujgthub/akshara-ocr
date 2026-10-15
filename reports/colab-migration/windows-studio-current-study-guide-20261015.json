@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-10-15T16:02:03.224376+00:00",
+  "change": "Studio help now describes active25k/5k/3k word-crop protocol and links live progress, replacing stale connected-pilot wording. Historical pilot evidence preserved.",
+  "http_content_verified": true,
+  "html_parser_passed": true,
+  "api_health": {
+    "status": "ok",
+    "model_ready": false,
+    "model_load_verified": false,
+    "training_active": true,
+    "note": "Inference waits until the local GPU study completes."
+  },
+  "scope": "Static help copy only. No JavaScript, GPU module, model, data, protocol or active evaluation change; full software tests unchanged and real browser verification pending."
+}

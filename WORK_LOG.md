@@ -581,3 +581,6 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-15T15:56:04.531280+00:00: PILOT sealedfinal midpoint recovery audit verified snapshot snapshot-20261015T155512Z-6215933c allSHA/1696 durable completeJSONL records with unique frozenseed42 IDs/rawreferences/component groups and exactliveprefix. CompletedORIGINAL3000/lockedselection unchanged. Samecontroller31852/12724 continuespilot; candidate3000 pending. Full25kepoch/5000validation reused. No outcome-based choice or completedrecordrerun. Local D backup,not offsite/actualrestore. Finalanalysis/export/selected API parity/Playwright remain pending; comparisons/publication deferred. Evidence reports/colab-migration/windows-final-pilot-midpoint-durable-20261015.json.
+
+
+- 2026-10-15T16:02:03.224376+00:00: Corrected only studio help copy: active25k/5k/3k Telugu word-crop study, link currentprogress, retaintypeset-sample and unmeasuredwhole-page scope. Removed stale assertion that connectedmodel is historical500-test pilot; historicalpilot artifacts/pages preserved. HTMLparsed and actualHTTPcontentverified, previewmodel_load_verified=False. NoJS/GPUmodule/scientificconfig/evaluationchanges; Playwright realselectedmodel checks await completedstudy. Evidence reports/colab-migration/windows-studio-current-study-guide-20261015.json.
