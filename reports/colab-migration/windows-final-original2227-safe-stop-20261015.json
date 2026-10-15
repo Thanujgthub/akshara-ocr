@@ -1,0 +1,44 @@
+{
+  "observed_utc": "2026-10-15T15:09:15.440778+00:00",
+  "archive": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\memory-guard-stop-20261015T1507Z",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T150750Z-eb38d1de",
+  "all_snapshot_hashes_verified": true,
+  "completed_training_epoch": true,
+  "completed_candidate_validation": 5000,
+  "checkpoint_metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 6250,
+    "epoch": 1,
+    "next_index": 0,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "full_state_identical": true,
+  "selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+  "selection_unchanged": true,
+  "original_final_predictions_saved": 2227,
+  "original_predictions_identical_to_snapshot": true,
+  "original_unique_ids_frozen_order_references_groups_verified": true,
+  "original_remaining": 773,
+  "pilot_remaining": 3000,
+  "candidate_remaining": 3000,
+  "STOP_preserved": true,
+  "locks_free": true,
+  "memory": {
+    "passed": false,
+    "measurement": {
+      "observed_utc": "2026-10-15T15:09:15.440778+00:00",
+      "commit_total_bytes": 17937952768,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 7281577984,
+      "available_ram_bytes": 4750831616,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9126805504,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 2.5,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "scope": "Graceful memory-reserve stop; controller finalexit0. No additional training; resume remaining final original then pilot/candidate in same locked comparison. No final outcome used for model choice."
+}
