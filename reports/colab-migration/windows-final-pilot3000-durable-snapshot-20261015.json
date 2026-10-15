@@ -1,0 +1,13 @@
+{
+  "observed_utc": "2026-10-15T16:18:14.501751+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T161712Z-9b7f4e83",
+  "all_snapshot_hashes_verified": true,
+  "completed_original3000_and_pilot3000_raw_and_metrics_identical": true,
+  "candidate_durable_predictions": 512,
+  "candidate_live_prefix_identical": true,
+  "candidate_frozen_order_unique_ids_references_groups_verified": true,
+  "locked_selection_identical": true,
+  "source_bundle_head": "79ecde9b8c023cf5cecf8004dd0b274150a9cbba",
+  "source_bundle_identical": true,
+  "scope": "Local D backup, not offsite or actual restore. Reporting quality analysis still deferred until all3final passes complete."
+}
