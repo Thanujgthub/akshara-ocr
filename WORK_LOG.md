@@ -95,7 +95,7 @@
 
 - Planning-report correction before delivery: recent100-word LR median slowed to3.97s/word. Included both prior80–105h and sustained-slow187–203h full-plan scenarios; cause unverified, no system settings changed. Report now clearly budgets four to eight-plus active days rather than relying on earlier optimistic throughput.
 
-- 2026-10-13T05:23:07Z: Validation: curated-efficient-original. 
+- 2026-10-13T05:23:07Z: Validation: curated-efficient-original.
 
 - 2026-10-13T05:44:12.319583+00:00: User requested Colab migration. Read complete updated objective. Verified active capped25k/5k/3k one-epoch protocol, frozen33k technical checks, local original5k validation live. Oldv2 parent retired afterLR child finished; old80k stage blocked. Preparing isolated portable source/notebook without altering the active evaluation. Historical pilot Colab notebook inspected and preserved. No Google/Colab access or performance claimed.
 
@@ -165,9 +165,9 @@ User approved local preflight, complete capped study, website integration and Pl
 
 Temporary progress page /progress.html added to existing studio; live frozen counts, active-stage progress, validation metrics, selection and API status come from current research endpoints. Playwright visible Chrome confirmed desktop/mobile rendering and API inference paused during GPU work; screenshots output/playwright/akshara-progress-preflight.png and akshara-progress-mobile.png. New coordinator will continue at pilot5000 validation, then selected-initialization smoke, one25000 epoch, validation selection and sealed3000 evaluation. Local recovery snapshots use D:/OCR/backups/word-efficient-v3-local-approved-v1 via existing verified snapshot/controller code. No Colab run or final model claim.
 
-- 2026-10-13T16:36:28Z: Validation: curated-efficient-original. 
+- 2026-10-13T16:36:28Z: Validation: curated-efficient-original.
 
-- 2026-10-13T16:36:28Z: Validation: curated-efficient-pilot. 
+- 2026-10-13T16:36:28Z: Validation: curated-efficient-pilot.
 
 - 2026-10-13T16:42:41.680814+00:00: Approved capped Windows coordinator is live (controller26260/wrapper30668, coordinator11224, GPU evaluator28016), pilot validation 660/5000; original validation hashes unchanged. Periodic local recovery snapshot snapshot-20261013T164133Z-efc2b133 verified. 52 software tests pass. Playwright desktop/mobile progress rendering and studio navigation checked; actual API returns409 while GPU study is active. Prepared gated selected-model launcher and actual API parity checker; these remain unexecuted until study completion. Full epoch, validation selection, sealed3000 test, selected-model connection and API parity remain pending.
 
@@ -208,9 +208,9 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 - 2026-10-13T20:34:37.376723+00:00: Fresh recovery smoke passed every actual forward/backward, finite gradient, changed-weight, mid-epoch exact-resume and final-reload inference check in BF16, unchanged selected-init signature 266194952cff5629b36fd132285ca79fe297e1dbcec3c99c37e0ef9bf46ed929. User confirmed unused apps closed; afterward availableRAM~5.0GiB and commit headroom~5.7GiB. Fresh64-example synchronized benchmark now running in recovery/cpu-memory-preflight-v1/benchmark; its weights are excluded from full training. Snapshot exceptions now retain type and traceback instead of empty-message-only evidence.53 tests passed again. Full4500 checkpoint remains preserved, full resume pending benchmark.
 
-- 2026-10-13T20:36:54Z: Validation: curated-efficient-original. 
+- 2026-10-13T20:36:54Z: Validation: curated-efficient-original.
 
-- 2026-10-13T20:36:54Z: Validation: curated-efficient-pilot. 
+- 2026-10-13T20:36:54Z: Validation: curated-efficient-pilot.
 
 - 2026-10-13T20:36:56Z: Capped25000-word training: epoch1. One initial epoch only. No additional epochs scheduled.
 
@@ -228,9 +228,9 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 - 2026-10-13T21:33:15.413110+00:00: Full trainer exited at raw logged6360 because Windows denied atomic replacement of training_progress.json (WinError5), not model/GPU error. Trainer/coordinator/controller all exited; full6000 checkpoint verified. Failure logs and pendingprogress preserved in recovery/atomic-replace-failure-20261013T213214Z, archived pointer named evidence to avoid scanner ambiguity. At safe boundary, atomic JSON writer now uses unique same-directory staging,flush/fsync and at most40 replace attempts over1.95s only for Windows access/sharing errors; never truncates old destination or discards pending failed bytes.56 tests pass, including transient lock,permanent failure preservation,and platform-specific retry guards. Original31 provenance/frozen hashes/nativeBF16 and both free locks reverified. Fresh resume smoke in recovery/atomic-replace-preflight-v1/smoke is running; benchmark and full6000 resume pending. Unsaved360 examples must replay with optimizer/RNG restoration; no new examples/extra epoch. Candidate validation,sealed3000,selected website/API parity still pending.
 
-- 2026-10-13T21:37:00Z: Validation: curated-efficient-original. 
+- 2026-10-13T21:37:00Z: Validation: curated-efficient-original.
 
-- 2026-10-13T21:37:00Z: Validation: curated-efficient-pilot. 
+- 2026-10-13T21:37:00Z: Validation: curated-efficient-pilot.
 
 - 2026-10-13T21:37:03Z: Capped25000-word training: epoch1. One initial epoch only. No additional epochs scheduled.
 
@@ -283,9 +283,9 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 - 2026-10-14T08:46:16.912461+00:00: All previoustrainer/coordinator/controller/helper exited after CUDAout-of-memory during backward checkpointrecomputation; snapshotcontroller also logged MemoryError allocating8MiB hashbuffer. Initiating system/GPUcause unproven. Failure logs,rawtraininglog and pointerevidence preserved in D:/OCR/runs/word-efficient-v3/recovery/cuda-memory-failure-20261014T084325Z. Latestfull13000/3250update checkpoint hashes/metadata identical to prior13k audit; unsavedpost13000 work mustreplay,notnewuniqueexamples. VerifiedsafeGPUboundary beforechanges: sharedcheckpoint/hash verifier now256KiB chunks instead8MiB,scaleverifier reusesit; sameSHA256bytes/precision/model/data/optimizersemantics.75 fullsoftwaretests pass. Original31 files/frozen25k/5k/3k hashes and bothfree locks verified; RTX3050nativeBF16 confirmed. Fresh real-image exact-resume smoke started in recovery/cuda-memory-preflight-v1/smoke (wrapper27004); benchmark/full13000resume pending. Candidatevalidation,selection,sealed3000,website/API parity remainincomplete. Evidence reports/colab-migration/windows-cuda-memory-recovery-preparation-20261014.json.
 
-- 2026-10-14T08:51:33Z: Validation: curated-efficient-original. 
+- 2026-10-14T08:51:33Z: Validation: curated-efficient-original.
 
-- 2026-10-14T08:51:33Z: Validation: curated-efficient-pilot. 
+- 2026-10-14T08:51:33Z: Validation: curated-efficient-pilot.
 
 - 2026-10-14T08:51:36Z: Capped25000-word training: epoch1. One initial epoch only. No additional epochs scheduled.
 
@@ -343,9 +343,9 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 - 2026-10-14T15:42:20.006892+00:00: Trainer18796/coordinator36580/controller23348 exited with CPU MemoryError in PIL image-to-array preprocessing at rawprogress17580/25000. All GPUstudy workers verified absent. Preserved failure/status/rawlog/progress/controller evidence in D:\OCR\runs\word-efficient-v3\recovery\cpu-memory-failure-20261014T154220Z. All35 checkpoint generations SHA-verified including17000 and17500; atomic pointer points to full17500/4375 updates, BF16, unchanged signatures. No restart or precision/model/data changes. Recovery preflight pending; final selection/test/API still incomplete. Deployment deferred per user. Evidence reports\colab-migration\windows-17500-memory-failure-audit-20261014.json.
 
-- 2026-10-14T15:48:02Z: Validation: curated-efficient-original. 
+- 2026-10-14T15:48:02Z: Validation: curated-efficient-original.
 
-- 2026-10-14T15:48:02Z: Validation: curated-efficient-pilot. 
+- 2026-10-14T15:48:02Z: Validation: curated-efficient-pilot.
 
 - 2026-10-14T15:48:04Z: Capped25000-word training: epoch1. One initial epoch only. No additional epochs scheduled.
 
@@ -382,9 +382,9 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 - 2026-10-15T05:05:31.212180+00:00: UserexplicitlyrequestedallactiveworkunderD:/CODEX/OCR, Ollamaremovalifunused,andlocalhostwebsite. ClonedexistingGit history toD:/CODEX/OCR/akshara-ocr andSHA-verified26historicaluntrackedartifacts; originalCcheckoutuntouched. Existingmodel/data/checkpoints remainD:/OCR tokeepfrozenpaths/hashes. Ollama notdependency; registereduninstallersucceeded(exit0,noreboot), noOllamaprocess/executable; recursiveleftoverdatacleanup rejectedbyautomaticreview(blockedbypolicy), leftoverfoldersuntouched,no bypass. Localwebsite/API nowservedfromD: at127.0.0.1:8765, logs/tempD:. HeadedPlaywright actualdesktop/mobile rendering/screenshots inspected, width375<=390,no consoleerrors in freshbrowser, HTTP200/204 andmultipart409 guardverified; fixedfavicon404, pausedETA andfalseGPUactivity wording. Ownautomationbrowserclosedformemory; userURLremainslive.83fullsoftwaretests andJS/PowerShellsyntaxchecks pass. AddedWindowscontroller early2GiBcommit STOP guardwithpreservedmanualreason/probefailure handling. Explicitoperationalpre-loadreserve2.5GiB+6GiBmodelallowance passesafterOllamaremoval; originalCLI3GiBdefault unchanged, nolearning/precision/config/fingerprint/epoch change. FreshnativeBF16/realresume smoke/64benchmark pendingbeforefull18000resume. Modelquality/selectedAPIparity/finalwebsiteinference stillunfinished; Vercel/GitHubdeferred. Evidence reports\colab-migration\windows-d-drive-migration-and-website-20261015.json.
 
-- 2026-10-15T05:10:45Z: Validation: curated-efficient-original. 
+- 2026-10-15T05:10:45Z: Validation: curated-efficient-original.
 
-- 2026-10-15T05:10:45Z: Validation: curated-efficient-pilot. 
+- 2026-10-15T05:10:45Z: Validation: curated-efficient-pilot.
 
 - 2026-10-15T05:10:47Z: Capped25000-word training: epoch1. One initial epoch only. No additional epochs scheduled.
 
@@ -400,9 +400,9 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 - 2026-10-15T05:30:10.677748+00:00: Verified graceful Windows memory-guard stop at 18,380/25,000 (4,595 updates), BF16 unchanged. Full step-0004595 and final durable snapshot snapshot-20261015T052237Z-122595b7 checksum-verified; source/snapshot state bytes match. All study workers exited; no new allocation crash, historical failure.json preserved. STOP and terminal state archived under recovery/memory-guard-stop-20261015T052700Z and STOP remains pending explicit verified recovery. User directs core training, validation, sealed final testing and website/API verification first; comparison page and ranking research deferred until afterward. Fixed API guard so paused/failed unfinished capped study cannot advertise historical pilot as selected; completed capped study ignores retired-run busy status. 85 full software tests pass. Fresh recovery preflight pending; current native commit headroom below explicit 8.5GiB pre-load requirement, so no GPU model/training launched. Frozen25k/5k/3k and one initial epoch preserved. Evidence reports/colab-migration/windows-18380-safe-memory-stop-20261015.json.
 
-- 2026-10-15T05:35:55Z: Validation: curated-efficient-original. 
+- 2026-10-15T05:35:55Z: Validation: curated-efficient-original.
 
-- 2026-10-15T05:35:55Z: Validation: curated-efficient-pilot. 
+- 2026-10-15T05:35:55Z: Validation: curated-efficient-pilot.
 
 - 2026-10-15T05:35:57Z: Capped25000-word training: epoch1. One initial epoch only. No additional epochs scheduled.
 
