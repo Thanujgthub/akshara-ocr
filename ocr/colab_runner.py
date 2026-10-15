@@ -20,6 +20,9 @@ def main():
             try:
                 while child.poll() is None:
                     now=time.monotonic()
+                    if os.name=='nt':
+                        from .windows_memory import request_memory_stop
+                        request_memory_stop(run)
                     if now-started>=a.seconds and not stop.exists():stop.write_text('Safe stop requested by runtime budget.\n')
                     if now>=next_sync:
                         try:

@@ -1,0 +1,187 @@
+{
+  "observed_utc": "2026-10-15T05:05:31.212180+00:00",
+  "active_checkout": "D:\\CODEX\\OCR\\akshara-ocr",
+  "original_checkout_preserved": "C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr",
+  "source_migration": {
+    "source": "C:\\Users\\ASUS\\Documents\\Codex\\2026-10-12\\co\\outputs\\akshara-ocr",
+    "destination": "D:\\CODEX\\OCR\\akshara-ocr",
+    "historical_untracked_files_verified": [
+      {
+        "relative_path": "output/playwright/akshara-final-results-sealed.png",
+        "sha256": "6ea663f0d53a2b80c3b3b506ccc80f36a4cf532c2a19f111e0c2b79e263d17b2"
+      },
+      {
+        "relative_path": "output/playwright/akshara-pilot-validation-live.png",
+        "sha256": "038e70a78536d3cf168cd43760bffa14c5a47419ade3b65a4b59334b6b6da826"
+      },
+      {
+        "relative_path": "output/playwright/akshara-progress-mobile.png",
+        "sha256": "214c76a5a9c69c8bd87718e7a74fafbcd4a5018f5d1782b6af5693bc83d862de"
+      },
+      {
+        "relative_path": "output/playwright/akshara-progress-preflight.png",
+        "sha256": "a3892a5da44e9f8a465522b58f1d6c8616604328015d713ea98d4d7bc53bcc27"
+      },
+      {
+        "relative_path": "output/playwright/akshara-reconnect-live-20261014.png",
+        "sha256": "d8a985a399be0053e522a150cf55bb5658ed9d704dfc9f9d1d17914a005e4f7a"
+      },
+      {
+        "relative_path": "output/playwright/akshara-training-started.png",
+        "sha256": "f26c0da01c76a98de7dbc52b888fe75c42ffee71a673cbed6c7cf9282df41995"
+      },
+      {
+        "relative_path": "outputs/akshara-server-20261013-200210.stderr.log",
+        "sha256": "3dbb755bc854a81ca32d2fa3e806f6f74e3038a5bf1eb2592cdd6a24e53ef785"
+      },
+      {
+        "relative_path": "outputs/akshara-server-20261013-200210.stdout.log",
+        "sha256": "9fef680e15744185d5c705baa0bbeaea5cd2dafa0b8e6d08908949586eea6a84"
+      },
+      {
+        "relative_path": "outputs/ocr-analytics-20261013/Akshara_OCR_Analytics_Dashboard.xlsx",
+        "sha256": "75a91fcdb406a8ceb80d4f19cad485645cbea6a377d383cd8e52f1e5723ead96"
+      },
+      {
+        "relative_path": "outputs/ocr-analytics-20261013/Akshara_OCR_Analytics_Dashboard.xlsx.inspect.ndjson",
+        "sha256": "5767857e4359f39e74a662c5828c33b3d7cb73bf80700498783de293059c1a4b"
+      },
+      {
+        "relative_path": "outputs/ocr-analytics-20261013/dashboard-preview.png",
+        "sha256": "f415f7348455b763ebcea89b504d6fbef26efe8c045411c24b3ce31dfa660f78"
+      },
+      {
+        "relative_path": "outputs/ocr-analytics-20261013/dashboard.mjs",
+        "sha256": "bbf1b62d00510bec155ab45f3fc34a69601544bc6fb319ed6fa18af00f065e23"
+      },
+      {
+        "relative_path": "outputs/ocr-analytics-20261013/data-preview.png",
+        "sha256": "27891740e5f1ce092a17e13bb30054488defbe2bfff3f3124d18dc13d67368e1"
+      },
+      {
+        "relative_path": "outputs/ocr-analytics-20261013/helpers-preview.png",
+        "sha256": "e963eae1e4180ea5ca765acc9bbea326bf87167a4202e435e180dc785bce754a"
+      },
+      {
+        "relative_path": "outputs/ocr-analytics-20261013/reference-render.png",
+        "sha256": "a696dec42fdb498c2cf79c0a5a51d7515777091518a94ff8897a96e7d366f477"
+      },
+      {
+        "relative_path": "outputs/ocr-analytics-20261013/verification.json",
+        "sha256": "597a8dd0bfdbca1ad766d0ce1e152aa200469e530a60e2edead309ee92437f12"
+      },
+      {
+        "relative_path": ".playwright-cli/console-2026-10-13T16-33-25-400Z.log",
+        "sha256": "d73d0ee9ad58723c83174deba1712f544d16dc87c802f56f6ab44387d1500615"
+      },
+      {
+        "relative_path": ".playwright-cli/console-2026-10-14T06-22-41-775Z.log",
+        "sha256": "847f3735aa0ec9c73fbe966674788e6752a2d903e676c0c02aab40de3662bcc8"
+      },
+      {
+        "relative_path": ".playwright-cli/page-2026-10-13T16-33-25-520Z.yml",
+        "sha256": "88cb847ac2ee3e79c05126663c7b72aaa1f190d21fcd8daed1b4917b8865dea8"
+      },
+      {
+        "relative_path": ".playwright-cli/page-2026-10-13T16-34-14-690Z.yml",
+        "sha256": "7386f206b5ea9004e519a4635d203fb38ae590631f45a95a2d4abc362517cc2b"
+      },
+      {
+        "relative_path": ".playwright-cli/page-2026-10-13T16-38-02-676Z.yml",
+        "sha256": "1681ae34d3ddf209664e9c54ca49d8b9dc87ef07b9bdbee43d941f176a11da46"
+      },
+      {
+        "relative_path": ".playwright-cli/page-2026-10-13T16-38-46-723Z.yml",
+        "sha256": "fe8a8a7bc43a57313ac70785000b8f2ed680283a6594b1e359c34f9bbf6908a0"
+      },
+      {
+        "relative_path": ".playwright-cli/page-2026-10-13T16-51-10-985Z.yml",
+        "sha256": "7dca5f3ac6247ce17f8deeb4ba98741dc1f400f9a1e1d8ecd5f250ca56a341d2"
+      },
+      {
+        "relative_path": ".playwright-cli/page-2026-10-13T16-51-56-748Z.yml",
+        "sha256": "e3c138e4242a0312764c385be27ac07d16fbb42ea79bb3be87a704566130af9d"
+      },
+      {
+        "relative_path": ".playwright-cli/page-2026-10-13T17-28-07-498Z.yml",
+        "sha256": "500b8678b99ef1ae89accd9cbd04fd839621a2c9e710fe482f71418f7dfbaf09"
+      },
+      {
+        "relative_path": ".playwright-cli/page-2026-10-14T06-22-41-942Z.yml",
+        "sha256": "baa728bda446ceec74db88dc8a75b2e9f17c3eeb11652b6c0a535b3cabe9affb"
+      }
+    ],
+    "skipped_links": [],
+    "source_preserved": true,
+    "node_modules": "Reparse points/node_modules excluded from copied historical output trees; installed tooling remains separately available."
+  },
+  "runtime_models_data_checkpoints": "D:/OCR existing artifacts unchanged",
+  "new_process_temp": "D:/CODEX/OCR/tmp; launchers use ignored checkout/.runtime-tmp",
+  "tests_passed": 83,
+  "javascript_syntax_checks": [
+    "dist/app.js",
+    "dist/progress.js"
+  ],
+  "powershell_launchers_parsed": true,
+  "website": "http://127.0.0.1:8765",
+  "dashboard": "http://127.0.0.1:8765/progress.html",
+  "playwright": {
+    "headed": true,
+    "desktop_studio_and_progress_rendered": true,
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "mobile_document_width": 375,
+    "mobile_no_horizontal_overflow": true,
+    "fresh_browser_console_errors": 0,
+    "paused_state_historical_progress_label_verified": true,
+    "screenshots": [
+      "output/playwright/akshara-d-studio-verified-20261015.png",
+      "output/playwright/akshara-d-progress-verified-desktop-20261015.png",
+      "output/playwright/akshara-d-progress-verified-mobile-20261015.png"
+    ],
+    "scope": "Website recovery/preview checks only; selected-model inference/API parity remain pending complete study.",
+    "automation_browser_closed_for_memory": true
+  },
+  "api_checks": {
+    "health": 200,
+    "model_load_verified": false,
+    "favicon": 204,
+    "inference_guard_multipart": 409
+  },
+  "ollama": {
+    "not_an_akshara_dependency": true,
+    "registered_uninstaller_exit": 0,
+    "reboot_required": false,
+    "processes_remaining": [],
+    "installed_executable_exists": false,
+    "model_archive_files": 0,
+    "leftover_cleanup": "Automatic approval review rejected recursive deletion; reported only blocked by policy. Remaining user data folders left intact; no bypass attempted."
+  },
+  "memory_recovery_policy": {
+    "preload_gate": {
+      "passed": true,
+      "measurement": {
+        "observed_utc": "2026-10-15T05:04:43.075705+00:00",
+        "commit_total_bytes": 15792685056,
+        "commit_limit_bytes": 25219530752,
+        "commit_headroom_bytes": 9426845696,
+        "available_ram_bytes": 5285507072,
+        "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+      },
+      "required_commit_headroom_bytes": 9126805504,
+      "model_private_allowance_gib": 6.0,
+      "reserve_gib": 2.5,
+      "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+      "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change.",
+      "operational_policy_note": "Explicit2.5GiB pre-load reserve after reboot/Ollama uninstall, with newly tested2GiB periodic optimizer-boundary STOP guard in Windows controller. Model allowance6GiB retained. Original3GiB CLI default unchanged. No scientific/precision/data/epoch changes."
+    },
+    "runtime_minimum_commit_headroom_gib": 2,
+    "action": "Existing optimizer/prediction-boundary STOP, not process termination",
+    "observation_failure": "Request safe stop; preserve earlier user STOP reason",
+    "limitations": "Periodic samples cannot guarantee protection from abrupt allocation spikes."
+  },
+  "training_resumed": false,
+  "original_protocol": "25000/5000/3000 one epoch unchanged; validation-only model selection; sealed test pending"
+}

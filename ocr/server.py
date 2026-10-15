@@ -4,11 +4,16 @@ import tempfile
 import logging
 from pathlib import Path
 from PIL import Image, UnidentifiedImageError
-from fastapi import FastAPI, UploadFile, HTTPException, Form
+from fastapi import FastAPI, UploadFile, HTTPException, Form, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from .model import available, predict, loaded
 app=FastAPI(title='Akshara OCR API',version='0.1.0')
+
+@app.get('/favicon.ico', include_in_schema=False)
+def favicon():
+    return Response(status_code=204)
+
 origins=os.environ.get('OCR_ALLOWED_ORIGINS','http://127.0.0.1:8765,http://localhost:8765').split(',')
 app.add_middleware(CORSMiddleware,allow_origins=origins,allow_methods=['GET','POST'],allow_headers=['Content-Type'],allow_credentials=False)
 
@@ -40,7 +45,7 @@ def health():
 
 @app.post('/api/predict')
 def predict_page(file:UploadFile,mode:str=Form('page'),variant:str=Form('adapted')):
-    if study_busy():raise HTTPException(409,'The GPU is training or testing. Open Training & results to follow progress, then transcribe when it completes.')
+    if study_busy():raise HTTPException(409,'Inference is paused for study preparation, training or testing. Open Study progress for the current stage.')
     if mode not in {'page','word'}: raise HTTPException(422,'Mode must be page or word')
     if variant not in {'adapted','original'}:raise HTTPException(422,'Variant must be adapted or original')
     if not available(): raise HTTPException(503,'Model unavailable. Configure INDIC_OCR_REPO with an authorized snapshot and install official dependencies.')

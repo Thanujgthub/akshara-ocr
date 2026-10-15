@@ -67,6 +67,41 @@ def assess(measured, model_private_gib=6., reserve_gib=3.):
     }
 
 
+def request_memory_stop(run, measured=None, minimum_headroom_gib=2.):
+    """Request the existing optimizer-boundary stop, without terminating a worker."""
+    if not math.isfinite(minimum_headroom_gib) or minimum_headroom_gib <= 0:
+        raise ValueError('Declare a finite positive runtime reserve')
+    run = Path(run)
+    if measured is None:
+        try:
+            measured = snapshot()
+        except (OSError, RuntimeError, MemoryError) as error:
+            try:
+                with (run / 'STOP').open('x', encoding='utf-8') as stream:
+                    stream.write('Windows memory observation failed; request the existing safe checkpoint boundary.\n')
+            except FileExistsError:
+                pass
+            print('Windows memory observation failed; safe stop requested: ' + str(error), flush=True)
+            return True
+    # Validate the native observation independently of the pre-load allowance.
+    assess(measured)
+    if measured['commit_headroom_bytes'] >= minimum_headroom_gib * GIB:
+        return False
+    stop = run / 'STOP'
+    try:
+        with stop.open('x', encoding='utf-8') as stream:
+            stream.write('Windows commit headroom below runtime reserve; save at the existing optimizer/prediction boundary.\n')
+    except FileExistsError:
+        return True  # Preserve the user's or runtime-budget stop reason.
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    save(run / 'recovery' / ('memory-stop-' + stamp + '.json'), {
+        'measurement': measured,
+        'minimum_headroom_gib': minimum_headroom_gib,
+        'action': 'STOP sentinel only; no process killed, OS setting or scientific configuration changed.',
+        'scope': 'Periodic observation cannot guarantee protection from abrupt allocation spikes.'})
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model-private-gib', type=float, default=6.)

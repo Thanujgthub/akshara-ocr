@@ -1,5 +1,9 @@
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
+$ocrTemporaryRoot = Join-Path $PSScriptRoot '.runtime-tmp'
+New-Item -ItemType Directory -Path $ocrTemporaryRoot -Force | Out-Null
+$env:TEMP = $ocrTemporaryRoot
+$env:TMP = $ocrTemporaryRoot
 $selectedRun = 'D:/OCR/runs/word-efficient-v3'
 $selectedState = Get-Content -LiteralPath "$selectedRun/status.json" -Raw | ConvertFrom-Json
 if ($selectedState.status -ne 'completed') { throw 'Finish the capped study before loading its selected model into the API.' }

@@ -1,5 +1,9 @@
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
+$ocrTemporaryRoot = Join-Path $PSScriptRoot '.runtime-tmp'
+New-Item -ItemType Directory -Path $ocrTemporaryRoot -Force | Out-Null
+$env:TEMP = $ocrTemporaryRoot
+$env:TMP = $ocrTemporaryRoot
 $env:PYTHONIOENCODING = 'utf-8'
 if (-not $env:INDIC_OCR_REPO) { $env:INDIC_OCR_REPO = 'D:/OCR/models/indic-ocr' }
 if (-not $env:INDIC_OCR_REVISION) { $env:INDIC_OCR_REVISION = 'cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25' }
