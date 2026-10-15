@@ -1,0 +1,60 @@
+{
+  "observed_utc": "2026-10-15T15:11:45.186226+00:00",
+  "memory": {
+    "passed": false,
+    "measurement": {
+      "observed_utc": "2026-10-15T15:11:45.189067+00:00",
+      "commit_total_bytes": 18003660800,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 7215869952,
+      "available_ram_bytes": 4638113792,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9126805504,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 2.5,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "brave_private_bytes": 1645879296,
+  "closed_monitor_logs": {
+    "study-watch-closed.json": {
+      "verified_sha256": "297945182b4b394c2f9183c214180446b38291136a69d54764fa4f3ef72b6d53",
+      "raw_path": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\windows-d-drive-preflight-v6\\study-watch.jsonl"
+    },
+    "system-memory-long-closed.json": {
+      "verified_sha256": "060b310ae685052bfdab42b75dabdcffc9bf8f91ba4cf0becbcf90ee9bef34f3",
+      "raw_path": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\windows-d-drive-preflight-v6\\system-memory-long.jsonl"
+    }
+  },
+  "keep_awake": {
+    "status": "released",
+    "updated_utc": "2026-10-15T15:08:01.192194+00:00",
+    "helper_pid": 25332,
+    "owner_pid": 25560,
+    "owner_created": 1792063371.7543669,
+    "request_flags": 2147483649,
+    "scope": "Idle system-sleep request only; controller identity checked every30seconds.",
+    "manual_sleep_and_lid_actions_can_pause": true,
+    "power_plan_changed": false,
+    "display_request": false,
+    "documentation": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate"
+  },
+  "api_health": {
+    "status": "ok",
+    "model_ready": false,
+    "model_load_verified": false,
+    "training_active": true,
+    "note": "Inference waits until the local GPU study completes."
+  },
+  "tests": {
+    "returncode": 0,
+    "observed_utc": "2026-10-15T15:10:58.045988+00:00"
+  },
+  "selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+  "training_complete": true,
+  "candidate_validation_complete": 5000,
+  "original_final_saved": 2227,
+  "STOP_preserved": true,
+  "scope": "CPU recovery only; no model loaded or study restarted. User close-Brave question pending; measure actual capacity before GPU checks and final-only continuation."
+}
