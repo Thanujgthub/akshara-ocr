@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-10-15T10:59:45.792471+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0004951",
+  "metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4951,
+    "epoch": 0,
+    "next_index": 19804,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T105848Z-b2dd69f3",
+  "snapshot_verified": true,
+  "state_identical": true,
+  "archive": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\memory-guard-stop-20261015T1058Z",
+  "STOP_preserved": true,
+  "controller_terminal": "pipeline exit0, final verified durable snapshot",
+  "scope": "Graceful memory-reserve stop, not a new allocation crash. No candidate validation or final testing performed. No source/GPU setting changes."
+}
