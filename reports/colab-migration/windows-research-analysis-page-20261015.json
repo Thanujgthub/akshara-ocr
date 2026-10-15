@@ -1,0 +1,48 @@
+{
+  "observed_utc": "2026-10-15T17:27:08.983818+00:00",
+  "url": "http://127.0.0.1:8765/analysis.html",
+  "source_sha256": {
+    "dist/analysis.html": "77593cdfcc728d87cd083018bfd68c2440aa406a7b57d95621144c3899252531",
+    "dist/analysis.css": "67d9cbfb646f17d5c5df4f742d8909baf0907fd29cdad3aafbee297581ee6371",
+    "dist/analysis.js": "6641b0265fc9e15a8db5cd7c7493504c844f72db30e0bda816e0f3f84ccabae1",
+    "dist/benchmark-context-20261015.json": "7036685d9daebf32d50f04fe4065d506ceee41340c8fc70cc42627a050d7cb01",
+    "dist/capped-study-metrics-20261015.csv": "1ea46c6e501c2f69df1b11bc16830a7753eb2e6ca09bb6755c0cdfd4f7e1b6fa",
+    "dist/akshara-study-report-20261015.md": "2ebff455a4eeed1f52ed53cbc0feb565ea1e970f038c714ae4495195de45d661",
+    "dist/index.html": "7838f25e7c43313d3033cb657f61f05fc81e34fae11a9cecd90d17375870daa8",
+    "dist/progress.html": "3e3309f868311f885d767c4fec5828618987758e762b9bdf26f4e27b57dae50d"
+  },
+  "evidence_files": 133,
+  "evidence_directory": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\windows-d-drive-preflight-v7\\analysis-page-evidence",
+  "evidence_checksums_sha256": "3eb5c4751061491d2ba59a4cb78846fb4cd0a406ff72968aed38be88666ad87d",
+  "passed_checks": [
+    "1440x1000desktop and390x844mobile no global horizontal overflow",
+    "interactive CER/exact metric switch",
+    "3models/6rawNFCmetrics/6paired intervals/10input subgroup rows",
+    "expanded resource/subgroup/external tables on390px",
+    "public vendor6/OmniDocBench5/ICDAR5/paper4 rows preserve source units",
+    "Markdown/CSV/JSON browser downloads exactly match source SHA",
+    "existing studio and completed dashboard link to analysis",
+    "dashboard remains100% and64/64recordedAPIparity",
+    "zero analysis application console errors/warnings"
+  ],
+  "visual_reviewed": [
+    "desktop top after typography refinement",
+    "mobile top after typography refinement"
+  ],
+  "source_links": {
+    "vendor": "https://huggingface.co/bodhan-ai/indic-ocr",
+    "omnidoc": "https://github.com/opendatalab/OmniDocBench",
+    "icdar": "https://ilocr.iiit.ac.in/icdar_2024_hwd/leaderboard.html",
+    "paper": "https://cvit.iiit.ac.in/images/ConferencePapers/2025/Self_supervised_approach_for_improving_Indic_handwritten_OCR.pdf"
+  },
+  "ranking_scope": "Candidate1of3local variants by final graphemeCER point estimate. Worldwide rank unestablished; no common external Akshara benchmark evaluation. Public rankings remain benchmark-specific, never mixed with local metrics.",
+  "Superdesign_scope": "CLIpreflight/auth attempted; pending login cancelled. No remote draft/canvas or paid generation claim. Existing local Akshara design used.",
+  "health_after_checks": {
+    "status": "ok",
+    "model_ready": true,
+    "model_load_verified": true,
+    "training_active": false,
+    "note": "Inference waits until the local GPU study completes."
+  },
+  "scope": "Requested analysis/comparison page completed after core study/API/UI. No newtraining/modelselection/finaltestinference, noVerceldeployment/GitHubpush."
+}

@@ -1,0 +1,138 @@
+{
+  "checked_utc": "2026-10-15T17:19:46.288404+00:00",
+  "scope": "Published context only; no common Akshara external benchmark evaluation or worldwide rank. Values preserve each source unit.",
+  "sources": {
+    "vendor": "https://huggingface.co/bodhan-ai/indic-ocr",
+    "omnidoc": "https://github.com/opendatalab/OmniDocBench",
+    "icdar": "https://ilocr.iiit.ac.in/icdar_2024_hwd/leaderboard.html",
+    "paper": "https://cvit.iiit.ac.in/images/ConferencePapers/2025/Self_supervised_approach_for_improving_Indic_handwritten_OCR.pdf"
+  },
+  "vendor_hw_telugu": [
+    {
+      "model": "Gemini 3.1 Pro",
+      "score": 72.0
+    },
+    {
+      "model": "Sarvam Vision",
+      "score": 59.1
+    },
+    {
+      "model": "IndicOCR",
+      "score": 53.5
+    },
+    {
+      "model": "Gemma-4-31B",
+      "score": 32.0
+    },
+    {
+      "model": "Chandra OCR 2",
+      "score": 20.8
+    },
+    {
+      "model": "Surya OCR 2",
+      "score": 14.6
+    }
+  ],
+  "vendor_families": [
+    {
+      "task": "OmniDocBench1.6 English",
+      "score": 92.76,
+      "unit": "Overall"
+    },
+    {
+      "task": "olmOCR-Bench English",
+      "score": 82.2,
+      "unit": "Overall"
+    },
+    {
+      "task": "Printed Telugu",
+      "score": 82.3,
+      "unit": "100 ? (1 ? WER)"
+    },
+    {
+      "task": "Handwritten Telugu",
+      "score": 53.5,
+      "unit": "100 ? (1 ? WER)"
+    }
+  ],
+  "omnidoc_full_top5": [
+    {
+      "model": "TeleOCR",
+      "score": 96.91
+    },
+    {
+      "model": "OvisOCR2",
+      "score": 96.47
+    },
+    {
+      "model": "PaddleOCR-VL-1.6",
+      "score": 96.34
+    },
+    {
+      "model": "MinerU2.5-Pro",
+      "score": 95.75
+    },
+    {
+      "model": "GLM-OCR",
+      "score": 95.22
+    }
+  ],
+  "icdar_telugu": [
+    {
+      "team": "TSNUK",
+      "crr": 96.72,
+      "wrr": 90.21
+    },
+    {
+      "team": "VitaminC_PA",
+      "crr": 94.62,
+      "wrr": 80.11
+    },
+    {
+      "team": "IndependentOCR",
+      "crr": 87.39,
+      "wrr": 75.12
+    },
+    {
+      "team": "TeamOCR",
+      "crr": 85.92,
+      "wrr": 75.03
+    },
+    {
+      "team": "IndicOCR Group (2024 team)",
+      "crr": 83.22,
+      "wrr": 73.82
+    }
+  ],
+  "paper_telugu": [
+    {
+      "domain": "IIIT HW-WORDS",
+      "model": "PARSeq HTR",
+      "wer": 10.37,
+      "cer": 2.5
+    },
+    {
+      "domain": "IIIT HW-WORDS",
+      "model": "SemiHastakshar",
+      "wer": 10.38,
+      "cer": 2.24
+    },
+    {
+      "domain": "IIIT HW-UC",
+      "model": "PARSeq HTR",
+      "wer": 60.56,
+      "cer": 30.58
+    },
+    {
+      "domain": "IIIT HW-UC",
+      "model": "SemiHastakshar",
+      "wer": 41.66,
+      "cer": 18.12
+    }
+  ],
+  "verification_notes": [
+    "Primary model-card and organizer repository/leaderboard checked; no external model weights downloaded or inference run.",
+    "Paper Table4 checked in existing rendered page6; Table5 values read from primary PDF text. Web screenshot fetch timed out, not represented as successful screenshot evidence.",
+    "Superdesign CLI preflight required account authorization; owned pending login was cancelled. Page uses existing local Akshara styling; no remote canvas/draft/paid generation claim."
+  ]
+}
