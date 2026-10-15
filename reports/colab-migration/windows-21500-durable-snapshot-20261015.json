@@ -1,0 +1,8 @@
+{
+  "observed_utc": "2026-10-15T12:18:04.211750+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T121651Z-32344f63",
+  "full_examples": 21500,
+  "all_hashes_verified": true,
+  "state_identical": true,
+  "scope": "Scheduled local D snapshot, not offsite or actual restore."
+}
