@@ -1,0 +1,53 @@
+{
+  "observed_utc": "2026-10-15T06:22:31.945134+00:00",
+  "archive": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\memory-guard-stop-20261015T0616Z",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0004937",
+  "metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4937,
+    "epoch": 0,
+    "next_index": 19748,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "pointer": {
+    "checkpoint": "checkpoints/step-0004937",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "3a5d916dc5659b25ea8205ed9ab1d90e4e22fa4dda9b91e7148ea7e52dcf0b20"
+  },
+  "verified_final_snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T061642Z-8b0b1487",
+  "source_snapshot_state_byte_identical": true,
+  "reason": {
+    "measurement": {
+      "observed_utc": "2026-10-15T06:16:12.626018+00:00",
+      "commit_total_bytes": 23095484416,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 2124046336,
+      "available_ram_bytes": 2394447872,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "minimum_headroom_gib": 2.0,
+    "action": "STOP sentinel only; no process killed, OS setting or scientific configuration changed.",
+    "scope": "Periodic observation cannot guarantee protection from abrupt allocation spikes."
+  },
+  "workers_exited": true,
+  "new_allocation_crash": false,
+  "stop_remains": true,
+  "memory_after_exit": {
+    "passed": false,
+    "measurement": {
+      "observed_utc": "2026-10-15T06:22:31.945134+00:00",
+      "commit_total_bytes": 16943050752,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 8276480000,
+      "available_ram_bytes": 4453761024,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9126805504,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 2.5,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "scope": "Graceful optimizer-boundary stop; final controller exit0. Historical failure.json remains untouched. No checkpoint or STOP consumed; no model restarted."
+}
