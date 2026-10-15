@@ -1,0 +1,167 @@
+{
+  "recorded_utc": "2026-10-15T19:34:27.182001+00:00",
+  "github": {
+    "url": "https://github.com/Thanujgthub/akshara-ocr",
+    "visibility": "public",
+    "homepage": "https://akshara-ocr-seven.vercel.app",
+    "full_existing_history_preserved": true
+  },
+  "vercel": {
+    "url": "https://akshara-ocr-seven.vercel.app",
+    "project": "akshara-ocr",
+    "github_connected": true,
+    "mode": "static",
+    "gpu_inference": false
+  },
+  "huggingface": {
+    "model": "https://huggingface.co/thanujhf/akshara-telugu-handwriting-ocr",
+    "revision": "329268ff4169b496b2e6727bfe421cc76bfb2be8",
+    "adapter_sha256": "7d64d5371be010c0c1fe15936b44f1e1539c2c52b80d2e3c957b53c4c91ea1e9",
+    "all_original_export_hashes": {
+      "adapter/adapter_config.json": "c09a604422ebf4190c103849e50f9e6f0cf6dd236841b20f3ba7a7afea3cbf9c",
+      "adapter/adapter_model.safetensors": "7d64d5371be010c0c1fe15936b44f1e1539c2c52b80d2e3c957b53c4c91ea1e9",
+      "adapter/checksums.json": "a1b3c3a6a045d14207088b26c53e37265a8f94e8188f2c80f2eb62909afda3db",
+      "adapter/README.md": "ecd557900eb80d36a43647aff4e76d0f119e4e3ecc4690470622d395ceb12d17",
+      "best.json": "b04bb87529d2bb624482e085bfbef4e087f57d64dc2c52d8e5dba1a103220cd4",
+      "final-summary.json": "214253fbefcd37adf53e6b2ba8b3f6c11cdce42780b1c8179ebd2c7b75a28e9f",
+      "full-config.json": "ce6d4114429fb049fa06521e3e4086ac6335fc46f5a250971a48a5779c5c81b6",
+      "metadata.json": "1a9b4a92e2939986ec93ec1554e76b7f6e78c29fb153c0d18a3f7e7472f69fad",
+      "model-provenance.json": "a6bf922583e0ff6265bac545bc8f9a4cac71a052da02ad95d235be7591eaba66",
+      "protocol.json": "2c43ae5d90781139baf3bc813c85ea4bf1bd267f586598a513e8b4329d67c242",
+      "selected-analysis.json": "dc4c2fe2128ec0521b0f94bc22944adc7df4e28ae4d17129d2e4efc0cd790ade",
+      "selection.json": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+      "training_complete.json": "30acd1827f754d38fde0fb0babfae4ce0d136b5a637e691b22b3d08e267a5452"
+    },
+    "license_sha256": "b39f2a9cb2d5ace3a03f4425cbc6db38ebd9a53ab7a7648d67dc1e0998ad75c2",
+    "space": "https://huggingface.co/spaces/thanujhf/akshara-ocr-studio",
+    "static_host": "https://thanujhf-akshara-ocr-studio.static.hf.space",
+    "runtime": "RUNNING",
+    "gpu_hardware_selected": false
+  },
+  "software_tests": {
+    "passed": 88,
+    "historical_study_tests": 85,
+    "publication_tests": 3,
+    "thread_limits": {
+      "OPENBLAS_NUM_THREADS": 1,
+      "OMP_NUM_THREADS": 1,
+      "MKL_NUM_THREADS": 1
+    }
+  },
+  "browser": {
+    "vercel": {
+      "url": "https://akshara-ocr-seven.vercel.app",
+      "studio": {
+        "status": "○ Online inference not configured",
+        "credit": true,
+        "hosted": true,
+        "overflow": false
+      },
+      "progress": {
+        "state": "completed",
+        "bar": 100,
+        "rows": 3,
+        "api": "Recorded local API parity: 64/64 requests passed. This is a published study snapshot. No live GPU inference runs on this static host."
+      },
+      "analysis": {
+        "exact": "76.20%",
+        "cer": "7.45%",
+        "rank": "1 of 3",
+        "overflow": false
+      },
+      "mobile": {
+        "width": 390,
+        "overflow": false
+      },
+      "actual_browser_csv_download": true,
+      "mobile_studio": {
+        "width": 390,
+        "overflow": false,
+        "status": "○ Online inference not configured"
+      },
+      "downloads": {
+        "akshara-study-report-20261015.md": {
+          "bytes": 9772,
+          "sha256": "2ebff455a4eeed1f52ed53cbc0feb565ea1e970f038c714ae4495195de45d661",
+          "matches_source": true
+        },
+        "capped-study-metrics-20261015.csv": {
+          "bytes": 411,
+          "sha256": "1ea46c6e501c2f69df1b11bc16830a7753eb2e6ca09bb6755c0cdfd4f7e1b6fa",
+          "matches_source": true
+        },
+        "capped-study-results-20261015.json": {
+          "bytes": 95154,
+          "sha256": "bb96920398278c7c665af65fda355f51746007ae9e9a9e1f4230d2a6aaf424a1",
+          "matches_source": true
+        }
+      },
+      "checked_utc": "2026-10-15T19:30:19.782442+00:00",
+      "console": "### Result\nTotal messages: 0 (Errors: 0, Warnings: 0)\n\n"
+    },
+    "huggingface": {
+      "url": "https://thanujhf-akshara-ocr-studio.static.hf.space",
+      "studio": {
+        "status": "○ Online inference not configured",
+        "credit": true,
+        "hosted": true,
+        "overflow": false
+      },
+      "progress": {
+        "state": "completed",
+        "bar": 100,
+        "rows": 3,
+        "api": "Recorded local API parity: 64/64 requests passed. This is a published study snapshot. No live GPU inference runs on this static host."
+      },
+      "analysis": {
+        "exact": "76.20%",
+        "cer": "7.45%",
+        "rank": "1 of 3",
+        "overflow": false
+      },
+      "mobile": {
+        "width": 390,
+        "overflow": false
+      },
+      "actual_browser_csv_download": true,
+      "mobile_studio": {
+        "width": 390,
+        "overflow": false,
+        "status": "○ Online inference not configured"
+      },
+      "downloads": {
+        "akshara-study-report-20261015.md": {
+          "bytes": 9772,
+          "sha256": "2ebff455a4eeed1f52ed53cbc0feb565ea1e970f038c714ae4495195de45d661",
+          "matches_source": true
+        },
+        "capped-study-metrics-20261015.csv": {
+          "bytes": 411,
+          "sha256": "1ea46c6e501c2f69df1b11bc16830a7753eb2e6ca09bb6755c0cdfd4f7e1b6fa",
+          "matches_source": true
+        },
+        "capped-study-results-20261015.json": {
+          "bytes": 95154,
+          "sha256": "bb96920398278c7c665af65fda355f51746007ae9e9a9e1f4230d2a6aaf424a1",
+          "matches_source": true
+        }
+      },
+      "checked_utc": "2026-10-15T19:32:56.188694+00:00",
+      "console": "### Result\nTotal messages: 0 (Errors: 0, Warnings: 0)\n\n"
+    }
+  },
+  "preservation": {
+    "training_restarted": false,
+    "sealed_test_replayed": false,
+    "original_artifacts_overwritten": false,
+    "core_ocr_modules_changed": false,
+    "paid_gpu_purchased": false
+  },
+  "resolved_failures": [
+    "Unrestricted Windows BLAS memory allocation failed;88 tests pass with thread limits1.",
+    "First static Space upload rejected emoji transformed by Windows stdin encoding; UTF8 file template corrected and upload committed.",
+    "Native HF-Xet remote-verification process failed memory allocation; all13 export hashes verified through plain public HTTPS.",
+    "Initial browser assertion ran before async metrics loaded; explicit DOM readiness check passes.",
+    "Initial static preview favicon404 corrected with SVG icon; deployed console checks show0 errors/warnings."
+  ]
+}

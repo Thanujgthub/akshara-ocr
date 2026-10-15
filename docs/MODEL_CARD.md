@@ -18,6 +18,8 @@ tags:
 
 **Built with IndicOCR from Bodhan AI / AI4Bharat.** This independent research adaptation is not endorsed by the upstream organizations. This repository contains the exact validation-selected **LoRA adapter**, not a merged base model or a running inference endpoint.
 
+[Hugging Face Space](https://huggingface.co/spaces/thanujhf/akshara-ocr-studio) ? [Website](https://akshara-ocr-seven.vercel.app/) ? [Measured analysis](https://akshara-ocr-seven.vercel.app/analysis.html)
+
 ## Training and selection
 
 One effective epoch over a frozen 25,000-example Telugu word-image training set; 5,000 validation examples selected pilot initialization and the candidate before the sealed 3,000-example final comparison. Rank-8 q/v LoRA, learning rate 1e-5, microbatch 1, accumulation 4, seed 42, native BF16, 6,250 updates; no augmentation. Completed locally on Windows / RTX 3050 Laptop 4 GB, not Colab. No extra epoch is pending.
@@ -36,7 +38,7 @@ Candidate median generation0.6274s, p95 0.9228s, peak allocated GPU memory appro
 
 ## Loading the correct model
 
-Use the existing source and Windows installation instructions at **https://github.com/Thanujgthub/akshara-ocr**. Access to that source repository may depend on owner permissions. Download this repository in full with `hf download MODEL_REPOSITORY --local-dir D:/OCR/releases/akshara-selected` (substitute this page's repository ID).
+Use the existing source and Windows installation instructions at **https://github.com/Thanujgthub/akshara-ocr**. Download this repository in full with `hf download thanujhf/akshara-telugu-handwriting-ocr --local-dir D:/OCR/releases/akshara-selected` (substitute this page's repository ID).
 
 Obtain `bodhan-ai/indic-ocr` at **cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25**, including its shipped tokenizer, processor, root Python modules and original weights. The adapter's original `base_model_name_or_path` contains a preserved Windows provenance path. **Do not use AutoModel on this adapter repository or interpret that path as an alternative downloadable base.** The existing loader explicitly supplies the pinned base and `adapter/` subfolder to PEFT.
 

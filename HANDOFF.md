@@ -1,5 +1,14 @@
 # Handoff · 13 October 2026
 
+## Publication verified ? 16 October 2026
+
+User-approved publication complete: PUBLIC GitHub https://github.com/Thanujgthub/akshara-ocr (owner requested public); Vercel https://akshara-ocr-seven.vercel.app linked in GitHub About/Website and README, GitHub auto-deploy connected. Full existing Git history and original local origin preserved. Hugging Face browser device auth succeeded as thanujhf; no secrets committed. Selected adapter https://huggingface.co/thanujhf/akshara-telugu-handwriting-ocr revision329268ff4169b496b2e6727bfe421cc76bfb2be8. Static Space https://huggingface.co/spaces/thanujhf/akshara-ocr-studio ; actual host https://thanujhf-akshara-ocr-studio.static.hf.space ; runtimeRUNNING, no GPU hardware selected.
+
+All13 original selected-export checksums and original license bytes verified from public HTTPS; adapter SHA7d64d5371be010c0c1fe15936b44f1e1539c2c52b80d2e3c957b53c4c91ea1e9 unchanged. Original31base hashes pass locally.88 software tests pass (85historical+3publication, BLAS/OMPthreads1). Both hosted desktop/mobile Playwright checks pass: completed100%/3models,76.20%/7.45% analysis, no globaloverflow, actualCSVdownload andMD/CSV/JSON byteidentity,0consoleerrors/warnings. Resolved memory/metadata/browser-harness failures recorded in reports/publication-20261016.json; no model/scientific outcome changed.
+
+README includes analysis, prerequisites, step-by-step Windows installation, pinned base/adapter downloads, checksum/nativeBF16 launcher, API, tests and licenses. PreviousREADME archived. CoreOCR/training/evaluation modules, originalweights/data/labels/frozenmanifests/checkpoints/rawresults unchanged. No training or final-test replay. Both website hosts are STATIC: onlineGPUinference is NOT deployed; localservice remains measured inference path. ModelHub holds downloadable adapter, not a hosted inference endpoint or complete recovery backup. No paidhardware orworldrankclaim. Publication evidence reports/publication-20261016.json; browser/source staging underignored output/playwright and outputs/publication-20261016. Publication-only helpers can be closed without affecting originalAPI8765.
+
+
 ## Latest verified handoff — 15 October 2026
 
 The capped Windows study and selected local website are complete. Use `D:/CODEX/OCR/akshara-ocr`; preserve the original C: checkout and all `D:/OCR` originals. **Do not restart training.** Full25k one-effective-epoch training,6,250updates, all5kvalidation comparisons and three identical3ksealed final passes completed. Candidate remained validation-locked. Final exact76.20% versus original66.4333%, CER7.4534% versus12.7839%, WER24.40% versus42.2667%; grouped paired improvement is supported. Validation81.38% is not final accuracy.

@@ -1,5 +1,14 @@
 # Akshara Telugu OCR — Codex CLI account handoff
 
+## Publication verified ? 16 October 2026
+
+User-approved publication complete: PUBLIC GitHub https://github.com/Thanujgthub/akshara-ocr (owner requested public); Vercel https://akshara-ocr-seven.vercel.app linked in GitHub About/Website and README, GitHub auto-deploy connected. Full existing Git history and original local origin preserved. Hugging Face browser device auth succeeded as thanujhf; no secrets committed. Selected adapter https://huggingface.co/thanujhf/akshara-telugu-handwriting-ocr revision329268ff4169b496b2e6727bfe421cc76bfb2be8. Static Space https://huggingface.co/spaces/thanujhf/akshara-ocr-studio ; actual host https://thanujhf-akshara-ocr-studio.static.hf.space ; runtimeRUNNING, no GPU hardware selected.
+
+All13 original selected-export checksums and original license bytes verified from public HTTPS; adapter SHA7d64d5371be010c0c1fe15936b44f1e1539c2c52b80d2e3c957b53c4c91ea1e9 unchanged. Original31base hashes pass locally.88 software tests pass (85historical+3publication, BLAS/OMPthreads1). Both hosted desktop/mobile Playwright checks pass: completed100%/3models,76.20%/7.45% analysis, no globaloverflow, actualCSVdownload andMD/CSV/JSON byteidentity,0consoleerrors/warnings. Resolved memory/metadata/browser-harness failures recorded in reports/publication-20261016.json; no model/scientific outcome changed.
+
+README includes analysis, prerequisites, step-by-step Windows installation, pinned base/adapter downloads, checksum/nativeBF16 launcher, API, tests and licenses. PreviousREADME archived. CoreOCR/training/evaluation modules, originalweights/data/labels/frozenmanifests/checkpoints/rawresults unchanged. No training or final-test replay. Both website hosts are STATIC: onlineGPUinference is NOT deployed; localservice remains measured inference path. ModelHub holds downloadable adapter, not a hosted inference endpoint or complete recovery backup. No paidhardware orworldrankclaim. Publication evidence reports/publication-20261016.json; browser/source staging underignored output/playwright and outputs/publication-20261016. Publication-only helpers can be closed without affecting originalAPI8765.
+
+
 This file is the operational handoff for another Codex CLI account. It is deliberately separate from the research objective and does not contain credentials. The other account must inspect the repository and current files before acting.
 
 ## Current completion — 15 October 2026

@@ -15,3 +15,4 @@ outputs/
 .playwright-cli/
 .env.*
 !.env.example
+.vercel

@@ -6,7 +6,11 @@ A Telugu transcription and human-review studio backed by a completed adaptation 
 
 ## Website and model
 
-Publication links will be added here after each service confirms deployment. Vercel and the Hugging Face static Space host the website and completed results; they do **not** contain a running GPU inference endpoint. The selected adapter is a separate Hugging Face model release.
+**[Live website](https://akshara-ocr-seven.vercel.app/) ? [Analysis](https://akshara-ocr-seven.vercel.app/analysis.html) ? [Completed study dashboard](https://akshara-ocr-seven.vercel.app/progress.html) ? [GitHub source](https://github.com/Thanujgthub/akshara-ocr)**
+
+**[Hugging Face selected model](https://huggingface.co/thanujhf/akshara-telugu-handwriting-ocr) ? [Hugging Face Space](https://huggingface.co/spaces/thanujhf/akshara-ocr-studio)**
+
+GitHub is public at the owner?s request. The Vercel URL is also recorded in the repository?s About / Website field. Vercel and the Hugging Face static Space host the website and completed results; they do **not** contain a running GPU inference endpoint. The selected adapter is a separate Hugging Face model release.
 
 Locally: [Studio](http://127.0.0.1:8765/) · [Full analysis](http://127.0.0.1:8765/analysis.html) · [Completed dashboard](http://127.0.0.1:8765/progress.html)
 
@@ -86,7 +90,12 @@ Read the [base model license](licenses/Indic-Open-Model-License-v1.0.md). Sign i
 & $ocrPython -m huggingface_hub.cli.hf download bodhan-ai/indic-ocr --revision cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25 --local-dir D:/OCR/models/indic-ocr-pinned
 ```
 
-Download the selected Hugging Face model release linked above to `D:/OCR/releases/akshara-selected`. Retain the complete structure: `adapter/`, `checksums.json`, `full-config.json`, `model-provenance.json` and metadata. Never substitute smoke/benchmark weights. The release-specific download command is included with the publication links once confirmed.
+Download the pinned selected Hugging Face model release:
+
+```powershell
+& $ocrPython -m huggingface_hub.cli.hf download thanujhf/akshara-telugu-handwriting-ocr --revision 329268ff4169b496b2e6727bfe421cc76bfb2be8 --local-dir D:/OCR/releases/akshara-selected
+```
+ Retain the complete structure: `adapter/`, `checksums.json`, `full-config.json`, `model-provenance.json` and metadata. Never substitute smoke/benchmark weights. The pinned release includes the original export metadata and unchanged selected weights.
 
 ### 4. Verify and launch
 
@@ -118,7 +127,7 @@ $env:MKL_NUM_THREADS = '1'
 & $ocrPython -m unittest discover -s tests -q
 ```
 
-The study recorded **85 software tests**, **64/64 actual API parity requests** on 32 predeclared validation crops, and headed desktop/mobile Playwright checks. Publication adds separate checks; software pass counts are not model accuracy. Thread limits avoid excessive Windows BLAS memory allocation during tests.
+The study recorded **85 software tests**, **64/64 actual API parity requests** on 32 predeclared validation crops, and headed desktop/mobile Playwright checks. Publication added three reproducibility checks: **88 total software tests passed**, and both deployed sites passed desktop/mobile Playwright checks and actual CSV downloads. Software pass counts are not model accuracy. Thread limits avoid excessive Windows BLAS memory allocation during tests.
 
 ## Website-only preview and deployment
 

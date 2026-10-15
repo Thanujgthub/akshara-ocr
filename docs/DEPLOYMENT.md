@@ -2,6 +2,16 @@
 
 The model study is complete. Deployment does not start training or repeat the sealed test.
 
+## Verified publication ? 16 October 2026
+
+- GitHub: https://github.com/Thanujgthub/akshara-ocr (public, owner-approved).
+- Vercel: https://akshara-ocr-seven.vercel.app (also GitHub About / Website).
+- Selected model: https://huggingface.co/thanujhf/akshara-telugu-handwriting-ocr .
+- Space: https://huggingface.co/spaces/thanujhf/akshara-ocr-studio .
+- Direct static host: https://thanujhf-akshara-ocr-studio.static.hf.space .
+
+Vercel GitHub integration is connected. Both static hosts were verified with desktop/mobile Playwright checks and real report downloads. The selected model?s original13export-file checksums were verified through public HTTPS after upload. No GPU runtime is included.
+
 ## Services and boundaries
 
 | Destination | Published content | GPU inference |
