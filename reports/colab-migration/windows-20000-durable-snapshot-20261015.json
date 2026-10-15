@@ -1,0 +1,10 @@
+{
+  "observed_utc": "2026-10-15T11:34:15.751843+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T113341Z-9c896e5c",
+  "all_hashes_verified": true,
+  "saved_examples": 20000,
+  "state_identical": true,
+  "source_bundle_head": "fb46e53",
+  "source_bundle_identical": true,
+  "scope": "Scheduled local D snapshot only; no restore/offsite claim."
+}
