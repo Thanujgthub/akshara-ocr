@@ -520,3 +520,33 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-15T05:30:10.677748+00:00: Verified graceful Windows memory-guard stop at 18,380/25,000 (4,595 updates), BF16 unchanged. Full step-0004595 and final durable snapshot snapshot-20261015T052237Z-122595b7 checksum-verified; source/snapshot state bytes match. All study workers exited; no new allocation crash, historical failure.json preserved. STOP and terminal state archived under recovery/memory-guard-stop-20261015T052700Z and STOP remains pending explicit verified recovery. User directs core training, validation, sealed final testing and website/API verification first; comparison page and ranking research deferred until afterward. Fixed API guard so paused/failed unfinished capped study cannot advertise historical pilot as selected; completed capped study ignores retired-run busy status. 85 full software tests pass. Fresh recovery preflight pending; current native commit headroom below explicit 8.5GiB pre-load requirement, so no GPU model/training launched. Frozen25k/5k/3k and one initial epoch preserved. Evidence reports/colab-migration/windows-18380-safe-memory-stop-20261015.json.
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Validation: curated-efficient-original",
+  "updated_utc": "2026-10-15T05:35:55Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\experiments\\curated-efficient-original"
+}
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Validation: curated-efficient-pilot",
+  "updated_utc": "2026-10-15T05:35:55Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\experiments\\curated-efficient-pilot"
+}
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Capped25000-word training: epoch1",
+  "updated_utc": "2026-10-15T05:35:57Z",
+  "note": "One initial epoch only. No additional epochs scheduled.",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\full"
+}
+
+
+- 2026-10-15T05:37:04.641615+00:00: Fresh D-drive recovery preflight passed85fullsoftwaretests, original31/frozen25k/5k/3k/free-lock checks, actualnativeBF16RTX3050, real-image interrupted/resumed/uninterrupted/reloadsmoke. Fresh64-image benchmark passed directprocess exit0:0.592348images/s,warm8=13.688713s,medianinput/transfer0.043399s,peak2154064384B,checkpoint0.118706s,finite losses; rawinput/GPUutil/loss records retained. Source history bundle and215trackedfileSHAindex preserved. Verified full18380/4595update checkpoint and durable snapshotstate identical; explicitlyarchived/consumed STOP only aftergates. Singleactualtrainer23612/coordinator11248/controller22600 (wrappers13116/23632/11976) nowadvancedto18400,finite losses,BF16/config/dataset/oneepoch unchanged. Existing2GiBearlymemorysafe-stop unchanged; noOSsettings orotherapptermination. Temporaryidle-sleephelper2888 boundcontrollerwrapper11976; processaffinity0..11/normalpriorityonly. APIrestartedfromD:; realHTTPhealthmodel_readyFalse/model_load_verifiedFalse andmultipart409 confirmed; no concurrentOCRinference. Trainingremainingprojectionabout3.1activehours excludesvalidation/finaltests/disconnects. Completedoriginal/pilot5000validationreused. Candidatevalidation/selection/sealedfinal/APIparity unfinished; ranking/comparisonresearch/page deferreduntilcorecompletion; Vercel/GitHubpublicationdeferred. Evidence reports/colab-migration/windows-full18380-recovery-resume-20261015.json.
