@@ -1,0 +1,71 @@
+{
+  "observed_utc": "2026-10-15T13:55:59.463861+00:00",
+  "training_updates_complete": true,
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0006250-0064addc942f",
+  "pointer": {
+    "checkpoint": "checkpoints/step-0006250-0064addc942f",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "5e5e2400f6b9411ec96e1314d025f26106327e8a7995a32f2ad9cc9eeeb6c462"
+  },
+  "metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 6250,
+    "epoch": 0,
+    "next_index": 25000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "checkpoint_verified": true,
+  "epoch_adapter": "D:\\OCR\\runs\\word-efficient-v3\\full\\epoch-1\\adapter",
+  "epoch_adapter_checksums_verified": true,
+  "epoch_adapter_equals_checkpoint": true,
+  "epoch_adapter_sha256": "7d64d5371be010c0c1fe15936b44f1e1539c2c52b80d2e3c957b53c4c91ea1e9",
+  "original31_verified": true,
+  "frozen_manifests_verified": true,
+  "unchanged_ocr_modules": 41,
+  "training_unique_positions": 25000,
+  "training_raw_rows": 26054,
+  "recovery_replayed_raw_rows": 1054,
+  "replay_scope": "Earlier discarded/replayed recovery work preserved. Unique training pairs remain25000; one effective epoch ends at6250 updates.",
+  "all_logged_losses_finite": true,
+  "latest_raw_training": {
+    "epoch": 1,
+    "example": 25000,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 6250,
+    "loss": 0.05966591835021973,
+    "lr": 0.0,
+    "elapsed_seconds": 84164.82219958305,
+    "peak_allocated_vram_bytes": 2155519488
+  },
+  "max_logged_training_allocated_vram_bytes": 2172328960,
+  "training_loop_elapsed_seconds": 84164.82219958305,
+  "elapsed_scope": "Recorded cumulative training-loop wall time; excludes later validation, some discarded recovery work and preflight/benchmark time. Energy cost unmeasured.",
+  "trainer_pid": 14864,
+  "live_dashboard_status": {
+    "status": "running",
+    "stage": "Validation after epoch 1: full",
+    "updated_utc": "2026-10-15T11:22:55Z",
+    "note": "One initial epoch only. No additional epochs scheduled.",
+    "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\full",
+    "pipeline_stage": "Capped25000-word training: epoch1"
+  },
+  "candidate_validation_progress": {
+    "evaluated": 340,
+    "total": 5000,
+    "elapsed_seconds": 201.76656460762024
+  },
+  "training_complete_marker": false,
+  "selection_locked": false,
+  "final_summary_exists": false,
+  "memory": {
+    "observed_utc": "2026-10-15T13:55:59.468983+00:00",
+    "commit_total_bytes": 22119972864,
+    "commit_limit_bytes": 25219530752,
+    "commit_headroom_bytes": 3099557888,
+    "available_ram_bytes": 4350226432,
+    "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+  },
+  "D_free_bytes": 86952091648,
+  "scope": "25k training updates complete; candidate5000 validation active. Selection,sealed3000 comparisons,analysis/export,selected API and Playwright pending. Rankings/publication deferred."
+}
