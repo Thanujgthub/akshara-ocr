@@ -10,9 +10,10 @@ async function refresh(){
     for(const split of ['train','validation','final-test'])byId(split).textContent=d.protocol?.manifests?.[split]?.count?.toLocaleString()??'Pending';
     const p=d.progress||d.evaluation;
     const active=d.status.status==='running';
+    const completed=d.status.status==='completed'&&Boolean(d.final);
     const n=p?.example??p?.evaluated??0,total=p?.examples_per_epoch??p?.total??0;
-    byId('bar').value=total?Math.min(100,100*n/total):0;
-    byId('progress').textContent=p?`${active?'':'Last recorded: '}${n.toLocaleString()} / ${total.toLocaleString()} in this stage${p.epoch?' · epoch '+p.epoch:''}${typeof p.loss==='number'?' · loss '+p.loss.toFixed(4):''}`:d.status.note||'Waiting for the next measured progress record.';
+    byId('bar').value=completed?100:total?Math.min(100,100*n/total):0;
+    byId('progress').textContent=completed?'Training, validation and all final comparisons are complete. Model/API verification is shown below.':p?`${active?'':'Last recorded: '}${n.toLocaleString()} / ${total.toLocaleString()} in this stage${p.epoch?' · epoch '+p.epoch:''}${typeof p.loss==='number'?' · loss '+p.loss.toFixed(4):''}`:d.status.note||'Waiting for the next measured progress record.';
     const t=d.training_timing;
     byId('timing').textContent=active&&t?`Recent ${t.recent_median_seconds_per_word.toFixed(2)} seconds/example. About ${Math.ceil(t.current_epoch_remaining_seconds_excluding_pauses/60)} minutes left in this epoch; excludes pauses and evaluation.`:d.status.status==='completed'?'':'Training ETA is unavailable while this stage is stopped or preparing.';
     byId('metrics').replaceChildren();
@@ -48,7 +49,9 @@ async function refresh(){
       }
       byId('pairedIntervals').textContent=intervals.join(' ');
     }
-    byId('api').textContent=health.training_active?'API inference paused for study preparation, training or testing.':health.model_load_verified?'API model loaded; parity verification is a separate check.':'API responding; model has not been loaded or verified in this server session.';
+    const parity=d.status.api_parity;
+    const verifiedParity=parity?.passed===true&&parity.mismatches?.length===0&&parity.validation_examples>0&&parity.api_requests===2*parity.validation_examples&&typeof parity.selection_sha256==='string'&&parity.selection_sha256===d.selected_analysis?.selection_sha256&&parity.selection===d.selection?.variant&&parity.validation_manifest_sha256===d.protocol?.manifests?.validation?.sha256;
+    byId('api').textContent=health.training_active?'API inference paused for study preparation, training or testing.':health.model_load_verified?(verifiedParity?`API model loaded. Recorded original/selected parity passed: ${parity.api_requests} / ${parity.api_requests} requests on ${parity.validation_examples} validation crops.`:'API model loaded; parity verification is a separate check.'):'API responding; model has not been loaded or verified in this server session.';
     byId('failure').textContent=d.failure?JSON.stringify(d.failure,null,2):'No active coordinator failure. Earlier recovery evidence remains preserved in the run logs.';
   }catch(e){byId('state').textContent=e.message;byId('bar').removeAttribute('value')}
 }

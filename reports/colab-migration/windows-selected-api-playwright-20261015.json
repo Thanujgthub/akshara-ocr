@@ -1,0 +1,97 @@
+{
+  "observed_utc": "2026-10-15T17:07:11.752198+00:00",
+  "api_parity": {
+    "passed": true,
+    "validation_examples": 32,
+    "api_requests": 64,
+    "selection": "candidate",
+    "selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+    "validation_manifest_sha256": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+    "mismatches": [],
+    "scope": "Actual original/selected API versus saved validation output on the first declared N validation examples; no final-test replay and no whole-page claim."
+  },
+  "api_parity_report_sha256": "b569bb70c3c1f947a5b25b0d9b4e7f3a66be956cc3cd71fa04442a15abbc82db",
+  "api_raw_outputs_sha256": "cb4c0c73328612791b929c59057dc9f04ada64dc3cb3f4d4e00e97dec13e2d50",
+  "actual_api": {
+    "observed_utc": "2026-10-15T16:50:01.414800+00:00",
+    "actual_pid": 27236,
+    "actual_created": 1792082977.111873,
+    "command": [
+      "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "-m",
+      "uvicorn",
+      "ocr.server:app",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8765"
+    ],
+    "cwd": "D:\\CODEX\\OCR\\akshara-ocr",
+    "health_before_inference": {
+      "status": "ok",
+      "model_ready": true,
+      "model_load_verified": false,
+      "training_active": false,
+      "note": "Inference waits until the local GPU study completes."
+    },
+    "model_environment": {
+      "INDIC_OCR_REPO": "D:/OCR/models/indic-ocr",
+      "INDIC_OCR_REVISION": "cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25",
+      "INDIC_OCR_ADAPTER": "D:\\OCR\\runs\\word-efficient-v3\\full\\epoch-1\\adapter",
+      "OCR_RESEARCH_CONFIG": "D:/OCR/runs/word-efficient-v3/configs/full.json",
+      "OCR_DEVICE": "cuda",
+      "TEMP": "D:\\CODEX\\OCR\\akshara-ocr\\.runtime-tmp",
+      "TMP": "D:\\CODEX\\OCR\\akshara-ocr\\.runtime-tmp"
+    }
+  },
+  "health_after_real_inference": {
+    "status": "ok",
+    "model_ready": true,
+    "model_load_verified": true,
+    "training_active": false,
+    "note": "Inference waits until the local GPU study completes."
+  },
+  "functional_crop_id": "iiit-words:val/images/10/101/10.jpg",
+  "first_declared_validation_crop_not_selected_by_success": true,
+  "final_test_replayed_for_UI_or_API": false,
+  "headed_playwright": true,
+  "desktop_viewport": [
+    1440,
+    1000
+  ],
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "passed_checks": [
+    "actual selected word upload/raw text/token IDs/adapter identity",
+    "review toggle resets on edit",
+    "raw output survives visible edits",
+    "copy success",
+    "JSON export preserves raw/edited/model/review metadata",
+    "UTF8 text and Markdown downloads match selected output",
+    "uniform constant-pixel abstention and no-text limitation",
+    "desktop/mobile no global horizontal overflow",
+    "completed dashboard3models/6rawNFCmetrics/6pairedintervals/diagnostics/subgroups",
+    "completed progress100%",
+    "recorded parity badge bound to selected model and validation fingerprint",
+    "mismatched-selection browser response hides parity badge, mock removed",
+    "zero studio and dashboard application console errors/warnings"
+  ],
+  "repaired_UI_faults": [
+    "Long filename and nonwrapping action toolbar caused mobile horizontal overflow; flex shrink/ellipsis/wrapping rules corrected, stylesheet version advanced, real crop rechecked.",
+    "Completed dashboard without active progress record showed0%/waiting; completed final evidence now displays100%. Measured parity receipt displayed only when bound to locked selection/frozen validation."
+  ],
+  "harness_notes": "Windows command quoting/UTF8 stdout and current Playwright CLI command/function conventions corrected in test helper; no model/data fixes required. Failed attempts preserved; final checks repeated successfully.",
+  "test_only_edits": "UI test edit marker and checkbox exercise are software tests, not human verification or new training data. Final displayed crop restored to actual selected raw output.",
+  "frontend_sha256": {
+    "dist\\index.html": "627e908fe3b84228603f2ece64d53d50dc3375d613e94059d3ab870c5bfdf067",
+    "dist\\style.css": "2e1dac75e54b3169277c285fc75cd661e8969297a8be317718bbf1d3d6dafe4f",
+    "dist\\progress.html": "92630d01d3f50c9f50cfaeb55375082fa0abc6f771ca269caf47d725f2e92eb1",
+    "dist\\progress.js": "0c2577b4aab0bec852dac76d035a93898a715bd742355893b61fe39358f2770e"
+  },
+  "evidence_directory": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\windows-d-drive-preflight-v7\\browser-selected-evidence",
+  "evidence_file_count": 116,
+  "evidence_checksums_sha256": "637b1040fcbc48c1c3263c4ac1aeb3477c6cdce59af59441663e9d4bcfbfc6b6",
+  "scope": "Core model study/API/website verification passed locally. Human-readable final report/handoff still being assembled; rankings/comparison follow core. No Vercel deployment or GitHub push."
+}
