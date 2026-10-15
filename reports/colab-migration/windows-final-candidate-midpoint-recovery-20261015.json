@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-10-15T16:29:05.886400+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T162810Z-6d758644",
+  "all_snapshot_hashes_verified": true,
+  "candidate_live_saved": 1563,
+  "candidate_durable_saved": 1455,
+  "candidate_backup_is_exact_live_prefix": true,
+  "candidate_unique_frozen_order_references_component_and_document_groups_verified": true,
+  "original_and_pilot_completed3000_unchanged": true,
+  "selection_unchanged": true,
+  "unchanged_tracked_OCR_files": 41,
+  "unchanged_Python_modules": 39,
+  "unchanged_HTML_monitor_resources": 2,
+  "D_free_bytes": 57775648768,
+  "scope": "Midpoint recovery only, no final quality analysis or model choice changes. Local D backup, not offsite/actualrestore. Training and validation stay complete."
+}
