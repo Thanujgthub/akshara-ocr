@@ -1,0 +1,175 @@
+{
+  "observed_utc": "2026-10-15T11:03:11.998391+00:00",
+  "full_checkpoint_examples": 19804,
+  "updates": 4951,
+  "precision": "torch.bfloat16",
+  "memory": {
+    "passed": false,
+    "measurement": {
+      "observed_utc": "2026-10-15T11:03:11.998391+00:00",
+      "commit_total_bytes": 17668222976,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 7551307776,
+      "available_ram_bytes": 3762753536,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9126805504,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 2.5,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "stability": {
+    "samples": 25,
+    "min_headroom_bytes": 5506527232,
+    "all_preload_gates_passed": false,
+    "raw_sha256": "e13426552eeaed59e63936e726b430e5d3ce0fe7509c8f5a74116c3263935b21",
+    "scope": "Read-only120second idle capacity observations. No guarantee against later pressure."
+  },
+  "current_brave_private_bytes": 2379354112,
+  "brave_processes": [
+    {
+      "pid": 2376,
+      "created": 1792061990.7962196,
+      "private_bytes": 75558912
+    },
+    {
+      "pid": 5916,
+      "created": 1792061979.057446,
+      "private_bytes": 40423424
+    },
+    {
+      "pid": 7492,
+      "created": 1792061987.0138016,
+      "private_bytes": 101453824
+    },
+    {
+      "pid": 7928,
+      "created": 1792061965.877916,
+      "private_bytes": 2535424
+    },
+    {
+      "pid": 11016,
+      "created": 1792061990.7255993,
+      "private_bytes": 29663232
+    },
+    {
+      "pid": 14840,
+      "created": 1792061966.4315825,
+      "private_bytes": 244609024
+    },
+    {
+      "pid": 17612,
+      "created": 1792061991.5425255,
+      "private_bytes": 27086848
+    },
+    {
+      "pid": 18988,
+      "created": 1792061994.8361497,
+      "private_bytes": 15048704
+    },
+    {
+      "pid": 20560,
+      "created": 1792061970.7678187,
+      "private_bytes": 282976256
+    },
+    {
+      "pid": 21140,
+      "created": 1792061967.9093451,
+      "private_bytes": 8626176
+    },
+    {
+      "pid": 21572,
+      "created": 1792061987.5556023,
+      "private_bytes": 23810048
+    },
+    {
+      "pid": 22076,
+      "created": 1792061974.1768937,
+      "private_bytes": 47017984
+    },
+    {
+      "pid": 23400,
+      "created": 1792061967.0760884,
+      "private_bytes": 53530624
+    },
+    {
+      "pid": 24968,
+      "created": 1792061988.124077,
+      "private_bytes": 22650880
+    },
+    {
+      "pid": 26040,
+      "created": 1792061966.9156787,
+      "private_bytes": 37371904
+    },
+    {
+      "pid": 26168,
+      "created": 1792061966.4361532,
+      "private_bytes": 26677248
+    },
+    {
+      "pid": 26468,
+      "created": 1792061966.915661,
+      "private_bytes": 68546560
+    },
+    {
+      "pid": 26732,
+      "created": 1792061993.454116,
+      "private_bytes": 23863296
+    },
+    {
+      "pid": 27008,
+      "created": 1792061972.030395,
+      "private_bytes": 288686080
+    },
+    {
+      "pid": 28248,
+      "created": 1792061965.77739,
+      "private_bytes": 125186048
+    },
+    {
+      "pid": 28948,
+      "created": 1792061966.5098665,
+      "private_bytes": 9662464
+    },
+    {
+      "pid": 31588,
+      "created": 1792061969.6124096,
+      "private_bytes": 32792576
+    },
+    {
+      "pid": 31648,
+      "created": 1792061967.7474773,
+      "private_bytes": 286179328
+    },
+    {
+      "pid": 31844,
+      "created": 1792061992.952896,
+      "private_bytes": 32325632
+    },
+    {
+      "pid": 32304,
+      "created": 1792061967.0711317,
+      "private_bytes": 131100672
+    },
+    {
+      "pid": 33204,
+      "created": 1792061967.9092577,
+      "private_bytes": 12627968
+    },
+    {
+      "pid": 33612,
+      "created": 1792061992.9318266,
+      "private_bytes": 37572608
+    },
+    {
+      "pid": 33788,
+      "created": 1792061970.5047812,
+      "private_bytes": 291770368
+    }
+  ],
+  "known_causality_limit": "Observed Brave reopen after the10:58 safe stop; not proof of the earlier transient pressure source.",
+  "next_action": "User save and close reopened Brave, keep Codex open; remeasure capacity, verify unchanged recovery gates, resume full19804 only. STOP remains preserved.",
+  "pending": "Candidate validation,locked selection,sealed final,analysis/export,selected API parity,selected website browser checks; rankings and publication deferred."
+}
