@@ -8,3 +8,10 @@ data/
 *.egg-info/
 .env
 .runtime-tmp/
+.vercel/
+public-release/
+output/
+outputs/
+.playwright-cli/
+.env.*
+!.env.example

@@ -1,5 +1,13 @@
 # Project state — verified 15 October 2026
 
+## Publication in progress ? 16 October 2026
+
+User authorized GitHub, Vercel and Hugging Face publication of the completed checkpoint. GitHub authenticated asThanujgthub; Vercel as thanujgthub (account handle verified as `thanujgthub`). New GitHub repository `Thanujgthub/akshara-ocr` created PRIVATE pending user visibility preference; prior local origin retained and separate github remote added. No source push or production deployment confirmed yet. Hugging Face browser device authorization not completed; first code expired.
+
+Original31-file and13selected-export checksums passed read-only verification. Historical769Git blobs scanned for standard credential/private-key patterns, no matches (not a comprehensive secret guarantee). Static publication build copies only dist assets plus derived aggregate completed-status JSON; no hosted GPU inference or paid hardware is provisioned. Existing CPU/GPU inference/training modules are unchanged. New portable selected-release launcher verifies original and adapter identities and refuses native-BF16 or port failures.
+
+88software tests passed with BLAS/OMP threads1 (initial unrestricted test process failed OpenBLAS allocation; failure preserved in tool output). Browser preview verifies honest no-online-inference status, completed100%/3model dashboard and76.20%/7.45% analysis. Static favicon404 corrected; deployed checks pending. README installation/analysis rewritten with previous README preserved under docs. No training or sealed-test replay.
+
 ## Current completed capped v3 study
 
 Active checkout: `D:/CODEX/OCR/akshara-ocr`. **No training is pending.** The one effective 25,000-example BF16 epoch finished with 6,250 optimizer updates. All original/pilot/candidate 5,000-example validation and identical 3,000-example sealed final evaluations completed. Selection was locked to `full/epoch-1/adapter` using validation only; the final test did not change it.

@@ -1,0 +1,11 @@
+.git
+.runtime-tmp
+.playwright-cli
+output
+outputs
+public-release
+__pycache__
+*.safetensors
+*.pt
+*.zip
+.env*

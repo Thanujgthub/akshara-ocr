@@ -20,7 +20,7 @@ $('guideBtn').onclick=()=>$('guide').showModal();
 function settings(){$('apiUrl').value=api;$('settings').showModal()}
 $('settingsBtn').onclick=settings;$('devConnect').onclick=settings;
 async function health(url){const response=await fetch(url+'/api/health',{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error(`HTTP ${response.status}`);return response.json()}
-function updateResearchLinks(){const link=$('liveResearchLink');if(link)link.href=(api||'http://127.0.0.1:8765')+'/research-v2'}
+function updateResearchLinks(){const link=$('liveResearchLink');if(link){link.href=window.AKSHARA_DEPLOYMENT?.staticHosting?'analysis.html':(api||'http://127.0.0.1:8765')+'/research-v2';if(window.AKSHARA_DEPLOYMENT?.staticHosting)link.querySelector('.nav-link-label').textContent='Research analysis'}}
 function showHealth(h){$('connectionStatus').textContent=h.training_active?'○ Study in progress · inference paused':h.model_ready?'● Model connected':'○ Server connected · model unavailable';$('healthMessage').textContent=h.training_active?'Inference is paused for study preparation, training or testing. Follow Study progress for the current stage.':h.model_ready?'Model ready. Uploaded images will be sent to this server.':'Server connected; model unavailable. Check the local server log and model configuration.';}
 $('useCurrentPrediction').onclick=()=>{if(isSample||!raw.trim())return tell('Transcribe an uploaded image first.');$('prediction').value=raw;$('metricResults').replaceChildren();page('evaluation');tell('Raw output copied. Enter the correct reference to measure errors.');};
 $('gold').oninput=$('prediction').oninput=()=>$('metricResults').replaceChildren();
@@ -52,7 +52,12 @@ setText(sample);page(['studio','library','evaluation','datasets','developers'].i
 
 const localStudio=location.protocol.startsWith('http')&&['127.0.0.1','localhost'].includes(location.hostname);
 $('localStudioNotice').hidden=localStudio;
-if(localStudio)api=location.origin;
+if(localStudio&&!window.AKSHARA_DEPLOYMENT?.staticHosting)api=location.origin;
+if(window.AKSHARA_DEPLOYMENT?.staticHosting){
+  api=api||window.AKSHARA_DEPLOYMENT.apiBase||'';
+  $('localStudioNotice').hidden=false;
+  $('connectionStatus').textContent=api?'Checking model…':'○ Online inference not configured';
+}
 updateResearchLinks();
 if(api){$('connectionStatus').textContent='Checking model…';health(api).then(showHealth).catch(()=>{$('connectionStatus').textContent='○ API unavailable';$('healthMessage').textContent='Start the local API, then test the connection again.';});}
 

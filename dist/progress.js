@@ -2,11 +2,13 @@ const byId=id=>document.getElementById(id);
 const percent=value=>typeof value==='number'?(100*value).toFixed(2)+'%':'Pending';
 async function refresh(){
   try{
-    const responses=await Promise.all([fetch('/api/research-v2',{cache:'no-store'}),fetch('/api/health',{cache:'no-store'})]);
+    const published=window.AKSHARA_DEPLOYMENT?.staticHosting===true;
+    const responses=published?[await fetch('published-study-status.json')]:await Promise.all([fetch('/api/research-v2',{cache:'no-store'}),fetch('/api/health',{cache:'no-store'})]);
     if(responses.some(r=>!r.ok))throw new Error('Progress service unavailable; last values may be stale.');
-    const [d,health]=await Promise.all(responses.map(r=>r.json()));
+    const [d,liveHealth]=await Promise.all(responses.map(r=>r.json()));
+    const health=liveHealth||{training_active:false,model_load_verified:false};
     byId('state').textContent=d.status.status;byId('stage').textContent=d.status.stage;
-    byId('updated').textContent='Last fetched '+new Date().toLocaleTimeString();
+    byId('updated').textContent=published?'Published results snapshot · measured '+d.recorded_utc:'Last fetched '+new Date().toLocaleTimeString();
     for(const split of ['train','validation','final-test'])byId(split).textContent=d.protocol?.manifests?.[split]?.count?.toLocaleString()??'Pending';
     const p=d.progress||d.evaluation;
     const active=d.status.status==='running';
@@ -52,7 +54,8 @@ async function refresh(){
     const parity=d.status.api_parity;
     const verifiedParity=parity?.passed===true&&parity.mismatches?.length===0&&parity.validation_examples>0&&parity.api_requests===2*parity.validation_examples&&typeof parity.selection_sha256==='string'&&parity.selection_sha256===d.selected_analysis?.selection_sha256&&parity.selection===d.selection?.variant&&parity.validation_manifest_sha256===d.protocol?.manifests?.validation?.sha256;
     byId('api').textContent=health.training_active?'API inference paused for study preparation, training or testing.':health.model_load_verified?(verifiedParity?`API model loaded. Recorded original/selected parity passed: ${parity.api_requests} / ${parity.api_requests} requests on ${parity.validation_examples} validation crops.`:'API model loaded; parity verification is a separate check.'):'API responding; model has not been loaded or verified in this server session.';
+    if(published)byId('api').textContent=(verifiedParity?`Recorded local API parity: ${parity.api_requests}/${parity.api_requests} requests passed. `:'')+'This is a published study snapshot. No live GPU inference runs on this static host.';
     byId('failure').textContent=d.failure?JSON.stringify(d.failure,null,2):'No active coordinator failure. Earlier recovery evidence remains preserved in the run logs.';
   }catch(e){byId('state').textContent=e.message;byId('bar').removeAttribute('value')}
 }
-refresh();setInterval(refresh,5000);
+refresh();if(!window.AKSHARA_DEPLOYMENT?.staticHosting)setInterval(refresh,5000);
