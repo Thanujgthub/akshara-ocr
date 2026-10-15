@@ -696,3 +696,6 @@ The existing user action is to close unused heavy apps/browser windows while kee
 
 
 - 2026-10-15T12:59:45.526939+00:00: Same actual trainer14864 reached23,000/25,000 (92%one epoch,not accuracy),5,750updates. Immutable step0005750/index/atomicpointerSHA/frozen manifests verified; BF16/signature/fingerprint unchanged from approvedv6. Post19804 raw segment contiguous/finite with batch4updates,noSTOP. Latest snapshot snapshot-20261015T125445Z-4ec301b7 contains22500 saved examples; independent verification this check=False. No GPU code/config/precision/epoch change or inference. Remaining training/candidate validation/locked selection/sealedfinal/analysis/export/selected API/browser pending; rankings/publication deferred. Evidence reports/colab-migration/windows-23000-training-checkpoint-20261015.json.
+
+
+- 2026-10-15T13:02:17.395463+00:00: Scheduled snapshot snapshot-20261015T130008Z-458aee70 independently verified allSHA/full23000/state byte identity. Same actualtrainer14864 continues,noSTOP or scientific/sourceGPU changes. Local D backup,not offsite/actualrestore. Remaining training/validation/selection/sealedfinal/API/selected browser work pending; rankings/publication deferred. Evidence reports/colab-migration/windows-23000-durable-snapshot-20261015.json.
