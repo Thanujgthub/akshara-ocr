@@ -1,0 +1,24 @@
+{
+  "observed_utc": "2026-10-15T05:18:26.379084+00:00",
+  "source_head": "7317261435e16e89b52e26b3956bd9dfd2b8dde4",
+  "launch_code_commit": "51a5c5fbe51ca6d028e9760c23dccc26e49de843",
+  "bundle_sha256": "b197d177f86e9e59ed05ad509aee4f68819c797cc1a25b35dde14f9e2660f1fa",
+  "bundle_bytes": 1226671,
+  "browser_evidence": [
+    {
+      "name": "akshara-d-studio-verified-20261015.png",
+      "sha256": "e51038064a368e2562ec2f169c40ee0ab6748d96760054f94752012ace13728f"
+    },
+    {
+      "name": "akshara-d-progress-verified-desktop-20261015.png",
+      "sha256": "7a9e7cc764460b286738cd017d76cd98d6ca1aef1561863cd73f22f2a1ea796c"
+    },
+    {
+      "name": "akshara-d-progress-verified-mobile-20261015.png",
+      "sha256": "13f3058dbf27014c13d0f720f822296e95cf45735fa11c8fef5333eb120aaae9"
+    }
+  ],
+  "scope": "Offline source Git bundle verified by git bundle verify and SHA256; no restore/second checkout or training launched. Browser screenshots copied byte-identically into run recovery for scheduled local snapshots.",
+  "tracked_files": 213,
+  "recovery_directory": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\windows-d-drive-preflight-v1"
+}
