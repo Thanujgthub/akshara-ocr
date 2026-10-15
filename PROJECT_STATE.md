@@ -594,3 +594,33 @@ The third consecutive audit after the graceful stop confirms insufficient Window
 CPU preparation is complete: 85 tests, all31 original files, all33,000 image hashes/headers and known historical final-exposure isolation pass. Native BF16, real resume smoke and64-image benchmark still require fresh GPU execution after capacity recovers. Then resume full19748; candidate validation, selection, sealed final testing, reporting/export, selected-model API parity and real selected-model website verification remain unfinished. Ranking/comparison work and publication remain deferred.
 
 The existing user action is to close unused heavy apps/browser windows while keeping Codex open, then reply Closed. No new credentials or generic approval are needed; measure actual capacity again before proceeding. A bulk handoff/backup shell command was rejected by automatic approval review with only the reason "blocked by policy" and made no changes. Scoped factual documentation edits preserved this audit. Evidence: `reports/colab-migration/windows-19748-external-memory-block-audit-20261015.json`.
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Validation: curated-efficient-original",
+  "updated_utc": "2026-10-15T10:56:10Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\experiments\\curated-efficient-original"
+}
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Validation: curated-efficient-pilot",
+  "updated_utc": "2026-10-15T10:56:10Z",
+  "note": "",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\experiments\\curated-efficient-pilot"
+}
+
+## Latest automated milestone
+{
+  "status": "running",
+  "stage": "Capped25000-word training: epoch1",
+  "updated_utc": "2026-10-15T10:56:12Z",
+  "note": "One initial epoch only. No additional epochs scheduled.",
+  "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\full"
+}
+
+
+- 2026-10-15T10:57:00Z: User resumed work and closed Brave; native commit headroom recovered to9.86GiB. Fresh v4 preflight passes85tests, original31/frozen25k/5k/3k, native BF16 RTX3050/Torch2.11cu128/CUDA12.8, real-image exact interrupted/resumed optimizer/RNG/scheduler and adapter-reload smoke. Synchronized64-image benchmark: 0.654316images/s; warm8=12.545151s; median input/transfer=0.036150s; peak=2154064384B; checkpoint=0.129504s; finite losses, raw input/GPU utilization retained. Full19748/4937 checkpoint and latest durable snapshot verified, state identical; postbenchmark preload9.80GiB. Verified STOP archived/consumed after gates. Single actual trainer31428/coordinator25716/controller31864 (wrappers31404/15848/27660) resumed FULL19748; observed contiguous finite raw19749..19761; diagnostic weights never used. Existing2GiB runtime safe-stop and300s snapshots unchanged; scoped temporary keep-awake/affinity0..11/normal priority only, no OS setting changes. Local website127.0.0.1:8765 and progress.html live with inference guarded. About2.23 active training hours estimated, excluding candidate validation/final comparisons. Candidate validation/locked selection/sealed testing/analysis/export/selected API parity/browser OCR pending. Rankings/comparison page and publication deferred. Evidence reports/colab-migration/windows-full19748-recovery-resume-20261015.json; raw recovery/windows-d-drive-preflight-v4.

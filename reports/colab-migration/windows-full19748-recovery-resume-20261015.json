@@ -1,0 +1,223 @@
+{
+  "observed_utc": "2026-10-15T10:56:47.961592+00:00",
+  "active_checkout": "D:\\CODEX\\OCR\\akshara-ocr",
+  "resume_from_examples": 19748,
+  "resume_from_updates": 4937,
+  "latest_raw_example": 19761,
+  "new_rows_contiguous_finite": true,
+  "source_head": "412b9e3",
+  "software_tests": {
+    "tests": 85,
+    "returncode": 0,
+    "observed_utc": "2026-10-15T10:46:39.748227+00:00"
+  },
+  "hardware": {
+    "observed_utc": "2026-10-15T10:48:51.279144+00:00",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "native_bf16": true,
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu_total_bytes": 4294508544,
+    "memory_gate": {
+      "passed": true,
+      "measurement": {
+        "observed_utc": "2026-10-15T10:48:47.801263+00:00",
+        "commit_total_bytes": 14634995712,
+        "commit_limit_bytes": 25219530752,
+        "commit_headroom_bytes": 10584535040,
+        "available_ram_bytes": 6316158976,
+        "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+      },
+      "required_commit_headroom_bytes": 9126805504,
+      "model_private_allowance_gib": 6.0,
+      "reserve_gib": 2.5,
+      "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+      "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+    },
+    "tests": 85,
+    "scope": "Actual local Windows GPU capability; not cloud or training progress."
+  },
+  "smoke": {
+    "forward_backward": true,
+    "finite_loss_and_gradients": true,
+    "adapter_weights_changed": true,
+    "final_adapter_reload_inference_matches": true,
+    "mid_epoch_resume_exact_adapter_weights": true,
+    "optimizer_rng_scheduler_resume": true,
+    "config_signature": "266194952cff5629b36fd132285ca79fe297e1dbcec3c99c37e0ef9bf46ed929",
+    "precision": "torch.bfloat16"
+  },
+  "benchmark_summary": {
+    "examples": 64,
+    "warmup_examples": 8,
+    "warmup_seconds": 12.545151199999964,
+    "steady_examples_per_second": 0.6543157702506678,
+    "median_input_processing_transfer_seconds": 0.036149749999822234,
+    "peak_allocated_vram_bytes": 2154064384,
+    "checkpoint_write_seconds": [
+      0.12950430000273627
+    ],
+    "precision": "torch.bfloat16"
+  },
+  "benchmark_sha256": "e92523dabb589e8b6d5991256eb2294165e9cb225c819b4957912bbb9bf5072e",
+  "preload_integrity": {
+    "observed_utc": "2026-10-15T10:55:53.502880+00:00",
+    "original31_verified": true,
+    "frozen_manifests_verified": {
+      "train": {
+        "count": 25000,
+        "sha256": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496"
+      },
+      "validation": {
+        "count": 5000,
+        "sha256": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4"
+      },
+      "final-test": {
+        "count": 3000,
+        "sha256": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+      }
+    },
+    "workers": [],
+    "locks_free": true,
+    "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0004937",
+    "metadata": {
+      "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+      "updates": 4937,
+      "epoch": 0,
+      "next_index": 19748,
+      "precision": "torch.bfloat16",
+      "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+    },
+    "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T063232Z-9b46b751",
+    "snapshot_verified": true,
+    "state_identical": true,
+    "memory": {
+      "passed": true,
+      "measurement": {
+        "observed_utc": "2026-10-15T10:55:53.502880+00:00",
+        "commit_total_bytes": 14697054208,
+        "commit_limit_bytes": 25219530752,
+        "commit_headroom_bytes": 10522476544,
+        "available_ram_bytes": 6658379776,
+        "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+      },
+      "required_commit_headroom_bytes": 9126805504,
+      "model_private_allowance_gib": 6.0,
+      "reserve_gib": 2.5,
+      "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+      "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+    },
+    "benchmark_sha256": "e92523dabb589e8b6d5991256eb2294165e9cb225c819b4957912bbb9bf5072e"
+  },
+  "workers": [
+    {
+      "pid": 27660,
+      "created": 1792061768.5200539,
+      "command": [
+        "D:/OCR/runtime/venv/Scripts/python.exe",
+        "-u",
+        "-m",
+        "ocr.colab_runner",
+        "--durable",
+        "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+        "--seconds",
+        "86400",
+        "--sync-seconds",
+        "300"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr"
+    },
+    {
+      "pid": 31864,
+      "created": 1792061768.540732,
+      "command": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.colab_runner",
+        "--durable",
+        "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+        "--seconds",
+        "86400",
+        "--sync-seconds",
+        "300"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr"
+    },
+    {
+      "pid": 15848,
+      "created": 1792061768.6376755,
+      "command": [
+        "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "ocr.run_efficient"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr"
+    },
+    {
+      "pid": 25716,
+      "created": 1792061768.6475525,
+      "command": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.run_efficient"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr"
+    },
+    {
+      "pid": 31404,
+      "created": 1792061772.2777758,
+      "command": [
+        "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "train",
+        "--config",
+        "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+        "--manifest",
+        "D:\\OCR\\runs\\word-efficient-v3\\train.jsonl",
+        "--validation",
+        "D:\\OCR\\runs\\word-efficient-v3\\validation.jsonl",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\full",
+        "--epochs",
+        "1"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr"
+    },
+    {
+      "pid": 31428,
+      "created": 1792061772.287119,
+      "command": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "train",
+        "--config",
+        "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+        "--manifest",
+        "D:\\OCR\\runs\\word-efficient-v3\\train.jsonl",
+        "--validation",
+        "D:\\OCR\\runs\\word-efficient-v3\\validation.jsonl",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\full",
+        "--epochs",
+        "1"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr"
+    }
+  ],
+  "native_memory": {
+    "observed_utc": "2026-10-15T10:56:47.964124+00:00",
+    "commit_total_bytes": 20058501120,
+    "commit_limit_bytes": 25219530752,
+    "commit_headroom_bytes": 5161029632,
+    "available_ram_bytes": 4334186496,
+    "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+  },
+  "scope": "Local Windows continuation; full19748 checkpoint only, diagnostic weights not promoted. Frozen25k/5k/3k,one initial epoch. Original/pilot validation reused; candidate validation,selection,sealedfinal,selectedAPI and browser checks pending. Rankings and publication deferred."
+}
