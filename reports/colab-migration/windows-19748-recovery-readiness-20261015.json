@@ -1,0 +1,80 @@
+{
+  "observed_utc": "2026-10-15T06:25:38.447875+00:00",
+  "manual_durable_snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T062537Z-9cc2752a",
+  "all_snapshot_hashes_verified": true,
+  "full_checkpoint": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4937,
+    "epoch": 0,
+    "next_index": 19748,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "state_byte_identical_to_source": true,
+  "software_tests": {
+    "observed_utc": "2026-10-15T06:23:22.919215+00:00",
+    "returncode": 0,
+    "tests": 85,
+    "scope": "Software suite only; no OCR GPU inference or training launched."
+  },
+  "memory_after_tests": {
+    "passed": false,
+    "measurement": {
+      "observed_utc": "2026-10-15T06:25:23.537156+00:00",
+      "commit_total_bytes": 17266941952,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 7952588800,
+      "available_ram_bytes": 4444082176,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9126805504,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 2.5,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "native_pagefile_audit": {
+    "observed_utc": "2026-10-15T06:24:21.569124+00:00",
+    "native_enum_succeeded": true,
+    "error": null,
+    "active_pagefiles": [
+      {
+        "name": "C:\\pagefile.sys",
+        "structure_size": 32,
+        "total_pages": 2048000,
+        "current_used_pages": 169313,
+        "peak_used_pages": 222303
+      }
+    ],
+    "memory": {
+      "passed": false,
+      "measurement": {
+        "observed_utc": "2026-10-15T06:24:21.569124+00:00",
+        "commit_total_bytes": 16903172096,
+        "commit_limit_bytes": 25219530752,
+        "commit_headroom_bytes": 8316358656,
+        "available_ram_bytes": 4595806208,
+        "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+      },
+      "required_commit_headroom_bytes": 9126805504,
+      "model_private_allowance_gib": 6.0,
+      "reserve_gib": 2.5,
+      "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+      "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+    },
+    "is_admin": false,
+    "reference": "https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-enumpagefilesw",
+    "structure_reference": "https://learn.microsoft.com/en-us/windows/win32/api/psapi/ns-psapi-enum_page_file_information",
+    "scope": "Native runtime enumeration only; no pagefile/OS/privilege changes. Registry existing/configured file list alone does not prove usable commit capacity."
+  },
+  "closed_runtime_trace": {
+    "path": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\windows-d-drive-preflight-v2\\runtime-observations-to20000-20261015.jsonl",
+    "sha256": "622c08095fef45299a6ae9c9235c95bfc7c4d01a4f6a3cdd2ca8084f73fb47ba",
+    "samples": 13,
+    "last_checkpoint": 19748
+  },
+  "stop_preserved": true,
+  "dashboard_pause_reason_enriched": true,
+  "question_pending": "Close unused browser windows/heavy apps while keeping Codex open; remeasure before recovery.",
+  "scope": "Safe paused local study. No BF16/smoke/benchmark/training launched for v3 recovery. No OS changes/credential request. Why configured D pagefile is inactive remains unresolved."
+}
