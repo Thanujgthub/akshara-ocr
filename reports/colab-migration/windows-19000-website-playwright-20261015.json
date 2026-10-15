@@ -1,0 +1,62 @@
+{
+  "observed_utc": "2026-10-15T05:58:03.350175+00:00",
+  "playwright": "Cached CLI, real headed browser, no installation",
+  "dataset_counts_dom": [
+    "Frozen training pairs:25000 one initial epoch",
+    "Frozen validation pairs:5000 model selection only",
+    "Sealed final-test pairs:3000 after selection lock"
+  ],
+  "historical_pilot_note_explicit": true,
+  "dashboard_measured_progress_at_capture": 19040,
+  "dashboard_original_validation_cer_percent": 10.7,
+  "dashboard_pilot_validation_cer_percent": 9.2,
+  "final_sealed_and_selection_unlocked_rendered": true,
+  "inference_paused_rendered": true,
+  "desktop_and_mobile_screenshots_visually_inspected": true,
+  "mobile_viewport": 390,
+  "mobile_document_width": 375,
+  "console_errors": 0,
+  "console_warnings": 0,
+  "both_owned_browser_sessions_closed": true,
+  "screenshots_sha256": {
+    "akshara-capped-dataset-counts-desktop-20261015.png": "8dcbb26c1188161d8dd1d4e1302887222f32eb58ed55c416471d70a281601ec0",
+    "akshara-capped-dataset-counts-mobile-20261015.png": "63cd62f643d3558e7b7b26c631b8a8c26b56fea292cbc72af9a5a5bc3a5a9482",
+    "akshara-live-progress-19040-desktop-20261015.png": "a00b28b48009e1ae168809479534a6d733f385293995f97914e47c8ec1f864ce",
+    "akshara-live-progress-19040-mobile-20261015.png": "2a02cb54357c714d8f1ff323869e2ef40247cbe11b7e1a82d30a09c2450b5ac9"
+  },
+  "screenshots_durable_source": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\windows-d-drive-preflight-v2\\browser-19000-evidence",
+  "verified_normal_snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T055718Z-bb067a2a",
+  "snapshot_full_metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4750,
+    "epoch": 0,
+    "next_index": 19000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "snapshot_source_state_identical": true,
+  "trainer_pid": 23612,
+  "trainer_created": 1792042557.9789948,
+  "progress": {
+    "epoch": 1,
+    "example": 19100,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4775,
+    "loss": 0.34464314579963684,
+    "lr": 2.484001347254968e-06,
+    "elapsed_seconds": 73970.26129889488,
+    "peak_allocated_vram_bytes": 2153141760
+  },
+  "memory_after_own_browsers_closed": {
+    "observed_utc": "2026-10-15T05:58:03.352784+00:00",
+    "commit_total_bytes": 20122865664,
+    "commit_limit_bytes": 25219530752,
+    "commit_headroom_bytes": 5096665088,
+    "available_ram_bytes": 5009113088,
+    "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+  },
+  "stop_exists": false,
+  "software_tests": 85,
+  "additional_checks": "Node syntax, gitdiffwhitespace, liveHTTP asset and realDOM checked",
+  "scope": "Website recovery/protocol display verification only. No selected-model OCR inference, API parity, candidate quality improvement or completed study claimed. Ranking and publication deferred."
+}
