@@ -556,3 +556,14 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-15T15:22:30.801107+00:00: User closed Brave and authorized closing other required apps. Closed only WhatsApp and its identified WebView helpers; Codex/progress API/other apps preserved. Native commit headroom recovered to 9913266176B, passing unchanged8.5GiB pre-load gate. Fresh RTX3050 Laptop4GB/Torch2.11.0+cu128/CUDA12.8 nativeBF16=True. Verified local snapshot snapshot-20261015T151312Z-52011a34 allSHA/postvalidationstate bytes/lockedselection/2227finalprediction bytes; sourcebundle HEADd9eac5e preserved. Recovery pointer compared semantically because snapshot serialization changes newlines; state bytes exact. Full25k epoch/6250updates and5000candidatevalidation COMPLETE; do not retrain. SelectionSHA32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b unchanged.85tests pass. Separatev7 interrupted/resumed smoke running; no smoke weights may become production. STOP remains preserved, no final restart yet. After diagnostics resume only originalremaining773 thenpilot3000/candidate3000. Analysis/export/selected API parity/Playwright pending; rankings/publication deferred. Evidence reports/colab-migration/windows-final2227-memory-recovered-20261015.json.
+
+- 2026-10-15T15:27:36Z: Validation: curated-efficient-original. 
+
+- 2026-10-15T15:27:36Z: Validation: curated-efficient-pilot. 
+
+- 2026-10-15T15:27:38Z: Capped25000-word training: epoch1. One initial epoch only. No additional epochs scheduled.
+
+- 2026-10-15T15:27:40Z: Sealed3000-word final evaluation: original. 
+
+
+- 2026-10-15T15:28:40.076309+00:00: Freshv7 nativeBF16/exactinterrupted-resumed smoke and64-image synchronized benchmark PASS (0.628564images/s,8warmup,56steady,98GPUobservations,peak2154064384B,checkpoint0.105579s,alllossesfinite). Original31/frozen25k-5k-3k/postvalidation6250state/all5000validationrawbytes/lockedselection/2227sealedpredictionprefix/free locks/no duplicate gates pass; nativecommitpreload~9.22GiB exceeds8.5GiB. ExplicitSTOP consumed toversioned evidence; launched existingcontroller wrapper31852/actual12724, coordinator2444/21524, originalfinalGPUworker7616/wrapper32844. Verified newprediction2228 and later continue frozen uniqueID/ref/component order, exact2227rawprefix retained. Completed training/validation SKIPPED, no trainworker or diagnosticweightpromotion. Scopedkeepawake active onlycontrollerlifetime. Current originalsaved2314/3000; pilot/candidate3000each follow. Progress-only API30284/wrapper22620 remains unconfigured atlocalhost8765/progress.html. SelectionSHA32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b unchanged; never test-guided choice. Finalmetrics/analysis/export/APIparity/Playwright pending; rankings/publication deferred. Evidence reports/colab-migration/windows-final-only-resume-20261015.json.

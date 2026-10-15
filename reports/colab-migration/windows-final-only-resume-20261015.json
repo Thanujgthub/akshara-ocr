@@ -1,0 +1,273 @@
+{
+  "ready": {
+    "observed_utc": "2026-10-15T15:27:13.125851+00:00",
+    "original31_verified": true,
+    "frozen_manifests": {
+      "train": {
+        "count": 25000,
+        "sha256": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496"
+      },
+      "validation": {
+        "count": 5000,
+        "sha256": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4"
+      },
+      "final-test": {
+        "count": 3000,
+        "sha256": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+      }
+    },
+    "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0006250-b0776421ff2f",
+    "metadata": {
+      "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+      "updates": 6250,
+      "epoch": 1,
+      "next_index": 0,
+      "precision": "torch.bfloat16",
+      "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+    },
+    "training_complete": true,
+    "selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+    "validation_unchanged": {
+      "original": {
+        "predictions.jsonl": "b60ccfd9e3be3dfa304303ee8c28e44f9cd4a4dc5ef056d437a852dcd00363db",
+        "metrics.json": "111bc7d89b3ec6b34da7685e4a13960b719dcfe7fe5abd446229375d9e9cb347"
+      },
+      "pilot": {
+        "predictions.jsonl": "ad5615a21a6c0e9a95e6a03250deff5e3ea62e639e59ff8a0231b88feb619951",
+        "metrics.json": "80b97099ac7209055025bd55d8b1ac98dbbbdfd1ab7620f6db9e382d3f185e92"
+      },
+      "candidate": {
+        "predictions.jsonl": "9eb317f05cf17c1203576cb03f678d16800e10f36fe4e04e5804a182a9f60b89",
+        "metrics.json": "90a0fa1819cafdb346b69828108874d7a70ab02d4ec40a6d45ae724dc4b8bbe3"
+      }
+    },
+    "original_final_saved": 2227,
+    "original_remaining": 773,
+    "pilot_remaining": 3000,
+    "candidate_remaining": 3000,
+    "partial_final_sha256": "1861ff382d81ac14b0129145fb58c261f5b5929d2dca1438c250000756682311",
+    "original_evaluation_contract_sha256": "1f4579a772b6ac92423ad4c1f952340fc6735b932ac5d257ea2c3675ec195f1a",
+    "source_hashes_verified": 41,
+    "workers": [],
+    "locks_free": true,
+    "memory": {
+      "passed": true,
+      "measurement": {
+        "observed_utc": "2026-10-15T15:27:12.651961+00:00",
+        "commit_total_bytes": 15302615040,
+        "commit_limit_bytes": 25219530752,
+        "commit_headroom_bytes": 9916915712,
+        "available_ram_bytes": 6354604032,
+        "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+      },
+      "required_commit_headroom_bytes": 9126805504,
+      "model_private_allowance_gib": 6.0,
+      "reserve_gib": 2.5,
+      "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+      "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+    },
+    "smoke_passed": {
+      "forward_backward": true,
+      "finite_loss_and_gradients": true,
+      "adapter_weights_changed": true,
+      "final_adapter_reload_inference_matches": true,
+      "mid_epoch_resume_exact_adapter_weights": true,
+      "optimizer_rng_scheduler_resume": true,
+      "config_signature": "266194952cff5629b36fd132285ca79fe297e1dbcec3c99c37e0ef9bf46ed929",
+      "precision": "torch.bfloat16"
+    },
+    "benchmark": {
+      "examples": 64,
+      "warmup_examples": 8,
+      "warmup_seconds": 12.871789200005878,
+      "steady_examples_per_second": 0.6285639505847391,
+      "median_input_processing_transfer_seconds": 0.03940415000033681,
+      "model_load_seconds": 11.168493799996213,
+      "checkpoint_write_seconds": [
+        0.10557930000504712
+      ],
+      "peak_allocated_vram_bytes": 2154064384,
+      "precision": "torch.bfloat16"
+    },
+    "benchmark_gpu_samples": 98,
+    "benchmark_loss_range": [
+      0.004829192068427801,
+      4.998307228088379
+    ],
+    "benchmark_sha256": "599e064c1ec2f5e7829947bf5accd5f68e71395ebfe76633d85fc9eac09d701a",
+    "source_head": "4d17444ae8073e5ff20d30c9b1838a2408736ec8",
+    "scope": "Final evaluation continuation only; training and validation reused. Diagnostic weights never promoted; no final accuracy or selection change."
+  },
+  "launch": {
+    "observed_utc": "2026-10-15T15:27:34.886418+00:00",
+    "controller_wrapper_pid": 31852,
+    "controller_wrapper_created": 1792078054.8820624,
+    "command": [
+      "D:/OCR/runtime/venv/Scripts/python.exe",
+      "-u",
+      "-m",
+      "ocr.colab_runner",
+      "--durable",
+      "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+      "--seconds",
+      "86400",
+      "--sync-seconds",
+      "300"
+    ],
+    "ready_sha256": "50ae4b71dc5bbf494e33d8d2e131ae6d18b5140c57bb0b6b9b992e24b323d515",
+    "preload_memory": {
+      "passed": true,
+      "measurement": {
+        "observed_utc": "2026-10-15T15:27:34.868370+00:00",
+        "commit_total_bytes": 15322226688,
+        "commit_limit_bytes": 25219530752,
+        "commit_headroom_bytes": 9897304064,
+        "available_ram_bytes": 6334861312,
+        "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+      },
+      "required_commit_headroom_bytes": 9126805504,
+      "model_private_allowance_gib": 6.0,
+      "reserve_gib": 2.5,
+      "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+      "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+    },
+    "source_head": "4d17444ae8073e5ff20d30c9b1838a2408736ec8",
+    "training_complete": true,
+    "original_saved_predictions": 2227,
+    "diagnostic_weights_used": false,
+    "runtime_memory_guard_gib": 2,
+    "temporary_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "observed": {
+    "observed_utc": "2026-10-15T15:28:40.076309+00:00",
+    "original_saved_before": 2227,
+    "original_saved_now": 2314,
+    "previous_raw_prefix_identical": true,
+    "new_records_frozen_order_unique_ids_references_groups_verified": true,
+    "training_worker_absent": true,
+    "training_complete_marker_sha256": "30acd1827f754d38fde0fb0babfae4ce0d136b5a637e691b22b3d08e267a5452",
+    "selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+    "workers": [
+      {
+        "pid": 2444,
+        "created": 1792078054.9998612,
+        "command": [
+          "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+          "-u",
+          "-m",
+          "ocr.run_efficient"
+        ]
+      },
+      {
+        "pid": 7616,
+        "created": 1792078060.9088664,
+        "command": [
+          "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "-u",
+          "-m",
+          "ocr.scale_experiment",
+          "evaluate",
+          "--config",
+          "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+          "--manifest",
+          "D:\\OCR\\runs\\word-efficient-v3\\final-test.jsonl",
+          "--output",
+          "D:\\OCR\\runs\\word-efficient-v3\\final\\original"
+        ]
+      },
+      {
+        "pid": 12724,
+        "created": 1792078054.9030674,
+        "command": [
+          "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "-u",
+          "-m",
+          "ocr.colab_runner",
+          "--durable",
+          "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+          "--seconds",
+          "86400",
+          "--sync-seconds",
+          "300"
+        ]
+      },
+      {
+        "pid": 21524,
+        "created": 1792078055.0121183,
+        "command": [
+          "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "-u",
+          "-m",
+          "ocr.run_efficient"
+        ]
+      },
+      {
+        "pid": 31852,
+        "created": 1792078054.8820624,
+        "command": [
+          "D:/OCR/runtime/venv/Scripts/python.exe",
+          "-u",
+          "-m",
+          "ocr.colab_runner",
+          "--durable",
+          "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+          "--seconds",
+          "86400",
+          "--sync-seconds",
+          "300"
+        ]
+      },
+      {
+        "pid": 32844,
+        "created": 1792078060.9000452,
+        "command": [
+          "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+          "-u",
+          "-m",
+          "ocr.scale_experiment",
+          "evaluate",
+          "--config",
+          "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+          "--manifest",
+          "D:\\OCR\\runs\\word-efficient-v3\\final-test.jsonl",
+          "--output",
+          "D:\\OCR\\runs\\word-efficient-v3\\final\\original"
+        ]
+      }
+    ],
+    "preview_health": {
+      "status": "ok",
+      "model_ready": false,
+      "model_load_verified": false,
+      "training_active": true,
+      "note": "Inference waits until the local GPU study completes."
+    },
+    "keep_awake": {
+      "status": "active",
+      "updated_utc": "2026-10-15T15:27:35.004991+00:00",
+      "helper_pid": 30708,
+      "owner_pid": 31852,
+      "owner_created": 1792078054.8820624,
+      "request_flags": 2147483649,
+      "scope": "Idle system-sleep request only; controller identity checked every30seconds.",
+      "manual_sleep_and_lid_actions_can_pause": true,
+      "power_plan_changed": false,
+      "display_request": false,
+      "documentation": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate"
+    },
+    "scope": "One existing final pass resumed; no completed predictions repeated, no final accuracy inspected, no training or model choice change."
+  }
+}
