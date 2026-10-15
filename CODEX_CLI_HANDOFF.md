@@ -2,6 +2,16 @@
 
 This file is the operational handoff for another Codex CLI account. It is deliberately separate from the research objective and does not contain credentials. The other account must inspect the repository and current files before acting.
 
+## Current completion — 15 October 2026
+
+Start in `D:/CODEX/OCR/akshara-ocr`, read the current top of `PROJECT_STATE.md` and latest `WORK_LOG.md`, inspect Git/processes/port8765. **The capped25k/5k/3k one-epoch study is finished; do not resume training.**6,250updates and all validation/final passes are complete. Candidate was locked using validation before final inference; final exact76.20% versus original66.4333%, grapheme CER7.4534% versus12.7839%, WER24.40% versus42.2667%. Candidate validation81.38% is not its final accuracy. Paired128-component intervals support improvement; writer/pretraining/label-quality/word-crop limits remain.
+
+Selected model is connected to the existing local website.85software tests,64/64original/selected API parity on declared32validation crops and headed desktop/mobile Playwright flows passed. Current API actualPID27236, creation1792082977.111873, launcher18012; verify identity again before any process action. Use `Start-AksharaSelected.ps1` only if no API owns8765. Open `/`, `/progress.html`, `/analysis.html` at http://127.0.0.1:8765. The headed test browser contains studio/progress/analysis tabs; no user browser was repurposed for testing.
+
+Evidence: `reports/akshara-capped-study-20261015-v1.md`, website snapshot `dist/capped-study-results-20261015.json`, canonical raw outputs `D:/OCR/runs/word-efficient-v3/final/`, API parity `api-parity-selected-v1/`, and recovery `recovery/windows-d-drive-preflight-v7/`. Preserve `selection.json` SHA256 `32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b`. Full checkpoint `step-0006250-b0776421ff2f` has epoch1/next_index0: a completed epoch, not zero training. Keep it separate from best adapter `full/epoch-1/adapter` and versioned selected export `selected-exports/selected-20261015T164733Z-e05e3cf061ff` plus ZIP. Never load diagnostic smoke/benchmark weights as production.
+
+All new work/data/backups are on D:. Original checkpoint31files, tokenizer/processor, data/labels, frozen manifests, pilot, older reports and original C: checkout remain preserved. Latest local backup pointer is `D:/OCR/backups/word-efficient-v3-local-approved-v1/latest-snapshot.json`; final delivery receipt is under recoveryv7. Same physical SSD, no offsite/Drive or full-snapshot restore claim. Colab was not used for these results. Public benchmark comparisons have separate scopes; no worldwide Akshara rank is established. No GitHub push or Vercel deployment; publication remains deferred. Earlier instructions/states below are historical and must not revive retired training plans.
+
 ## What is already preserved
 
 - Repository: `C:\Users\ASUS\Documents\Codex\2026-10-12\co\outputs\akshara-ocr`

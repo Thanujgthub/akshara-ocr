@@ -1,5 +1,15 @@
 # Handoff · 13 October 2026
 
+## Latest verified handoff — 15 October 2026
+
+The capped Windows study and selected local website are complete. Use `D:/CODEX/OCR/akshara-ocr`; preserve the original C: checkout and all `D:/OCR` originals. **Do not restart training.** Full25k one-effective-epoch training,6,250updates, all5kvalidation comparisons and three identical3ksealed final passes completed. Candidate remained validation-locked. Final exact76.20% versus original66.4333%, CER7.4534% versus12.7839%, WER24.40% versus42.2667%; grouped paired improvement is supported. Validation81.38% is not final accuracy.
+
+85software tests and64/64actual API parity checks passed. Headed Playwright checked selected inference, raw/edit/review/copy/TXT-MD-JSON export, uniform abstention, desktop/mobile layouts and completed results. API actual27236/launcher18012 was verified loaded on8765; check PID creation/cmd/cwd/port again before touching it. Current evidence: `reports/akshara-capped-study-20261015-v1.md`, `reports/colab-migration/windows-selected-api-playwright-20261015.json`, and `reports/colab-migration/windows-research-analysis-page-20261015.json`.
+
+Studio `/`, dashboard `/progress.html`, full analysis `/analysis.html` on http://127.0.0.1:8765. The analysis provides benchmark-specific public context with citations; worldwide rank remains unestablished. Latest resumable checkpoint is completed `epoch=1,next_index=0,updates=6250`; best adapter is `full/epoch-1/adapter`; final selected copy/ZIP is `selected-exports/selected-20261015T164733Z-e05e3cf061ff`. Check the durable latest-snapshot pointer and recoveryv7receipts for verified backups. Local D backup is not offsite or an executed full-snapshot restore. No extra epoch, Colab result, model replacement, final-guided selection, deployment or push was performed. Deployment remains deferred.
+
+## Historical pilot handoff (preserved)
+
 The word adapter improved grapheme CER by 0.58 percentage points on this fixed test set. The paired bootstrap interval does not establish a CER reduction.
 
 | Requirement | Actual status |

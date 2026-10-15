@@ -1,4 +1,23 @@
-# Project state — 13 October 2026
+# Project state — verified 15 October 2026
+
+## Current completed capped v3 study
+
+Active checkout: `D:/CODEX/OCR/akshara-ocr`. **No training is pending.** The one effective 25,000-example BF16 epoch finished with 6,250 optimizer updates. All original/pilot/candidate 5,000-example validation and identical 3,000-example sealed final evaluations completed. Selection was locked to `full/epoch-1/adapter` using validation only; the final test did not change it.
+
+Final candidate exact-word match **76.20%** versus original **66.4333%**; grapheme CER **7.4534%** versus **12.7839%**; WER **24.40%** versus **42.2667%**. Paired exact-gain95% interval **8.3444–11.1631 percentage points** (128 source-document/duplicate components,2,000 repetitions,seed42). Candidate validation exact81.38% is a different result. Writer identity, pretraining overlap, complete human semantic label verification and page accuracy remain unknown.
+
+**85 software tests and64/64 actual API parity checks passed.** Headed Playwright verified desktop/mobile word upload, raw-preserving review, copy, TXT/MD/JSON exports, uniform-pixel abstention and dashboards. Selected-model API27236 (creation1792082977.111873; launcher18012) was verified loaded on port8765. Recheck live process identity before any action; do not restart training or launch a duplicate API.
+
+- Studio: http://127.0.0.1:8765/
+- Completed progress dashboard: http://127.0.0.1:8765/progress.html
+- Final analysis / benchmark-specific comparisons: http://127.0.0.1:8765/analysis.html
+- Human-readable evidence: `reports/akshara-capped-study-20261015-v1.md`.
+- Versioned selected export: `D:/OCR/runs/word-efficient-v3/selected-exports/selected-20261015T164733Z-e05e3cf061ff` and matching ZIP; latest resumable and best-validation adapters remain separate.
+- Canonical run and immutable raw outputs: `D:/OCR/runs/word-efficient-v3`; latest backup pointer: `D:/OCR/backups/word-efficient-v3-local-approved-v1/latest-snapshot.json`. Backups are local on the same physical SSD; no offsite or full-snapshot restore claim.
+
+Use `Start-AksharaSelected.ps1` only when no existing API owns8765. Colab was not used for these results. Preserve all originals, frozen25k/5k/3k manifests, prior reports and raw predictions. Never reuse final labels for model choice. Worldwide rank is unestablished; candidate ranks1of3local variants by final CER point estimate. Vercel/GitHub publication remains deferred.
+
+The dated plans/results below are historical records. Do not revive the retired80,083-pair/two-epoch plan or mistake a completed epoch's checkpoint `epoch=1,next_index=0` for an untrained model.
 
 ## Preserved baseline
 Original bodhan-ai/indic-ocr revision cd50d301d0e17e8ecb32fc49c8ccbd7914dcfc25. Original tokenizer/processor/chat template and official crop clamp. EOS 262146, PAD 262144. Pilot 1,000 train / 500 validation / 500 test, rank-8 q/v LoRA. Test CER 15.93% to 15.35%, WER 43.00% to 41.60%, exact 66.20% to 68.20%. Paired CER-reduction interval [-0.96, 1.79] pp: inconclusive.
