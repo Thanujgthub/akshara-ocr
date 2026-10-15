@@ -570,3 +570,8 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-15T15:34:21.942888+00:00: Firstscheduled final-only continuation snapshot snapshot-20261015T153307Z-04ab2502 independently verified allSHA/postvalidation6250state bytes/lockedselection and2760 originalfinalprediction rawprefix. Full sourcehistory bundle HEADf2c494a copied byte-identically. Local D backup only; no offsite/actualrestore claim. Completed25k training/5000validation reused; no retraining or final-guided choice. Same controller31852/12724 continues originalfinal, thenpilot/candidate. SelectedAPI/analysis/export/Playwright unfinished; comparisons/publication deferred. Evidence reports/colab-migration/windows-final-resume-durable-snapshot-20261015.json.
+
+- 2026-10-15T15:35:01Z: Sealed3000-word final evaluation: pilot. 
+
+
+- 2026-10-15T15:35:44.727883+00:00: ORIGINAL sealedfinal complete3000 unique frozenordered IDs/rawreferences/component groups. Existing2227 predictions reused and773new generated, no repeatedcompleted records. Metrics/raw/contract SHA recorded; original peakVRAM covers remaining773process only, latency records retainall3000. Samecontroller31852/12724 automatically moved toPILOT3000 final pass; candidate3000 follows. Full25kepoch/5000candidatevalidation complete, lockedselectionSHA32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b unchanged. No comparison claim until allpasses/pairedreport finished; no test-guided choice. Selectedanalysis/export/APIparity/realPlaywright pending; rankings/publication deferred. Evidence reports/colab-migration/windows-final-original3000-complete-20261015.json.

@@ -1,0 +1,61 @@
+{
+  "observed_utc": "2026-10-15T15:35:44.727883+00:00",
+  "original_final_completed": 3000,
+  "previous_predictions_reused": 2227,
+  "new_predictions_this_process": 773,
+  "raw_predictions_sha256": "cd41c6d96553367fb6500bf0eec3a00d389b645774bb2a02ddfaba617a8363a0",
+  "metrics_sha256": "ec8f180380c958c1b3e4eef4b61abb71f404845e2185ac58ebd0d236c4f12e52",
+  "evaluation_contract_sha256": "1f4579a772b6ac92423ad4c1f952340fc6735b932ac5d257ea2c3675ec195f1a",
+  "frozen_input_order_references_groups_verified": true,
+  "unique_ids": 3000,
+  "peak_vram_scope": "remaining_examples_in_this_process_only",
+  "selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+  "status": {
+    "status": "running",
+    "stage": "Sealed3000-word final evaluation: pilot",
+    "updated_utc": "2026-10-15T15:35:01Z",
+    "note": "",
+    "experiment_directory": "D:\\OCR\\runs\\word-efficient-v3\\final\\pilot"
+  },
+  "workers": [
+    {
+      "pid": 9280,
+      "created": 1792078501.493624,
+      "command": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "evaluate",
+        "--config",
+        "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+        "--manifest",
+        "D:\\OCR\\runs\\word-efficient-v3\\final-test.jsonl",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\final\\pilot",
+        "--adapter",
+        "D:\\OCR\\runs\\word-pilot-v1\\trained\\adapter"
+      ]
+    },
+    {
+      "pid": 12048,
+      "created": 1792078501.4832609,
+      "command": [
+        "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "evaluate",
+        "--config",
+        "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+        "--manifest",
+        "D:\\OCR\\runs\\word-efficient-v3\\final-test.jsonl",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\final\\pilot",
+        "--adapter",
+        "D:\\OCR\\runs\\word-pilot-v1\\trained\\adapter"
+      ]
+    }
+  ],
+  "scope": "Original sealed pass complete; pilot and candidate final pending. No training restart, final-guided selection or additional inference."
+}
