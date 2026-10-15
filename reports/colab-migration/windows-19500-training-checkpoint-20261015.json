@@ -1,0 +1,57 @@
+{
+  "observed_utc": "2026-10-15T06:09:38.574699+00:00",
+  "checkpoint": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0004875",
+  "metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4875,
+    "epoch": 0,
+    "next_index": 19500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "pointer": {
+    "checkpoint": "checkpoints/step-0004875",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "02fa8bc083b289460b87f8994cdc28b4ca29b9996c64787da250a0ea63e00c57"
+  },
+  "verified_files": 5,
+  "trainer_pid": 23612,
+  "trainer_created": 1792042557.9789948,
+  "progress": {
+    "epoch": 1,
+    "example": 19520,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4880,
+    "loss": 0.11902497708797455,
+    "lr": 2.3071741327046144e-06,
+    "elapsed_seconds": 74699.32467198372,
+    "peak_allocated_vram_bytes": 2169039360
+  },
+  "stop_exists": false,
+  "memory_now": {
+    "observed_utc": "2026-10-15T06:09:38.584689+00:00",
+    "commit_total_bytes": 20168716288,
+    "commit_limit_bytes": 25219530752,
+    "commit_headroom_bytes": 5050814464,
+    "available_ram_bytes": 5030686720,
+    "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+  },
+  "frozen_manifest_hashes_verified": true,
+  "contiguous_raw_segment": [
+    18380,
+    19520
+  ],
+  "finite_losses_and_batch4_update_position_verified": true,
+  "runtime_telemetry": {
+    "path": "D:\\OCR\\runs\\word-efficient-v3\\recovery\\windows-d-drive-preflight-v2\\runtime-observations-to19500-20261015.jsonl",
+    "sha256": "74f52b83243da3152c5455e65bcd7abd583ba70a723ac71cf3411c9af167089f",
+    "samples": 21,
+    "start_utc": "2026-10-15T05:59:03.354565+00:00",
+    "end_utc": "2026-10-15T06:09:03.630004+00:00",
+    "min_headroom_bytes": 5004931072,
+    "max_headroom_bytes": 5208342528
+  },
+  "selection_locked": false,
+  "final_summary_present": false,
+  "scope": "78% of the same one training epoch, not accuracy. Candidate validation/locked selection/sealed final/API parity/selected website OCR remain pending. No restart or model/data/precision change."
+}
