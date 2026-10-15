@@ -1,0 +1,98 @@
+{
+  "observed_utc": "2026-10-15T04:50:06.713124+00:00",
+  "boot_timestamp_ms": 1792034071500,
+  "original31_files_verified": true,
+  "frozen_manifests_verified": {
+    "train": 25000,
+    "validation": 5000,
+    "final-test": 3000
+  },
+  "free_locks_verified": true,
+  "resume_pointer": {
+    "checkpoint": "checkpoints/step-0004500",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "bf4d45f64a92b56dc3d4c7c8621acd7d11abab0ee8cb18e61283b9f06453e735"
+  },
+  "durable_snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261014T160728Z-8b4089a7",
+  "durable_checkpoint": {
+    "checkpoint": "checkpoints/step-0004500",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "bf4d45f64a92b56dc3d4c7c8621acd7d11abab0ee8cb18e61283b9f06453e735"
+  },
+  "durable_state_byte_equal_to_source_generation": true,
+  "memory_gate": {
+    "passed": false,
+    "measurement": {
+      "observed_utc": "2026-10-15T04:50:06.729265+00:00",
+      "commit_total_bytes": 18402164736,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 6817366016,
+      "available_ram_bytes": 1397305344,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9663676416,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 3.0,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "largest_process_groups": [
+    {
+      "name": "ollama app.exe",
+      "processes": 1,
+      "private_bytes": 4146352128,
+      "rss_bytes": 3219628032
+    },
+    {
+      "name": "brave.exe",
+      "processes": 22,
+      "private_bytes": 1986793472,
+      "rss_bytes": 2924863488
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "processes": 14,
+      "private_bytes": 1180987392,
+      "rss_bytes": 1494065152
+    },
+    {
+      "name": "ChatGPT.exe",
+      "processes": 10,
+      "private_bytes": 799346688,
+      "rss_bytes": 1036890112
+    },
+    {
+      "name": "mysqld.exe",
+      "processes": 2,
+      "private_bytes": 641343488,
+      "rss_bytes": 67055616
+    },
+    {
+      "name": "MsMpEng.exe",
+      "processes": 1,
+      "private_bytes": 618500096,
+      "rss_bytes": 589692928
+    },
+    {
+      "name": "svchost.exe",
+      "processes": 90,
+      "private_bytes": 571748352,
+      "rss_bytes": 1853734912
+    },
+    {
+      "name": "NodeManager.exe",
+      "processes": 1,
+      "private_bytes": 485339136,
+      "rss_bytes": 270200832
+    }
+  ],
+  "configured_D_pagefile_active": false,
+  "training_started": false,
+  "scope": "New boot verified; read-only checks only. No OS settings changed or other projects/apps terminated.",
+  "full_tests": {
+    "passed": 80,
+    "command": "D:/OCR/runtime/venv/Scripts/python.exe -m unittest discover -s tests -q",
+    "seconds": 16.272
+  },
+  "next_action": "User safely quits Ollama app (~3.9GiB private memory observed), then measured commit-capacity gate is rechecked before fresh nativeBF16/smoke/benchmark and full18000resume. No further reboot assumed to solve inactive Dpagefile."
+}
