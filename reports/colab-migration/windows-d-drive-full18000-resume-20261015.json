@@ -1,0 +1,1130 @@
+{
+  "observed_utc": "2026-10-15T05:12:30.118165+00:00",
+  "active_checkout": "D:\\CODEX\\OCR\\akshara-ocr",
+  "controller_wrapper_pid": 7600,
+  "controller_wrapper_created": 1792041043.8481464,
+  "keep_awake_wrapper_pid": 23968,
+  "software_tests_passed": 83,
+  "hardware": {
+    "observed_utc": "2026-10-15T05:06:00.815809+00:00",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "native_bf16": true,
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu_total_bytes": 4294508544,
+    "memory_gate": {
+      "passed": true,
+      "measurement": {
+        "observed_utc": "2026-10-15T05:05:55.402058+00:00",
+        "commit_total_bytes": 15792709632,
+        "commit_limit_bytes": 25219530752,
+        "commit_headroom_bytes": 9426821120,
+        "available_ram_bytes": 5283422208,
+        "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+      },
+      "required_commit_headroom_bytes": 9126805504,
+      "model_private_allowance_gib": 6.0,
+      "reserve_gib": 2.5,
+      "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+      "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+    },
+    "original31_verified": true,
+    "frozen_manifests_verified": {
+      "train": "22a698424d7a0963c640d9e7960a3c7858d358d26be38a3d5d620efc69dee496",
+      "validation": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+      "final-test": "5247e8ff10612838ac251bea3c41407b904034e9301be302078a4bb4fb85b1f4"
+    },
+    "run_locks_free": true,
+    "resume_pointer": {
+      "checkpoint": "checkpoints/step-0004500",
+      "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+      "checkpoint_index_sha256": "bf4d45f64a92b56dc3d4c7c8621acd7d11abab0ee8cb18e61283b9f06453e735"
+    },
+    "software_tests_passed": 83,
+    "active_checkout": "D:\\CODEX\\OCR\\akshara-ocr",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "smoke": {
+    "forward_backward": true,
+    "finite_loss_and_gradients": true,
+    "adapter_weights_changed": true,
+    "final_adapter_reload_inference_matches": true,
+    "mid_epoch_resume_exact_adapter_weights": true,
+    "optimizer_rng_scheduler_resume": true,
+    "config_signature": "266194952cff5629b36fd132285ca79fe297e1dbcec3c99c37e0ef9bf46ed929",
+    "precision": "torch.bfloat16"
+  },
+  "benchmark": {
+    "examples": 64,
+    "warmup_examples": 8,
+    "warmup_seconds": 12.401215899998533,
+    "steady_examples_per_second": 0.6393243072728255,
+    "median_batch_seconds": 1.560016850000011,
+    "median_input_processing_transfer_seconds": 0.04067265000003317,
+    "input_observations": [
+      {
+        "image_decode_preprocess_seconds": 0.015914900000097987,
+        "processor_and_transfer_seconds": 0.06889549999959854
+      },
+      {
+        "image_decode_preprocess_seconds": 0.012709699999504664,
+        "processor_and_transfer_seconds": 0.03234410000004573
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01580770000055054,
+        "processor_and_transfer_seconds": 0.01865819999966334
+      },
+      {
+        "image_decode_preprocess_seconds": 0.010204500000327243,
+        "processor_and_transfer_seconds": 0.030018099999324477
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01076310000007652,
+        "processor_and_transfer_seconds": 0.026171999999860418
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01687980000042444,
+        "processor_and_transfer_seconds": 0.020488299999669835
+      },
+      {
+        "image_decode_preprocess_seconds": 0.010338199999750941,
+        "processor_and_transfer_seconds": 0.02335620000030758
+      },
+      {
+        "image_decode_preprocess_seconds": 0.016390200000387267,
+        "processor_and_transfer_seconds": 0.025090599999202823
+      },
+      {
+        "image_decode_preprocess_seconds": 0.010568099999545666,
+        "processor_and_transfer_seconds": 0.028302499999881547
+      },
+      {
+        "image_decode_preprocess_seconds": 0.010772399999950721,
+        "processor_and_transfer_seconds": 0.020184700000754674
+      },
+      {
+        "image_decode_preprocess_seconds": 0.015250899999955436,
+        "processor_and_transfer_seconds": 0.01976070000000618
+      },
+      {
+        "image_decode_preprocess_seconds": 0.0076432999994722195,
+        "processor_and_transfer_seconds": 0.02014670000062324
+      },
+      {
+        "image_decode_preprocess_seconds": 0.012531100000160222,
+        "processor_and_transfer_seconds": 0.028389099999913014
+      },
+      {
+        "image_decode_preprocess_seconds": 0.016682399999808695,
+        "processor_and_transfer_seconds": 0.028803199999856588
+      },
+      {
+        "image_decode_preprocess_seconds": 0.008860399999321089,
+        "processor_and_transfer_seconds": 0.01959930000066379
+      },
+      {
+        "image_decode_preprocess_seconds": 0.009657599999627564,
+        "processor_and_transfer_seconds": 0.02814180000041233
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01751909999984491,
+        "processor_and_transfer_seconds": 0.019119500000670087
+      },
+      {
+        "image_decode_preprocess_seconds": 0.008895799999663723,
+        "processor_and_transfer_seconds": 0.024280600000565755
+      },
+      {
+        "image_decode_preprocess_seconds": 0.009872200000245357,
+        "processor_and_transfer_seconds": 0.017583400000148686
+      },
+      {
+        "image_decode_preprocess_seconds": 0.016493099999934202,
+        "processor_and_transfer_seconds": 0.022900299999491835
+      },
+      {
+        "image_decode_preprocess_seconds": 0.009595200000148907,
+        "processor_and_transfer_seconds": 0.016851600000336475
+      },
+      {
+        "image_decode_preprocess_seconds": 0.009184600000480714,
+        "processor_and_transfer_seconds": 0.02081469999939145
+      },
+      {
+        "image_decode_preprocess_seconds": 0.00908979999985604,
+        "processor_and_transfer_seconds": 0.02119189999939408
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01524040000003879,
+        "processor_and_transfer_seconds": 0.023648599999432918
+      },
+      {
+        "image_decode_preprocess_seconds": 0.009634400000322785,
+        "processor_and_transfer_seconds": 0.02341569999953208
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01117190000059054,
+        "processor_and_transfer_seconds": 0.02580289999878005
+      },
+      {
+        "image_decode_preprocess_seconds": 0.014756800000213843,
+        "processor_and_transfer_seconds": 0.02664840000034019
+      },
+      {
+        "image_decode_preprocess_seconds": 0.013970500000141328,
+        "processor_and_transfer_seconds": 0.02694729999984702
+      },
+      {
+        "image_decode_preprocess_seconds": 0.017108200000620855,
+        "processor_and_transfer_seconds": 0.0303764999989653
+      },
+      {
+        "image_decode_preprocess_seconds": 0.017012700000123004,
+        "processor_and_transfer_seconds": 0.01680899999973917
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01755310000044119,
+        "processor_and_transfer_seconds": 0.02787819999957719
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01853590000064287,
+        "processor_and_transfer_seconds": 0.01990499999919848
+      },
+      {
+        "image_decode_preprocess_seconds": 0.016636899999866728,
+        "processor_and_transfer_seconds": 0.02285219999976107
+      },
+      {
+        "image_decode_preprocess_seconds": 0.008999800000310643,
+        "processor_and_transfer_seconds": 0.029820400000062364
+      },
+      {
+        "image_decode_preprocess_seconds": 0.017351599999528844,
+        "processor_and_transfer_seconds": 0.022908200000529177
+      },
+      {
+        "image_decode_preprocess_seconds": 0.0160688999994818,
+        "processor_and_transfer_seconds": 0.023857600001065293
+      },
+      {
+        "image_decode_preprocess_seconds": 0.009649300000091898,
+        "processor_and_transfer_seconds": 0.017773000000488537
+      },
+      {
+        "image_decode_preprocess_seconds": 0.0174646000004941,
+        "processor_and_transfer_seconds": 0.033743399999366375
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01945869999963179,
+        "processor_and_transfer_seconds": 0.048089400000208116
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01075109999965207,
+        "processor_and_transfer_seconds": 0.027819300000373914
+      },
+      {
+        "image_decode_preprocess_seconds": 0.010275099999489612,
+        "processor_and_transfer_seconds": 0.029426000000057684
+      },
+      {
+        "image_decode_preprocess_seconds": 0.017416099999536527,
+        "processor_and_transfer_seconds": 0.022767800001020078
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01900110000042332,
+        "processor_and_transfer_seconds": 0.02644629999940662
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01740059999974619,
+        "processor_and_transfer_seconds": 0.023463100000299164
+      },
+      {
+        "image_decode_preprocess_seconds": 0.014950499999940803,
+        "processor_and_transfer_seconds": 0.025235799999791197
+      },
+      {
+        "image_decode_preprocess_seconds": 0.010749299999588402,
+        "processor_and_transfer_seconds": 0.03243759999986651
+      },
+      {
+        "image_decode_preprocess_seconds": 0.010024199999861594,
+        "processor_and_transfer_seconds": 0.024853799999618786
+      },
+      {
+        "image_decode_preprocess_seconds": 0.016721500000130618,
+        "processor_and_transfer_seconds": 0.021596800000224903
+      },
+      {
+        "image_decode_preprocess_seconds": 0.016026899999815214,
+        "processor_and_transfer_seconds": 0.03247710000050574
+      },
+      {
+        "image_decode_preprocess_seconds": 0.015929899999719055,
+        "processor_and_transfer_seconds": 0.02892240000073798
+      },
+      {
+        "image_decode_preprocess_seconds": 0.011549000000741216,
+        "processor_and_transfer_seconds": 0.028297899999415677
+      },
+      {
+        "image_decode_preprocess_seconds": 0.010871000000406639,
+        "processor_and_transfer_seconds": 0.0287969000000885
+      },
+      {
+        "image_decode_preprocess_seconds": 0.015503700000408571,
+        "processor_and_transfer_seconds": 0.020478299999922456
+      },
+      {
+        "image_decode_preprocess_seconds": 0.017978500000026543,
+        "processor_and_transfer_seconds": 0.03357270000014978
+      },
+      {
+        "image_decode_preprocess_seconds": 0.009415200000148616,
+        "processor_and_transfer_seconds": 0.023380599999654805
+      },
+      {
+        "image_decode_preprocess_seconds": 0.017149500000414264,
+        "processor_and_transfer_seconds": 0.033346199999868986
+      },
+      {
+        "image_decode_preprocess_seconds": 0.011221399999158166,
+        "processor_and_transfer_seconds": 0.026910100000350212
+      },
+      {
+        "image_decode_preprocess_seconds": 0.015207200000077137,
+        "processor_and_transfer_seconds": 0.03478279999944789
+      },
+      {
+        "image_decode_preprocess_seconds": 0.016559400000005553,
+        "processor_and_transfer_seconds": 0.030656199999612
+      },
+      {
+        "image_decode_preprocess_seconds": 0.01613199999974313,
+        "processor_and_transfer_seconds": 0.03322370000023511
+      },
+      {
+        "image_decode_preprocess_seconds": 0.008007399999769405,
+        "processor_and_transfer_seconds": 0.017206700000315323
+      },
+      {
+        "image_decode_preprocess_seconds": 0.0142494000001534,
+        "processor_and_transfer_seconds": 0.02690069999971456
+      },
+      {
+        "image_decode_preprocess_seconds": 0.007483100000172271,
+        "processor_and_transfer_seconds": 0.0213290000001507
+      },
+      {
+        "image_decode_preprocess_seconds": 0.010767400000077032,
+        "processor_and_transfer_seconds": 0.031257300000106625
+      }
+    ],
+    "model_load_seconds": 7.507983599999534,
+    "wall_seconds_including_checkpoint": 101.46030989999963,
+    "checkpoint_write_seconds": [
+      0.11879930000031891
+    ],
+    "gpu_samples": [
+      {
+        "time": 1792040853.3422794,
+        "observation": "22, 1801",
+        "returncode": 0
+      },
+      {
+        "time": 1792040854.3893654,
+        "observation": "0, 1837",
+        "returncode": 0
+      },
+      {
+        "time": 1792040855.4461765,
+        "observation": "28, 1995",
+        "returncode": 0
+      },
+      {
+        "time": 1792040856.4927347,
+        "observation": "88, 2017",
+        "returncode": 0
+      },
+      {
+        "time": 1792040857.5450022,
+        "observation": "95, 2117",
+        "returncode": 0
+      },
+      {
+        "time": 1792040858.6061454,
+        "observation": "80, 2117",
+        "returncode": 0
+      },
+      {
+        "time": 1792040859.646304,
+        "observation": "81, 2117",
+        "returncode": 0
+      },
+      {
+        "time": 1792040860.6970155,
+        "observation": "99, 2117",
+        "returncode": 0
+      },
+      {
+        "time": 1792040861.7411168,
+        "observation": "91, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040862.7839742,
+        "observation": "93, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040863.85525,
+        "observation": "95, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040864.8992722,
+        "observation": "97, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040865.9520535,
+        "observation": "96, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040867.0056438,
+        "observation": "22, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040868.0463798,
+        "observation": "98, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040869.1080465,
+        "observation": "78, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040870.1570752,
+        "observation": "56, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040871.210756,
+        "observation": "85, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040872.2493012,
+        "observation": "94, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040873.293308,
+        "observation": "98, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040874.3447726,
+        "observation": "84, 2131",
+        "returncode": 0
+      },
+      {
+        "time": 1792040875.3893929,
+        "observation": "96, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040876.4286127,
+        "observation": "86, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040877.4835205,
+        "observation": "98, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040878.5332215,
+        "observation": "58, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040879.5744984,
+        "observation": "89, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040880.6217089,
+        "observation": "95, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040881.6728702,
+        "observation": "76, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040882.7295635,
+        "observation": "63, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040883.774431,
+        "observation": "42, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040884.9129944,
+        "observation": "82, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040885.9583945,
+        "observation": "68, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040887.0161695,
+        "observation": "94, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040888.0685544,
+        "observation": "96, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040889.1155696,
+        "observation": "70, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040890.156251,
+        "observation": "69, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040891.2157676,
+        "observation": "97, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040892.2530594,
+        "observation": "78, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040893.2919722,
+        "observation": "97, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040894.3328116,
+        "observation": "94, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040895.3697984,
+        "observation": "82, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040896.4148254,
+        "observation": "96, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040897.4619715,
+        "observation": "75, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040898.5033333,
+        "observation": "92, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040899.5541573,
+        "observation": "80, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040900.6046538,
+        "observation": "96, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040901.65451,
+        "observation": "97, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040902.7034485,
+        "observation": "86, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040903.7461452,
+        "observation": "95, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040904.7869344,
+        "observation": "74, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040905.8335302,
+        "observation": "49, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040906.884298,
+        "observation": "95, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040907.9347193,
+        "observation": "86, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040908.9831896,
+        "observation": "98, 2133",
+        "returncode": 0
+      },
+      {
+        "time": 1792040910.0269647,
+        "observation": "95, 2189",
+        "returncode": 0
+      },
+      {
+        "time": 1792040911.0823298,
+        "observation": "99, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040912.1318882,
+        "observation": "99, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040913.179766,
+        "observation": "71, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040914.236185,
+        "observation": "86, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040915.284745,
+        "observation": "99, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040916.335081,
+        "observation": "97, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040917.3980412,
+        "observation": "58, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040918.4392855,
+        "observation": "52, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040919.6186602,
+        "observation": "55, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040920.6711876,
+        "observation": "83, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040921.7129285,
+        "observation": "92, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040922.7668965,
+        "observation": "57, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040923.8280056,
+        "observation": "98, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040924.9051695,
+        "observation": "60, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040926.0412116,
+        "observation": "87, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040927.0812478,
+        "observation": "62, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040928.1387436,
+        "observation": "86, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040929.1826673,
+        "observation": "86, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040930.2338393,
+        "observation": "95, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040931.2790384,
+        "observation": "42, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040932.3548424,
+        "observation": "93, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040933.422713,
+        "observation": "61, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040934.4653578,
+        "observation": "58, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040935.5410545,
+        "observation": "85, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040936.5974004,
+        "observation": "94, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040937.6488545,
+        "observation": "98, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040938.7304957,
+        "observation": "94, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040939.7757752,
+        "observation": "80, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040940.8155265,
+        "observation": "94, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040941.8728788,
+        "observation": "3, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040942.9317572,
+        "observation": "97, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040943.991594,
+        "observation": "98, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040945.0331075,
+        "observation": "64, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040946.093349,
+        "observation": "98, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040947.278021,
+        "observation": "87, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040948.3368983,
+        "observation": "98, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040949.4062424,
+        "observation": "44, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040950.4621527,
+        "observation": "74, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040951.5192664,
+        "observation": "98, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040952.5681424,
+        "observation": "91, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040953.6165438,
+        "observation": "84, 2237",
+        "returncode": 0
+      },
+      {
+        "time": 1792040954.6657636,
+        "observation": "98, 2237",
+        "returncode": 0
+      }
+    ],
+    "peak_allocated_vram_bytes": 2154064384,
+    "losses": [
+      0.004829192068427801,
+      0.02651222050189972,
+      0.6568908095359802,
+      0.036816809326410294,
+      0.059617359191179276,
+      0.017469463869929314,
+      0.029297657310962677,
+      0.09698653221130371,
+      0.1982814371585846,
+      0.01770312339067459,
+      0.9779120087623596,
+      0.1650831252336502,
+      0.03229965642094612,
+      0.1859092265367508,
+      0.2617896497249603,
+      2.2932116985321045,
+      1.6663020849227905,
+      0.29095524549484253,
+      0.41385963559150696,
+      0.1638021022081375,
+      0.20027804374694824,
+      2.2163236141204834,
+      0.007907685823738575,
+      1.7739102840423584,
+      0.11545747518539429,
+      0.015025312080979347,
+      0.21623532474040985,
+      0.33586129546165466,
+      0.0679587721824646,
+      0.008812465704977512,
+      0.03778264671564102,
+      0.30141177773475647,
+      0.14122694730758667,
+      0.15847915410995483,
+      0.18468883633613586,
+      0.14224471151828766,
+      0.18759356439113617,
+      0.03178614377975464,
+      0.9233607649803162,
+      0.03144782409071922,
+      0.1912001520395279,
+      4.998307228088379,
+      0.012430384755134583,
+      0.5915361642837524,
+      0.1616886854171753,
+      0.14688226580619812,
+      0.023890778422355652,
+      0.09724991768598557,
+      0.011076275259256363,
+      0.019958939403295517,
+      0.024408919736742973,
+      0.03243633732199669,
+      1.7738453149795532,
+      0.6896588206291199,
+      0.8491910099983215,
+      0.02047012746334076,
+      0.017434652894735336,
+      0.26307597756385803,
+      0.5621857643127441,
+      0.007193088531494141,
+      0.05453328788280487,
+      0.02086721546947956,
+      0.4439784288406372,
+      0.041123490780591965
+    ],
+    "remaining_25000_word_training_hours_projection": 10.862162388393234,
+    "projection_limitations": "Short64-example sample; excludes full validation, final testing, initialization, Drive sync and disconnects. Benchmark weights never selected or credited toward final training. Full25000-row scheduler retained. Synchronized timings add profiling overhead.",
+    "data_loader": "Direct sequential microbatch1 loop; DataLoader workers/pin_memory/persistent_workers not applicable.",
+    "precision": "torch.bfloat16",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "config": {
+      "seed": 42,
+      "prompt": "telugu_literal",
+      "preprocessing": "official",
+      "rank": 8,
+      "targets": [
+        "q",
+        "v"
+      ],
+      "lr": 1e-05,
+      "augmentation": false,
+      "accumulation": 4,
+      "microbatch_size": 1,
+      "gradient_clip": 1.0,
+      "maximum_training_examples": 25000,
+      "maximum_epochs": 1,
+      "initial_adapter": "D:\\OCR\\runs\\word-pilot-v1\\trained\\adapter",
+      "initial_adapter_sha256": "04262fcb507891c7ffe8639c08babca8bae03b585a8ab3443c21453f0cd82af2"
+    }
+  },
+  "benchmark_sha256": "678f2070cbdfed51e11c7de5934a3d11b7a7a88b146207954dce25b89474f09f",
+  "preload_memory_gate": {
+    "passed": true,
+    "measurement": {
+      "observed_utc": "2026-10-15T05:10:43.819281+00:00",
+      "commit_total_bytes": 15759069184,
+      "commit_limit_bytes": 25219530752,
+      "commit_headroom_bytes": 9460461568,
+      "available_ram_bytes": 5671047168,
+      "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+    },
+    "required_commit_headroom_bytes": 9126805504,
+    "model_private_allowance_gib": 6.0,
+    "reserve_gib": 2.5,
+    "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+    "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+  },
+  "runtime_memory_stop_gib": 2,
+  "precision": "BF16 unchanged",
+  "full_resume_pointer": {
+    "checkpoint": "checkpoints/step-0004500",
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "checkpoint_index_sha256": "bf4d45f64a92b56dc3d4c7c8621acd7d11abab0ee8cb18e61283b9f06453e735"
+  },
+  "protocol": "Frozen25000/5000/3000 one initial epoch, preserved originals and completed original/pilot validation; no smoke or benchmark weights promoted.",
+  "workers": [
+    {
+      "pid": 7600,
+      "created": 1792041043.8481464,
+      "cmd": [
+        "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "ocr.colab_runner",
+        "--durable",
+        "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+        "--seconds",
+        "86400",
+        "--sync-seconds",
+        "300"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr",
+      "rss": 4386816
+    },
+    {
+      "pid": 8412,
+      "created": 1792041043.9757202,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.run_efficient"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr",
+      "rss": 35385344
+    },
+    {
+      "pid": 10000,
+      "created": 1792041043.865771,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.colab_runner",
+        "--durable",
+        "D:/OCR/backups/word-efficient-v3-local-approved-v1",
+        "--seconds",
+        "86400",
+        "--sync-seconds",
+        "300"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr",
+      "rss": 20283392
+    },
+    {
+      "pid": 10768,
+      "created": 1792041047.4604032,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "train",
+        "--config",
+        "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+        "--manifest",
+        "D:\\OCR\\runs\\word-efficient-v3\\train.jsonl",
+        "--validation",
+        "D:\\OCR\\runs\\word-efficient-v3\\validation.jsonl",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\full",
+        "--epochs",
+        "1"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr",
+      "rss": 2276450304,
+      "process_only_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "pid": 10788,
+      "created": 1792041043.96257,
+      "cmd": [
+        "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "ocr.run_efficient"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr",
+      "rss": 4390912
+    },
+    {
+      "pid": 16544,
+      "created": 1792041043.8724148,
+      "cmd": [
+        "C:\\Users\\ASUS\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-m",
+        "ocr.windows_keep_awake",
+        "--pid",
+        "7600",
+        "--created",
+        "1792041043.8481464",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\recovery\\power-request-d-drive-v1"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr",
+      "rss": 20574208
+    },
+    {
+      "pid": 20712,
+      "created": 1792041047.4511533,
+      "cmd": [
+        "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "ocr.scale_experiment",
+        "train",
+        "--config",
+        "D:\\OCR\\runs\\word-efficient-v3\\configs\\full.json",
+        "--manifest",
+        "D:\\OCR\\runs\\word-efficient-v3\\train.jsonl",
+        "--validation",
+        "D:\\OCR\\runs\\word-efficient-v3\\validation.jsonl",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\full",
+        "--epochs",
+        "1"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr",
+      "rss": 4435968,
+      "process_only_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "pid": 23968,
+      "created": 1792041043.8543131,
+      "cmd": [
+        "D:\\OCR\\runtime\\venv\\Scripts\\python.exe",
+        "-m",
+        "ocr.windows_keep_awake",
+        "--pid",
+        "7600",
+        "--created",
+        "1792041043.8481464",
+        "--output",
+        "D:\\OCR\\runs\\word-efficient-v3\\recovery\\power-request-d-drive-v1"
+      ],
+      "cwd": "D:\\CODEX\\OCR\\akshara-ocr",
+      "rss": 4390912
+    }
+  ],
+  "actual_trainer_pid": 10768,
+  "actual_trainer_created": 1792041047.4604032,
+  "progress": {
+    "epoch": 1,
+    "example": 18040,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4510,
+    "loss": 0.0118519002571702,
+    "lr": 2.930279555405861e-06,
+    "elapsed_seconds": 72084.45447134972,
+    "peak_allocated_vram_bytes": 2106068992
+  },
+  "new_raw_rows": 55,
+  "exact_replayed_losses": 55,
+  "replayed_range": [
+    18001,
+    18055
+  ],
+  "runtime_memory_observation": {
+    "observed_utc": "2026-10-15T05:12:30.154208+00:00",
+    "commit_total_bytes": 22040662016,
+    "commit_limit_bytes": 25219530752,
+    "commit_headroom_bytes": 3178868736,
+    "available_ram_bytes": 3057602560,
+    "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+  },
+  "STOP_exists": false
+}
