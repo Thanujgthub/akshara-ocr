@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-10-15T05:41:50.009167+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T054119Z-3ee2272b",
+  "snapshot_index_sha256": "690519e1a02c2588d7305bda2d1b61e909adad40364854d54aeb9a6b839300ff",
+  "snapshot_and_full_checkpoint_verified": true,
+  "full_checkpoint_metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4625,
+    "epoch": 0,
+    "next_index": 18500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "state_byte_identical_to_immutable_source": true,
+  "trainer_pid": 23612,
+  "trainer_created": 1792042557.9789948,
+  "latest_progress": {
+    "epoch": 1,
+    "example": 18560,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4640,
+    "loss": 0.002382484031841159,
+    "lr": 2.711350623105423e-06,
+    "elapsed_seconds": 73024.0359222889,
+    "peak_allocated_vram_bytes": 2153141760
+  },
+  "stop_exists": false,
+  "scope": "Local D-drive backup, not an offsite/Google Drive copy. No restore execution or completed study claimed."
+}
