@@ -1,0 +1,136 @@
+{
+  "observed_utc": "2026-10-15T16:48:13.767729+00:00",
+  "original31_and_frozen_manifests_verified": true,
+  "training_examples": 25000,
+  "optimizer_updates": 6250,
+  "epoch_count": 1,
+  "checkpoint_metadata": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 6250,
+    "epoch": 1,
+    "next_index": 0,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "validation_examples_each": 5000,
+  "final_examples_each": 3000,
+  "all_three_final_unique_frozen_order_references_groups_verified": true,
+  "final_prediction_sha256": {
+    "original": "cd41c6d96553367fb6500bf0eec3a00d389b645774bb2a02ddfaba617a8363a0",
+    "pilot": "575a195a3526596a360edfa59bc1c2d9f5a129c85448fedc1973177060aa2d1c",
+    "candidate": "b814e9a19c7db104e1f9b51f10acda4669a4829d18e435c49a95346978282e31"
+  },
+  "selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+  "final_summary_sha256": "214253fbefcd37adf53e6b2ba8b3f6c11cdce42780b1c8179ebd2c7b75a28e9f",
+  "analysis_sha256": "dc4c2fe2128ec0521b0f94bc22944adc7df4e28ae4d17129d2e4efc0cd790ade",
+  "raw_nfc_final_metrics": {
+    "original": {
+      "examples": 3000,
+      "raw_micro_cer": 0.12783891360337157,
+      "nfc_micro_cer": 0.12783891360337157,
+      "raw_micro_wer": 0.4226666666666667,
+      "nfc_micro_wer": 0.4226666666666667,
+      "raw_exact_match": 0.6643333333333333,
+      "nfc_exact_match": 0.6643333333333333
+    },
+    "pilot": {
+      "examples": 3000,
+      "raw_micro_cer": 0.1219074377585265,
+      "nfc_micro_cer": 0.1219074377585265,
+      "raw_micro_wer": 0.40166666666666667,
+      "nfc_micro_wer": 0.40166666666666667,
+      "raw_exact_match": 0.6746666666666666,
+      "nfc_exact_match": 0.6746666666666666
+    },
+    "candidate": {
+      "examples": 3000,
+      "raw_micro_cer": 0.07453367673456646,
+      "nfc_micro_cer": 0.07453367673456646,
+      "raw_micro_wer": 0.244,
+      "nfc_micro_wer": 0.244,
+      "raw_exact_match": 0.762,
+      "nfc_exact_match": 0.762
+    }
+  },
+  "paired_original_selected": {
+    "examples": 3000,
+    "paired_groups": 128,
+    "repetitions": 2000,
+    "seed": 42,
+    "point_differences": {
+      "raw_cer_reduction": 0.05330523686880512,
+      "nfc_cer_reduction": 0.05330523686880512,
+      "raw_wer_reduction": 0.17866666666666667,
+      "nfc_wer_reduction": 0.17866666666666667,
+      "raw_exact_gain": 0.09766666666666667,
+      "nfc_exact_gain": 0.09766666666666667
+    },
+    "intervals_95": {
+      "raw_cer_reduction": [
+        0.043664050967290806,
+        0.0649360773308388
+      ],
+      "nfc_cer_reduction": [
+        0.043664050967290806,
+        0.0649360773308388
+      ],
+      "raw_wer_reduction": [
+        0.15479772651287194,
+        0.2030050083472454
+      ],
+      "nfc_wer_reduction": [
+        0.15479772651287194,
+        0.2030050083472454
+      ],
+      "raw_exact_gain": [
+        0.0834441489361702,
+        0.11163101604278075
+      ],
+      "nfc_exact_gain": [
+        0.0834441489361702,
+        0.11163101604278075
+      ]
+    },
+    "valid_repetitions_by_metric": {
+      "raw_cer_reduction": 2000,
+      "nfc_cer_reduction": 2000,
+      "raw_wer_reduction": 2000,
+      "nfc_wer_reduction": 2000,
+      "raw_exact_gain": 2000,
+      "nfc_exact_gain": 2000
+    },
+    "group_identity": "Frozen source-document / duplicate components; writer identity unknown.",
+    "warnings": [],
+    "interpretation": "Reporting only. Positive error reduction/exact gain favors selected output on this sealed sample; selection remains locked."
+  },
+  "selected_export": "D:\\OCR\\runs\\word-efficient-v3\\selected-exports\\selected-20261015T164733Z-e05e3cf061ff",
+  "selected_archive": "D:\\OCR\\runs\\word-efficient-v3\\selected-exports\\selected-20261015T164733Z-e05e3cf061ff.zip",
+  "selected_export_receipt": {
+    "directory": "selected-20261015T164733Z-e05e3cf061ff",
+    "zip": "selected-20261015T164733Z-e05e3cf061ff.zip",
+    "checksums_sha256": "bea0b0b74126c326933d0b1b200a10fe831a11a37850a5c97c13f7548cc55071",
+    "zip_sha256": "8b0f3b035100b5d520fafa5139633d8f6a49e2893399139d5991f596cf0ff837",
+    "selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+    "variant": "candidate"
+  },
+  "selected_export_hashes_and_zip_CRC_verified": true,
+  "poststudy_tests": {
+    "returncode": 0,
+    "observed_utc": "2026-10-15T16:47:11.993434+00:00"
+  },
+  "study_workers_exited": true,
+  "scoped_keep_awake": {
+    "status": "released",
+    "updated_utc": "2026-10-15T16:47:05.198345+00:00",
+    "helper_pid": 30708,
+    "owner_pid": 31852,
+    "owner_created": 1792078054.8820624,
+    "request_flags": 2147483649,
+    "scope": "Idle system-sleep request only; controller identity checked every30seconds.",
+    "manual_sleep_and_lid_actions_can_pause": true,
+    "power_plan_changed": false,
+    "display_request": false,
+    "documentation": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate"
+  },
+  "scope": "Measured local Windows capped study COMPLETE. Selected model API parity and headed Playwright still pending; no deployment or global ranking claim."
+}
