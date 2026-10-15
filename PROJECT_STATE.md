@@ -556,3 +556,6 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-15T05:41:50.009167+00:00: Normalcontroller scheduledsnapshot snapshot-20261015T054119Z-3ee2272b independentlyverified: snapshotindex/allhashes/full18500checkpoint pass; statebytes identical toimmutable source step0004625. Sameactualtrainer23612 live, latestprogress18560, noSTOP. Noextraepoch/sourceGPUedit/restart/inference; finalstages pending, rankingdeferred. Evidence reports/colab-migration/windows-18500-durable-snapshot-20261015.json.
+
+
+- 2026-10-15T05:51:03.484119+00:00: Updated website dataset description from historical80,083-crop scale emphasis toactivefrozen25,000train/5,000validation/3,000sealedfinal,oneinitialepoch/validation-onlyselection; retainslabel-quality, unknownwriter/pretraining-overlap caveats. NodeJavaScriptsyntax andactualHTTPservedasset verified. Contentonly,noGPU/training/model/config changes,noAPIparity ornewOCRaccuracyclaim. Full85softwaretests passedbeforecurrentlaunch; finalselectedbrowser/inference checks stillpending. Sameactualtrainer23612 liveat18860; ranking/comparisonpage remainsdeferred.
