@@ -1,0 +1,44 @@
+{
+  "observed_utc": "2026-10-15T06:13:51.860562+00:00",
+  "verified_snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T061312Z-f36fc94b",
+  "snapshot_index_sha256": "055b84079f1cc3674cbd2cecdd4405a607bfc93b49a3b64cfb40753d9edacdad",
+  "checkpoint": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4875,
+    "epoch": 0,
+    "next_index": 19500,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "source_state_byte_identical": true,
+  "gpu_operating_observation": {
+    "observed_utc": "2026-10-15T06:12:27.196894+00:00",
+    "query": "utilization.gpu,temperature.gpu,memory.used,clocks.current.graphics,clocks_event_reasons.sw_thermal_slowdown,clocks_event_reasons.hw_thermal_slowdown,clocks_event_reasons.sw_power_cap",
+    "native_raw": "65, 87, 2309, 1440, Active, Not Active, Not Active",
+    "utilization_percent": 65,
+    "temperature_c": 87,
+    "used_vram_mib": 2309,
+    "graphics_clock_mhz": 1440,
+    "sw_thermal_slowdown": "Active",
+    "hw_thermal_slowdown": "Not Active",
+    "sw_power_cap": "Not Active",
+    "interpretation_source": "Installed nvidia-smi --help-query-gpu: SW thermal capping reduces requested clocks above maximum operating temperature. Observation only; no setting changed.",
+    "ventilation_reference": "https://www.asus.com/support/faq/1015064/",
+    "scope": "One measured operating observation, not all-runtime thermal statistics or a speedup guarantee."
+  },
+  "gpu_observation_source_snapshot_byte_identical": true,
+  "trainer_pid": 23612,
+  "trainer_created": 1792042557.9789948,
+  "progress": {
+    "epoch": 1,
+    "example": 19660,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4915,
+    "loss": 0.5028867125511169,
+    "lr": 2.2482317278544965e-06,
+    "elapsed_seconds": 74938.87044262886,
+    "peak_allocated_vram_bytes": 2169039360
+  },
+  "stop_exists": false,
+  "scope": "Normal local backup independently verified. Measured software thermal capping at one observation can limit speed; no clocks/power/precision/OS/training settings changed. No new accuracy result or offsite backup claim."
+}
