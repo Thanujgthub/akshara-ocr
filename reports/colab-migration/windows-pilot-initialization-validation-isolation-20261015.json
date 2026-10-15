@@ -1,0 +1,32 @@
+{
+  "observed_utc": "2026-10-15T13:16:03.045857+00:00",
+  "pilot_training_count": 1000,
+  "validation_count": 5000,
+  "pilot_train_sha256": "5489cd7a0e7ebd852ee8e44d2277a60c2ff4175c663ce3b2f009137114cd6d25",
+  "validation_sha256": "b22314bdbb7fd922c9db41e9df68a764a13c299fa2ec2254a62e3333f77e35d4",
+  "known_overlap_counts": {
+    "example_id": 0,
+    "group_id": 0,
+    "original_sha256": 0,
+    "pixel_sha256": 0
+  },
+  "coverage": {
+    "example_id": {
+      "pilot_train_rows_with_field": 1000,
+      "validation_rows_with_field": 5000
+    },
+    "group_id": {
+      "pilot_train_rows_with_field": 1000,
+      "validation_rows_with_field": 5000
+    },
+    "original_sha256": {
+      "pilot_train_rows_with_field": 1000,
+      "validation_rows_with_field": 5000
+    },
+    "pixel_sha256": {
+      "pilot_train_rows_with_field": 1000,
+      "validation_rows_with_field": 5000
+    }
+  },
+  "scope": "Read-only known pilot-initializer training versus active validation identity audit. No inference, labels changed, model choice changed or final-test output read. Writer/pretraining identity remains unknown."
+}
