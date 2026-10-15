@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-10-15T13:24:14.773469+00:00",
+  "previous_actual_pid": 18480,
+  "previous_created": 1792042233.1060853,
+  "new_wrapper_pid": 22620,
+  "new_wrapper_created": 1792070653.141532,
+  "command": [
+    "D:/OCR/runtime/venv/Scripts/python.exe",
+    "-m",
+    "uvicorn",
+    "ocr.server:app",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8765"
+  ],
+  "mode": "Progress-only preview: model and adapter environment absent; selected launcher configured after completed study.",
+  "health": {
+    "status": "ok",
+    "model_ready": false,
+    "model_load_verified": false,
+    "training_active": true,
+    "note": "Inference waits until the local GPU study completes."
+  },
+  "progress_http_status": 200,
+  "trainer_pid_unchanged": 14864,
+  "trainer_created": 1792063375.5465167,
+  "scope": "No GPU model loaded, training process or model/config/data file changed. Prevents historical pilot becoming available during completed-study handoff.",
+  "actual_pid": 30284,
+  "actual_created": 1792070653.1660552,
+  "model_environment_absent": true,
+  "actual_multipart_guard_status": 409
+}
