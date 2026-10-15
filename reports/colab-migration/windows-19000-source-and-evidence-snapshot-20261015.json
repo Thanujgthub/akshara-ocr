@@ -1,0 +1,39 @@
+{
+  "observed_utc": "2026-10-15T06:03:17.917182+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T060235Z-d6bf9558",
+  "snapshot_index_sha256": "57ddcbf4e566e09e50649a2604bc0d44a330848f8889f9c397e0fecf3cbe90b7",
+  "all_snapshot_hashes_verified": true,
+  "full_checkpoint": {
+    "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+    "updates": 4750,
+    "epoch": 0,
+    "next_index": 19000,
+    "precision": "torch.bfloat16",
+    "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+  },
+  "snapshot_source_state_identical": true,
+  "current_ui_source_head": "06126c85e57addf47b5d7a0978d7d14196260e67",
+  "source_history_bundle_sha256": "3ea5ed111b412c9882e316ed322c9e99e7a8f5606710764ad4b62f78e53c62aa",
+  "source_history_bundle_verified": true,
+  "tracked_source_index_files": 221,
+  "four_browser_screenshots_byte_identical_to_source": {
+    "akshara-capped-dataset-counts-desktop-20261015.png": "8dcbb26c1188161d8dd1d4e1302887222f32eb58ed55c416471d70a281601ec0",
+    "akshara-capped-dataset-counts-mobile-20261015.png": "63cd62f643d3558e7b7b26c631b8a8c26b56fea292cbc72af9a5a5bc3a5a9482",
+    "akshara-live-progress-19040-desktop-20261015.png": "a00b28b48009e1ae168809479534a6d733f385293995f97914e47c8ec1f864ce",
+    "akshara-live-progress-19040-mobile-20261015.png": "2a02cb54357c714d8f1ff323869e2ef40247cbe11b7e1a82d30a09c2450b5ac9"
+  },
+  "closed_ten_minute_memory_raw_trace_sha256": "5afeee764821e8218b61f10cd313f3ea6a87443ada8b9adf6917452c0041d21a",
+  "trainer_pid": 23612,
+  "trainer_created": 1792042557.9789948,
+  "progress": {
+    "epoch": 1,
+    "example": 19300,
+    "examples_per_epoch": 25000,
+    "optimizer_updates": 4825,
+    "loss": 0.012262902222573757,
+    "lr": 2.3997979117548e-06,
+    "elapsed_seconds": 74317.48034119606,
+    "peak_allocated_vram_bytes": 2169039360
+  },
+  "scope": "Normal local D-drive durable snapshot includes full19000, current source/UI history, browser evidence and memory trace. Restore not executed; no offsite or Google Drive claim."
+}
