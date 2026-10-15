@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-10-15T15:56:04.531280+00:00",
+  "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T155512Z-6215933c",
+  "all_snapshot_hashes_verified": true,
+  "pilot_durable_predictions": 1696,
+  "pilot_live_prefix_identical": true,
+  "pilot_unique_ids_frozen_order_references_groups_verified": true,
+  "completed_original3000_unchanged": true,
+  "selection_unchanged": true,
+  "scope": "Read-only recovery verification, local D backup, not offsite/actualrestore. No final quality analysis or model selection change."
+}

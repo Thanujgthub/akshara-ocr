@@ -578,3 +578,6 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-15T15:39:01.167788+00:00: Scheduled snapshot snapshot-20261015T153834Z-a23818cb independently verified allSHA/completeORIGINAL3000rawpredictions+metrics/lockedselection/training-complete marker and306 pilotpredictionprefix. Sourcebundle HEAD47f29e2 byte-identical. Same existingcontroller continues pilot, candidate follows; no rerun or modelchoicechange. Local D backup only, not offsite/actualrestore. Analysis/export/selected API parity/Playwright pending; comparisons/publication deferred. Evidence reports/colab-migration/windows-final-original3000-durable-snapshot-20261015.json.
+
+
+- 2026-10-15T15:56:04.531280+00:00: PILOT sealedfinal midpoint recovery audit verified snapshot snapshot-20261015T155512Z-6215933c allSHA/1696 durable completeJSONL records with unique frozenseed42 IDs/rawreferences/component groups and exactliveprefix. CompletedORIGINAL3000/lockedselection unchanged. Samecontroller31852/12724 continuespilot; candidate3000 pending. Full25kepoch/5000validation reused. No outcome-based choice or completedrecordrerun. Local D backup,not offsite/actualrestore. Finalanalysis/export/selected API parity/Playwright remain pending; comparisons/publication deferred. Evidence reports/colab-migration/windows-final-pilot-midpoint-durable-20261015.json.
