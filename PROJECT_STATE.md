@@ -586,3 +586,11 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-15T06:32:57.495148+00:00: PreservedallCPU-readyrecoveryevidence/new19748handoff/sourcehistorybundleHEAD560c9e0 inappend-onlysnapshot snapshot-20261015T063232Z-9b46b751, allsnapshotSHAverified. ActualpausedAPIhealthmodel_load_verifiedFalse andmultipartpredict409 verified; keep-awakehelperreleased, noGPUmodelrun. Currentpreloadgatepassed=False, headroom7978913792Bvs9126805504Brequired. Userunused-appclosure questionpending. AllusefulCPU-onlypreparationcomplete; nextactualGPUdependentstage requirescapacityrecovery,notgenericpermission/credentials. Secondconsecutivepost19748blockaudit,goalincompleteandactive. Evidence reports/colab-migration/windows-19748-cpu-ready-backup-20261015.json.
+
+## External memory block - 15 October 2026, 06:37 UTC
+
+The third consecutive audit after the graceful stop confirms insufficient Windows commit headroom: 7,252,824,064 bytes available versus 9,126,805,504 required by the explicit pre-load gate. The full checkpoint is preserved at `D:/OCR/runs/word-efficient-v3/full/checkpoints/step-0004937`: 19,748 examples, 4,937 updates, BF16, same frozen25k/5k/3k one-epoch protocol. STOP remains unconsumed. The latest verified CPU-ready backup is `snapshot-20261015T063232Z-9b46b751`.
+
+CPU preparation is complete: 85 tests, all31 original files, all33,000 image hashes/headers and known historical final-exposure isolation pass. Native BF16, real resume smoke and64-image benchmark still require fresh GPU execution after capacity recovers. Then resume full19748; candidate validation, selection, sealed final testing, reporting/export, selected-model API parity and real selected-model website verification remain unfinished. Ranking/comparison work and publication remain deferred.
+
+The existing user action is to close unused heavy apps/browser windows while keeping Codex open, then reply Closed. No new credentials or generic approval are needed; measure actual capacity again before proceeding. A bulk handoff/backup shell command was rejected by automatic approval review with only the reason "blocked by policy" and made no changes. Scoped factual documentation edits preserved this audit. Evidence: `reports/colab-migration/windows-19748-external-memory-block-audit-20261015.json`.

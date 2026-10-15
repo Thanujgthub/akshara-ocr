@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-10-15T06:37:24.651414+00:00",
+  "consecutive_post19748_memory_block_goal_turns": 3,
+  "commit_headroom_bytes": 7252824064,
+  "required_commit_headroom_bytes": 9126805504,
+  "memory_gate_passed": false,
+  "checkpoint": "D:/OCR/runs/word-efficient-v3/full/checkpoints/step-0004937",
+  "saved_examples": 19748,
+  "optimizer_updates": 4937,
+  "precision": "torch.bfloat16",
+  "verified_recovery_snapshot": "D:/OCR/backups/word-efficient-v3-local-approved-v1/snapshot-20261015T063232Z-9b46b751",
+  "cpu_preflight_complete": {
+    "software_tests": 85,
+    "original_checkpoint_files": 31,
+    "frozen_image_files": 33000,
+    "known_historical_final_identity_overlap": 0
+  },
+  "remaining": [
+    "Fresh native BF16 detection, interrupted/resumed smoke and64-image benchmark after capacity recovers",
+    "Resume full19748 checkpoint to25000 within the existing one epoch",
+    "Candidate5000 validation and validation-only selection lock",
+    "Sealed3000 final comparisons exactly once with preserved partial outputs",
+    "Raw/NFC reporting, paired uncertainty analysis and selected artifact export",
+    "Actual selected-model API parity and selected-model website Playwright verification"
+  ],
+  "pending_user_action": "Close unused browser windows and heavy apps, keep Codex open, reply Closed; actual capacity must be remeasured.",
+  "bulk_handoff_command": "Automatic approval review rejected a bulk handoff/backup command with stated reason blocked by policy; it made no changes. Scoped factual documentation edits were used instead.",
+  "scope": "Verified external capacity block, not project completion. No precision, datasets, labels, epochs or OS settings changed. STOP remains preserved. Comparison/ranking and publication deferred."
+}
