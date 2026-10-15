@@ -1,0 +1,111 @@
+{
+  "observed_utc": "2026-10-15T15:22:30.801107+00:00",
+  "recovery_audit": {
+    "observed_utc": "2026-10-15T15:21:24.741427+00:00",
+    "memory": {
+      "passed": true,
+      "measurement": {
+        "observed_utc": "2026-10-15T15:21:24.741427+00:00",
+        "commit_total_bytes": 15306264576,
+        "commit_limit_bytes": 25219530752,
+        "commit_headroom_bytes": 9913266176,
+        "available_ram_bytes": 6194397184,
+        "source": "Native Windows GetPerformanceInfo; pagefile configuration is not runtime capacity."
+      },
+      "required_commit_headroom_bytes": 9126805504,
+      "model_private_allowance_gib": 6.0,
+      "reserve_gib": 2.5,
+      "policy_basis": "Recent trainer used about6GB private memory at Windows-confirmed exhaustion. Default6GiB allowance plus3GiB operational reserve before model loading.",
+      "scope": "Pre-load Windows capacity check only. Free physical RAM cannot replace commit headroom. Not native BF16, smoke, benchmark, runtime stability or accuracy evidence. Later memory demand can change."
+    },
+    "brave_closed": true,
+    "latest_snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T151312Z-52011a34",
+    "all_snapshot_hashes_verified": true,
+    "latest_checkpoint_verified": "D:\\OCR\\runs\\word-efficient-v3\\full\\checkpoints\\step-0006250-b0776421ff2f",
+    "checkpoint_metadata": {
+      "signature": "ed7a019fb99f830c1d9f5224dbfce380f229e625fcce2f9010969e1410d25491",
+      "updates": 6250,
+      "epoch": 1,
+      "next_index": 0,
+      "precision": "torch.bfloat16",
+      "dataset_fingerprint": "582e6e31739a2bcd0d2e20431d09be28a80278eef371d1c1a7d1e78464cc6e23"
+    },
+    "locked_selection_sha256": "32e18a5c4a29f3855bf323f51944a7ccae53659f60982d3d40b284960e63f00b",
+    "original_final_saved": 2227,
+    "STOP_preserved": true,
+    "locks_free": true,
+    "scope": "CPU checks only. No model load, training, final evaluation, STOP consumption or original artifact changes. Pointer compared as parsed JSON because snapshot serialization changes newlines; state bytes identical."
+  },
+  "hardware": {
+    "observed_utc": "2026-10-15T15:21:47.049541+00:00",
+    "gpu": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "gpu_total_bytes": 4294508544,
+    "native_bf16": true,
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu_observation": "NVIDIA GeForce RTX 3050 4GB Laptop GPU, 0 MiB, 0 %, 56"
+  },
+  "durable_receipt": {
+    "snapshot": "D:\\OCR\\backups\\word-efficient-v3-local-approved-v1\\snapshot-20261015T151312Z-52011a34",
+    "all_hashes_verified": true,
+    "postvalidation_state_identical": true,
+    "selection_unchanged": true,
+    "original2227_predictions_identical": true,
+    "source_head": "d9eac5e9c49779a98441afbbc56910952a551c9b",
+    "CPU_ready_evidence_preserved": true,
+    "scope": "Local D backup,not offsite or actualrestore. No GPU model/study launch or STOP consumption."
+  },
+  "authorized_app_closure": {
+    "observed_utc": "2026-10-15T15:21:09.895368+00:00",
+    "authorization": "User: close whatever required. WhatsApp-only closure; Codex, other apps and project processes preserved.",
+    "targets": [
+      {
+        "pid": 25120,
+        "created": 1792039337.6914883,
+        "name": "WhatsApp.Root.exe",
+        "children": [
+          {
+            "pid": 8552,
+            "created": 1792039339.3075185,
+            "name": "msedgewebview2.exe"
+          },
+          {
+            "pid": 12668,
+            "created": 1792039339.3344953,
+            "name": "msedgewebview2.exe"
+          },
+          {
+            "pid": 24528,
+            "created": 1792039339.4628987,
+            "name": "msedgewebview2.exe"
+          },
+          {
+            "pid": 23884,
+            "created": 1792039339.4677992,
+            "name": "msedgewebview2.exe"
+          },
+          {
+            "pid": 24168,
+            "created": 1792039339.5254204,
+            "name": "msedgewebview2.exe"
+          },
+          {
+            "pid": 26200,
+            "created": 1792039341.7039125,
+            "name": "msedgewebview2.exe"
+          },
+          {
+            "pid": 25876,
+            "created": 1792039455.049803,
+            "name": "msedgewebview2.exe"
+          }
+        ]
+      }
+    ]
+  },
+  "tests": {
+    "returncode": 0,
+    "observed_utc": "2026-10-15T15:10:58.045988+00:00"
+  },
+  "scope": "Completed epoch/validation preserved. Smoke currently diagnostic only; final evaluation has not restarted. No scientific config or GPU source edits."
+}
