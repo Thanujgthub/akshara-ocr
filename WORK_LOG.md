@@ -494,3 +494,6 @@ Pilot5000 validation completed: raw/NFC CER9.1996%, WER30.38%, raw exact74.14%, 
 
 
 - 2026-10-15T12:18:04.211750+00:00: Scheduled snapshot snapshot-20261015T121651Z-32344f63 independently verified allSHA/full21500/state byte identity. Same actualtrainer14864 continues, noSTOP or scientific/sourceGPU changes. Local D backup,not offsite or actualrestore; remaining training/validation/selection/sealedfinal/API/selected browser gates unchanged. Evidence reports/colab-migration/windows-21500-durable-snapshot-20261015.json.
+
+
+- 2026-10-15T12:28:44.151579+00:00: Same actual trainer14864 reached22,000/25,000 (88%one epoch,not accuracy),5,500updates. Immutable step0005500/index/atomicpointerSHA and frozen manifests verified; BF16/signature/fingerprint unchanged from approvedv6 recovery. Post19804 raw segment contiguous/finite with batch4updates, no STOP. Latest snapshot snapshot-20261015T122737Z-f46bade1 contains21500 saved examples; independently verified this check=False. No GPU code/config/precision/epoch change or inference. Candidate validation/locked selection/sealedfinal/analysis/export/selected API/browser pending; rankings/publication deferred. Evidence reports/colab-migration/windows-22000-training-checkpoint-20261015.json.
