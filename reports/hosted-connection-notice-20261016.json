@@ -11,5 +11,36 @@
   },
   "javascript_syntax": "pass",
   "software_scope": "UI only; no full-suite rerun for this small frontend change",
-  "original_model_or_data_changed": false
+  "original_model_or_data_changed": false,
+  "deployed_verification": {
+    "vercel": {
+      "url": "https://akshara-ocr-seven.vercel.app/",
+      "notice": {
+        "text": "Connect a model to transcribe images.\n\nYou can review text and view results here. To read a new image, connect your OCR server.\n\nConnect model\nRead setup instructions",
+        "links": [
+          "https://github.com/Thanujgthub/akshara-ocr#step-by-step-installation--windows-powershell"
+        ],
+        "overflow": false
+      },
+      "opens_dialog": true,
+      "http_on_https_rejected_before_fetch": true,
+      "console": "### Result\nTotal messages: 0 (Errors: 0, Warnings: 0)\n\n"
+    },
+    "huggingface": {
+      "url": "https://thanujhf-akshara-ocr-studio.static.hf.space/",
+      "notice": {
+        "text": "Connect a model to transcribe images.\n\nYou can review text and view results here. To read a new image, connect your OCR server.\n\nConnect model\nRead setup instructions",
+        "links": [
+          "https://github.com/Thanujgthub/akshara-ocr#step-by-step-installation--windows-powershell"
+        ],
+        "overflow": false
+      },
+      "opens_dialog": true,
+      "http_on_https_rejected_before_fetch": true,
+      "console": "### Result\nTotal messages: 0 (Errors: 0, Warnings: 0)\n\n"
+    },
+    "verified_utc": "2026-10-16T09:52:01.013325+00:00",
+    "github_commit": "1122f6f",
+    "huggingface_commit": "bfc5138d414f3c9b2382aabd8c92eca8a02b060d"
+  }
 }
