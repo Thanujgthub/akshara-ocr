@@ -1,4 +1,8 @@
-# Project state — verified 15 October 2026
+# Project state — verified 16 October 2026
+
+## Hosted connection notice fixed
+
+The hosted studio now offers a Connect model button that opens its existing connection dialog and a setup guide link. Removed the corrupted separator and unchecked localhost shortcut. A successful ready response hides the notice; unavailable or paused responses retain it. HTTPS pages reject HTTP server URLs with instructions for local use. Desktop/mobile Playwright fixture checks verify the flow without performing inference. Core model, training, data and results remain unchanged. Deployment verification is recorded in the work log.
 
 ## Publication verified ? 16 October 2026
 

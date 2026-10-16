@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-10-16T09:51:09.075208+00:00",
+  "change": "Hosted connection notice and action",
+  "checks": {
+    "opens_connection_dialog": true,
+    "ready_fixture_hides_notice": true,
+    "unavailable_fixture_restores_notice": true,
+    "fixture_routes_removed": true,
+    "mobile_no_overflow": true,
+    "scope": "UI fixtures only, no model inference performed"
+  },
+  "javascript_syntax": "pass",
+  "software_scope": "UI only; no full-suite rerun for this small frontend change",
+  "original_model_or_data_changed": false
+}
