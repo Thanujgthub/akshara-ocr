@@ -3,4 +3,4 @@
 
 .research-nav{display:flex;align-items:center;gap:12px;width:100%;padding:14px 12px;margin:3px 0;border-radius:7px;font-size:12px;color:var(--muted)}.research-nav>span:first-child{font-size:18px;width:20px}.research-nav:hover{background:var(--pale);color:var(--accent)}@media(max-width:900px){.research-nav{justify-content:center;padding:13px 5px}.research-nav>.nav-link-label{display:none}.research-nav>span:first-child{font-size:21px}}
 
-.connection-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.connection-actions .button{max-width:100%}
+.connection-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.connection-actions .button{max-width:100%}.connection-actions .button:not(.primary){color:var(--ink)}
